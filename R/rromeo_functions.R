@@ -32,10 +32,7 @@ rr_get_version = function() {
   rr_base_api() %>%
     http() %>%
     xml2::read_xml() %>%
-    xml2::as_list() %>%
-    .[["romeoapi"]] %>%
-    attributes() %>%
-    .[["version"]]
+    xml2::xml_attr("version")
 }
 
 #' Get record from Publication ID
@@ -82,7 +79,9 @@ rr_get_pub = function(given_id) {
   })
 
   rr_base_api() %>%
-    api_query(id = given_id)
+    api_query_(.dots = list(id = as.character(given_id))) %>%
+    http() %>%
+    xml2::read_xml()
 }
 
 #' Retrieve RoMEO data by ISSN
@@ -98,7 +97,7 @@ rr_get_issn = function(issn) {
   validate_issn(issn)
 
   rr_base_api() %>%
-    api_query_(issn = issn)
+    api_query_(.dots = list(issn = issn))
 }
 
 
