@@ -47,17 +47,86 @@ rr_get_version = function() {
 #' @export
 #'
 #' @examples
-rr_get_pub = function(id) {
+rr_get_rest_pub = function(id) {
 
   id = tryCatch({
     as.integer(id)
-    },
-    error = function() {
-      stop("id needs to be an integer")
-      return(NA_integer_)
-    })
+  },
+  error = function() {
+    stop("id needs to be an integer")
+    return(NA_integer_)
+  })
 
   rr_base_rest_api() %>%
     api_template(template = "pub/{{pub_id}}/", data = list(pub_id = id)) %>%
     http()
 }
+
+#' Get record from Publication ID
+#'
+#' Use SHERPA/RoMEO regular API to retrieve a specific publication number status
+#' @param given_id publication number
+#'
+#' @return
+#' @export
+#'
+#' @examples
+rr_get_pub = function(given_id) {
+
+  given_id = tryCatch({
+    as.integer(given_id)
+  },
+  error = function() {
+    stop("id needs to be an integer")
+    return(NA_integer_)
+  })
+
+  rr_base_api() %>%
+    api_query(id = given_id)
+}
+
+#' Retrieve RoMEO data by ISSN
+#'
+#' @param issn A single ISSN
+#'
+#' @return
+#' @export
+#'
+#' @examples
+rr_get_issn = function(issn) {
+
+  validate_issn(issn)
+
+  rr_base_api() %>%
+    api_query_(issn = issn)
+}
+
+
+#' Checks validity of the ISSN
+#'
+#' Silent if the ISSN is valid, errors otherwise.
+#' @param issn The ISSN of a journal
+#'
+validate_issn = function(issn) {
+
+  is_char      = is.character(issn)
+  n_char       = nchar(issn) == 9
+  contains_sep = grepl("-", issn, fixed = TRUE)
+  issn_groups = strsplit(issn, "-", fixed = TRUE)[[1]]
+  group_len = nchar(issn_groups[1]) == 4 & nchar(issn_groups[2]) == 4
+
+  group_num = tryCatch({
+    as.numeric(issn_groups[1])
+    as.numeric(issn_groups[2])
+
+    TRUE
+  },
+  warning = function(w) {
+    return(FALSE)
+  })
+
+  if (!all(is_char, n_char, contains_sep, group_len, group_num)) {
+    stop("ISSN is invalid, please check the format")
+  }
+}
+
