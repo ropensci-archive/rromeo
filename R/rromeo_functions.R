@@ -117,19 +117,18 @@ validate_issn = function(issn) {
   }
 
   # Weighted sum check
-  to_sum = gsub("-", "", issn)
+  issn_digits = strsplit(gsub("-", "", issn), "")[[1]]
 
-  non_control_digits = as.numeric(strsplit(substr(to_sum, 1, 7), "")[[1]])
-  control_digit = substr(to_sum, 8, 8)
-
-  if (control_digit %in% c("X", "x")) {
-    control_digit = 10
-  }
-  control_digit = as.numeric(control_digit)
+  non_control_digits = as.numeric(issn_digits[1:7])
+  control_digit = toupper(issn_digits[8])
 
   weighted_sum = sum(seq(8, 2, by = -1) * non_control_digits)
 
-  if (11 - (weighted_sum %% 11) != control_digit) {
+  weighted_sum = ifelse(control_digit == "X",
+                        weighted_sum + 10,
+                        weighted_sum + as.numeric(control_digit))
+
+  if (weighted_sum %% 11 != 0) {
     stop("ISSN is invalid, please check the format")
   }
 
