@@ -1,16 +1,19 @@
 Package: rromeo
 Type: Package
-Title: What the Package Does (Title Case)
+Title: An R Client for SHERPA/RoMEO API
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: c(
+  person("Matthias", "Grenié", email = "matthias.grenie@gmail.com",
+         role = c("aut", "cre"), comment = c(ORCID = "0000-0002-4659-7522")),
+  person("Hugo", "Gruson", email = "hugo.gruson@protonmail.com",
+         role = "aut", comment = c(ORCID = "0000-0002-4094-1476"))
+  )
+Description: Provides an R Client for SHERPA/RoMEO API.
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    request,
+    httr,
     xml2
 RoxygenNote: 6.1.0
 Suggests:
