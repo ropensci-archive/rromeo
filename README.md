@@ -1,21 +1,24 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+`rromeo` – an R interface for SHERPA/RoMEO data
+===============================================
 
-# rromeo – an R interface for SHERPA/RoMEO data
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis build status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo)
 
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+The goal of `rromeo` is to provide an R client for the [SHERPA/RoMEO API](http://www.sherpa.ac.uk/romeo/index.php?la=en&fIDnum=&mode=simple). The API documentation can be found [here](http://www.sherpa.ac.uk/romeo/apimanual.php?la=en&fIDnum=%7C&mode=simple).
 
-The goal of rromeo is to provide an R client for the [SHERPA/RoMEO
-API](http://www.sherpa.ac.uk/romeo/index.php?la=en&fIDnum=&mode=simple).
-The API documentation can be found
-[here](http://www.sherpa.ac.uk/romeo/apimanual.php?la=en&fIDnum=%7C&mode=simple).
-
-## Installation
+Installation
+------------
 
 You can install the development version of rromeo with:
 
 ``` r
 remotes::install_github("Rekyt/rromeo")
 ```
+
+API Key
+-------
+
+Note that SHERPA/RoMEO lets you run 500 requests per day per IP address, by [registring for a free API key](http://www.sherpa.ac.uk/romeo/apiregistry.php) you can bypass this limit.
+
+`rromeo` will provide a mechanism by which you can use your key to access the API.
