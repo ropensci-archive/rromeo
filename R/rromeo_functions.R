@@ -1,50 +1,34 @@
+rr_base_url = function() {
+  "http://www.sherpa.ac.uk/"
+}
+
 rr_base_rest_api = function() {
-  api("http://www.sherpa.ac.uk/romeo/api29/")
+  "romeo/api29/"
 }
 
 rr_base_api = function() {
-  api("http://www.sherpa.ac.uk/romeo/api29.php")
-}
-
-#' Checks SHERPA/RoMEO API
-#'
-#' If reaching the RoMEO API this function returns an error
-#' @return Nothing if can reach, error otherwise
-#' @import request
-#' @export
-#'
-#' @examples
-#' rr_check_api()
-rr_check_api = function() {
-  rr_base_api() %>%
-    http()
+  "http://www.sherpa.ac.uk/romeo/api29.php"
 }
 
 #' Get SHERPA/RoMEO API version
 #'
 #' @return
-#' @import request
+#' @import httr
 #' @export
 #'
 #' @examples
-#' rr_get_version()
-rr_get_version = function() {
-  rr_base_api() %>%
-    http() %>%
-    xml2::read_xml() %>%
-    xml2::xml_attr("version")
+#' rr_api_version()
+rr_api_version = function() {
+  rr_query = content(GET(rr_base_api()))
+
+  xml2::xml_attr(rr_query, "version")
 }
 
-#' Get record from Publication ID
+#' Get record from Publichser ID
 #'
-#' Use SHERPA/RoMEO RESTful API to retrieve a specific publication number status
-#' @param id publication number
-#'
-#' @return
-#' @export
-#'
-#' @examples
-rr_get_rest_pub = function(id) {
+#' Use SHERPA/RoMEO RESTful API to retrieve a specific publisher status
+#' @param id publisher ID
+rr_rest_publisher = function(id) {
 
   id = tryCatch({
     as.integer(id)
@@ -54,9 +38,9 @@ rr_get_rest_pub = function(id) {
     return(NA_integer_)
   })
 
-  rr_base_rest_api() %>%
-    api_template(template = "pub/{{pub_id}}/", data = list(pub_id = id)) %>%
-    http()
+  pub_path = paste0(rr_base_rest_api(), "pub/", id, "/")
+
+  GET(rr_base_url(), path = pub_path)
 }
 
 #' Get record from Publication ID
@@ -64,11 +48,10 @@ rr_get_rest_pub = function(id) {
 #' Use SHERPA/RoMEO regular API to retrieve a specific publication number status
 #' @param given_id publication number
 #'
-#' @return
 #' @export
-#'
 #' @examples
-rr_get_pub = function(given_id) {
+#' rr_publisher(55)
+rr_publisher = function(given_id) {
 
   given_id = tryCatch({
     as.integer(given_id)
@@ -78,26 +61,22 @@ rr_get_pub = function(given_id) {
     return(NA_integer_)
   })
 
-  rr_base_api() %>%
-    api_query_(.dots = list(id = as.character(given_id))) %>%
-    http() %>%
-    xml2::read_xml()
+  GET(rr_base_api(), query = list(id = given_id))
 }
 
-#' Retrieve RoMEO data by ISSN
+#' Journal data by ISSN
 #'
-#' @param issn A single ISSN
-#'
-#' @return
+#' @param issn A single journal ISSN
 #' @export
 #'
 #' @examples
-rr_get_issn = function(issn) {
+#'
+#' rr_journal("1947-6264")
+rr_journal = function(issn) {
 
   validate_issn(issn)
 
-  rr_base_api() %>%
-    api_query_(.dots = list(issn = issn))
+  GET(rr_base_api(), query = list(issn = issn))
 }
 
 
@@ -105,7 +84,6 @@ rr_get_issn = function(issn) {
 #'
 #' Silent if the ISSN is valid, errors otherwise.
 #' @param issn The ISSN of a journal
-#'
 validate_issn = function(issn) {
 
   # How to validate ISSN?
