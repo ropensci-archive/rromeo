@@ -13,5 +13,7 @@ Imports:
     request,
     xml2
 RoxygenNote: 6.1.0
-Suggests: 
+Suggests:
+    spelling, 
     testthat
+Language: en-US
