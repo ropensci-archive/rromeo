@@ -108,24 +108,23 @@ rr_get_issn = function(issn) {
 #'
 validate_issn = function(issn) {
 
-  is_char      = is.character(issn)
-  n_char       = nchar(issn) == 9
-  contains_sep = grepl("-", issn, fixed = TRUE)
-  issn_groups = strsplit(issn, "-", fixed = TRUE)[[1]]
-  group_len = nchar(issn_groups[1]) == 4 & nchar(issn_groups[2]) == 4
+  # How to validate ISSN?
+  # https://en.wikipedia.org/wiki/International_Standard_Serial_Number
 
-  group_num = tryCatch({
-    as.numeric(issn_groups[1])
-    as.numeric(issn_groups[2])
-
-    TRUE
-  },
-  warning = function(w) {
-    return(FALSE)
-  })
-
-  if (!all(is_char, n_char, contains_sep, group_len, group_num)) {
+  # Pre-check: does it look like a valid ISSN?
+  if (!grepl("^\\d{4}-\\d{3}[\\dxX]$", issn, perl = TRUE)) {
     stop("ISSN is invalid, please check the format")
   }
+
+  # Weighted sum check
+  to_sum = gsub("-", "", issn)
+
+  weighted_sum = sum(seq(8, 1, by = -1) * as.numeric(strsplit(to_sum, "")[[1]]))
+
+  if (weighted_sum %% 11 != 0) {
+    stop("ISSN is invalid, please check the format")
+  }
+
+  return(NULL)
 }
 
