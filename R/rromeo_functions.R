@@ -1,8 +1,8 @@
-rr_base_rest_api = function() {
+rr_base_rest_api = function() {
   api("http://www.sherpa.ac.uk/romeo/api29/")
 }
 
-rr_base_api = function() {
+rr_base_api = function() {
   api("http://www.sherpa.ac.uk/romeo/api29.php")
 }
 
