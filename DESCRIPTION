@@ -17,6 +17,9 @@ Imports:
     xml2
 RoxygenNote: 6.1.0
 Suggests:
-    spelling, 
-    testthat
+    spelling,
+    testthat,
+    knitr,
+    rmarkdown
 Language: en-US
+VignetteBuilder: knitr
