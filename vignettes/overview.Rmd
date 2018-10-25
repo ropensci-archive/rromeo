@@ -1,0 +1,40 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+library(rromeo)
+```
+
+# Get summary data
+
+Let's try to access summary data for . We can access this data
+using its full name or its unique ISSN identifier.
+
+```{r}
+rr_journal_issn("1947-6264")
+```
+
+You can also search for partial matches.
+
+```{r}
+rr_journal_name("Biogeography", qtype = "contains")
+```
+
+If rromeo finds multiple journals matching your query terms,
+it will only returns the list of titles and ISSN by default.
+
+You can then use this list to select the exact journal you are looking for (in this case, it is recommended to use the ISSN).
+
+Alternatively, you may want to get data for all those journals. To achieve this, you may enable the `multiple` option:
+
+```{r}
+rr_journal_name("Biogeography", qtype = "contains", multiple = TRUE)
+```

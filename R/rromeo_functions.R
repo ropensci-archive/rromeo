@@ -67,36 +67,56 @@ rr_publisher = function(given_id) {
 #' Journal data by ISSN
 #'
 #' @param issn A single journal ISSN
+#'
 #' @export
 #'
 #' @examples
 #'
-#' rr_journal("1947-6264")
-rr_journal = function(issn) {
+#' rr_journal_issn("1947-6264")
+rr_journal_issn = function(issn) {
 
   validate_issn(issn)
 
-  GET(rr_base_api(), query = list(issn = issn))
+  api_answer = GET(rr_base_api(), query = list(issn = issn))
+
+  parse_answer(api_answer, multiple = FALSE)
 }
 
+#' Journal data by title
+#'
 #' @param name A character string, containing the (possibly) partial name of the
 #' journal
 #' @param qtype A character string saying whether you are lookin for `exact`,
 #' `contains` or `starts with` matches
+#' @inheritParams parse_answer
+#'
+#' @export
+#'
 #' @examples
 #' rr_journal_name("Journal of Geology")
-rr_journal_name = function(name,
+#' rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
+#' rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
+rr_journal_name = function(name, multiple = FALSE,
                            qtype = c("exact", "contains", "starts with")) {
 
   qtype = match.arg(qtype)
 
   api_answer = GET(rr_base_api(), query = list(jtitle = name, qtype = qtype))
 
-  return(api_answer)
+  parse_answer(api_answer, multiple = multiple)
 }
 
-#' Parse API.
-parse_answer = function(api_answer) {
+#' Parse API answer.
+#'
+#' @param multiple If multiple results match your query, should the function
+#' recursively fetch data for each of one of them (`multiple = TRUE`) or
+#' return a data.frame containing only titles and ISSN of all matches
+#' (`multiple = FALSE`)
+#'
+#' @keywords internal
+#'
+#' @import xml2
+parse_answer = function(api_answer, multiple = FALSE) {
 
   if (http_error(api_answer)) {
     stop("The API endpoint could not be reached. Please try again later.")
@@ -111,21 +131,31 @@ parse_answer = function(api_answer) {
   }
   else if (hits == 1) {
     romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
+    preprint = xml_text(xml_find_all(xml_source, "//prearchiving"))
+    postprint = xml_text(xml_find_all(xml_source, "//postarchiving"))
+    pdf = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
 
     # TODO: which characteristics should we return?
-    return(romeocolour)
+    return(data.frame(preprint, postprint, pdf, romeocolour))
   }
   else {
-    # TODO: if multiple journals are found:
-    # - return a df with their names and issn and ask to user to try again with
-    #   a more precise query
-    # - automatically perform an API request for each one of them and return the
-    #   results in a df
-    # This could also depend on a switch 'multiple = TRUE' to determine which
-    # one of these two alternatives the user wants to follow.
-    # At the moment, we just return an error.
-    stop(hits, " journals match your query terms. Please modify your query to
-         only match one journal.")
+    warning(hits, " journals match your query terms.\n")
+
+    journals = xml_text(xml_find_all(xml_source, "//jtitle"))
+    issns = xml_text(xml_find_all(xml_source, "//issn"))
+
+    if (!multiple) {
+      warning("Select one journal from the provided list or enable multiple = TRUE")
+
+      return(data.frame("Title" = journals,
+                        "ISSN" = issns))
+    } else {
+      message("Recursively fetching data from each journal. This may take some time...")
+
+      # FIXME: if data is missing for one of the journals, it is silently dropped.
+      # We should add a warning about this.
+      return(do.call(rbind.data.frame, lapply(issns, rr_journal_issn)))
+    }
   }
 }
 
