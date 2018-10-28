@@ -141,6 +141,11 @@ parse_answer = function(api_answer, multiple = FALSE) {
   else {
     warning(hits, " journals match your query terms.\n")
 
+    if (xml_text(xml_find_all(xml_source, "//outcome")) == "excessJournals") {
+      warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
+              "You should try to split your request into smaller chunks.")
+    }
+
     journals = xml_text(xml_find_all(xml_source, "//jtitle"))
     issns = xml_text(xml_find_all(xml_source, "//issn"))
 
