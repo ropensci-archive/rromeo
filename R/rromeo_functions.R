@@ -23,7 +23,7 @@ rr_api_version = function() {
   xml2::xml_attr(rr_query, "version")
 }
 
-#' Get record from Publichser ID
+#' Get record from Publisher ID
 #'
 #' Use SHERPA/RoMEO RESTful API to retrieve a specific publisher status
 #' @param id publisher ID
@@ -130,24 +130,25 @@ parse_answer = function(api_answer, multiple = FALSE) {
   }
   else if (hits == 1) {
 
-    title = xml_text(xml_find_all(xml_source, "//jtitle"))
-    issn = xml_text(xml_find_all(xml_source, "//issn"))
-    romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
-    preprint = xml_text(xml_find_all(xml_source, "//prearchiving"))
-    postprint = xml_text(xml_find_all(xml_source, "//postarchiving"))
-    pdf = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
+    title = xml_text_or_na(xml_source, "//jtitle")
+    issn = xml_text_or_na(xml_source, "//issn")
+
+    romeocolour = xml_text_or_na(xml_source, "//romeocolour")
+    preprint = xml_text_or_na(xml_source, "//prearchiving")
+    postprint = xml_text_or_na(xml_source, "//postarchiving")
+    pdf = xml_text_or_na(xml_source, "//pdfarchiving")
 
     return(data.frame(title, issn, preprint, postprint, pdf, romeocolour))
   } else {
     warning(hits, " journals match your query terms.\n")
 
-    if (xml_text(xml_find_all(xml_source, "//outcome")) == "excessJournals") {
+    if (xml_text_or_na(xml_source, "//outcome") == "excessJournals") {
       warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
               "You should try to split your request into smaller chunks.")
     }
 
-    journals = xml_text(xml_find_all(xml_source, "//jtitle"))
-    issns = xml_text(xml_find_all(xml_source, "//issn"))
+    journals = xml_text_or_na(xml_source, "//jtitle")
+    issns = xml_text_or_na(xml_source, "//issn")
 
     if (!multiple) {
       warning("Select one journal from the provided list or enable multiple = ",
@@ -198,3 +199,8 @@ validate_issn = function(issn) {
   return(NULL)
 }
 
+xml_text_or_na = function(parsed_xml, xml_tag) {
+  given_text = xml_text(xml_find_all(parsed_xml, xml_tag))
+
+  ifelse(length(given_text) == 0, NA_character_, given_text)
+}
