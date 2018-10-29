@@ -2,7 +2,7 @@
 % Please edit documentation in R/rromeo_functions.R
 \name{rr_rest_publisher}
 \alias{rr_rest_publisher}
-\title{Get record from Publichser ID}
+\title{Get record from Publisher ID}
 \usage{
 rr_rest_publisher(id)
 }

@@ -12,12 +12,12 @@ rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
 journal}
 
 \item{multiple}{If multiple results match your query, should the function
-recursively fetch data for each of one of them (`multiple = TRUE`) or
+recursively fetch data for each of one of them (\code{multiple = TRUE}) or
 return a data.frame containing only titles and ISSN of all matches
-(`multiple = FALSE`)}
+(\code{multiple = FALSE})}
 
-\item{qtype}{A character string saying whether you are lookin for `exact`,
-`contains` or `starts with` matches}
+\item{qtype}{A character string saying whether you are lookin for \code{exact},
+\code{contains} or \code{starts with} matches}
 }
 \description{
 Journal data by title
