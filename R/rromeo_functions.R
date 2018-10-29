@@ -12,7 +12,6 @@ rr_base_api = function() {
 
 #' Get SHERPA/RoMEO API version
 #'
-#' @return
 #' @import httr
 #' @export
 #'
@@ -130,15 +129,16 @@ parse_answer = function(api_answer, multiple = FALSE) {
     stop("No journal matches your query terms. Please try another query.")
   }
   else if (hits == 1) {
+
+    title = xml_text(xml_find_all(xml_source, "//jtitle"))
+    issn = xml_text(xml_find_all(xml_source, "//issn"))
     romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
     preprint = xml_text(xml_find_all(xml_source, "//prearchiving"))
     postprint = xml_text(xml_find_all(xml_source, "//postarchiving"))
     pdf = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
 
-    # TODO: which characteristics should we return?
-    return(data.frame(preprint, postprint, pdf, romeocolour))
-  }
-  else {
+    return(data.frame(title, issn, preprint, postprint, pdf, romeocolour))
+  } else {
     warning(hits, " journals match your query terms.\n")
 
     if (xml_text(xml_find_all(xml_source, "//outcome")) == "excessJournals") {
@@ -150,15 +150,16 @@ parse_answer = function(api_answer, multiple = FALSE) {
     issns = xml_text(xml_find_all(xml_source, "//issn"))
 
     if (!multiple) {
-      warning("Select one journal from the provided list or enable multiple = TRUE")
+      warning("Select one journal from the provided list or enable multiple = ",
+              "TRUE")
 
-      return(data.frame("Title" = journals,
-                        "ISSN" = issns))
+      return(data.frame("title" = journals,
+                        "issn" = issns))
     } else {
-      message("Recursively fetching data from each journal. This may take some time...")
 
-      # FIXME: if data is missing for one of the journals, it is silently dropped.
-      # We should add a warning about this.
+      message("Recursively fetching data from each journal. This may take some",
+              " time...")
+
       return(do.call(rbind.data.frame, lapply(issns, rr_journal_issn)))
     }
   }
