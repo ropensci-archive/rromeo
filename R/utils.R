@@ -23,25 +23,32 @@ parse_answer = function(api_answer, multiple = FALSE) {
   }
   else if (hits == 1) {
 
-    title = xml_text_or_na(xml_source, "//jtitle")
-    issn = xml_text_or_na(xml_source, "//issn")
+    # Here, we use xml_find_first instead of xml_find_all because we know there
+    # won't be more than one result. xml_find_first also returns NA_character_
+    # instead of character(0) if there is no match. This is required to
+    # concatenate results in a data.frame that we return to the user.
 
-    romeocolour = xml_text_or_na(xml_source, "//romeocolour")
-    preprint = xml_text_or_na(xml_source, "//prearchiving")
-    postprint = xml_text_or_na(xml_source, "//postarchiving")
-    pdf = xml_text_or_na(xml_source, "//pdfarchiving")
+    title = xml_text(xml_find_first(xml_source, "//jtitle"))
+    issn = xml_text(xml_find_first(xml_source, "//issn"))
+
+    romeocolour = xml_text(xml_find_first(xml_source, "//romeocolour"))
+    preprint = xml_text(xml_find_first(xml_source, "//prearchiving"))
+    postprint = xml_text(xml_find_first(xml_source, "//postarchiving"))
+    pdf = xml_text(xml_find_first(xml_source, "//pdfarchiving"))
 
     return(data.frame(title, issn, preprint, postprint, pdf, romeocolour))
+
   } else {
+
     warning(hits, " journals match your query terms.\n")
 
-    if (xml_text_or_na(xml_source, "//outcome") == "excessJournals") {
+    if (xml_text(xml_find_all(xml_source, "//outcome")) == "excessJournals") {
       warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
               "You should try to split your request into smaller chunks.")
     }
 
-    journals = xml_text_or_na(xml_source, "//jtitle")
-    issns = xml_text_or_na(xml_source, "//issn")
+    journals = xml_text(xml_find_all(xml_source, "//jtitle"))
+    issns = xml_text(xml_find_all(xml_source, "//issn"))
 
     if (!multiple) {
       warning("Select one journal from the provided list or enable multiple = ",
@@ -51,8 +58,8 @@ parse_answer = function(api_answer, multiple = FALSE) {
                         "issn" = issns))
     } else {
 
-      message("Recursively fetching data from each journal. This may take some",
-              " time...")
+      message("Recursively fetching data from each journal. ",
+              "This may take some time...")
 
       return(do.call(rbind.data.frame, lapply(issns, rr_journal_issn)))
     }
@@ -90,20 +97,4 @@ validate_issn = function(issn) {
   }
 
   return(NULL)
-}
-
-
-#' Search xml tag and get character value
-#'
-#' This function extract the character value from a given parsed xml document
-#' using [xml2::xml_find_all()] and [xml2::xml_text()].
-#'
-#' @param parsed_xml parsed xml document
-#' @param xml_tag    a string containing an xpath expression
-#'
-#' @return `NA` if the tag isn't found, the string of the tag content otherwise
-xml_text_or_na = function(parsed_xml, xml_tag) {
-  given_text = xml_text(xml_find_all(parsed_xml, xml_tag))
-
-  ifelse(length(given_text) == 0, NA_character_, given_text)
 }
