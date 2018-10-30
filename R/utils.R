@@ -120,5 +120,9 @@ validate_issn = function(issn) {
 check_key = function(key) {
   tmp = ifelse(is.null(key), Sys.getenv("SHERPAROMEO_KEY"), key)
 
-  tmp = ifelse(tmp == "", NULL, tmp)
+  if (tmp == "") {
+    tmp = NULL
+  }
+
+  return(tmp)
 }
