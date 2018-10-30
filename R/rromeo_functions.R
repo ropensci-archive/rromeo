@@ -21,11 +21,12 @@ rr_rest_publisher = function(id) {
 #'
 #' Use SHERPA/RoMEO regular API to retrieve a specific publication number status
 #' @param given_id publication number
+#' @inheritParams check_key
 #'
 #' @export
 #' @examples
 #' rr_publisher(55)
-rr_publisher = function(given_id) {
+rr_publisher = function(given_id, key = NULL) {
 
   given_id = tryCatch({
     as.integer(given_id)
@@ -35,23 +36,25 @@ rr_publisher = function(given_id) {
     return(NA_integer_)
   })
 
-  GET(rr_base_api(), query = list(id = given_id))
+  GET(rr_base_api(), query = list(id = given_id, ak = check_key(key)))
 }
 
 #' Journal data by ISSN
 #'
 #' @param issn A single journal ISSN
+#' @inheritParams check_key
 #'
 #' @export
 #'
 #' @examples
 #'
 #' rr_journal_issn("1947-6264")
-rr_journal_issn = function(issn) {
+rr_journal_issn = function(issn, key = NULL) {
 
   validate_issn(issn)
 
-  api_answer = GET(rr_base_api(), query = list(issn = issn))
+  api_answer = GET(rr_base_api(), query = list(issn = issn,
+                                               ak   = check_key(key)))
 
   parse_answer(api_answer, multiple = FALSE)
 }
@@ -63,6 +66,7 @@ rr_journal_issn = function(issn) {
 #' @param qtype A character string saying whether you are lookin for `exact`,
 #' `contains` or `starts with` matches
 #' @inheritParams parse_answer
+#' @inheritParams check_key
 #'
 #' @export
 #'
@@ -71,11 +75,13 @@ rr_journal_issn = function(issn) {
 #' rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
 #' rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
 rr_journal_name = function(name, multiple = FALSE,
-                           qtype = c("exact", "contains", "starts with")) {
+                           qtype = c("exact", "contains", "starts with"),
+                           key = NULL) {
 
   qtype = match.arg(qtype)
 
-  api_answer = GET(rr_base_api(), query = list(jtitle = name, qtype = qtype))
+  api_answer = GET(rr_base_api(), query = list(jtitle = name, qtype = qtype,
+                                               ak = check_key(key)))
 
   parse_answer(api_answer, multiple = multiple)
 }

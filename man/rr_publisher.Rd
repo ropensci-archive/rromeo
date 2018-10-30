@@ -4,10 +4,12 @@
 \alias{rr_publisher}
 \title{Get record from Publication ID}
 \usage{
-rr_publisher(given_id)
+rr_publisher(given_id, key = NULL)
 }
 \arguments{
 \item{given_id}{publication number}
+
+\item{key}{a character string or \code{NULL}}
 }
 \description{
 Use SHERPA/RoMEO regular API to retrieve a specific publication number status

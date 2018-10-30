@@ -30,5 +30,10 @@ remotes::install_github("Rekyt/rromeo")
 
 Note that SHERPA/RoMEO lets you run 500 requests per day per IP address, by [registring for a free API key](http://www.sherpa.ac.uk/romeo/apiregistry.php) you can bypass this limit.
 
-`rromeo` will provide a mechanism by which you can use your key to access the API.
+`rromeo` can use your registered SHERPA/RoMEO API key:
 
+You can either pass it as a string when querying the data with the argument `key`
+``` r
+rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
+```
+Or you can specify the enviromental variable `SHERPAROMEO_KEY` in an `.Rprofile` or in an `.Renviron` file. `rromeo` will automatically retrieve the API key.

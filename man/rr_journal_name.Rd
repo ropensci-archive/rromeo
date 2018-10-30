@@ -5,7 +5,7 @@
 \title{Journal data by title}
 \usage{
 rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
-  "starts with"))
+  "starts with"), key = NULL)
 }
 \arguments{
 \item{name}{A character string, containing the (possibly) partial name of the
@@ -18,6 +18,8 @@ return a data.frame containing only titles and ISSN of all matches
 
 \item{qtype}{A character string saying whether you are lookin for \code{exact},
 \code{contains} or \code{starts with} matches}
+
+\item{key}{a character string or \code{NULL}}
 }
 \description{
 Journal data by title
