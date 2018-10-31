@@ -15,8 +15,8 @@ library(rromeo)
 
 # Get summary data
 
-Let's try to access summary data for . We can access this data
-using its full name or its unique ISSN identifier.
+Let's try to access summary data for . We can access this data using its full
+name or its unique ISSN identifier.
 
 ```{r}
 rr_journal_issn("1947-6264")
@@ -28,13 +28,37 @@ You can also search for partial matches.
 rr_journal_name("Biogeography", qtype = "contains")
 ```
 
-If rromeo finds multiple journals matching your query terms,
-it will only returns the list of titles and ISSN by default.
+If rromeo finds multiple journals matching your query terms, it will only return
+the list of titles and ISSN by default.
 
-You can then use this list to select the exact journal you are looking for (in this case, it is recommended to use the ISSN).
+You can then use this list to select the exact journal you are looking for (in
+this case, it is recommended to use the ISSN).
 
-Alternatively, you may want to get data for all those journals. To achieve this, you may enable the `multiple` option:
+Alternatively, you may want to get data for all those journals. To achieve this,
+you may enable the `multiple` option:
 
 ```{r}
-rr_journal_name("Biogeography", qtype = "contains", multiple = TRUE)
+res <- rr_journal_name("Biogeograph", qtype = "contains", multiple = TRUE)
+```
+
+This tool is useful in bibliometric studies. For example, we can now have a 
+visual overview of the policies of journals in a given field:
+
+```{r}
+library(tidyverse)
+theme_set(theme_minimal())
+res %>% 
+  select(preprint, postprint, pdf) %>%
+  gather(key = "file", value = "policy") %>%
+  ggplot(aes(x = factor(file, c("preprint", "postprint", "pdf")), 
+             fill = policy)) +
+    geom_histogram(stat = "count") +
+    xlab("") +
+    scale_fill_manual(values = c("can" = "forestgreen", "restricted" = "orange", "cannot" = "firebrick", "unknown" = "gray"), na.value = "black")
+
+res %>%
+  ggplot(aes(x = "", fill = romeocolour)) +
+    geom_histogram(stat = "count") + 
+    coord_polar("y") +
+    scale_fill_manual(values = c("gray" = "gray", "yellow" = "gold"), na.value = "black")
 ```
