@@ -4,10 +4,12 @@
 \alias{rr_journal_issn}
 \title{Journal data by ISSN}
 \usage{
-rr_journal_issn(issn)
+rr_journal_issn(issn, key = NULL)
 }
 \arguments{
 \item{issn}{A single journal ISSN}
+
+\item{key}{a character string or \code{NULL}}
 }
 \description{
 Journal data by ISSN

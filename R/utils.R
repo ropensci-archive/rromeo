@@ -16,6 +16,14 @@ parse_answer = function(api_answer, multiple = FALSE) {
 
   xml_source = content(api_answer, encoding = "ISO-8859-1")
 
+  apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
+
+  if (apicontrol == "invalidkey") {
+    stop("The provided API key is invalid. ",
+         "You can register for a free API at ",
+         "http://www.sherpa.ac.uk/romeo/apiregistry.php")
+  }
+
   hits = xml_text(xml_find_all(xml_source, "//numhits"))
 
   if (hits == 0) {
@@ -97,4 +105,22 @@ validate_issn = function(issn) {
   }
 
   return(NULL)
+}
+
+#' Check SHERPA/RoMEO API key
+#'
+#' The key can be either specified in an `.Renviron` file using
+#' `SHERPAROMEO_KEY=my_key` or by passing it when calling the function.
+#'
+#' @param key a character string or `NULL`
+#'
+#' @export
+check_key = function(key) {
+  tmp = ifelse(is.null(key), Sys.getenv("SHERPAROMEO_KEY"), key)
+
+  if (tmp == "") {
+    tmp = NULL
+  }
+
+  return(tmp)
 }
