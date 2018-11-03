@@ -18,9 +18,7 @@ parse_answer = function(api_answer, multiple = FALSE) {
 
   apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
 
-  if (apicontrol == "invalid") {
-    stop("The query is invalid")
-  } else if (apicontrol == "invalidkey") {
+  if (apicontrol == "invalidkey") {
     stop("The provided API key is invalid. ",
          "You can register for a free API at ",
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")
