@@ -85,3 +85,22 @@ rr_journal_name = function(name, multiple = FALSE,
 
   parse_answer(api_answer, multiple = multiple)
 }
+
+#' Query publisher by RoMEO colour
+#'
+#' @param romeo_colour indicates the SHERPA/RoMEO classification of a publisher
+#'     see http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour
+#' @inheritParams parse_answer
+#' @inheritParams check_key
+#'
+#' @export
+rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
+                           multiple = FALSE, key = NULL) {
+
+  romeo_colour = match.arg(romeo_colour)
+
+  api_answer = GET(rr_base_api(), query = list(colour = romeo_colour,
+                                               ak = check_key(key)))
+
+  parse_answer(api_answer, multiple = multiple)
+}
