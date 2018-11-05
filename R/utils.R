@@ -54,7 +54,7 @@ parse_answer = function(api_answer, multiple = FALSE) {
 
   } else {
 
-    warning(hits, " journals match your query terms.\n")
+    warning(hits, " journals match your query terms.")
 
     if (xml_text(xml_find_all(xml_source, "//outcome")) == "excessJournals") {
       warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
@@ -74,6 +74,9 @@ parse_answer = function(api_answer, multiple = FALSE) {
 
       message("Recursively fetching data from each journal. ",
               "This may take some time...")
+
+      # Dropping silently missing ISSNs
+      issns = issns[lapply(issns, nchar) > 0]
 
       return(do.call(rbind.data.frame, lapply(issns, rr_journal_issn)))
     }
