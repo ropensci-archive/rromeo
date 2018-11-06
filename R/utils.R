@@ -25,16 +25,20 @@ parse_answer = function(api_answer, multiple = FALSE) {
   }
 
   hits = xml_text(xml_find_all(xml_source, "//numhits"))
+  outcome = xml_text(xml_find_all(xml_source, "//outcome"))
 
-  if (hits == 0) {
+  if (outcome == "notFound") {
     stop("No journal matches your query terms. Please try another query.")
   }
-  else if (hits == 1) {
+  else if (outcome %in% c("singleJournal", "uniqueZetoc")) {
 
     # Here, we use xml_find_first instead of xml_find_all because we know there
     # won't be more than one result. xml_find_first also returns NA_character_
     # instead of character(0) if there is no match. This is required to
     # concatenate results in a data.frame that we return to the user.
+
+    # TODO: check whether xml_find_first returns the policy with the highest
+    # priority.
 
     title = xml_text(xml_find_first(xml_source, "//jtitle"))
     issn = xml_text(xml_find_first(xml_source, "//issn"))
@@ -50,7 +54,7 @@ parse_answer = function(api_answer, multiple = FALSE) {
 
     warning(hits, " journals match your query terms.")
 
-    if (xml_text(xml_find_all(xml_source, "//outcome")) == "excessJournals") {
+    if (outcome == "excessJournals") {
       warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
               "You should try to split your request into smaller chunks.")
     }
