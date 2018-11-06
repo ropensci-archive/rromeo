@@ -31,6 +31,10 @@ parse_answer = function(api_answer, multiple = FALSE) {
     stop("No journal matches your query terms. Please try another query.")
   }
   else if (outcome %in% c("singleJournal", "uniqueZetoc")) {
+    # Some journals have multiple policies because they are owned by multiple
+    # publishers or because of historic data. They return hits == 2 but it's
+    # still a single journal. They are identified by a specific outcome
+    # (uniqueZetoc) so we use it to treat them in the same way as singleJournal.
 
     # Here, we use xml_find_first instead of xml_find_all because we know there
     # won't be more than one result. xml_find_first also returns NA_character_
