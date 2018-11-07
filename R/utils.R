@@ -44,7 +44,13 @@ parse_answer = function(api_answer, multiple = FALSE) {
     postprint = xml_text(xml_find_first(xml_source, "//postarchiving"))
     pdf = xml_text(xml_find_first(xml_source, "//pdfarchiving"))
 
-    return(data.frame(title, issn, preprint, postprint, pdf, romeocolour))
+    pre_embargo = parse_embargo(xml_source, "pre")
+    post_embargo = parse_embargo(xml_source, "post")
+    pdf_embargo = parse_embargo(xml_source, "pdf")
+
+    return(data.frame(title, issn, romeocolour,
+                      preprint, postprint, pdf,
+                      pre_embargo, post_embargo, pdf_embargo))
 
   } else {
 
@@ -124,3 +130,20 @@ check_key = function(key) {
 
   return(tmp)
 }
+
+parse_embargo = function(xml_source, type) {
+
+  tag = paste0("//", type, "restriction")
+  embargo_field = xml_text(xml_find_first(xml_source, tag))
+
+  if (is.na(embargo_field)) {
+    return(NA_character_)
+  }
+  else {
+    embargo_field = read_html(embargo_field)
+    time = xml_text(xml_find_first(embargo_field, "//num"))
+    unit = xml_text(xml_find_first(embargo_field, "//period"))
+    return(paste(time, unit))
+  }
+}
+
