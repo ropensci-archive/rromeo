@@ -90,11 +90,10 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
               "This may take some time...")
 
       # Retrieve RoMEO data for all matched journals
-      # if the ISSN isn't available try to match using title otherwise use ISSN
+      # Use ISSN available retrieve using title otherwise
       result_df = apply(journal_df, 1, function(x) {
         if (x["issn"] != "") {
           journal_policy = rr_journal_issn(x["issn"], check_key(key))
-
         } else {
           journal_policy = tryCatch({
             rr_journal_name(x["title"], check_key(key), qtype = "exact")
@@ -102,10 +101,13 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
           error = function(err) {
             return(data.frame(title = x["title"],
                               issn = x["issn"],
+                              romeocolour = NA,
                               preprint    = NA,
                               postprint   = NA,
                               pdf         = NA,
-                              romeocolour = NA))
+                              pre_embargo = NA,
+                              post_embargo = NA,
+                              pdf_embargo = NA))
           })
         }})
 
