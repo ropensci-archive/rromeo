@@ -131,6 +131,15 @@ check_key = function(key) {
   return(tmp)
 }
 
+#' Parse embargo period from API return
+#'
+#' This function provides an easy way to return the embargo period in the
+#' different categories
+#' @param xml_source a parsed xml document
+#' @param type       name of the embargo type must be in `"pre"`, `"post"`, and
+#'                   `"pdf"`
+#'
+#' @return the embargo period as a string
 parse_embargo = function(xml_source, type) {
 
   tag = paste0("//", type, "restriction")
