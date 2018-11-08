@@ -78,6 +78,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
     journal_df = data.frame(title = journals,
                             issn  = issns)
+    journal_df[journal_df == ""] = NA
 
     if (!multiple) {
       warning("Select one journal from the provided list or enable multiple = ",
@@ -92,7 +93,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
       # Retrieve RoMEO data for all matched journals
       # Use ISSN available retrieve using title otherwise
       result_df = apply(journal_df, 1, function(x) {
-        if (x["issn"] != "") {
+        if (!is.na(x["issn"])) {
           journal_policy = rr_journal_issn(x["issn"], check_key(key))
         } else {
           journal_policy = tryCatch({
