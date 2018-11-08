@@ -1,14 +1,18 @@
-#' Parse API answer.
+#' Parse API answer
 #'
+#' Returns data.frame from parsed xml API answer.
+#'
+#' @param api_answer parsed xml API answer
 #' @param multiple If multiple results match your query, should the function
 #' recursively fetch data for each of one of them (`multiple = TRUE`) or
 #' return a data.frame containing only titles and ISSN of all matches
 #' (`multiple = FALSE`)
+#' @inheritParams check_key
 #'
 #' @keywords internal
 #'
 #' @import xml2
-parse_answer = function(api_answer, multiple = FALSE) {
+parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   if (http_error(api_answer)) {
     stop("The API endpoint could not be reached. Please try again later.")
@@ -66,21 +70,40 @@ parse_answer = function(api_answer, multiple = FALSE) {
     journals = xml_text(xml_find_all(xml_source, "//jtitle"))
     issns = xml_text(xml_find_all(xml_source, "//issn"))
 
+    journal_df = data.frame(title = journals,
+                            issn  = issns)
+
     if (!multiple) {
       warning("Select one journal from the provided list or enable multiple = ",
               "TRUE")
 
-      return(data.frame("title" = journals,
-                        "issn" = issns))
+      return(journal_df)
     } else {
 
       message("Recursively fetching data from each journal. ",
               "This may take some time...")
 
-      # Dropping silently missing ISSNs
-      issns = issns[lapply(issns, nchar) > 0]
+      # Retrieve RoMEO data for all matched journals
+      # if the ISSN isn't available try to match using title otherwise use ISSN
+      result_df = apply(journal_df, 1, function(x) {
+        if (x["issn"] != "") {
+          journal_policy = rr_journal_issn(x["issn"], check_key(key))
 
-      return(do.call(rbind.data.frame, lapply(issns, rr_journal_issn)))
+        } else {
+          journal_policy = tryCatch({
+            rr_journal_name(x["title"], check_key(key), qtype = "exact")
+          },
+          error = function(err) {
+            return(data.frame(title = x["title"],
+                              issn = x["issn"],
+                              preprint    = NA,
+                              postprint   = NA,
+                              pdf         = NA,
+                              romeocolour = NA))
+          })
+        }})
+
+      return(do.call(rbind.data.frame, c(result_df, make.row.names = FALSE)))
     }
   }
 }
