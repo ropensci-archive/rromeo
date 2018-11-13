@@ -38,7 +38,7 @@ Alternatively, you may want to get data for all those journals. To achieve this,
 you may enable the `multiple` option:
 
 ```{r}
-res <- rr_journal_name("Biogeograph", qtype = "contains", multiple = TRUE)
+res <- rr_journal_name("Evolutionary", qtype = "contains", multiple = TRUE)
 ```
 
 This tool is useful in bibliometric studies. For example, we can now have a 
@@ -53,12 +53,10 @@ res %>%
   ggplot(aes(x = factor(file, c("preprint", "postprint", "pdf")), 
              fill = policy)) +
     geom_histogram(stat = "count") +
-    xlab("") +
-    scale_fill_manual(values = c("can" = "forestgreen", "restricted" = "orange", "cannot" = "firebrick", "unknown" = "gray"), na.value = "black")
+    xlab("")
 
 res %>%
   ggplot(aes(x = "", fill = romeocolour)) +
     geom_histogram(stat = "count") + 
-    coord_polar("y") +
-    scale_fill_manual(values = c("gray" = "gray", "yellow" = "gold"), na.value = "black")
+    coord_polar("y")
 ```
