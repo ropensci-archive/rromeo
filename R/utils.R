@@ -66,7 +66,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   } else {
 
-    warning(hits, " journals match your query terms.")
+    warning(hits, " journals match your query terms.\n")
 
     if (outcome == "excessJournals") {
       warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
