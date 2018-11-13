@@ -94,10 +94,10 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
       # Use ISSN available retrieve using title otherwise
       result_df = apply(journal_df, 1, function(x) {
         if (!is.na(x["issn"])) {
-          journal_policy = rr_journal_issn(x["issn"], check_key(key))
+          journal_policy = rr_journal_issn(x["issn"], key)
         } else {
           journal_policy = tryCatch({
-            rr_journal_name(x["title"], check_key(key), qtype = "exact")
+            rr_journal_name(x["title"], key, qtype = "exact")
           },
           error = function(err) {
             return(data.frame(title = x["title"],

@@ -53,10 +53,13 @@ rr_journal_issn = function(issn, key = NULL) {
 
   validate_issn(issn)
 
-  api_answer = GET(rr_base_api(), query = list(issn = issn,
-                                               ak   = check_key(key)))
+  api_key = check_key(key)
 
-  parse_answer(api_answer, multiple = FALSE)
+
+  api_answer = GET(rr_base_api(), query = list(issn = issn,
+                                               ak   = api_key))
+
+  parse_answer(api_answer, multiple = FALSE, key = api_key)
 }
 
 #' Journal data by title
@@ -80,8 +83,10 @@ rr_journal_name = function(name, multiple = FALSE,
 
   qtype = match.arg(qtype)
 
-  api_answer = GET(rr_base_api(), query = list(jtitle = name, qtype = qtype,
-                                               ak = check_key(key)))
+  api_key = check_key(key)
 
-  parse_answer(api_answer, multiple = multiple)
+  api_answer = GET(rr_base_api(), query = list(jtitle = name, qtype = qtype,
+                                               ak = api_key))
+
+  parse_answer(api_answer, multiple = multiple, key = api_key)
 }
