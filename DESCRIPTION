@@ -23,6 +23,7 @@ Suggests:
     knitr,
     rmarkdown,
     spelling,
-    testthat
+    testthat,
+    tidyr,
 Language: en-US
 VignetteBuilder: knitr
