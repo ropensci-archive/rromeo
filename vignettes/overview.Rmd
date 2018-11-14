@@ -45,7 +45,8 @@ This tool is useful in bibliometric studies. For example, we can now have a
 visual overview of the policies of journals in a given field:
 
 ```{r}
-library(tidyverse)
+library("dplyr")
+library("ggplot2")
 theme_set(theme_minimal())
 res %>% 
   select(preprint, postprint, pdf) %>%
