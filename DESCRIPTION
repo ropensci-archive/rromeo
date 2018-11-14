@@ -18,9 +18,11 @@ Imports:
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
 Suggests:
-    spelling,
-    testthat,
+    dplyr,
+    ggplot2,
     knitr,
-    rmarkdown
+    rmarkdown,
+    spelling,
+    testthat
 Language: en-US
 VignetteBuilder: knitr
