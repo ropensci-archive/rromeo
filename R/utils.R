@@ -45,6 +45,9 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
     # instead of character(0) if there is no match. This is required to
     # concatenate results in a data.frame that we return to the user.
 
+    # Because RoMEO API returns 'gray' or 'unknown' when the policies of journal
+    # are unknown, we convert them to NA
+
     # TODO: check whether xml_find_first returns the policy with the highest
     # priority.
 
@@ -52,9 +55,16 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
     issn = xml_text(xml_find_first(xml_source, "//issn"))
 
     romeocolour = xml_text(xml_find_first(xml_source, "//romeocolour"))
+    romeocolour = ifelse(romeocolour == "gray", NA_character_, romeocolour)
+
     preprint = xml_text(xml_find_first(xml_source, "//prearchiving"))
+    preprint = ifelse(preprint == "unknown", NA_character_, preprint)
+
     postprint = xml_text(xml_find_first(xml_source, "//postarchiving"))
+    postprint = ifelse(postprint == "unknown", NA_character_, postprint)
+
     pdf = xml_text(xml_find_first(xml_source, "//pdfarchiving"))
+    pdf = ifelse(pdf == "unknown", NA_character_, pdf)
 
     pre_embargo = parse_embargo(xml_source, "pre")
     post_embargo = parse_embargo(xml_source, "post")
