@@ -50,7 +50,7 @@ library("ggplot2")
 theme_set(theme_minimal())
 res %>% 
   select(preprint, postprint, pdf) %>%
-  gather(key = "file", value = "policy") %>%
+  tidyr::gather(key = "file", value = "policy") %>%
   ggplot(aes(x = factor(file, c("preprint", "postprint", "pdf")), 
              fill = policy)) +
     geom_histogram(stat = "count") +
