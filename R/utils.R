@@ -1,14 +1,18 @@
-#' Parse API answer.
+#' Parse API answer
 #'
+#' Returns data.frame from parsed xml API answer.
+#'
+#' @param api_answer parsed xml API answer
 #' @param multiple If multiple results match your query, should the function
 #' recursively fetch data for each of one of them (`multiple = TRUE`) or
 #' return a data.frame containing only titles and ISSN of all matches
 #' (`multiple = FALSE`)
+#' @inheritParams check_key
 #'
 #' @keywords internal
 #'
 #' @import xml2
-parse_answer = function(api_answer, multiple = FALSE) {
+parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   if (http_error(api_answer)) {
     stop("The API endpoint could not be reached. Please try again later.")
@@ -25,32 +29,56 @@ parse_answer = function(api_answer, multiple = FALSE) {
   }
 
   hits = xml_text(xml_find_all(xml_source, "//numhits"))
+  outcome = xml_text(xml_find_all(xml_source, "//outcome"))
 
-  if (hits == 0) {
+  if (outcome == "notFound") {
     stop("No journal matches your query terms. Please try another query.")
   }
-  else if (hits == 1) {
+  else if (outcome %in% c("singleJournal", "uniqueZetoc")) {
+    # Some journals have multiple policies because they are owned by multiple
+    # publishers or because of historic data. They return hits == 2 but it's
+    # still a single journal. They are identified by a specific outcome
+    # (uniqueZetoc) so we use it to treat them in the same way as singleJournal.
 
     # Here, we use xml_find_first instead of xml_find_all because we know there
     # won't be more than one result. xml_find_first also returns NA_character_
     # instead of character(0) if there is no match. This is required to
     # concatenate results in a data.frame that we return to the user.
 
+    # Because RoMEO API returns 'gray' or 'unknown' when the policies of journal
+    # are unknown, we convert them to NA
+
+    # TODO: check whether xml_find_first returns the policy with the highest
+    # priority.
+
     title = xml_text(xml_find_first(xml_source, "//jtitle"))
     issn = xml_text(xml_find_first(xml_source, "//issn"))
 
     romeocolour = xml_text(xml_find_first(xml_source, "//romeocolour"))
-    preprint = xml_text(xml_find_first(xml_source, "//prearchiving"))
-    postprint = xml_text(xml_find_first(xml_source, "//postarchiving"))
-    pdf = xml_text(xml_find_first(xml_source, "//pdfarchiving"))
+    romeocolour = ifelse(romeocolour == "gray", NA_character_, romeocolour)
 
-    return(data.frame(title, issn, preprint, postprint, pdf, romeocolour))
+    preprint = xml_text(xml_find_first(xml_source, "//prearchiving"))
+    preprint = ifelse(preprint == "unknown", NA_character_, preprint)
+
+    postprint = xml_text(xml_find_first(xml_source, "//postarchiving"))
+    postprint = ifelse(postprint == "unknown", NA_character_, postprint)
+
+    pdf = xml_text(xml_find_first(xml_source, "//pdfarchiving"))
+    pdf = ifelse(pdf == "unknown", NA_character_, pdf)
+
+    pre_embargo = parse_embargo(xml_source, "pre")
+    post_embargo = parse_embargo(xml_source, "post")
+    pdf_embargo = parse_embargo(xml_source, "pdf")
+
+    return(data.frame(title, issn, romeocolour,
+                      preprint, postprint, pdf,
+                      pre_embargo, post_embargo, pdf_embargo))
 
   } else {
 
     warning(hits, " journals match your query terms.\n")
 
-    if (xml_text(xml_find_all(xml_source, "//outcome")) == "excessJournals") {
+    if (outcome == "excessJournals") {
       warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
               "You should try to split your request into smaller chunks.")
     }
@@ -58,18 +86,43 @@ parse_answer = function(api_answer, multiple = FALSE) {
     journals = xml_text(xml_find_all(xml_source, "//jtitle"))
     issns = xml_text(xml_find_all(xml_source, "//issn"))
 
+    journal_df = data.frame(title = journals,
+                            issn  = issns)
+    journal_df[journal_df == ""] = NA
+
     if (!multiple) {
       warning("Select one journal from the provided list or enable multiple = ",
               "TRUE")
 
-      return(data.frame("title" = journals,
-                        "issn" = issns))
+      return(journal_df)
     } else {
 
       message("Recursively fetching data from each journal. ",
               "This may take some time...")
 
-      return(do.call(rbind.data.frame, lapply(issns, rr_journal_issn)))
+      # Retrieve RoMEO data for all matched journals
+      # Use ISSN available retrieve using title otherwise
+      result_df = apply(journal_df, 1, function(x) {
+        if (!is.na(x["issn"])) {
+          journal_policy = rr_journal_issn(x["issn"], key)
+        } else {
+          journal_policy = tryCatch({
+            rr_journal_name(x["title"], key, qtype = "exact")
+          },
+          error = function(err) {
+            return(data.frame(title = x["title"],
+                              issn = x["issn"],
+                              romeocolour = NA,
+                              preprint    = NA,
+                              postprint   = NA,
+                              pdf         = NA,
+                              pre_embargo = NA,
+                              post_embargo = NA,
+                              pdf_embargo = NA))
+          })
+        }})
+
+      return(do.call(rbind.data.frame, c(result_df, make.row.names = FALSE)))
     }
   }
 }
@@ -94,11 +147,18 @@ parse_publisher = function(api_answer) {
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")
   }
 
-  data.frame(publisher   = xml_text(xml_find_all(xml_source, "//name")),
-             romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour")),
-             preprint    = xml_text(xml_find_all(xml_source, "//prearchiving")),
-             postprint   = xml_text(xml_find_all(xml_source, "//postarchiving")),
-             pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving")))
+  publisher   = xml_text(xml_find_all(xml_source, "//name"))
+  romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
+  preprint    = xml_text(xml_find_all(xml_source, "//prearchiving"))
+  postprint   = xml_text(xml_find_all(xml_source, "//postarchiving"))
+  pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
+  pdf         = ifelse(pdf == "unknown", NA_character_, pdf)
+
+  data.frame(publisher   = publisher,
+             romeocolour = romeocolour,
+             preprint    = preprint,
+             postprint   = postprint,
+             pdf         = pdf)
 }
 
 
@@ -152,3 +212,29 @@ check_key = function(key) {
 
   return(tmp)
 }
+
+#' Parse embargo period from API return
+#'
+#' This function provides an easy way to return the embargo period in the
+#' different categories
+#' @param xml_source a parsed xml document
+#' @param type       name of the embargo type must be in `"pre"`, `"post"`, and
+#'                   `"pdf"`
+#'
+#' @return the embargo period as a string
+parse_embargo = function(xml_source, type) {
+
+  tag = paste0("//", type, "restriction")
+  embargo_field = xml_text(xml_find_first(xml_source, tag))
+
+  if (is.na(embargo_field)) {
+    return(NA_character_)
+  }
+  else {
+    embargo_field = read_html(embargo_field)
+    time = xml_text(xml_find_first(embargo_field, "//num"))
+    unit = xml_text(xml_find_first(embargo_field, "//period"))
+    return(paste(time, unit))
+  }
+}
+
