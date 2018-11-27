@@ -74,6 +74,34 @@ parse_answer = function(api_answer, multiple = FALSE) {
   }
 }
 
+#' Parse publisher list
+#'
+#' @param api_answer
+#'
+#' @return a parsed data.frame of publisher
+parse_publisher = function(api_answer) {
+  if (http_error(api_answer)) {
+    stop("The API endpoint could not be reached. Please try again later.")
+  }
+
+  xml_source = content(api_answer, encoding = "ISO-8859-1")
+
+  apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
+
+  if (apicontrol == "invalidkey") {
+    stop("The provided API key is invalid. ",
+         "You can register for a free API at ",
+         "http://www.sherpa.ac.uk/romeo/apiregistry.php")
+  }
+
+  data.frame(publisher   = xml_text(xml_find_all(xml_source, "//name")),
+             romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour")),
+             preprint    = xml_text(xml_find_all(xml_source, "//prearchiving")),
+             postprint   = xml_text(xml_find_all(xml_source, "//postarchiving")),
+             pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving")))
+}
+
+
 #' Checks validity of the ISSN
 #'
 #' @return `NULL` if the ISSN is valid, errors otherwise.
