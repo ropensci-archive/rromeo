@@ -2,7 +2,7 @@
 #'
 #' Returns data.frame from parsed xml API answer.
 #'
-#' @param api_answer parsed xml API answer
+#' @inheritParams parse_publisher
 #' @param multiple If multiple results match your query, should the function
 #' recursively fetch data for each of one of them (`multiple = TRUE`) or
 #' return a data.frame containing only titles and ISSN of all matches
@@ -129,9 +129,11 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
 #' Parse publisher list
 #'
-#' @param api_answer
+#' @param api_answer parsed xml API answer
 #'
-#' @return a parsed data.frame of publisher
+#' @keywords internal
+#'
+#' @import xml2
 parse_publisher = function(api_answer) {
   if (http_error(api_answer)) {
     stop("The API endpoint could not be reached. Please try again later.")
@@ -147,18 +149,38 @@ parse_publisher = function(api_answer) {
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")
   }
 
+  romeoid     = xml_attr(xml_find_all(w, "//publisher"), "id")
+
   publisher   = xml_text(xml_find_all(xml_source, "//name"))
+
+  alias       = xml_text(xml_find_all(xml_source, "//alias"))
+  alias       = ifelse(alias == "", NA_character_, alias)
+
   romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
+
   preprint    = xml_text(xml_find_all(xml_source, "//prearchiving"))
+  preprint         = ifelse(preprint == "unknown", NA_character_, preprint)
+
   postprint   = xml_text(xml_find_all(xml_source, "//postarchiving"))
+  postprint         = ifelse(postprint == "unknown", NA_character_, postprint)
+
   pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
   pdf         = ifelse(pdf == "unknown", NA_character_, pdf)
 
-  data.frame(publisher   = publisher,
-             romeocolour = romeocolour,
-             preprint    = preprint,
-             postprint   = postprint,
-             pdf         = pdf)
+  pre_embargo = parse_embargo(xml_source, "pre")
+  post_embargo = parse_embargo(xml_source, "post")
+  pdf_embargo = parse_embargo(xml_source, "pdf")
+
+  data.frame(romeoid,
+             publisher,
+             alias,
+             romeocolour,
+             preprint,
+             postprint,
+             pdf,
+             pre_embargo,
+             post_embargo,
+             pdf_embargo)
 }
 
 

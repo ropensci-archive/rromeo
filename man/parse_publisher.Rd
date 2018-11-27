@@ -7,11 +7,9 @@
 parse_publisher(api_answer)
 }
 \arguments{
-\item{api_answer}{}
-}
-\value{
-a parsed data.frame of publisher
+\item{api_answer}{parsed xml API answer}
 }
 \description{
 Parse publisher list
 }
+\keyword{internal}
