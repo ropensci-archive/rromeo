@@ -94,7 +94,7 @@ rr_journal_name = function(name, multiple = FALSE,
 #' Query publisher by RoMEO colour
 #'
 #' @param romeo_colour indicates the SHERPA/RoMEO classification of a publisher
-#'     see http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour
+#'     see <http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour>
 #' @inheritParams check_key
 #'
 #' @export

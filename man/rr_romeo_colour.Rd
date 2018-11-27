@@ -9,7 +9,7 @@ rr_romeo_colour(romeo_colour = c("green", "blue", "yellow", "white"),
 }
 \arguments{
 \item{romeo_colour}{indicates the SHERPA/RoMEO classification of a publisher
-see http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour}
+see <http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour>}
 
 \item{key}{a character string or \code{NULL}}
 }
