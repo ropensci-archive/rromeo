@@ -53,10 +53,13 @@ rr_journal_issn = function(issn, key = NULL) {
 
   validate_issn(issn)
 
-  api_answer = GET(rr_base_api(), query = list(issn = issn,
-                                               ak   = check_key(key)))
+  api_key = check_key(key)
 
-  parse_answer(api_answer, multiple = FALSE)
+
+  api_answer = GET(rr_base_api(), query = list(issn = issn,
+                                               ak   = api_key))
+
+  parse_answer(api_answer, multiple = FALSE, key = api_key)
 }
 
 #' Journal data by title
@@ -80,17 +83,18 @@ rr_journal_name = function(name, multiple = FALSE,
 
   qtype = match.arg(qtype)
 
-  api_answer = GET(rr_base_api(), query = list(jtitle = name, qtype = qtype,
-                                               ak = check_key(key)))
+  api_key = check_key(key)
 
-  parse_answer(api_answer, multiple = multiple)
+  api_answer = GET(rr_base_api(), query = list(jtitle = name, qtype = qtype,
+                                               ak = api_key))
+
+  parse_answer(api_answer, multiple = multiple, key = api_key)
 }
 
 #' Query publisher by RoMEO colour
 #'
 #' @param romeo_colour indicates the SHERPA/RoMEO classification of a publisher
-#'     see http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour
-#' @inheritParams parse_answer
+#'     see <http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour>
 #' @inheritParams check_key
 #'
 #' @return a data frame containing publisher name and the different statuses
@@ -98,12 +102,12 @@ rr_journal_name = function(name, multiple = FALSE,
 #'
 #' @export
 rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
-                           multiple = FALSE, key = NULL) {
+                           key = NULL) {
 
   romeo_colour = match.arg(romeo_colour)
 
   api_answer = GET(rr_base_api(), query = list(colour = romeo_colour,
                                                ak = check_key(key)))
 
-  parse_answer(api_answer, multiple = multiple)
+  parse_publisher(api_answer)
 }

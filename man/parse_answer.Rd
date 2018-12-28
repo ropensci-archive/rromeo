@@ -2,17 +2,21 @@
 % Please edit documentation in R/utils.R
 \name{parse_answer}
 \alias{parse_answer}
-\title{Parse API answer.}
+\title{Parse API answer}
 \usage{
-parse_answer(api_answer, multiple = FALSE)
+parse_answer(api_answer, multiple = FALSE, key = NULL)
 }
 \arguments{
+\item{api_answer}{parsed xml API answer}
+
 \item{multiple}{If multiple results match your query, should the function
 recursively fetch data for each of one of them (\code{multiple = TRUE}) or
 return a data.frame containing only titles and ISSN of all matches
 (\code{multiple = FALSE})}
+
+\item{key}{a character string or \code{NULL}}
 }
 \description{
-Parse API answer.
+Returns data.frame from parsed xml API answer.
 }
 \keyword{internal}

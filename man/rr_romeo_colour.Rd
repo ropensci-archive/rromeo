@@ -5,16 +5,11 @@
 \title{Query publisher by RoMEO colour}
 \usage{
 rr_romeo_colour(romeo_colour = c("green", "blue", "yellow", "white"),
-  multiple = FALSE, key = NULL)
+  key = NULL)
 }
 \arguments{
 \item{romeo_colour}{indicates the SHERPA/RoMEO classification of a publisher
-see http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour}
-
-\item{multiple}{If multiple results match your query, should the function
-recursively fetch data for each of one of them (\code{multiple = TRUE}) or
-return a data.frame containing only titles and ISSN of all matches
-(\code{multiple = FALSE})}
+see <http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour>}
 
 \item{key}{a character string or \code{NULL}}
 }
