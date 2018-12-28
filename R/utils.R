@@ -73,17 +73,17 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
                       preprint, postprint, pdf,
                       pre_embargo, post_embargo, pdf_embargo))
 
-    } else if (outcome %in% c("manyJournals", "excessJournals")) {
+  } else if (outcome %in% c("manyJournals", "excessJournals")) {
 
-      warning(hits, " journals match your query terms.\n")
+    warning(hits, " journals match your query terms.\n")
 
     if (outcome == "excessJournals") {
       warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
               "You should try to split your request into smaller chunks.")
     }
 
-      journals = xml_text(xml_find_all(xml_source, "//jtitle"))
-      issns = xml_text(xml_find_all(xml_source, "//issn"))
+    journals = xml_text(xml_find_all(xml_source, "//jtitle"))
+    issns = xml_text(xml_find_all(xml_source, "//issn"))
 
     journal_df = data.frame(title = journals,
                             issn  = issns)
@@ -96,8 +96,8 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
       return(journal_df)
     } else {
 
-        message("Recursively fetching data from each journal. ",
-                "This may take some time...")
+      message("Recursively fetching data from each journal. ",
+              "This may take some time...")
 
       # Retrieve RoMEO data for all matched journals
       # Use ISSN available retrieve using title otherwise
@@ -123,17 +123,6 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
       return(do.call(rbind.data.frame, c(result_df, make.row.names = FALSE)))
     }
-  } else if (apicontrol == "colour") {
-    # When querying RoMEO colour
-    publisher = xml_text(xml_find_all(xml_source, "//name"))
-
-    romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
-    preprint = xml_text(xml_find_all(xml_source, "//prearchiving"))
-    postprint = xml_text(xml_find_all(xml_source, "//postarchiving"))
-    pdf = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
-
-    return(data.frame(publisher, preprint, postprint, pdf, romeocolour))
-  }
 }
 
 #' Parse publisher list
@@ -158,7 +147,7 @@ parse_publisher = function(api_answer) {
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")
   }
 
-  romeoid     = xml_attr(xml_find_all(w, "//publisher"), "id")
+  romeoid     = xml_attr(xml_find_all(xml_source, "//publisher"), "id")
 
   publisher   = xml_text(xml_find_all(xml_source, "//name"))
 
@@ -168,17 +157,13 @@ parse_publisher = function(api_answer) {
   romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
 
   preprint    = xml_text(xml_find_all(xml_source, "//prearchiving"))
-  preprint         = ifelse(preprint == "unknown", NA_character_, preprint)
+  preprint    = ifelse(preprint == "unknown", NA_character_, preprint)
 
   postprint   = xml_text(xml_find_all(xml_source, "//postarchiving"))
-  postprint         = ifelse(postprint == "unknown", NA_character_, postprint)
+  postprint   = ifelse(postprint == "unknown", NA_character_, postprint)
 
   pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
   pdf         = ifelse(pdf == "unknown", NA_character_, pdf)
-
-  pre_embargo = parse_embargo(xml_source, "pre")
-  post_embargo = parse_embargo(xml_source, "post")
-  pdf_embargo = parse_embargo(xml_source, "pdf")
 
   data.frame(romeoid,
              publisher,
@@ -186,10 +171,7 @@ parse_publisher = function(api_answer) {
              romeocolour,
              preprint,
              postprint,
-             pdf,
-             pre_embargo,
-             post_embargo,
-             pdf_embargo)
+             pdf)
 }
 
 
