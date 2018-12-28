@@ -93,6 +93,9 @@ rr_journal_name = function(name, multiple = FALSE,
 #' @inheritParams parse_answer
 #' @inheritParams check_key
 #'
+#' @return a data frame containing publisher name and the different statuses
+#'         of preprint, postprint and publisher's pdf archival
+#'
 #' @export
 rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
                            multiple = FALSE, key = NULL) {
