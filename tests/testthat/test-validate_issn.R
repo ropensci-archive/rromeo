@@ -11,3 +11,20 @@ test_that("Can validate ISSN properly", {
   expect_error(validate_issn(invalid_issn),
                regexp = "ISSN is invalid, please check the format")
 })
+
+test_that("Can retrieve the API key", {
+
+  expect_silent(check_key(NULL))
+  expect_silent(check_key("abcd"))
+
+  expect_match(check_key("abcd"), "abcd")
+
+  actual_key = ifelse(Sys.getenv('SHERPAROMEO_KEY') != "",
+                      Sys.getenv('SHERPAROMEO_KEY'), "")
+
+  if (actual_key == "") {
+    actual_key = NULL
+  }
+
+  expect_equal(check_key(NULL), actual_key)
+})
