@@ -71,8 +71,9 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
     pdf_embargo = parse_embargo(xml_source, "pdf")
 
     return(data.frame(title, issn, romeocolour,
-                      preprint, postprint, pdf,
-                      pre_embargo, post_embargo, pdf_embargo))
+                      preprint,    postprint,    pdf,
+                      pre_embargo, post_embargo, pdf_embargo,
+                      stringsAsFactors = FALSE))
 
   } else {
 
