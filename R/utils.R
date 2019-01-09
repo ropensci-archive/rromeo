@@ -2,7 +2,7 @@
 #'
 #' Returns data.frame from parsed xml API answer.
 #'
-#' @param api_answer parsed xml API answer
+#' @inheritParams parse_publisher
 #' @param multiple If multiple results match your query, should the function
 #' recursively fetch data for each of one of them (`multiple = TRUE`) or
 #' return a data.frame containing only titles and ISSN of all matches
@@ -44,7 +44,6 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
     # won't be more than one result. xml_find_first also returns NA_character_
     # instead of character(0) if there is no match. This is required to
     # concatenate results in a data.frame that we return to the user.
-
     # Because RoMEO API returns 'gray' or 'unknown' when the policies of journal
     # are unknown, we convert them to NA
 
@@ -74,7 +73,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
                       preprint, postprint, pdf,
                       pre_embargo, post_embargo, pdf_embargo))
 
-  } else {
+  } else if (outcome %in% c("manyJournals", "excessJournals")) {
 
     warning(hits, " journals match your query terms.\n")
 
@@ -124,8 +123,57 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
       return(do.call(rbind.data.frame, c(result_df, make.row.names = FALSE)))
     }
-  }
 }
+
+#' Parse publisher list
+#'
+#' @param api_answer parsed xml API answer
+#'
+#' @keywords internal
+#'
+#' @import xml2
+parse_publisher = function(api_answer) {
+  if (http_error(api_answer)) {
+    stop("The API endpoint could not be reached. Please try again later.")
+  }
+
+  xml_source = content(api_answer, encoding = "ISO-8859-1")
+
+  apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
+
+  if (apicontrol == "invalidkey") {
+    stop("The provided API key is invalid. ",
+         "You can register for a free API at ",
+         "http://www.sherpa.ac.uk/romeo/apiregistry.php")
+  }
+
+  romeoid     = xml_attr(xml_find_all(xml_source, "//publisher"), "id")
+
+  publisher   = xml_text(xml_find_all(xml_source, "//name"))
+
+  alias       = xml_text(xml_find_all(xml_source, "//alias"))
+  alias       = ifelse(alias == "", NA_character_, alias)
+
+  romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
+
+  preprint    = xml_text(xml_find_all(xml_source, "//prearchiving"))
+  preprint    = ifelse(preprint == "unknown", NA_character_, preprint)
+
+  postprint   = xml_text(xml_find_all(xml_source, "//postarchiving"))
+  postprint   = ifelse(postprint == "unknown", NA_character_, postprint)
+
+  pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
+  pdf         = ifelse(pdf == "unknown", NA_character_, pdf)
+
+  data.frame(romeoid,
+             publisher,
+             alias,
+             romeocolour,
+             preprint,
+             postprint,
+             pdf)
+}
+
 
 #' Checks validity of the ISSN
 #'

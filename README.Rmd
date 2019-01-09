@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 ```
 # `rromeo` – an R interface for SHERPA/RoMEO data
 
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis build status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![Travis build status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo) [![codecov](https://codecov.io/gh/Rekyt/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/rromeo)
 
 The goal of `rromeo` is to provide an R client for the [SHERPA/RoMEO API](http://www.sherpa.ac.uk/romeo/index.php?la=en&fIDnum=&mode=simple). The API documentation can be found [here](http://www.sherpa.ac.uk/romeo/apimanual.php?la=en&fIDnum=|&mode=simple).
 
