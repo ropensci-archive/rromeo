@@ -1,0 +1,130 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?id=55&ak=DDKJFnXZpio
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Wed, 09 Jan 2019 17:15:14 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1764'
+      Content-Type: text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>id</parametername>
+                <parametervalue>55</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>identifier</apicontrol>
+            <outcome>publisherFound</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>09-Jan-2019:17:15:14</timestamp>
+          </header>
+          <journals />
+          <publishers>
+            <publisher id="55">
+              <name>Oxford University Press</name>
+              <alias>OUP</alias>
+              <homeurl>http://www.oxfordjournals.org/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo on science, technology, medicine articles</postrestriction>
+                  <postrestriction>&lt;num&gt;2&lt;/num&gt; &lt;period units=&quot;year&quot;&gt;years&lt;/period&gt; embargo on arts and humanities articles</postrestriction>
+                  <postrestriction>Some titles may have different embargoes</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>unclear</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Pre-print can only be posted prior to acceptance</condition>
+                <condition>Pre-print must be accompanied by set statement (see link)</condition>
+                <condition>Pre-print must not be replaced with post-print, instead a link to published version with amended set statement should be made</condition>
+                <condition>Pre-print on author's personal website, employer website, free public server or pre-prints in subject area</condition>
+                <condition>Post-print in Institutional repositories or Central repositories</condition>
+                <condition>Publisher version cannot be used except for Nucleic Acids Research articles</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Set phrase to accompany archived copy (see policy)</condition>
+                <condition>Articles in &lt;a href=&quot;http://www.oxfordjournals.org/oxfordopen/&quot; target=&quot;_blank&quot;&gt;some journals&lt;/a&gt; can be made Open Access on payment of additional charge</condition>
+                <condition>Eligible UK authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
+                <condition>Publisher will deposit on behalf of NIH funded authors to PubMed Central, Nucleic Acids Research authors must pay their fee first</condition>
+                <condition>Some titles may use different policies</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.oxfordjournals.org/oxfordopen/</paidaccessurl>
+                <paidaccessname>Oxford Open</paidaccessname>
+                <paidaccessnotes>Covers 90 journals</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy A</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/self-archiving_policya.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Policy B</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/self-archiving_policyb.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>publication rights</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/publication_rights.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>NIH policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/news/2008/08/04/nih_deposits.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Other funding agencies</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/for_authors/repositories.html</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2004-01-10 00:00:00</dateadded>
+              <dateupdated>2013-09-02 13:26:34</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-01-09 17:15:15 GMT
+  recorded_with: vcr/0.2.0, webmockr/0.2.9

@@ -1,0 +1,123 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Journal%20of%20Geology&qtype=exact&ak=DDKJFnXZpio
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Wed, 09 Jan 2019 16:57:48 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1603'
+      Content-Type: text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>Journal of Geology</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>09-Jan-2019:16:57:48</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Journal of Geology</jtitle>
+              <issn>0022-1376</issn>
+              <zetocpub>University of Chicago Press</zetocpub>
+              <romeopub>University of Chicago Press</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="77">
+              <name>University of Chicago Press</name>
+              <alias />
+              <homeurl>http://www.press.uchicago.edu/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On a not-for-profit author's personal website, institutional website, social website or pre-print server immediately</condition>
+                <condition>On an institutional repository or open access repository after &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</condition>
+                <condition>Publisher's version/PDF may be used in open access repositories only</condition>
+                <condition>Publisher copyright and source must be acknowledged with set statement</condition>
+                <condition>Non-commercial use</condition>
+                <condition>Encouraged to link to publisher version</condition>
+                <condition>Wellcome Trust and MRC authors may post authors accepted version in PubMed Central/ PubMed Central UK 6 month after publication</condition>
+                <condition>NIH authors may post authors' own version in PubMed Central for release &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; after publication</condition>
+                <condition>RCUK authors may post authors accepted version in an open access repository 6 months or 12 months after publication, as required by the funding agency</condition>
+                <condition>Publisher last reviewed on 08/09/2017</condition>
+                <condition>Deposit of author's pre-print and author's post-print are permitted, but are discouraged</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.press.uchicago.edu/infoServices/open.html</paidaccessurl>
+                <paidaccessname>Gold Open Access Option</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Open Access at Chicago</copyrightlinktext>
+                  <copyrightlinkurl>http://www.press.uchicago.edu/infoServices/open.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>University of Chicago Press Guidelines;for Journal Authors’ Rights</copyrightlinktext>
+                  <copyrightlinkurl>http://www.press.uchicago.edu/journals/jrnl_rights.html</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2004-01-10 00:00:00</dateadded>
+              <dateupdated>2017-09-08 15:16:32</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-01-09 16:57:49 GMT
+  recorded_with: vcr/0.2.0, webmockr/0.2.9

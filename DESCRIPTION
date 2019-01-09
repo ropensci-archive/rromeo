@@ -25,5 +25,6 @@ Suggests:
     spelling,
     testthat,
     tidyr,
+    vcr
 Language: en-US
 VignetteBuilder: knitr

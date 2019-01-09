@@ -202,4 +202,3 @@ parse_embargo = function(xml_source, type) {
     return(paste(time, unit))
   }
 }
-
