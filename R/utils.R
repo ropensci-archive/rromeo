@@ -33,8 +33,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   if (outcome == "notFound") {
     stop("No journal matches your query terms. Please try another query.")
-  }
-  else if (outcome %in% c("singleJournal", "uniqueZetoc")) {
+  } else if (outcome %in% c("singleJournal", "uniqueZetoc")) {
     # Some journals have multiple policies because they are owned by multiple
     # publishers or because of historic data. They return hits == 2 but it's
     # still a single journal. They are identified by a specific outcome
@@ -124,6 +123,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
       return(do.call(rbind.data.frame, c(result_df, make.row.names = FALSE)))
     }
+  }
 }
 
 #' Parse publisher list
