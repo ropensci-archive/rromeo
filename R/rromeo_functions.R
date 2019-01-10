@@ -66,7 +66,7 @@ rr_journal_issn = function(issn, key = NULL) {
 #'
 #' @param name A character string, containing the (possibly) partial name of the
 #' journal
-#' @param qtype A character string saying whether you are lookin for `exact`,
+#' @param qtype A character string saying whether you are looking for `exact`,
 #' `contains` or `starts with` matches
 #' @inheritParams parse_answer
 #' @inheritParams check_key
