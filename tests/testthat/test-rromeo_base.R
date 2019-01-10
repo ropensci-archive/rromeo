@@ -13,8 +13,12 @@ test_that("API URL matches", {
 })
 
 test_that("API version is correct", {
-  api_version = rr_api_version()
+  skip_on_cran()
 
-  expect_type(api_version, "character")
-  expect_equal(api_version, "2.9.9")
+  vcr::use_cassette("rr_api_version", {
+    api_version = rr_api_version()
+
+    expect_type(api_version, "character")
+    expect_equal(api_version, "2.9.9")
+  })
 })
