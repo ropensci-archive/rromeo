@@ -86,7 +86,8 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
     issns = xml_text(xml_find_all(xml_source, "//issn"))
 
     journal_df = data.frame(title = journals,
-                            issn  = issns)
+                            issn  = issns,
+                            stringsAsFactors = FALSE)
     journal_df[journal_df == ""] = NA
 
     if (!multiple) {
@@ -109,15 +110,16 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
             rr_journal_name(x["title"], key, qtype = "exact")
           },
           error = function(err) {
-            return(data.frame(title = x["title"],
-                              issn = x["issn"],
-                              romeocolour = NA,
-                              preprint    = NA,
-                              postprint   = NA,
-                              pdf         = NA,
-                              pre_embargo = NA,
+            return(data.frame(title        = x["title"],
+                              issn         = x["issn"],
+                              romeocolour  = NA,
+                              preprint     = NA,
+                              postprint    = NA,
+                              pdf          = NA,
+                              pre_embargo  = NA,
                               post_embargo = NA,
-                              pdf_embargo = NA))
+                              pdf_embargo  = NA,
+                              stringsAsFactors = FALSE))
           })
         }})
 
