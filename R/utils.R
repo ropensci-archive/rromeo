@@ -168,13 +168,14 @@ parse_publisher = function(api_answer) {
   pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
   pdf         = ifelse(pdf == "unknown", NA_character_, pdf)
 
-  data.frame(romeoid,
+  data.frame(romeoid = as.numeric(romeoid),
              publisher,
              alias,
              romeocolour,
              preprint,
              postprint,
-             pdf)
+             pdf,
+             stringsAsFactors = FALSE)
 }
 
 

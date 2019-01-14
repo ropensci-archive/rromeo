@@ -4,7 +4,7 @@ test_that("rr_journal_name() works", {
   skip_on_cran()
 
   use_cassette("rr_journal_name", {
-    res = rr_journal_name("Journal of Geology")
+    res = suppressWarnings({rr_journal_name("Journal of Geology")})
 
     expect_is(res, "data.frame")
 
@@ -16,7 +16,9 @@ test_that("rr_journal_name() works", {
   })
 
   use_cassette("rr_journal_name_multiple", {
-    res = rr_journal_name("Biogeography", qtype = "contains", key = NULL)
+    res = suppressWarnings({
+      rr_journal_name("Biogeography", qtype = "contains", key = NULL)
+    })
 
     expect_is(res, "data.frame")
 

@@ -31,12 +31,19 @@ rr_publisher = function(given_id, key = NULL) {
   given_id = tryCatch({
     as.integer(given_id)
   },
-  error = function() {
+  error = function(cond) {
+    stop("id needs to be an integer")
+    return(NA_integer_)
+  },
+  warning = function(cond) {
     stop("id needs to be an integer")
     return(NA_integer_)
   })
 
-  GET(rr_base_api(), query = list(id = given_id, ak = check_key(key)))
+  api_answer = GET(rr_base_api(), query = list(id = given_id,
+                                               ak = check_key(key)))
+
+  parse_publisher(api_answer)
 }
 
 #' Journal data by ISSN
