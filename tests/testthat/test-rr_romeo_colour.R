@@ -4,8 +4,10 @@ test_that("rr_romeo_colour() works", {
   skip_on_cran()
 
   expect_error(rr_romeo_colour("purple"),
-               regexp = paste0("'arg' should be one of \"green\", \"blue\", ",
-                               "\"yellow\", \"white\""))
+               regexp = paste0("'arg' should be one of ", dQuote("green"), ", ",
+                              dQuote("blue"), ", ", dQuote("yellow"), ", ",
+                              dQuote("white")))
+
 
 
   use_cassette("rr_romeo_colour", {
