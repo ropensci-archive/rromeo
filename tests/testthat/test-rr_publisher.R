@@ -1,8 +1,6 @@
 context("rr_publisher")
 
 test_that("rr_publisher() works", {
-  skip_on_cran()
-
   expect_error(rr_publisher("a"), regexp = "id needs to be an integer")
 
   use_cassette("rr_publisher", {

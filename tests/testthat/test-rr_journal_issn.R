@@ -1,8 +1,6 @@
 context("rr_journal_issn")
 
 test_that("rr_journal_issn() works", {
-  skip_on_cran()
-
   use_cassette("rr_journal_issn", {
     res = rr_journal_issn("1947-6264")
 

@@ -13,8 +13,6 @@ test_that("API URL matches", {
 })
 
 test_that("API version is correct", {
-  skip_on_cran()
-
   vcr::use_cassette("rr_api_version", {
     api_version = rr_api_version()
 
