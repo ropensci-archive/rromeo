@@ -33,11 +33,9 @@ rr_publisher = function(given_id, key = NULL) {
   },
   error = function(cond) {
     stop("id needs to be an integer")
-    return(NA_integer_)
   },
   warning = function(cond) {
     stop("id needs to be an integer")
-    return(NA_integer_)
   })
 
   api_answer = GET(rr_base_api(), query = list(id = given_id,
