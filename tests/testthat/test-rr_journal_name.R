@@ -2,7 +2,7 @@ context("rr_journal_name")
 
 test_that("rr_journal_name() works", {
   use_cassette("rr_journal_name", {
-    res = suppressWarnings({rr_journal_name("Journal of Geology")})
+    res = rr_journal_name("Journal of Geology")
 
     expect_is(res, "data.frame")
 
