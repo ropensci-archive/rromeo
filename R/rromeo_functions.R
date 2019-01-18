@@ -31,12 +31,17 @@ rr_publisher = function(given_id, key = NULL) {
   given_id = tryCatch({
     as.integer(given_id)
   },
-  error = function() {
+  error = function(cond) {
     stop("id needs to be an integer")
-    return(NA_integer_)
+  },
+  warning = function(cond) {
+    stop("id needs to be an integer")
   })
 
-  GET(rr_base_api(), query = list(id = given_id, ak = check_key(key)))
+  api_answer = GET(rr_base_api(), query = list(id = given_id,
+                                               ak = check_key(key)))
+
+  parse_publisher(api_answer)
 }
 
 #' Journal data by ISSN
@@ -66,7 +71,7 @@ rr_journal_issn = function(issn, key = NULL) {
 #'
 #' @param name A character string, containing the (possibly) partial name of the
 #' journal
-#' @param qtype A character string saying whether you are lookin for `exact`,
+#' @param qtype A character string saying whether you are looking for `exact`,
 #' `contains` or `starts with` matches
 #' @inheritParams parse_answer
 #' @inheritParams check_key

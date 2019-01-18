@@ -33,8 +33,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   if (outcome == "notFound") {
     stop("No journal matches your query terms. Please try another query.")
-  }
-  else if (outcome %in% c("singleJournal", "uniqueZetoc")) {
+  } else if (outcome %in% c("singleJournal", "uniqueZetoc")) {
     # Some journals have multiple policies because they are owned by multiple
     # publishers or because of historic data. They return hits == 2 but it's
     # still a single journal. They are identified by a specific outcome
@@ -70,8 +69,9 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
     pdf_embargo = parse_embargo(xml_source, "pdf")
 
     return(data.frame(title, issn, romeocolour,
-                      preprint, postprint, pdf,
-                      pre_embargo, post_embargo, pdf_embargo))
+                      preprint,    postprint,    pdf,
+                      pre_embargo, post_embargo, pdf_embargo,
+                      stringsAsFactors = FALSE))
 
   } else if (outcome %in% c("manyJournals", "excessJournals")) {
 
@@ -86,7 +86,8 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
     issns = xml_text(xml_find_all(xml_source, "//issn"))
 
     journal_df = data.frame(title = journals,
-                            issn  = issns)
+                            issn  = issns,
+                            stringsAsFactors = FALSE)
     journal_df[journal_df == ""] = NA
 
     if (!multiple) {
@@ -109,20 +110,22 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
             rr_journal_name(x["title"], key, qtype = "exact")
           },
           error = function(err) {
-            return(data.frame(title = x["title"],
-                              issn = x["issn"],
-                              romeocolour = NA,
-                              preprint    = NA,
-                              postprint   = NA,
-                              pdf         = NA,
-                              pre_embargo = NA,
+            return(data.frame(title        = x["title"],
+                              issn         = x["issn"],
+                              romeocolour  = NA,
+                              preprint     = NA,
+                              postprint    = NA,
+                              pdf          = NA,
+                              pre_embargo  = NA,
                               post_embargo = NA,
-                              pdf_embargo = NA))
+                              pdf_embargo  = NA,
+                              stringsAsFactors = FALSE))
           })
         }})
 
       return(do.call(rbind.data.frame, c(result_df, make.row.names = FALSE)))
     }
+  }
 }
 
 #' Parse publisher list
@@ -165,13 +168,14 @@ parse_publisher = function(api_answer) {
   pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
   pdf         = ifelse(pdf == "unknown", NA_character_, pdf)
 
-  data.frame(romeoid,
+  data.frame(romeoid = as.numeric(romeoid),
              publisher,
              alias,
              romeocolour,
              preprint,
              postprint,
-             pdf)
+             pdf,
+             stringsAsFactors = FALSE)
 }
 
 
@@ -250,4 +254,3 @@ parse_embargo = function(xml_source, type) {
     return(paste(time, unit))
   }
 }
-

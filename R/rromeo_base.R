@@ -9,7 +9,7 @@ rr_base_rest_api = function() {
 }
 
 rr_base_api = function() {
-  "http://www.sherpa.ac.uk/romeo/api29.php"
+  paste0(rr_base_url(), "romeo/api29.php")
 }
 
 #' Get SHERPA/RoMEO API version

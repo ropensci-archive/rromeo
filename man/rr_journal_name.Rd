@@ -16,7 +16,7 @@ recursively fetch data for each of one of them (\code{multiple = TRUE}) or
 return a data.frame containing only titles and ISSN of all matches
 (\code{multiple = FALSE})}
 
-\item{qtype}{A character string saying whether you are lookin for \code{exact},
+\item{qtype}{A character string saying whether you are looking for \code{exact},
 \code{contains} or \code{starts with} matches}
 
 \item{key}{a character string or \code{NULL}}
