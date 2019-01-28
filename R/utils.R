@@ -143,11 +143,16 @@ parse_publisher = function(api_answer) {
   xml_source = content(api_answer, encoding = "ISO-8859-1")
 
   apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
+  outcome = xml_text(xml_find_all(xml_source, "//outcome"))
 
   if (apicontrol == "invalidapikey") {
     stop("The provided API key is invalid. ",
          "You can register for a free API at ",
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")
+  }
+
+  if (outcome == "notFound") {
+    stop("No publisher matches the provided id. Please try another id.")
   }
 
   romeoid     = xml_attr(xml_find_all(xml_source, "//publisher"), "id")
