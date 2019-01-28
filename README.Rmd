@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# `rromeo` – an R interface for SHERPA/RoMEO data
+# `rromeo` - an R interface for SHERPA/RoMEO data
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Travis build status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo) [![codecov](https://codecov.io/gh/Rekyt/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/rromeo)
 
