@@ -12,9 +12,6 @@ rr_publisher = function(given_id, key = NULL) {
   given_id = tryCatch({
     as.integer(given_id)
   },
-  error = function(cond) {
-    stop("id needs to be an integer")
-  },
   warning = function(cond) {
     stop("id needs to be an integer")
   })
