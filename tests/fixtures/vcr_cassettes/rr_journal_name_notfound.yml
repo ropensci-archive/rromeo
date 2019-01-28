@@ -22,7 +22,7 @@ http_interactions:
       content-length: '711'
       Content-Type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
