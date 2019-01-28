@@ -28,4 +28,10 @@ test_that("rr_journal_name() works", {
     expect_equal(res$issn[[1]], "1345-0662")
     expect_equal(res$title[[1]], "Biogeography")
   })
+
+  use_cassette("rr_journal_name_notfound", {
+    expect_error(
+      rr_journal_name("Journal of Blabla", qtype = "contains", key = ""),
+      "No journal matches your query terms. Please try another query.")
+  })
 })
