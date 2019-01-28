@@ -7,9 +7,6 @@ test_that("API URL matches", {
   expect_type(rr_base_api(), "character")
   expect_equal(rr_base_api(), "http://www.sherpa.ac.uk/romeo/api29.php")
 
-  expect_type(rr_base_rest_api(), "character")
-  expect_equal(rr_base_rest_api(), "romeo/api29/")
-
 })
 
 test_that("API version is correct", {

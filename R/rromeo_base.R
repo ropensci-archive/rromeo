@@ -4,10 +4,6 @@ rr_base_url = function() {
   "http://www.sherpa.ac.uk/"
 }
 
-rr_base_rest_api = function() {
-  "romeo/api29/"
-}
-
 rr_base_api = function() {
   paste0(rr_base_url(), "romeo/api29.php")
 }

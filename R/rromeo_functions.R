@@ -1,22 +1,3 @@
-#' Get record from Publisher ID
-#'
-#' Use SHERPA/RoMEO RESTful API to retrieve a specific publisher status
-#' @param id publisher ID
-rr_rest_publisher = function(id) {
-
-  id = tryCatch({
-    as.integer(id)
-  },
-  error = function() {
-    stop("id needs to be an integer")
-    return(NA_integer_)
-  })
-
-  pub_path = paste0(rr_base_rest_api(), "pub/", id, "/")
-
-  GET(rr_base_url(), path = pub_path)
-}
-
 #' Get record from Publication ID
 #'
 #' Use SHERPA/RoMEO regular API to retrieve a specific publication number status
