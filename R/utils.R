@@ -22,7 +22,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
 
-  if (apicontrol == "invalidkey") {
+  if (apicontrol == "invalidapikey") {
     stop("The provided API key is invalid. ",
          "You can register for a free API at ",
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")
@@ -144,7 +144,7 @@ parse_publisher = function(api_answer) {
 
   apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
 
-  if (apicontrol == "invalidkey") {
+  if (apicontrol == "invalidapikey") {
     stop("The provided API key is invalid. ",
          "You can register for a free API at ",
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")

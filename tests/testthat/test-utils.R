@@ -29,3 +29,19 @@ test_that("Can retrieve the API key", {
 
   expect_equal(check_key(NULL), actual_key)
 })
+
+test_that("Parse answer fails with invalid API", {
+  use_cassette("invalid_api_key_journal", {
+    expect_error(rr_journal_name("Journal of Geology", key = "azertyuiop"),
+                 paste0("The provided API key is invalid. ",
+                        "You can register for a free API at ",
+                        "http://www.sherpa.ac.uk/romeo/apiregistry.php"))
+  })
+
+  use_cassette("invalid_api_key_publisher", {
+    expect_error(rr_publisher(55, key = "azertyuiop"),
+                 paste0("The provided API key is invalid. ",
+                        "You can register for a free API at ",
+                        "http://www.sherpa.ac.uk/romeo/apiregistry.php"))
+  })
+})
