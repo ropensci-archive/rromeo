@@ -9,7 +9,8 @@ test_that("Can validate ISSN properly", {
   expect_null(validate_issn(valid_issn[2]))
 
   expect_error(validate_issn(invalid_issn),
-               regexp = "ISSN is invalid, please check the format")
+               regexp = "ISSN is invalid, please check the format",
+               fixed = TRUE)
 })
 
 test_that("Can retrieve the API key", {
