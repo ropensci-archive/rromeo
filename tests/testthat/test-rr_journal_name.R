@@ -34,4 +34,10 @@ test_that("rr_journal_name() works", {
       rr_journal_name("Journal of Blabla", qtype = "contains", key = ""),
       "No journal matches your query terms. Please try another query.")
   })
+
+  use_cassette("rr_journal_name_excess", {
+    expect_warning(
+      rr_journal_name("Ecology", qtype = "contains"),
+      "Your request exceeded SHERPA/RoMEO API's cap of 50 results.")
+  })
 })

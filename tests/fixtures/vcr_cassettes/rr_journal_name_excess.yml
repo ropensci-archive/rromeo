@@ -1,0 +1,367 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Ecology&qtype=contains
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Wed, 30 Jan 2019 13:56:15 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '2852'
+      Content-Type: text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>Ecology</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>contains</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>50</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>excessJournals</outcome>
+            <message>More than 50 journals were found. Only the first 50 are listed here.</message>
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>30-Jan-2019:13:56:16</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Actual Gynecology And Obstetrics / Aktualni Gynekologie a Porodnictvi</jtitle>
+              <issn>1803-9588</issn>
+              <zetocpub>Aprofema</zetocpub>
+              <romeopub>Aprofema</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Adolescent and pediatric gynecology</jtitle>
+              <issn>0932-8610</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Advances in Ecology</jtitle>
+              <issn>2356-6647</issn>
+              <zetocpub>Hindawi Publishing Corporation</zetocpub>
+              <romeopub>Hindawi Publishing Corporation</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Advances in Geoecology</jtitle>
+              <issn />
+              <zetocpub>Elsevier Science B.V., Amsterdam.</zetocpub>
+              <romeopub>Elsevier</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Advances in Human Ecology</jtitle>
+              <issn>1069-0573</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Advances in Microbial Ecology</jtitle>
+              <issn>0147-4863</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>African Journal of Ecology</jtitle>
+              <issn>0141-6707</issn>
+              <zetocpub>Wiley: 12 months / Blackwell Publishing Ltd</zetocpub>
+              <romeopub>Wiley: 12 months</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Agroecology and Sustainable Food Systems</jtitle>
+              <issn>2168-3565</issn>
+              <zetocpub>Taylor &amp; Francis: STM, Behavioural Science and Public Health Titles / Taylor and Francis</zetocpub>
+              <romeopub>Taylor &amp; Francis: STM, Behavioural Science and Public Health Titles</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Aquatic Microbial Ecology</jtitle>
+              <issn>0948-3055</issn>
+              <zetocpub>Inter Research / Inter-research</zetocpub>
+              <romeopub>Inter Research</romeopub>
+            </journal>
+            <journal>
+              <jtitle>American journal of clinical and experimental obstetrics and gynecology</jtitle>
+              <issn>2330-1899</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>American Journal of Obstetrics and Gynecology</jtitle>
+              <issn>0002-9378</issn>
+              <zetocpub>Elsevier: 12 months / Elsevier Science B.V., Amsterdam</zetocpub>
+              <romeopub>Elsevier: 12 months</romeopub>
+            </journal>
+            <journal>
+              <jtitle>&#1042;&#1077;&#1089;&#1090;&#1085;&#1080;&#1082; &#1058;&#1074;&#1077;&#1088;&#1089;&#1082;&#1086;&#1075;&#1086; &#1075;&#1086;&#1089;&#1091;&#1076;&#1072;&#1088;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;&#1075;&#1086; &#1091;&#1085;&#1080;&#1074; / Tver State University Bulletin. Series: Biology and Ecology / Tverskoi Gosudarstvennyi Universitet. Vestnik. Seriya Biologiya i Ekologiya</jtitle>
+              <issn>1995-0160</issn>
+              <zetocpub>Tverskoi Gosudarstvennyi Universitet (Tver State University)</zetocpub>
+              <romeopub>Tverskoi Gosudarstvennyi Universitet (Tver State University)</romeopub>
+            </journal>
+            <journal>
+              <jtitle>&#1069;&#1082;&#1086;&#1083;&#1086;&#1075;&#1080;&#1103; / Ekologiya / Russian Journal of Ecology</jtitle>
+              <issn>0367-0597</issn>
+              <zetocpub>MAIK Nauka/Interperiodica (&amp;#1052;&amp;#1040;&amp;#1048;&amp;#1050; &amp;#1053;&amp;#1072;&amp;#1091;&amp;#1082;&amp;#1072;/&amp;#1048;&amp;#1085;&amp;#1090;&amp;#1077;&amp;#1088;&amp;#1087;&amp;#1077;&amp;#1088;&amp;#1080;&amp;#1086;&amp;#1076;&amp;#1080;&amp;#1082;&amp;#1072;)</zetocpub>
+              <romeopub>Springer Verlag (Germany)</romeopub>
+            </journal>
+            <journal>
+              <jtitle>&#19990;&#30028;&#29983;&#24577;&#23398; / International Journal of Ecology</jtitle>
+              <issn>2324-7967</issn>
+              <zetocpub>Hans Publishers (&amp;#27721;&amp;#26031;&amp;#20986;&amp;#29256;&amp;#31038;)</zetocpub>
+              <romeopub>Hans Publishers (&amp;#27721;&amp;#26031;&amp;#20986;&amp;#29256;&amp;#31038;)</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Asian Case Reports in Obstetrics and Gynecology</jtitle>
+              <issn />
+              <zetocpub>Hans Publishers (&amp;#27721;&amp;#26031;&amp;#20986;&amp;#29256;&amp;#31038;)</zetocpub>
+              <romeopub>Hans Publishers (&amp;#27721;&amp;#26031;&amp;#20986;&amp;#29256;&amp;#31038;)</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Andrology and Gynecology: Current Research</jtitle>
+              <issn>2327-4360</issn>
+              <zetocpub>SciTechnol</zetocpub>
+              <romeopub>SciTechnol</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Annual Review of Ecology and Systematics</jtitle>
+              <issn>0066-4162</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Annual Review of Ecology, Evolution, and Systematics</jtitle>
+              <issn>1543-592X</issn>
+              <zetocpub>Annual Reviews / Unknown</zetocpub>
+              <romeopub>Annual Reviews</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Applied Ecology and Environmental Sciences</jtitle>
+              <issn>2328-3912</issn>
+              <zetocpub>Science and Education Publishing</zetocpub>
+              <romeopub>Science and Education Publishing</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Applied Soil Ecology</jtitle>
+              <issn>0929-1393</issn>
+              <zetocpub>Elsevier</zetocpub>
+              <romeopub>Elsevier</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Aquatic Ecology</jtitle>
+              <issn>1386-2588</issn>
+              <zetocpub>Springer (part of Springer Nature): Springer Open Choice Hybrid Journals / Springer Science   Business Media</zetocpub>
+              <romeopub>Springer (part of Springer Nature): Springer Open Choice Hybrid Journals</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Archives of gynecology</jtitle>
+              <issn>0170-9925</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Archives of Gynecology and Obstetrics</jtitle>
+              <issn>0932-0067</issn>
+              <zetocpub>Springer (part of Springer Nature): Springer Open Choice Hybrid Journals / Springer Berlin Heidelberg / Springer Science   Business Media</zetocpub>
+              <romeopub>Springer (part of Springer Nature): Springer Open Choice Hybrid Journals</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Asia-Oceania journal of obstetrics and gynaecology / AOFOG</jtitle>
+              <issn>0389-2328</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Austin Journal of Obstetrics and Gynecology</jtitle>
+              <issn>2378-1386</issn>
+              <zetocpub>Austin Publishing Group</zetocpub>
+              <romeopub>Austin Publishing Group</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Austral Ecology</jtitle>
+              <issn>1442-9985</issn>
+              <zetocpub>Wiley: 6 months / Blackwell Publishing Ltd</zetocpub>
+              <romeopub>Wiley: 6 months</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Australian and New Zealand Journal of Obstetrics and Gynaecology</jtitle>
+              <issn>0004-8666</issn>
+              <zetocpub>Wiley: 12 months / Blackwell Publishing Ltd</zetocpub>
+              <romeopub>Wiley: 12 months</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Australian Journal of Ecology</jtitle>
+              <issn>0307-692X</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Avian Conservation and Ecology</jtitle>
+              <issn>1712-6568</issn>
+              <zetocpub>Resilience Alliance</zetocpub>
+              <romeopub>Resilience Alliance</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Bailliere's best practice &amp; research. Clinical obstetrics &amp; gynaecology</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Bailliere's clinical obstetrics and gynaecology</jtitle>
+              <issn>0950-3552</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Basic and Applied Ecology</jtitle>
+              <issn>1439-1791</issn>
+              <zetocpub>Elsevier</zetocpub>
+              <romeopub>Elsevier</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Behavioral Ecology</jtitle>
+              <issn>1045-2249</issn>
+              <zetocpub>Oxford University Press (OUP): Policy B - Oxford Open Option A / Oxford University Press</zetocpub>
+              <romeopub>Oxford University Press (OUP): Policy B - Oxford Open Option A</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Behavioral Ecology and Sociobiology</jtitle>
+              <issn>0340-5443</issn>
+              <zetocpub>Springer (part of Springer Nature): Springer Open Choice Hybrid Journals / Springer-verlag / Springer Science   Business Media</zetocpub>
+              <romeopub>Springer (part of Springer Nature): Springer Open Choice Hybrid Journals</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Best Practice and Research: Clinical Obstetrics and Gynaecology</jtitle>
+              <issn>1521-6934</issn>
+              <zetocpub>Elsevier: 12 months / Elsevier Science B.V., Amsterdam</zetocpub>
+              <romeopub>Elsevier: 12 months</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Biochemical Systematics and Ecology</jtitle>
+              <issn>0305-1978</issn>
+              <zetocpub>Elsevier</zetocpub>
+              <romeopub>Elsevier</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Biodiversity and ecology = Biodiversitat und Okologie</jtitle>
+              <issn>1613-9801</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>BIOINFO Conservation Ecology</jtitle>
+              <issn />
+              <zetocpub>Bioinfo Publications</zetocpub>
+              <romeopub>Bioinfo Publications</romeopub>
+            </journal>
+            <journal>
+              <jtitle>BIOINFO Obstetrics and Gynecology</jtitle>
+              <issn />
+              <zetocpub>Bioinfo Publications</zetocpub>
+              <romeopub>Bioinfo Publications</romeopub>
+            </journal>
+            <journal>
+              <jtitle>BJOG: An International Journal of Obstetrics and Gynaecology</jtitle>
+              <issn>1470-0328</issn>
+              <zetocpub>Wiley: 12 months</zetocpub>
+              <romeopub>Wiley: 12 months</romeopub>
+            </journal>
+            <journal>
+              <jtitle>BMC Ecology</jtitle>
+              <issn>1472-6785</issn>
+              <zetocpub>BMC (part of Springer Nature) / BioMed Central</zetocpub>
+              <romeopub>BMC (part of Springer Nature)</romeopub>
+            </journal>
+            <journal>
+              <jtitle>British Journal of Obstetrics and Gynaecology</jtitle>
+              <issn>0306-5456</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>British Journal of Obstetrics and Gynaecology -Supplement-</jtitle>
+              <issn>0140-7686</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Case Reports in Obstetrics and Gynecology</jtitle>
+              <issn>2090-6684</issn>
+              <zetocpub>Hindawi Publishing Corporation / Hindawi Limited</zetocpub>
+              <romeopub>Hindawi Publishing Corporation</romeopub>
+            </journal>
+            <journal>
+              <jtitle>CDE working paper. University of Wisconsin--Madison. Center for Demography and Ecology</jtitle>
+              <issn>0891-2874</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Chemistry and Ecology</jtitle>
+              <issn>0275-7540</issn>
+              <zetocpub>Taylor &amp; Francis: STM, Behavioural Science and Public Health Titles / Taylor &amp;amp; Francis</zetocpub>
+              <romeopub>Taylor &amp; Francis: STM, Behavioural Science and Public Health Titles</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Chemistry-Didactics-Ecology-Metrology</jtitle>
+              <issn>1640-9019</issn>
+              <zetocpub>De Gruyter Open</zetocpub>
+              <romeopub>De Gruyter Open</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Chemoecology</jtitle>
+              <issn>0937-7409</issn>
+              <zetocpub>Springer Verlag (Germany) / Springer Science   Business Media</zetocpub>
+              <romeopub>Springer Verlag (Germany)</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Chinese Journal of Obstetrics and Gynecology</jtitle>
+              <issn>0529-567X</issn>
+              <zetocpub>Chinese Medical Association</zetocpub>
+              <romeopub>Chinese Medical Association</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Clinical and Experimental Obstetrics &amp;&amp; Gynecology</jtitle>
+              <issn>0390-6663</issn>
+              <zetocpub>Irog Canada Inc.</zetocpub>
+              <romeopub>Irog Canada Inc.</romeopub>
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-01-30 13:56:54 GMT
+  recorded_with: vcr/0.2.2, webmockr/0.3.0
