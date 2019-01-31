@@ -101,7 +101,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
               "This may take some time...")
 
       # Retrieve RoMEO data for all matched journals
-      # Use ISSN available retrieve using title otherwise
+      # Use ISSN if available, use title otherwise to retrieve info
       result_df = apply(journal_df, 1, function(x) {
         if (!is.na(x["issn"])) {
           journal_policy = rr_journal_issn(x["issn"], key)
