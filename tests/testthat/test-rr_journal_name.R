@@ -14,9 +14,14 @@ test_that("rr_journal_name() works", {
   })
 
   use_cassette("rr_journal_name_multiple", {
-    res = suppressWarnings({
-      rr_journal_name("Biogeography", qtype = "contains", key = NULL)
-    })
+    false_multiple = capture_warnings(
+      res <- rr_journal_name("Biogeography", qtype = "contains", key = NULL)
+    )
+
+    expect_match(false_multiple[1], "5 journals match your query terms")
+    expect_match(
+      false_multiple[2],
+      "Select one journal from the provided list or enable multiple = TRUE")
 
     expect_is(res, "data.frame")
 
