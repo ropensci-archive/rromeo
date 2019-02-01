@@ -22,7 +22,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
 
-  if (apicontrol == "invalidkey") {
+  if (apicontrol == "invalidapikey") {
     stop("The provided API key is invalid. ",
          "You can register for a free API at ",
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")
@@ -101,7 +101,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
               "This may take some time...")
 
       # Retrieve RoMEO data for all matched journals
-      # Use ISSN available retrieve using title otherwise
+      # Use ISSN if available, use title otherwise to retrieve info
       result_df = apply(journal_df, 1, function(x) {
         if (!is.na(x["issn"])) {
           journal_policy = rr_journal_issn(x["issn"], key)
@@ -143,11 +143,16 @@ parse_publisher = function(api_answer) {
   xml_source = content(api_answer, encoding = "ISO-8859-1")
 
   apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
+  outcome = xml_text(xml_find_all(xml_source, "//outcome"))
 
-  if (apicontrol == "invalidkey") {
+  if (apicontrol == "invalidapikey") {
     stop("The provided API key is invalid. ",
          "You can register for a free API at ",
          "http://www.sherpa.ac.uk/romeo/apiregistry.php")
+  }
+
+  if (outcome == "notFound") {
+    stop("No publisher matches the provided id. Please try another id.")
   }
 
   romeoid     = xml_attr(xml_find_all(xml_source, "//publisher"), "id")

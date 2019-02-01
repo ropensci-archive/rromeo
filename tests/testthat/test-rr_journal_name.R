@@ -14,9 +14,14 @@ test_that("rr_journal_name() works", {
   })
 
   use_cassette("rr_journal_name_multiple", {
-    res = suppressWarnings({
-      rr_journal_name("Biogeography", qtype = "contains", key = NULL)
-    })
+    false_multiple = capture_warnings(
+      res <- rr_journal_name("Biogeography", qtype = "contains", key = NULL)
+    )
+
+    expect_match(false_multiple[1], "5 journals match your query terms")
+    expect_match(
+      false_multiple[2],
+      "Select one journal from the provided list or enable multiple = TRUE")
 
     expect_is(res, "data.frame")
 
@@ -27,5 +32,17 @@ test_that("rr_journal_name() works", {
 
     expect_equal(res$issn[[1]], "1345-0662")
     expect_equal(res$title[[1]], "Biogeography")
+  })
+
+  use_cassette("rr_journal_name_notfound", {
+    expect_error(
+      rr_journal_name("Journal of Blabla", qtype = "contains", key = ""),
+      "No journal matches your query terms. Please try another query.")
+  })
+
+  use_cassette("rr_journal_name_excess", {
+    expect_warning(
+      rr_journal_name("Ecology", qtype = "contains"),
+      "Your request exceeded SHERPA/RoMEO API's cap of 50 results.")
   })
 })

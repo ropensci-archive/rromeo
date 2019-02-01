@@ -3,6 +3,7 @@ context("rr_publisher")
 test_that("rr_publisher() works", {
   expect_error(rr_publisher("a"), regexp = "id needs to be an integer")
 
+  # Regular Query
   use_cassette("rr_publisher", {
     res = rr_publisher(55)
 
@@ -22,4 +23,13 @@ test_that("rr_publisher() works", {
     expect_equal(res$alias, "OUP")
     expect_equal(res$pdf,   "unclear")
   })
+
+  # When Publisher is not found
+  use_cassette("rr_publisher_notfound", {
+    expect_error(rr_publisher(150000000, key = ""),
+                 "No publisher matches the provided id. Please try another id.")
+  })
+
+  # Invalid ID
+  expect_error(rr_publisher("azerty"), "id needs to be an integer")
 })
