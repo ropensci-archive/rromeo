@@ -13,5 +13,5 @@ after_success:
 
 deploy:
   provider: script
-  script: Rscript -e 'pkgdown::deploy_site_github(ssh_id = Sys.getenv("GITHUB_DEPLOY"))'
+  script: Rscript -e 'pkgdown::deploy_site_github()'
   skip_cleanup: true
