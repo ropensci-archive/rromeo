@@ -55,7 +55,7 @@ SHERPA/RoMEO provides a synthetic "colour" for each journal, the colour summariz
   | `yellow`     | can archive pre-print                                     |
   | `white`      | archiving not formally supported                          |
   
-(Table taken from http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version=#colours)
+(Table taken from <http://www.sherpa.ac.uk/romeo/definitions.php#colours>)
 
 `rromeo` lets you retrieve the policies of all journals of a given colour using the function `rr_romeo_colour()` (**NOTE:** this function can be slow as there many journals to retrieve):
 
