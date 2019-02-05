@@ -29,3 +29,5 @@ Suggests:
     covr
 Language: en-US
 VignetteBuilder: knitr
+URL: https://github.com/Rekyt/rromeo
+BugReports: https://github.com/Rekyt/rromeo/issues
