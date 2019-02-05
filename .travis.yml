@@ -6,6 +6,12 @@ cache: packages
 
 r_packages:
   - covr
+  - pkgdown
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
+
+deploy:
+  provider: script
+  script: Rscript -e 'pkgdown::deploy_site_github()'
+  skip_cleanup: true
