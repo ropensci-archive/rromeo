@@ -59,7 +59,7 @@ test_that("rr_journal_name() works", {
 
     expect_equal(res$issn[[1]], "0305-0270")
     expect_equal(res$issn[[2]], "1932-6203")
-  })
+  }, record = "new_episodes")
 
   use_cassette("rr_journal_name_notfound", {
     expect_error(

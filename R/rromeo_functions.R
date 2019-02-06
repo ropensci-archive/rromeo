@@ -68,7 +68,7 @@ rr_journal_name = function(name, multiple = FALSE,
 
   api_key = check_key(key)
 
-  answer_list = vapply(name, function(journal_name, given_multiple = multiple,
+  answer_list = sapply(name, function(journal_name, given_multiple = multiple,
                                       given_qtype = qtype,
                                       given_api_key = api_key) {
 
@@ -77,11 +77,13 @@ rr_journal_name = function(name, multiple = FALSE,
                                                  ak = given_api_key))
 
     parse_answer(api_answer, multiple = given_multiple, key = given_api_key)
-  }, data.frame(title = NA, issn = NA, romeocolour = NA, preprint = NA,
-                postprint = NA, pdf = NA, pre_embargo = NA, post_embargo = NA,
-                pdf_embargo = NA))
+  })
 
-  do.call(rbind, apply(answer_list, 2, as.data.frame, row.names = FALSE))
+  journals_df = do.call(rbind, apply(answer_list, 2, as.data.frame.list,
+                                     stringAsFactors = FALSE))
+  row.names(journals_df) = NULL
+
+  return(journals_df)
 }
 
 #' Query publisher by RoMEO colour
