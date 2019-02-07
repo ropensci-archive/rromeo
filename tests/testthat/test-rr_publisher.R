@@ -32,4 +32,11 @@ test_that("rr_publisher() works", {
 
   # Invalid ID
   expect_error(rr_publisher("azerty"), "id needs to be an integer")
+
+  # When server is not reachable
+  use_cassette("api_unreachable_publisher", {
+    expect_error(rr_publisher(55),
+                 paste0("The API endpoint could not be reached. Please try",
+                        " again later."))
+  })
 })
