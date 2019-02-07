@@ -36,10 +36,9 @@ test_that("rr_journal_name() works", {
 
 
   use_cassette("rr_journal_name_multiple_exact", {
-    false_multiple = capture_warnings(
-      res <- rr_journal_name(c("Journal of Biogeography", "PLOS one"),
+
+      res = rr_journal_name(c("Journal of Biogeography", "PLOS one"),
                              qtype = "exact", key = NULL)
-    )
 
     expect_is(res, "data.frame")
 

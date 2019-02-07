@@ -79,8 +79,11 @@ rr_journal_name = function(name, multiple = FALSE,
     parse_answer(api_answer, multiple = given_multiple, key = given_api_key)
   })
 
-  journals_df = do.call(rbind, apply(answer_list, 2, as.data.frame.list,
-                                     stringAsFactors = FALSE))
+  journals_df = do.call(rbind,
+                        apply(answer_list, 2, function(x) {
+                          as.data.frame(x, stringsAsFactors = FALSE)
+                        }))
+
   row.names(journals_df) = NULL
 
   return(journals_df)
