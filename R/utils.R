@@ -9,9 +9,26 @@
 #' (`multiple = FALSE`)
 #' @inheritParams check_key
 #'
+#' @return Returns a data.frame with the following columns:
+#' * `title`        `[character(1)]` the name of the journal
+#' * `issn`         `[character(1)]` the ISSN of the journal
+#' * `romeocolour`  `[character(1)]` the SHERPA/RoMEO colour of the journal
+#' * `preprint`     `[character(1)]` is the preprint (not reviewed) archivable?
+#' * `postprint`    `[character(1)]` is the postprint (reviewed but not
+#'                   typesetted) archivable?
+#' * `pdf`          `[character(1)]` is the publisher's version
+#'                  (reviewed and typesetted)
+#' * `pre_embargo`  `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the pre-print
+#' * `post_embargo` `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the post-print
+#' * `pdf_embargo`  `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the publisher's version
+#'
 #' @keywords internal
 #'
-#' @import xml2
+#' @importFrom httr content
+#' @importFrom xml2 xml_text xml_find_all xml_find_first
 parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   if (http_error(api_answer)) {
@@ -130,11 +147,30 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
 #' Parse publisher list
 #'
-#' @param api_answer parsed xml API answer
+#' When the returned content by the SHERPA/RoMEO API is a list of publishers
+#' this function parses the list and returns a structured data.frame with
+#' the default policies of the different publisher.
+#'
+#' @param api_answer xml API answer
+#'
+#' @return Returns a data frame with the following columns:
+#' * `romeoid`     `[integer(1)]` the internal index of the publisher in
+#'                 the SHERPA/RoMEO database
+#' * `publisher`   `[character(1)]` the name of the publisher
+#' * `alias`       `[character(1)]` if applicable an alternative name of the
+#'                 publisher or the name of the specific publishing branch
+#' * `romeocolour` `[character(1)]` a colour assigned by the database that
+#'                 reflects the default policies of the publisher
+#' * `preprint`    `[character(1)]` is the preprint (not reviewed) archivable?
+#' * `postprint`   `[character(1)]` is the postprint (reviewed but not
+#'                 typesetted) archivable?
+#' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
+#'                 typesetted) archivable?
 #'
 #' @keywords internal
 #'
-#' @import xml2
+#' @importFrom httr content http_error
+#' @importFrom xml2 xml_text xml_find_all xml_find_first xml_attr
 parse_publisher = function(api_answer) {
   if (http_error(api_answer)) {
     stop("The API endpoint could not be reached. Please try again later.")
@@ -186,8 +222,15 @@ parse_publisher = function(api_answer) {
 
 #' Checks validity of the ISSN
 #'
-#' @return `NULL` if the ISSN is valid, errors otherwise.
+#' International Standard Serial Numbers (ISSNs) have a specific structure and
+#' this function checks that the provided ISSN is valid. For more information
+#' please go to
+#' <https://en.wikipedia.org/wiki/International_Standard_Serial_Number>
+#'
 #' @param issn The ISSN of a journal
+#' @return `NULL` if the ISSN is valid, errors otherwise
+#'
+#' @keywords internal
 validate_issn = function(issn) {
 
   # How to validate ISSN?
@@ -219,11 +262,21 @@ validate_issn = function(issn) {
 
 #' Check SHERPA/RoMEO API key
 #'
-#' The key can be either specified in an `.Renviron` file using
-#' `SHERPAROMEO_KEY=my_key` or by passing it when calling the function.
+#' The key can be either specified in various ways see the Details section.
 #'
 #' @param key a character string or `NULL`
 #'
+#' @details To provide your API key to `rromeo` you can 1) provide it as a
+#'          character string as the `key` arguments of `rromeo` functions
+#'          as `rr_*(..., key = "my_key_as_a_string")` (**NOT RECOMMENDED**)
+#'          2) you can define the variable `SHERPAROMEO_KEY` in an `.Renviron`
+#'          file in your working directory, the file should contain the
+#'          following line `SHERPAROMEO_KEY=my_key_without_quotes`
+#'          3) you can also define the variable `SHERPAROMEO_KEY` in an
+#'          `.Rprofile` file in your working directory, the file should contain
+#'          the following line `SHERPAROMEO_KEY="my_key_with_quotes"`.
+#'
+#' @return if found the character string of the key, `NULL` otherwise
 #' @export
 check_key = function(key) {
   tmp = ifelse(is.null(key), Sys.getenv("SHERPAROMEO_KEY"), key)
@@ -243,7 +296,11 @@ check_key = function(key) {
 #' @param type       name of the embargo type must be in `"pre"`, `"post"`, and
 #'                   `"pdf"`
 #'
-#' @return the embargo period as a string
+#' @return the embargo period as a string like `"12 months"`
+#'
+#' @keywords internal
+#'
+#' @importFrom xml2 xml_text xml_find_first
 parse_embargo = function(xml_source, type) {
 
   tag = paste0("//", type, "restriction")

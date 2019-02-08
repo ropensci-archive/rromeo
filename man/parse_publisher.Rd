@@ -7,9 +7,28 @@
 parse_publisher(api_answer)
 }
 \arguments{
-\item{api_answer}{parsed xml API answer}
+\item{api_answer}{xml API answer}
+}
+\value{
+Returns a data frame with the following columns:
+\itemize{
+\item \code{romeoid}     \code{[integer(1)]} the internal index of the publisher in
+the SHERPA/RoMEO database
+\item \code{publisher}   \code{[character(1)]} the name of the publisher
+\item \code{alias}       \code{[character(1)]} if applicable an alternative name of the
+publisher or the name of the specific publishing branch
+\item \code{romeocolour} \code{[character(1)]} a colour assigned by the database that
+reflects the default policies of the publisher
+\item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
+\item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
+typesetted) archivable?
+\item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
+typesetted) archivable?
+}
 }
 \description{
-Parse publisher list
+When the returned content by the SHERPA/RoMEO API is a list of publishers
+this function parses the list and returns a structured data.frame with
+the default policies of the different publisher.
 }
 \keyword{internal}
