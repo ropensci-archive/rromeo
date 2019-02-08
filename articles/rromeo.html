@@ -95,9 +95,9 @@
 ## 1   12 months</code></pre>
 <p>You can also search for partial matches.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Biogeography"</span>, <span class="dt">qtype =</span> <span class="st">"contains"</span>)</a></code></pre></div>
-<pre><code>## Warning in parse_answer(api_answer, multiple = multiple, key = api_key): 5 journals match your query terms.</code></pre>
-<pre><code>## Warning in parse_answer(api_answer, multiple = multiple, key = api_key):
-## Select one journal from the provided list or enable multiple = TRUE</code></pre>
+<pre><code>## Warning: 5 journals match your query terms.</code></pre>
+<pre><code>## Warning: Select one journal from the provided list or enable multiple =
+## TRUE</code></pre>
 <pre><code>##                                     title      issn
 ## 1                            Biogeography 1345-0662
 ## 2               Frontiers of Biogeography 1948-6596
@@ -108,7 +108,7 @@
 <p>You can then use this list to select the exact journal you are looking for (in this case, it is recommended to use the ISSN).</p>
 <p>Alternatively, you may want to get data for all those journals. To achieve this, you may enable the <code>multiple</code> option:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Evolutionary"</span>, <span class="dt">qtype =</span> <span class="st">"contains"</span>, <span class="dt">multiple =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<pre><code>## Warning in parse_answer(api_answer, multiple = multiple, key = api_key): 43 journals match your query terms.</code></pre>
+<pre><code>## Warning: 43 journals match your query terms.</code></pre>
 <pre><code>## Recursively fetching data from each journal. This may take some time...</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">tail</a></span>(res, <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##                                 title      issn romeocolour preprint
