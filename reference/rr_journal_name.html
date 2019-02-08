@@ -138,7 +138,7 @@ set match type for the <code>name</code> search string</p></td>
     </tr>
     <tr>
       <th>key</th>
-      <td><p>a character string or <code>NULL</code></p></td>
+      <td><p>a character string containing the API key or <code>NULL</code></p></td>
     </tr>
     </table>
     
@@ -177,18 +177,9 @@ the author(s) can archive the publisher's version</p></li>
 #&gt; 2               Frontiers of Biogeography 1948-6596
 #&gt; 3         Global Ecology and Biogeography 1466-822X
 #&gt; 4 Global Ecology and Biogeography Letters 0960-7447
-#&gt; 5                 Journal of Biogeography 0305-0270</div><div class='input'><span class='fu'>rr_journal_name</span>(<span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 5 journals match your query terms.</span></div><div class='output co'>#&gt; <span class='message'>Recursively fetching data from each journal. This may take some time...</span></div><div class='output co'>#&gt;                                     title      issn romeocolour preprint
-#&gt; 1                            Biogeography 1345-0662        &lt;NA&gt;     &lt;NA&gt;
-#&gt; 2               Frontiers of Biogeography 1948-6596        &lt;NA&gt;     &lt;NA&gt;
-#&gt; 3         Global Ecology and Biogeography 1466-822X      yellow      can
-#&gt; 4 Global Ecology and Biogeography Letters 0960-7447        &lt;NA&gt;     &lt;NA&gt;
-#&gt; 5                 Journal of Biogeography 0305-0270      yellow      can
-#&gt;    postprint    pdf pre_embargo post_embargo pdf_embargo
-#&gt; 1       &lt;NA&gt;   &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
-#&gt; 2       &lt;NA&gt;   &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
-#&gt; 3 restricted cannot        &lt;NA&gt;    12 months        &lt;NA&gt;
-#&gt; 4       &lt;NA&gt;   &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
-#&gt; 5 restricted cannot        &lt;NA&gt;    12 months        &lt;NA&gt;</div></pre>
+#&gt; 5                 Journal of Biogeography 0305-0270</div><span class='co'># NOT RUN {</span>
+<span class='fu'>rr_journal_name</span>(<span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
