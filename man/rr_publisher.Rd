@@ -9,7 +9,7 @@ rr_publisher(given_id, key = NULL)
 \arguments{
 \item{given_id}{\code{[integer(1)]} SHERPA/RoMEO publisher's ID}
 
-\item{key}{a character string or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}}
 }
 \value{
 Returns a data frame with the following columns:

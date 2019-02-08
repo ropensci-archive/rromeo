@@ -19,7 +19,7 @@ return a data.frame containing only titles and ISSN of all matches
 \item{qtype}{\code{[character(1)]} in \code{c("exact", "contains", "starts with")} to
 set match type for the \code{name} search string}
 
-\item{key}{a character string or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}}
 }
 \value{
 Returns a data frame if multiple journals are found and
@@ -51,5 +51,7 @@ Retrieve journal(s) policy(ies) by matching title
 \examples{
 rr_journal_name("Journal of Geology")
 rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
+\dontrun{
 rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
+}
 }

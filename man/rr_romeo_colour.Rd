@@ -12,7 +12,7 @@ rr_romeo_colour(romeo_colour = c("green", "blue", "yellow", "white"),
 \code{c("green", "blue", "yellow", "white")}
 the SHERPA/RoMEO colour to retrieve}
 
-\item{key}{a character string or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}}
 }
 \value{
 Returns a data frame with the following columns:
@@ -52,5 +52,7 @@ publishers in the selected category, so the results are generally bigger in
 size than specific functions like \code{\link[=rr_journal_name]{rr_journal_name()}} or \code{\link[=rr_publisher]{rr_publisher()}}
 }
 \examples{
+\dontrun{
 rr_romeo_colour("green")
+}
 }

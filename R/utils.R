@@ -264,7 +264,7 @@ validate_issn = function(issn) {
 #'
 #' The key can be either specified in various ways see the Details section.
 #'
-#' @param key a character string or `NULL`
+#' @param key a character string containing the API key or `NULL`
 #'
 #' @details To provide your API key to `rromeo` you can 1) provide it as a
 #'          character string as the `key` arguments of `rromeo` functions

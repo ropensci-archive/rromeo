@@ -103,7 +103,9 @@ rr_journal_issn = function(issn, key = NULL) {
 #' @examples
 #' rr_journal_name("Journal of Geology")
 #' rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
+#' \dontrun{
 #' rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
+#' }
 rr_journal_name = function(name, multiple = FALSE,
                            qtype = c("exact", "contains", "starts with"),
                            key = NULL) {
@@ -160,7 +162,9 @@ rr_journal_name = function(name, multiple = FALSE,
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' rr_romeo_colour("green")
+#' }
 rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
                            key = NULL) {
 

@@ -9,7 +9,7 @@ rr_journal_issn(issn, key = NULL)
 \arguments{
 \item{issn}{A single journal ISSN}
 
-\item{key}{a character string or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}}
 }
 \description{
 Retrieve policy information from the SHERPA/RoMEO API using the ISSN of

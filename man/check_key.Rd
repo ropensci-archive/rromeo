@@ -7,7 +7,7 @@
 check_key(key)
 }
 \arguments{
-\item{key}{a character string or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}}
 }
 \value{
 if found the character string of the key, \code{NULL} otherwise
