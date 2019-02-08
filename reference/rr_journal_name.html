@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Journal data by title — rr_journal_name • rromeo</title>
+<title>Retrieve journal(s) policy(ies) by matching title — rr_journal_name • rromeo</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Journal data by title — rr_journal_name" />
+<meta property="og:title" content="Retrieve journal(s) policy(ies) by matching title — rr_journal_name" />
 
-<meta property="og:description" content="Journal data by title" />
+<meta property="og:description" content="Retrieve journal(s) policy(ies) by matching title" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -102,14 +102,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Journal data by title</h1>
+    <h1>Retrieve journal(s) policy(ies) by matching title</h1>
     <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/rromeo_functions.R'><code>R/rromeo_functions.R</code></a></small>
     <div class="hidden name"><code>rr_journal_name.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Journal data by title</p>
+    <p>Retrieve journal(s) policy(ies) by matching title</p>
     
     </div>
 
@@ -121,7 +121,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>name</th>
-      <td><p>A character string, containing the (possibly) partial name of the
+      <td><p><code>[character(1)]</code> containing the (possibly) partial name of the
 journal</p></td>
     </tr>
     <tr>
@@ -133,14 +133,39 @@ return a data.frame containing only titles and ISSN of all matches
     </tr>
     <tr>
       <th>qtype</th>
-      <td><p>A character string saying whether you are looking for <code>exact</code>,
-<code>contains</code> or <code>starts with</code> matches</p></td>
+      <td><p><code>[character(1)]</code> in <code><a href='https://www.rdocumentation.org/packages/base/topics/c'>c("exact", "contains", "starts with")</a></code> to
+set match type for the <code>name</code> search string</p></td>
     </tr>
     <tr>
       <th>key</th>
       <td><p>a character string or <code>NULL</code></p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a data frame if multiple journals are found and
+<code>multiple = FALSE</code>:</p><ul>
+<li><p><code>title</code>        <code>[character(1)]</code> the name of the journal</p></li>
+<li><p><code>issn</code>         <code>[character(1)]</code> the ISSN of the journal
+if a single journal is found or if <code>multiple = TRUE</code> returns a larger
+data frame:</p></li>
+<li><p><code>title</code>        <code>[character(1)]</code> the name of the journal</p></li>
+<li><p><code>issn</code>         <code>[character(1)]</code> the ISSN of the journal</p></li>
+<li><p><code>romeocolour</code>  <code>[character(1)]</code> the SHERPA/RoMEO colour of the journal</p></li>
+<li><p><code>preprint</code>     <code>[character(1)]</code> is the preprint (not reviewed) archivable?</p></li>
+<li><p><code>postprint</code>    <code>[character(1)]</code> is the postprint (reviewed but not
+typesetted) archivable?</p></li>
+<li><p><code>pdf</code>          <code>[character(1)]</code> is the publisher's version
+(reviewed and typesetted)</p></li>
+<li><p><code>pre_embargo</code>  <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the pre-print</p></li>
+<li><p><code>post_embargo</code> <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the post-print</p></li>
+<li><p><code>pdf_embargo</code>  <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the publisher's version</p></li>
+</ul>
+
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -169,7 +194,9 @@ return a data.frame containing only titles and ISSN of all matches
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#value">Value</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

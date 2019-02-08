@@ -120,7 +120,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>api_answer</th>
-      <td><p>parsed xml API answer</p></td>
+      <td><p>xml API answer</p></td>
     </tr>
     <tr>
       <th>multiple</th>
@@ -135,13 +135,35 @@ return a data.frame containing only titles and ISSN of all matches
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a data.frame with the following columns:</p><ul>
+<li><p><code>title</code>        <code>[character(1)]</code> the name of the journal</p></li>
+<li><p><code>issn</code>         <code>[character(1)]</code> the ISSN of the journal</p></li>
+<li><p><code>romeocolour</code>  <code>[character(1)]</code> the SHERPA/RoMEO colour of the journal</p></li>
+<li><p><code>preprint</code>     <code>[character(1)]</code> is the preprint (not reviewed) archivable?</p></li>
+<li><p><code>postprint</code>    <code>[character(1)]</code> is the postprint (reviewed but not
+typesetted) archivable?</p></li>
+<li><p><code>pdf</code>          <code>[character(1)]</code> is the publisher's version
+(reviewed and typesetted)</p></li>
+<li><p><code>pre_embargo</code>  <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the pre-print</p></li>
+<li><p><code>post_embargo</code> <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the post-print</p></li>
+<li><p><code>pdf_embargo</code>  <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the publisher's version</p></li>
+</ul>
+
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

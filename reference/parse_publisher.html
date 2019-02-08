@@ -32,7 +32,9 @@
 
 <meta property="og:title" content="Parse publisher list — parse_publisher" />
 
-<meta property="og:description" content="Parse publisher list" />
+<meta property="og:description" content="When the returned content by the SHERPA/RoMEO API is a list of publishers
+this function parses the list and returns a structured data.frame with
+the default policies of the different publisher." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -109,7 +111,9 @@
 
     <div class="ref-description">
     
-    <p>Parse publisher list</p>
+    <p>When the returned content by the SHERPA/RoMEO API is a list of publishers
+this function parses the list and returns a structured data.frame with
+the default policies of the different publisher.</p>
     
     </div>
 
@@ -120,9 +124,27 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>api_answer</th>
-      <td><p>parsed xml API answer</p></td>
+      <td><p>xml API answer</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a data frame with the following columns:</p><ul>
+<li><p><code>romeoid</code>     <code>[integer(1)]</code> the internal index of the publisher in
+the SHERPA/RoMEO database</p></li>
+<li><p><code>publisher</code>   <code>[character(1)]</code> the name of the publisher</p></li>
+<li><p><code>alias</code>       <code>[character(1)]</code> if applicable an alternative name of the
+publisher or the name of the specific publishing branch</p></li>
+<li><p><code>romeocolour</code> <code>[character(1)]</code> a colour assigned by the database that
+reflects the default policies of the publisher</p></li>
+<li><p><code>preprint</code>    <code>[character(1)]</code> is the preprint (not reviewed) archivable?</p></li>
+<li><p><code>postprint</code>   <code>[character(1)]</code> is the postprint (reviewed but not
+typesetted) archivable?</p></li>
+<li><p><code>pdf</code>         <code>[character(1)]</code> is the publisher's version (reviewed and
+typesetted) archivable?</p></li>
+</ul>
+
     
 
   </div>
@@ -130,7 +152,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

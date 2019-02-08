@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get record from Publication ID — rr_publisher • rromeo</title>
+<title>Get Publisher Information from Publisher ID — rr_publisher • rromeo</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,10 @@
 
 
 
-<meta property="og:title" content="Get record from Publication ID — rr_publisher" />
+<meta property="og:title" content="Get Publisher Information from Publisher ID — rr_publisher" />
 
-<meta property="og:description" content="Use SHERPA/RoMEO regular API to retrieve a specific publication number status" />
+<meta property="og:description" content="Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
+archivals" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -102,14 +103,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get record from Publication ID</h1>
+    <h1>Get Publisher Information from Publisher ID</h1>
     <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/rromeo_functions.R'><code>R/rromeo_functions.R</code></a></small>
     <div class="hidden name"><code>rr_publisher.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Use SHERPA/RoMEO regular API to retrieve a specific publication number status</p>
+    <p>Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
+archivals</p>
     
     </div>
 
@@ -120,13 +122,31 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>given_id</th>
-      <td><p>publication number</p></td>
+      <td><p><code>[integer(1)]</code> SHERPA/RoMEO publisher's ID</p></td>
     </tr>
     <tr>
       <th>key</th>
       <td><p>a character string or <code>NULL</code></p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a data frame with the following columns:</p><ul>
+<li><p><code>romeoid</code>     <code>[integer(1)]</code> the internal index of the publisher in
+the SHERPA/RoMEO database</p></li>
+<li><p><code>publisher</code>   <code>[character(1)]</code> the name of the publisher</p></li>
+<li><p><code>alias</code>       <code>[character(1)]</code> if applicable an alternative name of the
+publisher or the name of the specific publishing branch</p></li>
+<li><p><code>romeocolour</code> <code>[character(1)]</code> a colour assigned by the database that
+reflects the default policies of the publisher</p></li>
+<li><p><code>preprint</code>    <code>[character(1)]</code> is the preprint (not reviewed) archivable?</p></li>
+<li><p><code>postprint</code>   <code>[character(1)]</code> is the postprint (reviewed but not
+typesetted) archivable?</p></li>
+<li><p><code>pdf</code>         <code>[character(1)]</code> is the publisher's version (reviewed and
+typesetted) archivable?</p></li>
+</ul>
+
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -137,7 +157,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#value">Value</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
