@@ -2,13 +2,13 @@
 % Please edit documentation in R/rromeo_functions.R
 \name{rr_journal_name}
 \alias{rr_journal_name}
-\title{Journal data by title}
+\title{Retrieve journal(s) policy(ies) by matching title}
 \usage{
 rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
   "starts with"), key = NULL)
 }
 \arguments{
-\item{name}{A character string, containing the (possibly) partial name of the
+\item{name}{\code{[character(1)]} containing the (possibly) partial name of the
 journal}
 
 \item{multiple}{If multiple results match your query, should the function
@@ -16,13 +16,37 @@ recursively fetch data for each of one of them (\code{multiple = TRUE}) or
 return a data.frame containing only titles and ISSN of all matches
 (\code{multiple = FALSE})}
 
-\item{qtype}{A character string saying whether you are looking for \code{exact},
-\code{contains} or \code{starts with} matches}
+\item{qtype}{\code{[character(1)]} in \code{c("exact", "contains", "starts with")} to
+set match type for the \code{name} search string}
 
 \item{key}{a character string or \code{NULL}}
 }
+\value{
+Returns a data frame if multiple journals are found and
+\code{multiple = FALSE}:
+\itemize{
+\item \code{title}        \code{[character(1)]} the name of the journal
+\item \code{issn}         \code{[character(1)]} the ISSN of the journal
+if a single journal is found or if \code{multiple = TRUE} returns a larger
+data frame:
+\item \code{title}        \code{[character(1)]} the name of the journal
+\item \code{issn}         \code{[character(1)]} the ISSN of the journal
+\item \code{romeocolour}  \code{[character(1)]} the SHERPA/RoMEO colour of the journal
+\item \code{preprint}     \code{[character(1)]} is the preprint (not reviewed) archivable?
+\item \code{postprint}    \code{[character(1)]} is the postprint (reviewed but not
+typesetted) archivable?
+\item \code{pdf}          \code{[character(1)]} is the publisher's version
+(reviewed and typesetted)
+\item \code{pre_embargo}  \code{[character(1)]} if applicable the embargo period before
+the author(s) can archive the pre-print
+\item \code{post_embargo} \code{[character(1)]} if applicable the embargo period before
+the author(s) can archive the post-print
+\item \code{pdf_embargo}  \code{[character(1)]} if applicable the embargo period before
+the author(s) can archive the publisher's version
+}
+}
 \description{
-Journal data by title
+Retrieve journal(s) policy(ies) by matching title
 }
 \examples{
 rr_journal_name("Journal of Geology")

@@ -8,9 +8,11 @@ rr_base_api = function() {
   paste0(rr_base_url(), "romeo/api29.php")
 }
 
-#' Get SHERPA/RoMEO API version
+#' Return SHERPA/RoMEO API version
 #'
-#' @import httr
+#' This function queries SHERPA/RoMEO and returns the version of the API.
+#' @importFrom httr GET content
+#' @importFrom xml2 xml_attr
 #' @export
 #'
 #' @examples
@@ -18,5 +20,5 @@ rr_base_api = function() {
 rr_api_version = function() {
   rr_query = content(GET(rr_base_api()))
 
-  xml2::xml_attr(rr_query, "version")
+  xml_attr(rr_query, "version")
 }

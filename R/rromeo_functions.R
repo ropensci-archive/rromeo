@@ -1,9 +1,26 @@
-#' Get record from Publication ID
+#' Get Publisher Information from Publisher ID
 #'
-#' Use SHERPA/RoMEO regular API to retrieve a specific publication number status
-#' @param given_id publication number
+#' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
+#' archivals
+#'
+#' @param given_id  `[integer(1)]` SHERPA/RoMEO publisher's ID
 #' @inheritParams check_key
 #'
+#' @return Returns a data frame with the following columns:
+#' * `romeoid`     `[integer(1)]` the internal index of the publisher in
+#'                 the SHERPA/RoMEO database
+#' * `publisher`   `[character(1)]` the name of the publisher
+#' * `alias`       `[character(1)]` if applicable an alternative name of the
+#'                 publisher or the name of the specific publishing branch
+#' * `romeocolour` `[character(1)]` a colour assigned by the database that
+#'                 reflects the default policies of the publisher
+#' * `preprint`    `[character(1)]` is the preprint (not reviewed) archivable?
+#' * `postprint`   `[character(1)]` is the postprint (reviewed but not
+#'                 typesetted) archivable?
+#' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
+#'                 typesetted) archivable?
+#'
+#' @importFrom httr GET
 #' @export
 #' @examples
 #' rr_publisher(55)
@@ -22,11 +39,15 @@ rr_publisher = function(given_id, key = NULL) {
   parse_publisher(api_answer)
 }
 
-#' Journal data by ISSN
+#' Retrieve journal policy using ISSN
+#'
+#' Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
+#' the journal
 #'
 #' @param issn A single journal ISSN
 #' @inheritParams check_key
 #'
+#' @importFrom httr GET
 #' @export
 #'
 #' @examples
@@ -45,15 +66,38 @@ rr_journal_issn = function(issn, key = NULL) {
   parse_answer(api_answer, multiple = FALSE, key = api_key)
 }
 
-#' Journal data by title
+#' Retrieve journal(s) policy(ies) by matching title
+#
 #'
-#' @param name A character string, containing the (possibly) partial name of the
+#' @param name `[character(1)]` containing the (possibly) partial name of the
 #' journal
-#' @param qtype A character string saying whether you are looking for `exact`,
-#' `contains` or `starts with` matches
+#' @param qtype `[character(1)]` in `c("exact", "contains", "starts with")` to
+#'              set match type for the `name` search string
 #' @inheritParams parse_answer
 #' @inheritParams check_key
 #'
+#' @return Returns a data frame if multiple journals are found and
+#'         `multiple = FALSE`:
+#' * `title`        `[character(1)]` the name of the journal
+#' * `issn`         `[character(1)]` the ISSN of the journal
+#' if a single journal is found or if `multiple = TRUE` returns a larger
+#' data frame:
+#' * `title`        `[character(1)]` the name of the journal
+#' * `issn`         `[character(1)]` the ISSN of the journal
+#' * `romeocolour`  `[character(1)]` the SHERPA/RoMEO colour of the journal
+#' * `preprint`     `[character(1)]` is the preprint (not reviewed) archivable?
+#' * `postprint`    `[character(1)]` is the postprint (reviewed but not
+#'                   typesetted) archivable?
+#' * `pdf`          `[character(1)]` is the publisher's version
+#'                  (reviewed and typesetted)
+#' * `pre_embargo`  `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the pre-print
+#' * `post_embargo` `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the post-print
+#' * `pdf_embargo`  `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the publisher's version
+#'
+#' @importFrom httr GET
 #' @export
 #'
 #' @examples
@@ -76,14 +120,47 @@ rr_journal_name = function(name, multiple = FALSE,
 
 #' Query publisher by RoMEO colour
 #'
-#' @param romeo_colour indicates the SHERPA/RoMEO classification of a publisher
-#'     see <http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour>
+#' SHERPA/RoMEO classifies publisher in different colours depending on their
+#' archiving policies.
+#' * **green** publishers let authors archive pre-print and post-print or`
+#' ` publisher's version/PDF,
+#' * **blue** publishers let authors archive post-print or publisher's
+#'   version/PDF,
+#' * **yellow** publishers let authors archive pre-print,
+#' * **white** publishers do not formally support archival.
+#'
+#' For more details about the definitions of RoMEO colours check the
+#' [FAQ section](http://sherpa.ac.uk/romeo/definitions.php#colours) of
+#' SHERPA/RoMEO
+#'
+#' Note that when using `rr_romeo_colour()` the API returns **all** the
+#' publishers in the selected category, so the results are generally bigger in
+#' size than specific functions like [`rr_journal_name()`] or [`rr_publisher()`]
+#'
+#' @param romeo_colour `[character(1)]` in
+#'                      `c("green", "blue", "yellow", "white")`
+#'                      the SHERPA/RoMEO colour to retrieve
 #' @inheritParams check_key
 #'
-#' @return a data frame containing publisher name and the different statuses
-#'         of preprint, postprint and publisher's pdf archival
+#' @return Returns a data frame with the following columns:
+#' * `romeoid`     `[integer(1)]` the internal index of the publisher in
+#'                 the SHERPA/RoMEO database
+#' * `publisher`   `[character(1)]` the name of the publisher
+#' * `alias`       `[character(1)]` if applicable an alternative name of the
+#'                 publisher or the name of the specific publishing branch
+#' * `romeocolour` `[character(1)]` a colour assigned by the database that
+#'                 reflects the default policies of the publisher
+#' * `preprint`    `[character(1)]` is the preprint (not reviewed) archivable?
+#' * `postprint`   `[character(1)]` is the postprint (reviewed but not
+#'                 typesetted) archivable?
+#' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
+#'                 typesetted) archivable?
 #'
+#' @importFrom httr GET
 #' @export
+#'
+#' @examples
+#' rr_romeo_colour("green")
 rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
                            key = NULL) {
 

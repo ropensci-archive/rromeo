@@ -300,7 +300,7 @@ check_key = function(key) {
 #'
 #' @keywords internal
 #'
-#' @importFrom xml2 xml_text xml_find_first
+#' @importFrom xml2 xml_text xml_find_first read_html
 parse_embargo = function(xml_source, type) {
 
   tag = paste0("//", type, "restriction")

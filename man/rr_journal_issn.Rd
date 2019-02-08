@@ -2,7 +2,7 @@
 % Please edit documentation in R/rromeo_functions.R
 \name{rr_journal_issn}
 \alias{rr_journal_issn}
-\title{Journal data by ISSN}
+\title{Retrieve journal policy using ISSN}
 \usage{
 rr_journal_issn(issn, key = NULL)
 }
@@ -12,7 +12,8 @@ rr_journal_issn(issn, key = NULL)
 \item{key}{a character string or \code{NULL}}
 }
 \description{
-Journal data by ISSN
+Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
+the journal
 }
 \examples{
 
