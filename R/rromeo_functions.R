@@ -30,7 +30,7 @@ rr_publisher = function(given_id, key = NULL) {
     as.integer(given_id)
   },
   warning = function(cond) {
-    stop("id needs to be an integer")
+    stop("id needs to be an integer", call. = FALSE)
   })
 
   api_answer = GET(rr_base_api(), query = list(id = given_id,
