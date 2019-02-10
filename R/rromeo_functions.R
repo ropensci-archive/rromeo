@@ -60,6 +60,8 @@ rr_journal_issn = function(issn, key = NULL) {
 #' rr_journal_name("Journal of Geology")
 #' rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
 #' rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
+#' # You can also query multiple journals with exact titles in a single call
+#' rr_journal_name(c("Journal of Biogeography", "PLoS ONE"), qtype = "exact")
 rr_journal_name = function(name, multiple = FALSE,
                            qtype = c("exact", "contains", "starts with"),
                            key = NULL) {
