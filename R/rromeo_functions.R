@@ -32,17 +32,31 @@ rr_publisher = function(given_id, key = NULL) {
 #' @examples
 #'
 #' rr_journal_issn("1947-6264")
+#' rr_journal_issn(c("1947-6264", "0030-1299"))
 rr_journal_issn = function(issn, key = NULL) {
 
-  validate_issn(issn)
+  sapply(issn, validate_issn)
 
   api_key = check_key(key)
 
 
-  api_answer = GET(rr_base_api(), query = list(issn = issn,
-                                               ak   = api_key))
+  answer_list = sapply(issn, function(journal_issn,
+                                      given_api_key = api_key) {
 
-  parse_answer(api_answer, multiple = FALSE, key = api_key)
+    api_answer = GET(rr_base_api(), query = list(issn = journal_issn,
+                                                 ak   = given_api_key))
+
+    parse_answer(api_answer, multiple = FALSE, key = api_key)
+  })
+
+  journals_df = do.call(rbind,
+                        apply(answer_list, 2, function(x) {
+                          as.data.frame(x, stringsAsFactors = FALSE)
+                        }))
+
+  row.names(journals_df) = NULL
+
+  return(journals_df)
 }
 
 #' Journal data by title
