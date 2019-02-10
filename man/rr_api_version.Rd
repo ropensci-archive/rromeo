@@ -2,12 +2,12 @@
 % Please edit documentation in R/rromeo_base.R
 \name{rr_api_version}
 \alias{rr_api_version}
-\title{Get SHERPA/RoMEO API version}
+\title{Return SHERPA/RoMEO API version}
 \usage{
 rr_api_version()
 }
 \description{
-Get SHERPA/RoMEO API version
+This function queries SHERPA/RoMEO and returns the version of the API.
 }
 \examples{
 rr_api_version()

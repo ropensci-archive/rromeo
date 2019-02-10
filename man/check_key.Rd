@@ -7,9 +7,22 @@
 check_key(key)
 }
 \arguments{
-\item{key}{a character string or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}}
+}
+\value{
+if found the character string of the key, \code{NULL} otherwise
 }
 \description{
-The key can be either specified in an \code{.Renviron} file using
-\code{SHERPAROMEO_KEY=my_key} or by passing it when calling the function.
+The key can be either specified in various ways see the Details section.
+}
+\details{
+To provide your API key to \code{rromeo} you can 1) provide it as a
+character string as the \code{key} arguments of \code{rromeo} functions
+as \code{rr_*(..., key = "my_key_as_a_string")} (\strong{NOT RECOMMENDED})
+2) you can define the variable \code{SHERPAROMEO_KEY} in an \code{.Renviron}
+file in your working directory, the file should contain the
+following line \code{SHERPAROMEO_KEY=my_key_without_quotes}
+3) you can also define the variable \code{SHERPAROMEO_KEY} in an
+\code{.Rprofile} file in your working directory, the file should contain
+the following line \code{SHERPAROMEO_KEY="my_key_with_quotes"}.
 }

@@ -2,17 +2,35 @@
 % Please edit documentation in R/rromeo_functions.R
 \name{rr_publisher}
 \alias{rr_publisher}
-\title{Get record from Publication ID}
+\title{Get Publisher Information from Publisher ID}
 \usage{
 rr_publisher(given_id, key = NULL)
 }
 \arguments{
-\item{given_id}{publication number}
+\item{given_id}{\code{[integer(1)]} SHERPA/RoMEO publisher's ID}
 
-\item{key}{a character string or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}}
+}
+\value{
+Returns a data frame with the following columns:
+\itemize{
+\item \code{romeoid}     \code{[integer(1)]} the internal index of the publisher in
+the SHERPA/RoMEO database
+\item \code{publisher}   \code{[character(1)]} the name of the publisher
+\item \code{alias}       \code{[character(1)]} if applicable an alternative name of the
+publisher or the name of the specific publishing branch
+\item \code{romeocolour} \code{[character(1)]} a colour assigned by the database that
+reflects the default policies of the publisher
+\item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
+\item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
+typesetted) archivable?
+\item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
+typesetted) archivable?
+}
 }
 \description{
-Use SHERPA/RoMEO regular API to retrieve a specific publication number status
+Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
+archivals
 }
 \examples{
 rr_publisher(55)

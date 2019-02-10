@@ -1,0 +1,27 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?id=55
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 500
+      category: Server error
+      reason: Internal Server Error
+      message: 'Server error: (500) Internal Server Error'
+    headers:
+      date: Mon, 28 Jan 2019 15:50:24 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      content-length: '0'
+      connection: close
+      Content-Type: text/html
+    body:
+      encoding: ISO-8859-1
+      string: ''
+  recorded_at: 2019-01-28 15:50:59 GMT
+  recorded_with: vcr/0.2.2, webmockr/0.3.0

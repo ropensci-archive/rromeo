@@ -71,4 +71,10 @@ test_that("rr_journal_name() works", {
       rr_journal_name("Ecology", qtype = "contains"),
       "Your request exceeded SHERPA/RoMEO API's cap of 50 results.")
   })
+
+  use_cassette("api_unreachable", {
+    expect_error(rr_journal_name("Journal", qtype = "contains"),
+                 paste0("The API endpoint could not be reached. Please try",
+                        " again later."))
+  })
 })

@@ -13,9 +13,10 @@ parse_embargo(xml_source, type)
 \code{"pdf"}}
 }
 \value{
-the embargo period as a string
+the embargo period as a string like \code{"12 months"}
 }
 \description{
 This function provides an easy way to return the embargo period in the
 different categories
 }
+\keyword{internal}

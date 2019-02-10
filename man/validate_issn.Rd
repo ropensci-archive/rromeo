@@ -10,8 +10,12 @@ validate_issn(issn)
 \item{issn}{The ISSN of a journal}
 }
 \value{
-\code{NULL} if the ISSN is valid, errors otherwise.
+\code{NULL} if the ISSN is valid, errors otherwise
 }
 \description{
-Checks validity of the ISSN
+International Standard Serial Numbers (ISSNs) have a specific structure and
+this function checks that the provided ISSN is valid. For more information
+please go to
+\url{https://en.wikipedia.org/wiki/International_Standard_Serial_Number}
 }
+\keyword{internal}

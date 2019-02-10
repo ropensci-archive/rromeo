@@ -8,15 +8,51 @@ rr_romeo_colour(romeo_colour = c("green", "blue", "yellow", "white"),
   key = NULL)
 }
 \arguments{
-\item{romeo_colour}{indicates the SHERPA/RoMEO classification of a publisher
-see <http://www.sherpa.ac.uk/romeo/definitions.php?la=en&fIDnum=|&mode=simple&version= for definitions of colour>}
+\item{romeo_colour}{\code{[character(1)]} in
+\code{c("green", "blue", "yellow", "white")}
+the SHERPA/RoMEO colour to retrieve}
 
-\item{key}{a character string or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}}
 }
 \value{
-a data frame containing publisher name and the different statuses
-of preprint, postprint and publisher's pdf archival
+Returns a data frame with the following columns:
+\itemize{
+\item \code{romeoid}     \code{[integer(1)]} the internal index of the publisher in
+the SHERPA/RoMEO database
+\item \code{publisher}   \code{[character(1)]} the name of the publisher
+\item \code{alias}       \code{[character(1)]} if applicable an alternative name of the
+publisher or the name of the specific publishing branch
+\item \code{romeocolour} \code{[character(1)]} a colour assigned by the database that
+reflects the default policies of the publisher
+\item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
+\item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
+typesetted) archivable?
+\item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
+typesetted) archivable?
+}
 }
 \description{
-Query publisher by RoMEO colour
+SHERPA/RoMEO classifies publisher in different colours depending on their
+archiving policies.
+\itemize{
+\item \strong{green} publishers let authors archive pre-print and post-print or\code{} publisher's version/PDF,
+\item \strong{blue} publishers let authors archive post-print or publisher's
+version/PDF,
+\item \strong{yellow} publishers let authors archive pre-print,
+\item \strong{white} publishers do not formally support archival.
+}
+}
+\details{
+For more details about the definitions of RoMEO colours check the
+\href{http://sherpa.ac.uk/romeo/definitions.php#colours}{FAQ section} of
+SHERPA/RoMEO
+
+Note that when using \code{rr_romeo_colour()} the API returns \strong{all} the
+publishers in the selected category, so the results are generally bigger in
+size than specific functions like \code{\link[=rr_journal_name]{rr_journal_name()}} or \code{\link[=rr_publisher]{rr_publisher()}}
+}
+\examples{
+\dontrun{
+rr_romeo_colour("green")
+}
 }
