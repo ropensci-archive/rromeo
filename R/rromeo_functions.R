@@ -7,19 +7,36 @@
 #' @export
 #' @examples
 #' rr_publisher(55)
+#' rr_publisher(c(55, 735))
 rr_publisher = function(given_id, key = NULL) {
 
-  given_id = tryCatch({
-    as.integer(given_id)
-  },
-  warning = function(cond) {
-    stop("id needs to be an integer")
+  given_id = sapply(given_id, function(x) {
+    tryCatch({
+      as.integer(x)
+    },
+    warning = function(cond) {
+      stop("id needs to be an integer")
+    })
   })
 
-  api_answer = GET(rr_base_api(), query = list(id = given_id,
-                                               ak = check_key(key)))
+  api_key = check_key(key)
 
-  parse_publisher(api_answer)
+  answer_list = sapply(given_id, function(publisher_id,
+                                          given_api_key = api_key) {
+    api_answer = GET(rr_base_api(), query = list(id = publisher_id,
+                                                 ak = given_api_key))
+
+    parse_publisher(api_answer)
+  })
+
+  publishers_df = do.call(rbind,
+                        apply(answer_list, 2, function(x) {
+                          as.data.frame(x, stringsAsFactors = FALSE)
+                        }))
+
+  row.names(publishers_df) = NULL
+
+  return(publishers_df)
 }
 
 #' Journal data by ISSN
