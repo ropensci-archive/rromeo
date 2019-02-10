@@ -8,18 +8,22 @@ http_interactions:
     headers:
       Accept: application/json, text/xml, application/xml, */*
   response:
-    status: 200
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
     headers:
-      date: Wed, 06 Feb 2019 22:59:51 GMT
+      date: Sun, 10 Feb 2019 09:02:33 GMT
       server: Apache/2.4.7 (Ubuntu)
       x-powered-by: PHP/5.5.9-1ubuntu4.26
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1657'
+      content-length: '1656'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -54,7 +58,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>06-Feb-2019:22:59:51</timestamp>
+            <timestamp>10-Feb-2019:09:02:33</timestamp>
           </header>
           <journals>
             <journal>
@@ -121,8 +125,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-06 23:00:05 GMT
-  recorded_with: vcr/0.2.2.9311, webmockr/0.3.1.9111
+  recorded_at: 2019-02-10 09:02:34 GMT
+  recorded_with: vcr/0.2.4.9211, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=PLOS%20one&qtype=exact
@@ -138,16 +142,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Wed, 06 Feb 2019 23:00:05 GMT
+      date: Sun, 10 Feb 2019 09:02:34 GMT
       server: Apache/2.4.7 (Ubuntu)
       x-powered-by: PHP/5.5.9-1ubuntu4.26
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1349'
+      content-length: '1348'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -182,7 +186,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>06-Feb-2019:23:00:05</timestamp>
+            <timestamp>10-Feb-2019:09:02:34</timestamp>
           </header>
           <journals>
             <journal>
@@ -241,5 +245,5 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-06 23:00:05 GMT
-  recorded_with: vcr/0.2.2.9311, webmockr/0.3.1.9111
+  recorded_at: 2019-02-10 09:02:34 GMT
+  recorded_with: vcr/0.2.4.9211, webmockr/0.3.4.9100
