@@ -83,7 +83,7 @@ rr_publisher = function(romeo_id, key = NULL) {
 #' rr_journal_issn(issn = c("1947-6264", "0030-1299"))
 rr_journal_issn = function(issn, key = NULL) {
 
-  vapply(issn, validate_issn, c(TRUE))
+  vapply(issn, validate_issn, logical(1))
 
   api_key = check_key(key)
 
