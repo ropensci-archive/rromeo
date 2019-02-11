@@ -28,12 +28,9 @@
 #' rr_publisher(romeo_id = c(55, 735))
 rr_publisher = function(romeo_id, key = NULL) {
 
-  romeo_id = tryCatch({
-    as.integer(romeo_id)
-  },
-  warning = function(cond) {
-    stop("id needs to be an integer", call. = FALSE)
-  })
+  if (any(!grepl("^[[:digit:]]+$", romeo_id))) {
+    stop("All provided IDs should be integers")
+  }
 
   api_key = check_key(key)
 
