@@ -76,6 +76,12 @@ rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
 
 or you can specify the environment variable `SHERPAROMEO_KEY` in an `.Rprofile` or in an `.Renviron` file and `rromeo` will automatically retrieve the API key.
 
+## Dependency netwrok
+```{r dependency_network, echo=FALSE, message=FALSE, warning=FALSE}
+source("https://gist.githubusercontent.com/Rekyt/261c2c3040715dcd8c211d7f5d18c9c8/raw/46980bd7a00b89f291af57a90a579b521bb6a87e/plot_dependencies.R")
+plot_dependencies()
+```
+
 ## Code of Conduct
 
 Please note that the 'rromeo' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
