@@ -21,6 +21,8 @@
 #' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
 #'                 typesetted) archivable?
 #'
+#' @inherit check_key details
+#'
 #' @importFrom httr GET
 #' @export
 #' @examples
@@ -54,6 +56,24 @@ rr_publisher = function(romeo_id, key = NULL) {
 #'
 #' @param issn `[character(1+)]` one or a vector of journal(s) ISSN(s)
 #' @inheritParams check_key
+#'
+#' @return Returns a data frame as follow:
+#' * `title`        `[character(1)]` the name of the journal
+#' * `issn`         `[character(1)]` the ISSN of the journal
+#' * `romeocolour`  `[character(1)]` the SHERPA/RoMEO colour of the journal
+#' * `preprint`     `[character(1)]` is the preprint (not reviewed) archivable?
+#' * `postprint`    `[character(1)]` is the postprint (reviewed but not
+#'                   typesetted) archivable?
+#' * `pdf`          `[character(1)]` is the publisher's version
+#'                  (reviewed and typesetted)
+#' * `pre_embargo`  `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the pre-print
+#' * `post_embargo` `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the post-print
+#' * `pdf_embargo`  `[character(1)]` if applicable the embargo period before
+#'                  the author(s) can archive the publisher's version
+#'
+#' @inherit check_key details
 #'
 #' @importFrom httr GET
 #' @export
@@ -111,6 +131,8 @@ rr_journal_issn = function(issn, key = NULL) {
 #'                  the author(s) can archive the post-print
 #' * `pdf_embargo`  `[character(1)]` if applicable the embargo period before
 #'                  the author(s) can archive the publisher's version
+#'
+#' @inherit check_key details
 #'
 #' @importFrom httr GET
 #' @export
@@ -184,6 +206,8 @@ rr_journal_name = function(name, multiple = FALSE,
 #'                 typesetted) archivable?
 #' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
 #'                 typesetted) archivable?
+#'
+#' @inherit check_key details
 #'
 #' @importFrom httr GET
 #' @export

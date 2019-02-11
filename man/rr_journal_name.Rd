@@ -19,7 +19,8 @@ return a data.frame containing only titles and ISSN of all matches
 \item{qtype}{\code{[character(1)]} in \code{c("exact", "contains", "starts with")} to
 set match type for the \code{name} search string}
 
-\item{key}{a character string containing the API key or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}
+(see Details section on how to specify it)}
 }
 \value{
 Returns a data frame if multiple journals are found and
@@ -47,6 +48,17 @@ the author(s) can archive the publisher's version
 }
 \description{
 Retrieve journal(s) policy(ies) by matching title
+}
+\details{
+To provide your API key to \code{rromeo} you can 1) provide it as a
+character string as the \code{key} arguments of \code{rromeo} functions
+as \code{rr_*(..., key = "my_key_as_a_string")} (\strong{NOT RECOMMENDED})
+2) you can define the variable \code{SHERPAROMEO_KEY} in an \code{.Renviron}
+file in your working directory, the file should contain the
+following line \code{SHERPAROMEO_KEY=my_key_without_quotes}
+3) you can also define the variable \code{SHERPAROMEO_KEY} in an
+\code{.Rprofile} file in your working directory, the file should contain
+the following line \code{SHERPAROMEO_KEY="my_key_with_quotes"}.
 }
 \examples{
 rr_journal_name(name = "Journal of Geology")

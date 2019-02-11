@@ -9,11 +9,42 @@ rr_journal_issn(issn, key = NULL)
 \arguments{
 \item{issn}{\code{[character(1+)]} one or a vector of journal(s) ISSN(s)}
 
-\item{key}{a character string containing the API key or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}
+(see Details section on how to specify it)}
+}
+\value{
+Returns a data frame as follow:
+\itemize{
+\item \code{title}        \code{[character(1)]} the name of the journal
+\item \code{issn}         \code{[character(1)]} the ISSN of the journal
+\item \code{romeocolour}  \code{[character(1)]} the SHERPA/RoMEO colour of the journal
+\item \code{preprint}     \code{[character(1)]} is the preprint (not reviewed) archivable?
+\item \code{postprint}    \code{[character(1)]} is the postprint (reviewed but not
+typesetted) archivable?
+\item \code{pdf}          \code{[character(1)]} is the publisher's version
+(reviewed and typesetted)
+\item \code{pre_embargo}  \code{[character(1)]} if applicable the embargo period before
+the author(s) can archive the pre-print
+\item \code{post_embargo} \code{[character(1)]} if applicable the embargo period before
+the author(s) can archive the post-print
+\item \code{pdf_embargo}  \code{[character(1)]} if applicable the embargo period before
+the author(s) can archive the publisher's version
+}
 }
 \description{
 Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
 the journal
+}
+\details{
+To provide your API key to \code{rromeo} you can 1) provide it as a
+character string as the \code{key} arguments of \code{rromeo} functions
+as \code{rr_*(..., key = "my_key_as_a_string")} (\strong{NOT RECOMMENDED})
+2) you can define the variable \code{SHERPAROMEO_KEY} in an \code{.Renviron}
+file in your working directory, the file should contain the
+following line \code{SHERPAROMEO_KEY=my_key_without_quotes}
+3) you can also define the variable \code{SHERPAROMEO_KEY} in an
+\code{.Rprofile} file in your working directory, the file should contain
+the following line \code{SHERPAROMEO_KEY="my_key_with_quotes"}.
 }
 \examples{
 rr_journal_issn(issn = "1947-6264")

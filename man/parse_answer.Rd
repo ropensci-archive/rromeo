@@ -14,7 +14,8 @@ recursively fetch data for each of one of them (\code{multiple = TRUE}) or
 return a data.frame containing only titles and ISSN of all matches
 (\code{multiple = FALSE})}
 
-\item{key}{a character string containing the API key or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}
+(see Details section on how to specify it)}
 }
 \value{
 Returns a data.frame with the following columns:

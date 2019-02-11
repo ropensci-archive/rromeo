@@ -12,7 +12,8 @@ rr_romeo_colour(romeo_colour = c("green", "blue", "yellow", "white"),
 \code{c("green", "blue", "yellow", "white")}
 the SHERPA/RoMEO colour to retrieve}
 
-\item{key}{a character string containing the API key or \code{NULL}}
+\item{key}{a character string containing the API key or \code{NULL}
+(see Details section on how to specify it)}
 }
 \value{
 Returns a data frame with the following columns:
