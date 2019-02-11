@@ -31,7 +31,7 @@
 rr_publisher = function(romeo_id, key = NULL) {
 
   if (any(!grepl("^[[:digit:]]+$", romeo_id))) {
-    stop("All provided IDs should be integers")
+    stop("All provided IDs should be integers", call. = FALSE)
   }
 
   api_key = check_key(key)
