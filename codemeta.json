@@ -9,7 +9,7 @@
   "name": "rromeo: An R Client for SHERPA/RoMEO API",
   "codeRepository": "https://github.com/Rekyt/rromeo",
   "issueTracker": "https://github.com/Rekyt/rromeo/issues",
-  "license": "https://spdx.org/licenses/GPL-2.0",
+  "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.1.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
@@ -182,7 +182,7 @@
     }
   ],
   "readme": "https://github.com/Rekyt/rromeo/blob/master/README.md",
-  "fileSize": "229.217KB",
+  "fileSize": "229.212KB",
   "contIntegration": [
     "https://travis-ci.org/Rekyt/rromeo",
     "https://codecov.io/gh/Rekyt/rromeo"

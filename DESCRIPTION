@@ -12,7 +12,7 @@ Description: Provides an R Client for SHERPA/RoMEO API
   <http://www.sherpa.ac.uk/romeo/apimanual.php> which indexes policies of
   journal regarding the archival of scientific manuscripts before and/or after
   peer-review as well as formatted manuscripts.
-License: GPL (>= 2)
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 

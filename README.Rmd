@@ -75,3 +75,7 @@ rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
 ```
 
 or you can specify the environment variable `SHERPAROMEO_KEY` in an `.Rprofile` or in an `.Renviron` file and `rromeo` will automatically retrieve the API key.
+
+## Code of Conduct
+
+Please note that the 'rromeo' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
