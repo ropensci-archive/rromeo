@@ -132,12 +132,12 @@ the journal</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>rr_journal_issn</span>(<span class='st'>"1947-6264"</span>)</div><div class='output co'>#&gt;                                                       title      issn
+    <pre class="examples"><div class='input'><span class='fu'>rr_journal_issn</span>(<span class='kw'>issn</span> <span class='kw'>=</span> <span class='st'>"1947-6264"</span>)</div><div class='output co'>#&gt;                                                       title      issn
 #&gt; 1 A Critical Introduction to Media and Communication Theory 1947-6264
 #&gt;   romeocolour preprint  postprint        pdf pre_embargo post_embargo
 #&gt; 1      yellow      can restricted restricted        &lt;NA&gt;    12 months
 #&gt;   pdf_embargo
-#&gt; 1   12 months</div><div class='input'><span class='fu'>rr_journal_issn</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"1947-6264"</span>, <span class='st'>"0030-1299"</span>))</div><div class='output co'>#&gt;                                                       title      issn
+#&gt; 1   12 months</div><div class='input'><span class='fu'>rr_journal_issn</span>(<span class='kw'>issn</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"1947-6264"</span>, <span class='st'>"0030-1299"</span>))</div><div class='output co'>#&gt;                                                       title      issn
 #&gt; 1 A Critical Introduction to Media and Communication Theory 1947-6264
 #&gt; 2                                                     Oikos 0030-1299
 #&gt;   romeocolour preprint  postprint        pdf pre_embargo post_embargo

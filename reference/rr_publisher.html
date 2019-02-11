@@ -115,13 +115,13 @@ archivals</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>rr_publisher</span>(<span class='no'>given_id</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>rr_publisher</span>(<span class='no'>romeo_id</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>given_id</th>
+      <th>romeo_id</th>
       <td><p><code>[integer(1+)]</code> one or a vector of SHERPA/RoMEO publisher's
 ID</p></td>
     </tr>
@@ -151,8 +151,8 @@ typesetted) archivable?</p></li>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>rr_publisher</span>(<span class='fl'>55</span>)</div><div class='output co'>#&gt;   romeoid               publisher alias romeocolour preprint  postprint     pdf
-#&gt; 1      55 Oxford University Press   OUP      yellow      can restricted unclear</div><div class='input'><span class='fu'>rr_publisher</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>55</span>, <span class='fl'>735</span>))</div><div class='output co'>#&gt;   romeoid               publisher alias romeocolour preprint  postprint     pdf
+    <pre class="examples"><div class='input'><span class='fu'>rr_publisher</span>(<span class='kw'>romeo_id</span> <span class='kw'>=</span> <span class='fl'>55</span>)</div><div class='output co'>#&gt;   romeoid               publisher alias romeocolour preprint  postprint     pdf
+#&gt; 1      55 Oxford University Press   OUP      yellow      can restricted unclear</div><div class='input'><span class='fu'>rr_publisher</span>(<span class='kw'>romeo_id</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>55</span>, <span class='fl'>735</span>))</div><div class='output co'>#&gt;   romeoid               publisher alias romeocolour preprint  postprint     pdf
 #&gt; 1      55 Oxford University Press   OUP      yellow      can restricted unclear
 #&gt; 2     735   AgroParisTech, ENGREF  &lt;NA&gt;       green      can        can  cannot</div></pre>
   </div>

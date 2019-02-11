@@ -169,18 +169,19 @@ the author(s) can archive the publisher's version</p></li>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>rr_journal_name</span>(<span class='st'>"Journal of Geology"</span>)</div><div class='output co'>#&gt;                title      issn romeocolour preprint postprint pdf pre_embargo
+    <pre class="examples"><div class='input'><span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Journal of Geology"</span>)</div><div class='output co'>#&gt;                title      issn romeocolour preprint postprint pdf pre_embargo
 #&gt; 1 Journal of Geology 0022-1376       green      can       can can        &lt;NA&gt;
 #&gt;   post_embargo pdf_embargo
-#&gt; 1         &lt;NA&gt;        &lt;NA&gt;</div><div class='input'><span class='fu'>rr_journal_name</span>(<span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 5 journals match your query terms.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Select one journal from the provided list or enable multiple = TRUE</span></div><div class='output co'>#&gt;                                     title      issn
+#&gt; 1         &lt;NA&gt;        &lt;NA&gt;</div><div class='input'><span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: 5 journals match your query terms.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Select one journal from the provided list or enable multiple = TRUE</span></div><div class='output co'>#&gt;                                     title      issn
 #&gt; 1                            Biogeography 1345-0662
 #&gt; 2               Frontiers of Biogeography 1948-6596
 #&gt; 3         Global Ecology and Biogeography 1466-822X
 #&gt; 4 Global Ecology and Biogeography Letters 0960-7447
 #&gt; 5                 Journal of Biogeography 0305-0270</div><span class='co'># NOT RUN {</span>
-<span class='fu'>rr_journal_name</span>(<span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)
+<span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)
 <span class='co'># You can also query multiple journals with exact titles in a single call</span>
-<span class='fu'>rr_journal_name</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Journal of Biogeography"</span>, <span class='st'>"PLoS ONE"</span>), <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"exact"</span>)
+<span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Journal of Biogeography"</span>, <span class='st'>"PLoS ONE"</span>),
+                <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"exact"</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
