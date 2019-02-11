@@ -36,7 +36,7 @@ rr_publisher = function(given_id, key = NULL) {
 
   api_key = check_key(key)
 
-  answer_list = sapply(given_id, function(publisher_id,
+  answer_list = lapply(given_id, function(publisher_id,
                                           given_api_key = api_key) {
     api_answer = GET(rr_base_api(), query = list(id = publisher_id,
                                                  ak = given_api_key))
@@ -44,12 +44,8 @@ rr_publisher = function(given_id, key = NULL) {
     parse_publisher(api_answer)
   })
 
-  publishers_df = do.call(rbind,
-                        apply(answer_list, 2, function(x) {
-                          as.data.frame(x, stringsAsFactors = FALSE)
-                        }))
-
-  row.names(publishers_df) = NULL
+  publishers_df = do.call(rbind.data.frame,
+                          c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -74,8 +70,7 @@ rr_journal_issn = function(issn, key = NULL) {
 
   api_key = check_key(key)
 
-
-  answer_list = sapply(issn, function(journal_issn,
+  answer_list = lapply(issn, function(journal_issn,
                                       given_api_key = api_key) {
 
     api_answer = GET(rr_base_api(), query = list(issn = journal_issn,
@@ -84,12 +79,8 @@ rr_journal_issn = function(issn, key = NULL) {
     parse_answer(api_answer, multiple = FALSE, key = api_key)
   })
 
-  journals_df = do.call(rbind,
-                        apply(answer_list, 2, function(x) {
-                          as.data.frame(x, stringsAsFactors = FALSE)
-                        }))
-
-  row.names(journals_df) = NULL
+  journals_df = do.call(rbind.data.frame,
+                        c(answer_list, stringsAsFactors = FALSE))
 
   return(journals_df)
 }
@@ -143,7 +134,7 @@ rr_journal_name = function(name, multiple = FALSE,
 
   api_key = check_key(key)
 
-  answer_list = sapply(name, function(journal_name, given_multiple = multiple,
+  answer_list = lapply(name, function(journal_name, given_multiple = multiple,
                                       given_qtype = qtype,
                                       given_api_key = api_key) {
 
@@ -154,12 +145,8 @@ rr_journal_name = function(name, multiple = FALSE,
     parse_answer(api_answer, multiple = given_multiple, key = given_api_key)
   })
 
-  journals_df = do.call(rbind,
-                        apply(answer_list, 2, function(x) {
-                          as.data.frame(x, stringsAsFactors = FALSE)
-                        }))
-
-  row.names(journals_df) = NULL
+  journals_df = do.call(rbind.data.frame,
+                        c(answer_list, stringsAsFactors = FALSE))
 
   return(journals_df)
 }
