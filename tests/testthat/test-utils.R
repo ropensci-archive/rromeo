@@ -6,8 +6,8 @@ test_that("Can validate ISSN properly", {
   invalid_issn = "1234-5678"
   not_issn     = "12345-678"
 
-  expect_null(validate_issn(valid_issn[1]))
-  expect_null(validate_issn(valid_issn[2]))
+  expect_true(validate_issn(valid_issn[1]))
+  expect_true(validate_issn(valid_issn[2]))
 
   expect_error(validate_issn(invalid_issn),
                regexp = "ISSN is invalid, please check the format",

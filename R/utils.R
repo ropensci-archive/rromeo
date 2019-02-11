@@ -263,7 +263,7 @@ validate_issn = function(issn) {
     stop("ISSN is invalid, please check the format")
   }
 
-  return(NULL)
+  return(TRUE)
 }
 
 #' Check SHERPA/RoMEO API key
