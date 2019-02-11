@@ -8,7 +8,8 @@ Authors@R: c(
   person("Hugo", "Gruson",
          role = "aut", comment = c(ORCID = "0000-0002-4094-1476"))
   )
-Description: Provides an R Client for SHERPA/RoMEO API.
+Description: Provides an R Client for SHERPA/RoMEO API 
+  <http://www.sherpa.ac.uk/romeo/apimanual.php>.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
