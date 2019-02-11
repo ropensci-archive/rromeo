@@ -37,10 +37,9 @@ rr_publisher = function(romeo_id, key = NULL) {
 
   api_key = check_key(key)
 
-  answer_list = lapply(romeo_id, function(publisher_id,
-                                          given_api_key = api_key) {
+  answer_list = lapply(romeo_id, function(publisher_id) {
     api_answer = GET(rr_base_api(), query = list(id = publisher_id,
-                                                 ak = given_api_key))
+                                                 ak = api_key))
 
     parse_publisher(api_answer)
   })
@@ -71,11 +70,10 @@ rr_journal_issn = function(issn, key = NULL) {
 
   api_key = check_key(key)
 
-  answer_list = lapply(issn, function(journal_issn,
-                                      given_api_key = api_key) {
+  answer_list = lapply(issn, function(journal_issn) {
 
     api_answer = GET(rr_base_api(), query = list(issn = journal_issn,
-                                                 ak   = given_api_key))
+                                                 ak   = api_key))
 
     parse_answer(api_answer, multiple = FALSE, key = api_key)
   })
@@ -137,15 +135,13 @@ rr_journal_name = function(name, multiple = FALSE,
 
   api_key = check_key(key)
 
-  answer_list = lapply(name, function(journal_name, given_multiple = multiple,
-                                      given_qtype = qtype,
-                                      given_api_key = api_key) {
+  answer_list = lapply(name, function(journal_name) {
 
     api_answer = GET(rr_base_api(), query = list(jtitle = journal_name,
-                                                 qtype = given_qtype,
-                                                 ak = given_api_key))
+                                                 qtype  = qtype,
+                                                 ak     = api_key))
 
-    parse_answer(api_answer, multiple = given_multiple, key = given_api_key)
+    parse_answer(api_answer, multiple = multiple, key = api_key)
   })
 
   journals_df = do.call(rbind.data.frame,
