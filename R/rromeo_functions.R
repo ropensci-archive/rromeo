@@ -193,19 +193,7 @@ rr_journal_name = function(name, multiple = FALSE,
 #'                      the SHERPA/RoMEO colour to retrieve
 #' @inheritParams check_key
 #'
-#' @return Returns a data frame with the following columns:
-#' * `romeoid`     `[integer(1)]` the internal index of the publisher in
-#'                 the SHERPA/RoMEO database
-#' * `publisher`   `[character(1)]` the name of the publisher
-#' * `alias`       `[character(1)]` if applicable an alternative name of the
-#'                 publisher or the name of the specific publishing branch
-#' * `romeocolour` `[character(1)]` a colour assigned by the database that
-#'                 reflects the default policies of the publisher
-#' * `preprint`    `[character(1)]` is the preprint (not reviewed) archivable?
-#' * `postprint`   `[character(1)]` is the postprint (reviewed but not
-#'                 typesetted) archivable?
-#' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
-#'                 typesetted) archivable?
+#' @inherit rr_publisher return
 #'
 #' @inherit check_key details
 #'
