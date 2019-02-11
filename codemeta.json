@@ -1,8 +1,11 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "rromeo",
-  "description": "Provides an R Client for SHERPA/RoMEO API which indexes policies of\n  journal regarding the archival of scientific manuscripts before and/or after\n  peer-review as well as formatted manuscripts.",
+  "description": "Provides an R Client for SHERPA/RoMEO API\n  <http://www.sherpa.ac.uk/romeo/apimanual.php> which indexes policies of\n  journal regarding the archival of scientific manuscripts before and/or after\n  peer-review as well as formatted manuscripts.",
   "name": "rromeo: An R Client for SHERPA/RoMEO API",
   "codeRepository": "https://github.com/Rekyt/rromeo",
   "issueTracker": "https://github.com/Rekyt/rromeo/issues",
@@ -27,7 +30,6 @@
       "@type": "Person",
       "givenName": "Hugo",
       "familyName": "Gruson",
-      "email": "hugo.gruson@protonmail.com",
       "@id": "https://orcid.org/0000-0002-4094-1476"
     }
   ],
@@ -180,7 +182,10 @@
     }
   ],
   "readme": "https://github.com/Rekyt/rromeo/blob/master/README.md",
-  "fileSize": "229.214KB",
-  "contIntegration": ["https://travis-ci.org/Rekyt/rromeo", "https://codecov.io/gh/Rekyt/rromeo"],
+  "fileSize": "229.217KB",
+  "contIntegration": [
+    "https://travis-ci.org/Rekyt/rromeo",
+    "https://codecov.io/gh/Rekyt/rromeo"
+  ],
   "developmentStatus": "https://www.repostatus.org/#active"
 }

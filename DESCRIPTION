@@ -5,10 +5,11 @@ Version: 0.1.0
 Authors@R: c(
   person("Matthias", "Grenié", email = "matthias.grenie@gmail.com",
          role = c("aut", "cre"), comment = c(ORCID = "0000-0002-4659-7522")),
-  person("Hugo", "Gruson", email = "hugo.gruson@protonmail.com",
+  person("Hugo", "Gruson",
          role = "aut", comment = c(ORCID = "0000-0002-4094-1476"))
   )
-Description: Provides an R Client for SHERPA/RoMEO API which indexes policies of
+Description: Provides an R Client for SHERPA/RoMEO API
+  <http://www.sherpa.ac.uk/romeo/apimanual.php> which indexes policies of
   journal regarding the archival of scientific manuscripts before and/or after
   peer-review as well as formatted manuscripts.
 License: GPL (>= 2)
