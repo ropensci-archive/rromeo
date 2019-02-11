@@ -121,8 +121,8 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>name</th>
-      <td><p><code>[character(1)]</code> containing the (possibly) partial name of the
-journal</p></td>
+      <td><p><code>[character(1+)]</code> one or several strings to match the titles of
+the journals</p></td>
     </tr>
     <tr>
       <th>multiple</th>
@@ -179,6 +179,8 @@ the author(s) can archive the publisher's version</p></li>
 #&gt; 4 Global Ecology and Biogeography Letters 0960-7447
 #&gt; 5                 Journal of Biogeography 0305-0270</div><span class='co'># NOT RUN {</span>
 <span class='fu'>rr_journal_name</span>(<span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)
+<span class='co'># You can also query multiple journals with exact titles in a single call</span>
+<span class='fu'>rr_journal_name</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Journal of Biogeography"</span>, <span class='st'>"PLoS ONE"</span>), <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"exact"</span>)
 <span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
