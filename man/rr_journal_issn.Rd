@@ -36,15 +36,17 @@ Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
 the journal
 }
 \details{
-To provide your API key to \code{rromeo} you can 1) provide it as a
-character string as the \code{key} arguments of \code{rromeo} functions
-as \code{rr_*(..., key = "my_key_as_a_string")} (\strong{NOT RECOMMENDED})
-2) you can define the variable \code{SHERPAROMEO_KEY} in an \code{.Renviron}
-file in your working directory, the file should contain the
-following line \code{SHERPAROMEO_KEY=my_key_without_quotes}
-3) you can also define the variable \code{SHERPAROMEO_KEY} in an
-\code{.Rprofile} file in your working directory, the file should contain
-the following line \code{SHERPAROMEO_KEY="my_key_with_quotes"}.
+To provide your API key to \code{rromeo} you can:
+\enumerate{
+\item provide it as a character string as the \code{key} arguments of \code{rromeo}
+functions as \code{rr_*(..., key = "my_key_as_a_string")} (\strong{NOT RECOMMENDED})
+\item you can define the variable \code{SHERPAROMEO_KEY} in an \code{.Renviron} file in
+your working directory, the file should contain the following line
+\code{SHERPAROMEO_KEY=my_key_without_quotes}
+\item you can also define the variable \code{SHERPAROMEO_KEY} in an \code{.Rprofile} file
+in your working directory, the file should contain the following line
+\code{SHERPAROMEO_KEY="my_key_with_quotes"}
+}
 }
 \examples{
 rr_journal_issn(issn = "1947-6264")
