@@ -49,11 +49,12 @@ the author(s) can archive the publisher's version
 Retrieve journal(s) policy(ies) by matching title
 }
 \examples{
-rr_journal_name("Journal of Geology")
-rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
+rr_journal_name(name = "Journal of Geology")
+rr_journal_name(name = "Biogeography", multiple = FALSE, qtype = "contains")
 \dontrun{
-rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
+rr_journal_name(name = "Biogeography", multiple = TRUE, qtype = "contains")
 # You can also query multiple journals with exact titles in a single call
-rr_journal_name(c("Journal of Biogeography", "PLoS ONE"), qtype = "exact")
+rr_journal_name(name = c("Journal of Biogeography", "PLoS ONE"),
+                qtype = "exact")
 }
 }

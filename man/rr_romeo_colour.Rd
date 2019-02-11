@@ -54,6 +54,6 @@ size than specific functions like \code{\link[=rr_journal_name]{rr_journal_name(
 }
 \examples{
 \dontrun{
-rr_romeo_colour("green")
+rr_romeo_colour(romeo_colour = "green")
 }
 }

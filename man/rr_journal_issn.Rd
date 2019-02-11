@@ -16,6 +16,6 @@ Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
 the journal
 }
 \examples{
-rr_journal_issn("1947-6264")
-rr_journal_issn(c("1947-6264", "0030-1299"))
+rr_journal_issn(issn = "1947-6264")
+rr_journal_issn(issn = c("1947-6264", "0030-1299"))
 }

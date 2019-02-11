@@ -3,7 +3,7 @@
 #' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 #' archivals
 #'
-#' @param given_id  `[integer(1+)]` one or a vector of SHERPA/RoMEO publisher's
+#' @param romeo_id  `[integer(1+)]` one or a vector of SHERPA/RoMEO publisher's
 #'                                  ID
 #' @inheritParams check_key
 #'
@@ -24,12 +24,12 @@
 #' @importFrom httr GET
 #' @export
 #' @examples
-#' rr_publisher(55)
-#' rr_publisher(c(55, 735))
-rr_publisher = function(given_id, key = NULL) {
+#' rr_publisher(romeo_id = 55)
+#' rr_publisher(romeo_id = c(55, 735))
+rr_publisher = function(romeo_id, key = NULL) {
 
-  given_id = tryCatch({
-    as.integer(given_id)
+  romeo_id = tryCatch({
+    as.integer(romeo_id)
   },
   warning = function(cond) {
     stop("id needs to be an integer", call. = FALSE)
@@ -37,7 +37,7 @@ rr_publisher = function(given_id, key = NULL) {
 
   api_key = check_key(key)
 
-  answer_list = lapply(given_id, function(publisher_id,
+  answer_list = lapply(romeo_id, function(publisher_id,
                                           given_api_key = api_key) {
     api_answer = GET(rr_base_api(), query = list(id = publisher_id,
                                                  ak = given_api_key))
@@ -63,8 +63,8 @@ rr_publisher = function(given_id, key = NULL) {
 #' @export
 #'
 #' @examples
-#' rr_journal_issn("1947-6264")
-#' rr_journal_issn(c("1947-6264", "0030-1299"))
+#' rr_journal_issn(issn = "1947-6264")
+#' rr_journal_issn(issn = c("1947-6264", "0030-1299"))
 rr_journal_issn = function(issn, key = NULL) {
 
   vapply(issn, validate_issn, c(TRUE))
@@ -121,12 +121,13 @@ rr_journal_issn = function(issn, key = NULL) {
 #' @export
 #'
 #' @examples
-#' rr_journal_name("Journal of Geology")
-#' rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
+#' rr_journal_name(name = "Journal of Geology")
+#' rr_journal_name(name = "Biogeography", multiple = FALSE, qtype = "contains")
 #' \dontrun{
-#' rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
+#' rr_journal_name(name = "Biogeography", multiple = TRUE, qtype = "contains")
 #' # You can also query multiple journals with exact titles in a single call
-#' rr_journal_name(c("Journal of Biogeography", "PLoS ONE"), qtype = "exact")
+#' rr_journal_name(name = c("Journal of Biogeography", "PLoS ONE"),
+#'                 qtype = "exact")
 #' }
 rr_journal_name = function(name, multiple = FALSE,
                            qtype = c("exact", "contains", "starts with"),
@@ -196,7 +197,7 @@ rr_journal_name = function(name, multiple = FALSE,
 #'
 #' @examples
 #' \dontrun{
-#' rr_romeo_colour("green")
+#' rr_romeo_colour(romeo_colour = "green")
 #' }
 rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
                            key = NULL) {

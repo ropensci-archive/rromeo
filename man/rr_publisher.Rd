@@ -4,10 +4,10 @@
 \alias{rr_publisher}
 \title{Get Publisher Information from Publisher ID}
 \usage{
-rr_publisher(given_id, key = NULL)
+rr_publisher(romeo_id, key = NULL)
 }
 \arguments{
-\item{given_id}{\code{[integer(1+)]} one or a vector of SHERPA/RoMEO publisher's
+\item{romeo_id}{\code{[integer(1+)]} one or a vector of SHERPA/RoMEO publisher's
 ID}
 
 \item{key}{a character string containing the API key or \code{NULL}}
@@ -34,6 +34,6 @@ Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 archivals
 }
 \examples{
-rr_publisher(55)
-rr_publisher(c(55, 735))
+rr_publisher(romeo_id = 55)
+rr_publisher(romeo_id = c(55, 735))
 }
