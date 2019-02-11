@@ -7,7 +7,8 @@
 rr_publisher(given_id, key = NULL)
 }
 \arguments{
-\item{given_id}{\code{[integer(1)]} SHERPA/RoMEO publisher's ID}
+\item{given_id}{\code{[integer(1+)]} one or a vector of SHERPA/RoMEO publisher's
+ID}
 
 \item{key}{a character string containing the API key or \code{NULL}}
 }
@@ -34,4 +35,5 @@ archivals
 }
 \examples{
 rr_publisher(55)
+rr_publisher(c(55, 735))
 }

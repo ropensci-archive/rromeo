@@ -3,7 +3,8 @@
 #' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 #' archivals
 #'
-#' @param given_id  `[integer(1)]` a vector of SHERPA/RoMEO publisher's ID
+#' @param given_id  `[integer(1+)]` one or a vector of SHERPA/RoMEO publisher's
+#'                                  ID
 #' @inheritParams check_key
 #'
 #' @return Returns a data frame with the following columns:
@@ -55,7 +56,7 @@ rr_publisher = function(given_id, key = NULL) {
 #' Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
 #' the journal
 #'
-#' @param issn One or a vector of journal(s) ISSN(s)
+#' @param issn `[character(1+)]` one or a vector of journal(s) ISSN(s)
 #' @inheritParams check_key
 #'
 #' @importFrom httr GET
@@ -66,7 +67,7 @@ rr_publisher = function(given_id, key = NULL) {
 #' rr_journal_issn(c("1947-6264", "0030-1299"))
 rr_journal_issn = function(issn, key = NULL) {
 
-  sapply(issn, validate_issn)
+  vapply(issn, validate_issn, logical(length(issn)))
 
   api_key = check_key(key)
 
@@ -88,8 +89,8 @@ rr_journal_issn = function(issn, key = NULL) {
 #' Retrieve journal(s) policy(ies) by matching title
 #
 #'
-#' @param name `[character(1)]` containing one or several strings to match the
-#'             titles of the journals
+#' @param name `[character(1+)]` one or several strings to match the titles of
+#'             the journals
 #' @param qtype `[character(1)]` in `c("exact", "contains", "starts with")` to
 #'              set match type for the `name` search string
 #' @inheritParams parse_answer
@@ -126,6 +127,7 @@ rr_journal_issn = function(issn, key = NULL) {
 #' rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
 #' # You can also query multiple journals with exact titles in a single call
 #' rr_journal_name(c("Journal of Biogeography", "PLoS ONE"), qtype = "exact")
+#' }
 rr_journal_name = function(name, multiple = FALSE,
                            qtype = c("exact", "contains", "starts with"),
                            key = NULL) {
