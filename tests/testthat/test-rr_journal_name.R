@@ -34,6 +34,32 @@ test_that("rr_journal_name() works", {
     expect_equal(res$title[[1]], "Biogeography")
   })
 
+
+  use_cassette("rr_journal_name_multiple_exact", {
+
+      res = rr_journal_name(c("Journal of Biogeography", "PLOS one"),
+                             qtype = "exact", key = NULL)
+
+    expect_is(res, "data.frame")
+
+    expect_equal(dim(res), c(2, 9))
+    expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
+                        "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
+
+    expect_is(res$title, "character")
+    expect_is(res$issn, "character")
+    expect_is(res$romeocolour, "character")
+    expect_is(res$preprint, "character")
+    expect_is(res$postprint, "character")
+    expect_is(res$pdf, "character")
+    expect_is(res$pre_embargo, "character")
+    expect_is(res$post_embargo, "character")
+    expect_is(res$pdf_embargo, "character")
+
+    expect_equal(res$issn[[1]], "0305-0270")
+    expect_equal(res$issn[[2]], "1932-6203")
+  }, record = "new_episodes")
+
   use_cassette("rr_journal_name_notfound", {
     expect_error(
       rr_journal_name("Journal of Blabla", qtype = "contains", key = ""),

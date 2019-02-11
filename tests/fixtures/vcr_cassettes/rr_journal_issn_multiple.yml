@@ -1,0 +1,230 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1947-6264
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sun, 10 Feb 2019 17:54:16 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1607'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1947-6264</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>10-Feb-2019:17:54:16</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>A Critical Introduction to Media and Communication Theory</jtitle>
+              <issn>1947-6264</issn>
+              <zetocpub>Peter Lang International Academic Publishers</zetocpub>
+              <romeopub>Peter Lang International Academic Publishers</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="1084">
+              <name>Peter Lang International Academic Publishers</name>
+              <alias />
+              <homeurl>http://www.peterlang.com/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>restricted</pdfarchiving>
+                <pdfrestrictions>
+                  <pdfrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</pdfrestriction>
+                </pdfrestrictions>
+              </pdfversion>
+              <conditions>
+                <condition>Author's pre-print on author's personal website, non-commercial institutional repository, non-commercial subject repository, non-commercial open access repository, pre-print server, arXiv, PubMed Central, Research Gate, Academia.edu or SSRN</condition>
+                <condition>Author's post-print on author's personal website, non-commercial institutional repository, non-commercial subject repository, non-commercial open access repository, pre-print server, arXiv or PubMed Central.</condition>
+                <condition>Publisher's version/PDF may be used on author's personal website,</condition>
+                <condition>Publisher's version/PDF may be used on author's personal website or non-commercial institutional repository only</condition>
+                <condition>Published version may only be shared with the statement: &quot;All rights reserved.&quot;</condition>
+                <condition>Only one book chapter or journal article may be shared.</condition>
+                <condition>Must link to publisher version with DOI and set statement</condition>
+                <condition>Publisher copyright and source must be acknowledged with citation</condition>
+                <condition>Exceptions to policy are possible to comply with funder's individual requirements, please contact publisher directly</condition>
+                <condition>Publisher last contacted on 08/03/2018</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>https://www.peterlang.com/page/Repository$0020Policy/repository-policy</paidaccessurl>
+                <paidaccessname>Paid Open Access</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>https://www.peterlang.com/page/Repository$0020Policy/repository-policy</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2011-10-26 16:07:53</dateadded>
+              <dateupdated>2018-03-13 11:29:11</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-10 17:54:16 GMT
+  recorded_with: vcr/0.2.4.9211, webmockr/0.3.4.9100
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0030-1299
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sun, 10 Feb 2019 17:54:16 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1402'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>0030-1299</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>10-Feb-2019:17:54:16</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Oikos</jtitle>
+              <issn>0030-1299</issn>
+              <zetocpub>Wiley: 12 months / Nordic Ecological Society</zetocpub>
+              <romeopub>Nordic Ecological Society</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="88">
+              <name>Nordic Ecological Society</name>
+              <alias />
+              <homeurl>http://www.oikos.ekol.lu.se/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On author's personal website, employer's website, employer's repository, or free public servers in the subject area</condition>
+                <condition>Pre-print must be accompanied by statement that submitted for publication in journal</condition>
+                <condition>Publisher copyright and source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://olabout.wiley.com/WileyCDA/Section/id-828081.html</paidaccessurl>
+                <paidaccessname>Wiley OnlineOpen</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.blackwellpublishing.com/pdf/ECO_ELF_7102011.pdf</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2004-04-17 00:00:00</dateadded>
+              <dateupdated>2016-10-27 10:10:09</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-10 17:54:16 GMT
+  recorded_with: vcr/0.2.4.9211, webmockr/0.3.4.9100

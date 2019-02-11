@@ -8,8 +8,8 @@ rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
   "starts with"), key = NULL)
 }
 \arguments{
-\item{name}{\code{[character(1)]} containing the (possibly) partial name of the
-journal}
+\item{name}{\code{[character(1+)]} one or several strings to match the titles of
+the journals}
 
 \item{multiple}{If multiple results match your query, should the function
 recursively fetch data for each of one of them (\code{multiple = TRUE}) or
@@ -53,5 +53,7 @@ rr_journal_name("Journal of Geology")
 rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
 \dontrun{
 rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
+# You can also query multiple journals with exact titles in a single call
+rr_journal_name(c("Journal of Biogeography", "PLoS ONE"), qtype = "exact")
 }
 }

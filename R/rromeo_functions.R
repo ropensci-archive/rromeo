@@ -3,7 +3,8 @@
 #' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 #' archivals
 #'
-#' @param given_id  `[integer(1)]` SHERPA/RoMEO publisher's ID
+#' @param given_id  `[integer(1+)]` one or a vector of SHERPA/RoMEO publisher's
+#'                                  ID
 #' @inheritParams check_key
 #'
 #' @return Returns a data frame with the following columns:
@@ -24,6 +25,7 @@
 #' @export
 #' @examples
 #' rr_publisher(55)
+#' rr_publisher(c(55, 735))
 rr_publisher = function(given_id, key = NULL) {
 
   given_id = tryCatch({
@@ -33,10 +35,20 @@ rr_publisher = function(given_id, key = NULL) {
     stop("id needs to be an integer", call. = FALSE)
   })
 
-  api_answer = GET(rr_base_api(), query = list(id = given_id,
-                                               ak = check_key(key)))
+  api_key = check_key(key)
 
-  parse_publisher(api_answer)
+  answer_list = lapply(given_id, function(publisher_id,
+                                          given_api_key = api_key) {
+    api_answer = GET(rr_base_api(), query = list(id = publisher_id,
+                                                 ak = given_api_key))
+
+    parse_publisher(api_answer)
+  })
+
+  publishers_df = do.call(rbind.data.frame,
+                          c(answer_list, stringsAsFactors = FALSE))
+
+  return(publishers_df)
 }
 
 #' Retrieve journal policy using ISSN
@@ -44,33 +56,41 @@ rr_publisher = function(given_id, key = NULL) {
 #' Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
 #' the journal
 #'
-#' @param issn A single journal ISSN
+#' @param issn `[character(1+)]` one or a vector of journal(s) ISSN(s)
 #' @inheritParams check_key
 #'
 #' @importFrom httr GET
 #' @export
 #'
 #' @examples
-#'
 #' rr_journal_issn("1947-6264")
+#' rr_journal_issn(c("1947-6264", "0030-1299"))
 rr_journal_issn = function(issn, key = NULL) {
 
-  validate_issn(issn)
+  vapply(issn, validate_issn, c(TRUE))
 
   api_key = check_key(key)
 
+  answer_list = lapply(issn, function(journal_issn,
+                                      given_api_key = api_key) {
 
-  api_answer = GET(rr_base_api(), query = list(issn = issn,
-                                               ak   = api_key))
+    api_answer = GET(rr_base_api(), query = list(issn = journal_issn,
+                                                 ak   = given_api_key))
 
-  parse_answer(api_answer, multiple = FALSE, key = api_key)
+    parse_answer(api_answer, multiple = FALSE, key = api_key)
+  })
+
+  journals_df = do.call(rbind.data.frame,
+                        c(answer_list, stringsAsFactors = FALSE))
+
+  return(journals_df)
 }
 
 #' Retrieve journal(s) policy(ies) by matching title
 #
 #'
-#' @param name `[character(1)]` containing the (possibly) partial name of the
-#' journal
+#' @param name `[character(1+)]` one or several strings to match the titles of
+#'             the journals
 #' @param qtype `[character(1)]` in `c("exact", "contains", "starts with")` to
 #'              set match type for the `name` search string
 #' @inheritParams parse_answer
@@ -105,6 +125,8 @@ rr_journal_issn = function(issn, key = NULL) {
 #' rr_journal_name("Biogeography", multiple = FALSE, qtype = "contains")
 #' \dontrun{
 #' rr_journal_name("Biogeography", multiple = TRUE, qtype = "contains")
+#' # You can also query multiple journals with exact titles in a single call
+#' rr_journal_name(c("Journal of Biogeography", "PLoS ONE"), qtype = "exact")
 #' }
 rr_journal_name = function(name, multiple = FALSE,
                            qtype = c("exact", "contains", "starts with"),
@@ -114,10 +136,21 @@ rr_journal_name = function(name, multiple = FALSE,
 
   api_key = check_key(key)
 
-  api_answer = GET(rr_base_api(), query = list(jtitle = name, qtype = qtype,
-                                               ak = api_key))
+  answer_list = lapply(name, function(journal_name, given_multiple = multiple,
+                                      given_qtype = qtype,
+                                      given_api_key = api_key) {
 
-  parse_answer(api_answer, multiple = multiple, key = api_key)
+    api_answer = GET(rr_base_api(), query = list(jtitle = journal_name,
+                                                 qtype = given_qtype,
+                                                 ak = given_api_key))
+
+    parse_answer(api_answer, multiple = given_multiple, key = given_api_key)
+  })
+
+  journals_df = do.call(rbind.data.frame,
+                        c(answer_list, stringsAsFactors = FALSE))
+
+  return(journals_df)
 }
 
 #' Query publisher by RoMEO colour

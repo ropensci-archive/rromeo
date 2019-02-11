@@ -7,7 +7,7 @@
 rr_journal_issn(issn, key = NULL)
 }
 \arguments{
-\item{issn}{A single journal ISSN}
+\item{issn}{\code{[character(1+)]} one or a vector of journal(s) ISSN(s)}
 
 \item{key}{a character string containing the API key or \code{NULL}}
 }
@@ -16,6 +16,6 @@ Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
 the journal
 }
 \examples{
-
 rr_journal_issn("1947-6264")
+rr_journal_issn(c("1947-6264", "0030-1299"))
 }

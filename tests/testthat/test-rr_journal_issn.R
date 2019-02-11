@@ -29,4 +29,27 @@ test_that("rr_journal_issn() works", {
 
     expect_equal(res, res_expect)
   })
+
+  use_cassette("rr_journal_issn_multiple", {
+    res = rr_journal_issn(c("1947-6264", "0030-1299"))
+
+    expect_is(res, "data.frame")
+
+    expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
+                        "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
+
+    expect_equal(dim(res), c(2, 9))
+    expect_is(res$title,        "character")
+    expect_is(res$issn,         "character")
+    expect_is(res$romeocolour,  "character")
+    expect_is(res$preprint,     "character")
+    expect_is(res$postprint,    "character")
+    expect_is(res$pdf,          "character")
+    expect_is(res$pre_embargo,  "character")
+    expect_is(res$post_embargo, "character")
+    expect_is(res$pdf_embargo,  "character")
+
+    expect_equal(res$issn[[1]], "1947-6264")
+    expect_equal(res$issn[[2]], "0030-1299")
+  })
 })
