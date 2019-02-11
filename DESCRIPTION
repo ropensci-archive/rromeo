@@ -8,7 +8,9 @@ Authors@R: c(
   person("Hugo", "Gruson", email = "hugo.gruson@protonmail.com",
          role = "aut", comment = c(ORCID = "0000-0002-4094-1476"))
   )
-Description: Provides an R Client for SHERPA/RoMEO API.
+Description: Provides an R Client for SHERPA/RoMEO API which indexes policies of
+  journal regarding the archival of scientific manuscripts before and/or after
+  peer-review as well as formatted manuscripts.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
