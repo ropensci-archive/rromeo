@@ -126,9 +126,42 @@ the journal</p>
     </tr>
     <tr>
       <th>key</th>
-      <td><p>a character string containing the API key or <code>NULL</code></p></td>
+      <td><p>a character string containing the API key or <code>NULL</code>
+(see Details section on how to specify it)</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a data frame as follow:</p><ul>
+<li><p><code>title</code>        <code>[character(1)]</code> the name of the journal</p></li>
+<li><p><code>issn</code>         <code>[character(1)]</code> the ISSN of the journal</p></li>
+<li><p><code>romeocolour</code>  <code>[character(1)]</code> the SHERPA/RoMEO colour of the journal</p></li>
+<li><p><code>preprint</code>     <code>[character(1)]</code> is the preprint (not reviewed) archivable?</p></li>
+<li><p><code>postprint</code>    <code>[character(1)]</code> is the postprint (reviewed but not
+typesetted) archivable?</p></li>
+<li><p><code>pdf</code>          <code>[character(1)]</code> is the publisher's version
+(reviewed and typesetted)</p></li>
+<li><p><code>pre_embargo</code>  <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the pre-print</p></li>
+<li><p><code>post_embargo</code> <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the post-print</p></li>
+<li><p><code>pdf_embargo</code>  <code>[character(1)]</code> if applicable the embargo period before
+the author(s) can archive the publisher's version</p></li>
+</ul>
+
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>To provide your API key to <code>rromeo</code> you can 1) provide it as a
+character string as the <code>key</code> arguments of <code>rromeo</code> functions
+as <code>rr_*(..., key = "my_key_as_a_string")</code> (<strong>NOT RECOMMENDED</strong>)
+2) you can define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Renviron</code>
+file in your working directory, the file should contain the
+following line <code>SHERPAROMEO_KEY=my_key_without_quotes</code>
+3) you can also define the variable <code>SHERPAROMEO_KEY</code> in an
+<code>.Rprofile</code> file in your working directory, the file should contain
+the following line <code>SHERPAROMEO_KEY="my_key_with_quotes"</code>.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -151,7 +184,11 @@ the journal</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 

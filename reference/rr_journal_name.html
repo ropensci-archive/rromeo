@@ -138,7 +138,8 @@ set match type for the <code>name</code> search string</p></td>
     </tr>
     <tr>
       <th>key</th>
-      <td><p>a character string containing the API key or <code>NULL</code></p></td>
+      <td><p>a character string containing the API key or <code>NULL</code>
+(see Details section on how to specify it)</p></td>
     </tr>
     </table>
     
@@ -167,6 +168,18 @@ the author(s) can archive the publisher's version</p></li>
 </ul>
 
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>To provide your API key to <code>rromeo</code> you can 1) provide it as a
+character string as the <code>key</code> arguments of <code>rromeo</code> functions
+as <code>rr_*(..., key = "my_key_as_a_string")</code> (<strong>NOT RECOMMENDED</strong>)
+2) you can define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Renviron</code>
+file in your working directory, the file should contain the
+following line <code>SHERPAROMEO_KEY=my_key_without_quotes</code>
+3) you can also define the variable <code>SHERPAROMEO_KEY</code> in an
+<code>.Rprofile</code> file in your working directory, the file should contain
+the following line <code>SHERPAROMEO_KEY="my_key_with_quotes"</code>.</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Journal of Geology"</span>)</div><div class='output co'>#&gt;                title      issn romeocolour preprint postprint pdf pre_embargo
@@ -190,6 +203,8 @@ the author(s) can archive the publisher's version</p></li>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
