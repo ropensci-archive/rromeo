@@ -124,12 +124,12 @@ rr_journal_name = function(name, multiple = FALSE,
 #'
 #' SHERPA/RoMEO classifies publisher in different colours depending on their
 #' archiving policies.
-#' * **green** publishers let authors archive pre-print and post-print or`
-#' ` publisher's version/PDF,
-#' * **blue** publishers let authors archive post-print or publisher's
+#' - **green** publishers let authors archive pre-print and post-print or
+#'   publisher's version/PDF,
+#' - **blue** publishers let authors archive post-print or publisher's
 #'   version/PDF,
-#' * **yellow** publishers let authors archive pre-print,
-#' * **white** publishers do not formally support archival.
+#' - **yellow** publishers let authors archive pre-print,
+#' - **white** publishers do not formally support archival.
 #'
 #' For more details about the definitions of RoMEO colours check the
 #' [FAQ section](http://sherpa.ac.uk/romeo/definitions.php#colours) of

@@ -35,7 +35,8 @@ typesetted) archivable?
 SHERPA/RoMEO classifies publisher in different colours depending on their
 archiving policies.
 \itemize{
-\item \strong{green} publishers let authors archive pre-print and post-print or\code{} publisher's version/PDF,
+\item \strong{green} publishers let authors archive pre-print and post-print or
+publisher's version/PDF,
 \item \strong{blue} publishers let authors archive post-print or publisher's
 version/PDF,
 \item \strong{yellow} publishers let authors archive pre-print,
