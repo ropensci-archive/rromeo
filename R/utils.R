@@ -310,7 +310,7 @@ check_key = function(key) {
 #' @importFrom xml2 xml_text xml_find_first read_html
 parse_embargo = function(xml_source, type) {
 
-  tag = paste0("//", type, "restriction")
+  tag = paste0("//", type, "restriction[contains(text(), 'embargo')]")
   embargo_field = xml_text(xml_find_first(xml_source, tag))
 
   if (is.na(embargo_field)) {
