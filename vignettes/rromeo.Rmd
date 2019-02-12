@@ -64,8 +64,8 @@ library("ggplot2")
 theme_set(theme_minimal())
 res %>% 
   select(preprint, postprint, pdf) %>%
-  tidyr::gather(key = "file", value = "policy") %>%
-  ggplot(aes(x = file, fill = policy)) +
+  tidyr::gather(key = "ms", value = "policy") %>%
+  ggplot(aes(x = ms, fill = policy)) +
   geom_bar() +
   xlab(NULL)
 
