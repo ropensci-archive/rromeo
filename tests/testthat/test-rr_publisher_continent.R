@@ -2,11 +2,14 @@ context("rr_publisher_continent")
 
 test_that("rr_publisher_continent() works", {
   expect_error(rr_publisher_continent("a"),
-               regexp = paste0("'arg' should be one of \"Africa\", ",
-                               "\"Antarctica\", \"Asia\", \"Australasia\", ",
-                               "\"Caribbean\", \"Central America\", ",
-                               "\"Europe\", \"North America\", \"Oceania\", ",
-                               "\"South America\""))
+               regexp = paste0("'arg' should be one of ", dQuote("Africa"),
+                               ", ", dQuote("Antarctica"), ", ", dQuote("Asia"),
+                               ", ", dQuote("Australasia"), ", ",
+                               dQuote("Caribbean"),  ", ",
+                               dQuote("Central America"), ", ",
+                               dQuote("Europe"), ", ", dQuote("North America"),
+                               ", ", dQuote("Oceania"), ", ",
+                               dQuote("South America")))
 
   # When Publisher is not found
   use_cassette("rr_publisher_continent_notfound", {
