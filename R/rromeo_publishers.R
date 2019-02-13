@@ -236,3 +236,26 @@ rr_publisher_country = function(country, key = NULL) {
 
   return(publishers_df)
 }
+
+#' Get all Publisher Policies
+#'
+#' Retrieve all data on publishers policies from SHERPA/RoMEO.
+#'
+#' @inheritParams check_key
+#'
+#' @inherit rr_publisher return
+#'
+#' @inherit check_key details
+#'
+#' @importFrom httr GET
+#' @export
+rr_publisher_all = function(key = NULL) {
+
+  message("This function can take a long time to run, please be patient.")
+
+  api_key = check_key(key)
+
+  api_answer = GET(rr_base_api(), query = list(all = "yes"))
+
+  parse_publisher(api_answer)
+}
