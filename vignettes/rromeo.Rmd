@@ -58,7 +58,7 @@ res <- res[has_evolutionary_title,]
 This tool is useful in bibliometric studies. For example, we can now have a 
 visual overview of the policies of journals in a given field:
 
-```{r}
+```{r bar_graph}
 library("dplyr")
 library("ggplot2")
 theme_set(theme_minimal())
@@ -68,9 +68,11 @@ res %>%
   ggplot(aes(x = ms, fill = policy)) +
   geom_bar() +
   xlab(NULL)
+```
 
+```{r pie_chart}
 res %>%
-  ggplot(aes(x = "", fill = romeocolour)) +
+  ggplot(aes(x = "a", fill = romeocolour)) +
   geom_bar() + 
   coord_polar("y") +
   xlab(NULL)
