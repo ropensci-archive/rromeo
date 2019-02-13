@@ -9,7 +9,7 @@ rr_publisher_country(country, key = NULL)
 \arguments{
 \item{country}{\code{[character(1)]}\cr{}
 one or a vector of ISO two-letter country code or \code{AA} for
-international publisher, \code{ZZ} for publisher of unknonwn
+international publisher, \code{ZZ} for publisher of unknown
 countries and \code{__} for publishers without specified country
 (case insensitive).}
 
@@ -28,9 +28,9 @@ publisher or the name of the specific publishing branch
 reflects the default policies of the publisher
 \item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
 \item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
-typesetted) archivable?
+formatted) archivable?
 \item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
-typesetted) archivable?
+formatted) archivable?
 }
 }
 \description{

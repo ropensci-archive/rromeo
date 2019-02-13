@@ -34,9 +34,9 @@ publisher or the name of the specific publishing branch
 reflects the default policies of the publisher
 \item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
 \item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
-typesetted) archivable?
+formatted) archivable?
 \item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
-typesetted) archivable?
+formatted) archivable?
 }
 }
 \description{

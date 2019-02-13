@@ -6,21 +6,7 @@
 #' @param issn `[character(1+)]` one or a vector of journal(s) ISSN(s)
 #' @inheritParams check_key
 #'
-#' @return Returns a data frame as follow:
-#' * `title`        `[character(1)]` the name of the journal
-#' * `issn`         `[character(1)]` the ISSN of the journal
-#' * `romeocolour`  `[character(1)]` the SHERPA/RoMEO colour of the journal
-#' * `preprint`     `[character(1)]` is the preprint (not reviewed) archivable?
-#' * `postprint`    `[character(1)]` is the postprint (reviewed but not
-#'                   typesetted) archivable?
-#' * `pdf`          `[character(1)]` is the publisher's version
-#'                  (reviewed and typesetted)
-#' * `pre_embargo`  `[character(1)]` if applicable the embargo period before
-#'                  the author(s) can archive the pre-print
-#' * `post_embargo` `[character(1)]` if applicable the embargo period before
-#'                  the author(s) can archive the post-print
-#' * `pdf_embargo`  `[character(1)]` if applicable the embargo period before
-#'                  the author(s) can archive the publisher's version
+#' @inherit parse_answer return
 #'
 #' @inherit check_key details
 #'
@@ -50,7 +36,7 @@ rr_journal_issn = function(issn, key = NULL) {
   return(journals_df)
 }
 
-#' Retrieve journal(s) policy(ies) by matching title
+#' Retrieve journals policies by matching title
 #
 #'
 #' @param name `[character(1+)]` one or several strings to match the titles of
@@ -71,13 +57,13 @@ rr_journal_issn = function(issn, key = NULL) {
 #' * `romeocolour`  `[character(1)]` the SHERPA/RoMEO colour of the journal
 #' * `preprint`     `[character(1)]` is the preprint (not reviewed) archivable?
 #' * `postprint`    `[character(1)]` is the postprint (reviewed but not
-#'                   typesetted) archivable?
+#'                   formatted)?
 #' * `pdf`          `[character(1)]` is the publisher's version
-#'                  (reviewed and typesetted)
+#'                  (reviewed and formatted)
 #' * `pre_embargo`  `[character(1)]` if applicable the embargo period before
-#'                  the author(s) can archive the pre-print
+#'                  the author(s) can archive the preprint
 #' * `post_embargo` `[character(1)]` if applicable the embargo period before
-#'                  the author(s) can archive the post-print
+#'                  the author(s) can archive the postprint
 #' * `pdf_embargo`  `[character(1)]` if applicable the embargo period before
 #'                  the author(s) can archive the publisher's version
 #'

@@ -3,10 +3,10 @@
 #' Returns data.frame from parsed xml API answer.
 #'
 #' @inheritParams parse_publisher
-#' @param multiple If multiple results match your query, should the function
-#' recursively fetch data for each of one of them (`multiple = TRUE`) or
-#' return a data.frame containing only titles and ISSN of all matches
-#' (`multiple = FALSE`)
+#' @param multiple `[logical(1)]` If multiple results match your query, should
+#' the function recursively fetch data for each of one of them
+#' (`multiple = TRUE`) or return a data.frame containing only titles and ISSN of
+#'  all matches (`multiple = FALSE`)
 #' @inheritParams check_key
 #'
 #' @return Returns a data.frame with the following columns:
@@ -15,13 +15,13 @@
 #' * `romeocolour`  `[character(1)]` the SHERPA/RoMEO colour of the journal
 #' * `preprint`     `[character(1)]` is the preprint (not reviewed) archivable?
 #' * `postprint`    `[character(1)]` is the postprint (reviewed but not
-#'                   typesetted) archivable?
+#'                   formatted) archivable?
 #' * `pdf`          `[character(1)]` is the publisher's version
-#'                  (reviewed and typesetted)
+#'                  (reviewed and formatted)
 #' * `pre_embargo`  `[character(1)]` if applicable the embargo period before
-#'                  the author(s) can archive the pre-print
+#'                  the author(s) can archive the preprint
 #' * `post_embargo` `[character(1)]` if applicable the embargo period before
-#'                  the author(s) can archive the post-print
+#'                  the author(s) can archive the postprint
 #' * `pdf_embargo`  `[character(1)]` if applicable the embargo period before
 #'                  the author(s) can archive the publisher's version
 #'
@@ -166,9 +166,9 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 #'                 reflects the default policies of the publisher
 #' * `preprint`    `[character(1)]` is the preprint (not reviewed) archivable?
 #' * `postprint`   `[character(1)]` is the postprint (reviewed but not
-#'                 typesetted) archivable?
+#'                 formatted) archivable?
 #' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
-#'                 typesetted) archivable?
+#'                 formatted) archivable?
 #'
 #' @keywords internal
 #'
@@ -334,6 +334,8 @@ parse_embargo = function(xml_source, type) {
 #'                `__` (special country codes for SHERPA/RoMEO)
 #'
 #' @return `TRUE` if the country code is valid, errors otherwise
+#'
+#' @keywords internal
 validate_country_code = function(country) {
   if (requireNamespace("ISOcodes", quietly = TRUE)) {
     if (!(country %in% c(ISOcodes::ISO_3166_1$Alpha_2, "AA", "ZZ", "__"))) {

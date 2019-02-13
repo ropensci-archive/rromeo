@@ -13,20 +13,20 @@ rr_journal_issn(issn, key = NULL)
 (see Details section on how to specify it)}
 }
 \value{
-Returns a data frame as follow:
+Returns a data.frame with the following columns:
 \itemize{
 \item \code{title}        \code{[character(1)]} the name of the journal
 \item \code{issn}         \code{[character(1)]} the ISSN of the journal
 \item \code{romeocolour}  \code{[character(1)]} the SHERPA/RoMEO colour of the journal
 \item \code{preprint}     \code{[character(1)]} is the preprint (not reviewed) archivable?
 \item \code{postprint}    \code{[character(1)]} is the postprint (reviewed but not
-typesetted) archivable?
+formatted) archivable?
 \item \code{pdf}          \code{[character(1)]} is the publisher's version
-(reviewed and typesetted)
+(reviewed and formatted)
 \item \code{pre_embargo}  \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the pre-print
+the author(s) can archive the preprint
 \item \code{post_embargo} \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the post-print
+the author(s) can archive the postprint
 \item \code{pdf_embargo}  \code{[character(1)]} if applicable the embargo period before
 the author(s) can archive the publisher's version
 }

@@ -7,19 +7,7 @@
 #'            ID
 #' @inheritParams check_key
 #'
-#' @return Returns a data frame with the following columns:
-#' * `romeoid`     `[integer(1)]` the internal index of the publisher in
-#'                 the SHERPA/RoMEO database
-#' * `publisher`   `[character(1)]` the name of the publisher
-#' * `alias`       `[character(1)]` if applicable an alternative name of the
-#'                 publisher or the name of the specific publishing branch
-#' * `romeocolour` `[character(1)]` a colour assigned by the database that
-#'                 reflects the default policies of the publisher
-#' * `preprint`    `[character(1)]` is the preprint (not reviewed) archivable?
-#' * `postprint`   `[character(1)]` is the postprint (reviewed but not
-#'                 typesetted) archivable?
-#' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
-#'                 typesetted) archivable?
+#' @inherit parse_publisher return
 #'
 #' @inherit check_key details
 #'
@@ -53,11 +41,11 @@ rr_publisher_id = function(id, key = NULL) {
 #'
 #' SHERPA/RoMEO classifies publisher in different colours depending on their
 #' archiving policies.
-#' - **green** publishers let authors archive pre-print and post-print or
+#' - **green** publishers let authors archive preprint and postprint or
 #'   publisher's version/PDF,
-#' - **blue** publishers let authors archive post-print or publisher's
+#' - **blue** publishers let authors archive postprint or publisher's
 #'   version/PDF,
-#' - **yellow** publishers let authors archive pre-print,
+#' - **yellow** publishers let authors archive preprint,
 #' - **white** publishers do not formally support archival.
 #'
 #' For more details about the definitions of RoMEO colours check the
@@ -74,7 +62,7 @@ rr_publisher_id = function(id, key = NULL) {
 #'                      the SHERPA/RoMEO colour to retrieve
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher_id return
+#' @inherit parse_publisher return
 #'
 #' @inherit check_key details
 #'
@@ -115,7 +103,7 @@ rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
 #'
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher_id return
+#' @inherit parse_publisher return
 #'
 #' @inherit check_key details
 #'
@@ -162,7 +150,7 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
 #'                  the continent name to retrieve
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher_id return
+#' @inherit parse_publisher return
 #'
 #' @inherit check_key details
 #'
@@ -200,12 +188,12 @@ rr_publisher_continent = function(continent = c("Africa",
 #'
 #' @param country `[character(1)]`\cr{}
 #'                one or a vector of ISO two-letter country code or `AA` for
-#'                international publisher, `ZZ` for publisher of unknonwn
+#'                international publisher, `ZZ` for publisher of unknown
 #'                countries and `__` for publishers without specified country
 #'                (case insensitive).
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher_id return
+#' @inherit parse_publisher return
 #'
 #' @inherit check_key details
 #'
@@ -244,7 +232,7 @@ rr_publisher_country = function(country, key = NULL) {
 #'
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher_id return
+#' @inherit parse_publisher return
 #'
 #' @inherit check_key details
 #'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/rromeo_journals.R
 \name{rr_journal_name}
 \alias{rr_journal_name}
-\title{Retrieve journal(s) policy(ies) by matching title}
+\title{Retrieve journals policies by matching title}
 \usage{
 rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
   "starts with"), key = NULL)
@@ -11,10 +11,10 @@ rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
 \item{name}{\code{[character(1+)]} one or several strings to match the titles of
 the journals}
 
-\item{multiple}{If multiple results match your query, should the function
-recursively fetch data for each of one of them (\code{multiple = TRUE}) or
-return a data.frame containing only titles and ISSN of all matches
-(\code{multiple = FALSE})}
+\item{multiple}{\code{[logical(1)]} If multiple results match your query, should
+the function recursively fetch data for each of one of them
+(\code{multiple = TRUE}) or return a data.frame containing only titles and ISSN of
+all matches (\code{multiple = FALSE})}
 
 \item{qtype}{\code{[character(1)]} in \code{c("exact", "contains", "starts with")} to
 set match type for the \code{name} search string}
@@ -35,19 +35,19 @@ data frame:
 \item \code{romeocolour}  \code{[character(1)]} the SHERPA/RoMEO colour of the journal
 \item \code{preprint}     \code{[character(1)]} is the preprint (not reviewed) archivable?
 \item \code{postprint}    \code{[character(1)]} is the postprint (reviewed but not
-typesetted) archivable?
+formatted)?
 \item \code{pdf}          \code{[character(1)]} is the publisher's version
-(reviewed and typesetted)
+(reviewed and formatted)
 \item \code{pre_embargo}  \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the pre-print
+the author(s) can archive the preprint
 \item \code{post_embargo} \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the post-print
+the author(s) can archive the postprint
 \item \code{pdf_embargo}  \code{[character(1)]} if applicable the embargo period before
 the author(s) can archive the publisher's version
 }
 }
 \description{
-Retrieve journal(s) policy(ies) by matching title
+Retrieve journals policies by matching title
 }
 \details{
 To provide your API key to \code{rromeo} you can:

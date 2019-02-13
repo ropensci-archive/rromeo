@@ -27,20 +27,20 @@ publisher or the name of the specific publishing branch
 reflects the default policies of the publisher
 \item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
 \item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
-typesetted) archivable?
+formatted) archivable?
 \item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
-typesetted) archivable?
+formatted) archivable?
 }
 }
 \description{
 SHERPA/RoMEO classifies publisher in different colours depending on their
 archiving policies.
 \itemize{
-\item \strong{green} publishers let authors archive pre-print and post-print or
+\item \strong{green} publishers let authors archive preprint and postprint or
 publisher's version/PDF,
-\item \strong{blue} publishers let authors archive post-print or publisher's
+\item \strong{blue} publishers let authors archive postprint or publisher's
 version/PDF,
-\item \strong{yellow} publishers let authors archive pre-print,
+\item \strong{yellow} publishers let authors archive preprint,
 \item \strong{white} publishers do not formally support archival.
 }
 }
