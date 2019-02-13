@@ -2,19 +2,19 @@
 % Please edit documentation in R/rromeo_publishers.R
 \name{rr_publisher_continent}
 \alias{rr_publisher_continent}
-\title{Get Publisher Policy by Publisher Continent}
+\title{Get Publisher Policy by Publisher's Continent}
 \usage{
 rr_publisher_continent(continent = c("Africa", "Antarctica", "Asia",
   "Australasia", "Caribbean", "Central America", "Europe", "North America",
   "Oceania", "South America"), key = NULL)
 }
 \arguments{
-\item{key}{a character string containing the API key or \code{NULL}
-(see Details section on how to specify it)}
-
-\item{romeo_colour}{\code{[character(1)]}\cr{}
+\item{continent}{\code{[character(1)]}\cr{}
 in \code{c("Africa", "Antarctica",  "Asia",  "Australasia", "Carribean",  "Central America",  "Europe", "North America",  "Oceania",  "South America")}\cr{}
 the continent name to retrieve}
+
+\item{key}{a character string containing the API key or \code{NULL}
+(see Details section on how to specify it)}
 }
 \value{
 Returns a data frame with the following columns:
