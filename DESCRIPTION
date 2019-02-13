@@ -27,7 +27,6 @@ Suggests:
     rmarkdown,
     spelling,
     testthat,
-    tidyr,
     vcr,
     covr,
     ISOcodes
