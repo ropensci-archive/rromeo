@@ -29,7 +29,8 @@ Suggests:
     testthat,
     tidyr,
     vcr,
-    covr
+    covr,
+    ISOcodes
 Language: en-US
 VignetteBuilder: knitr
 URL: https://github.com/Rekyt/rromeo

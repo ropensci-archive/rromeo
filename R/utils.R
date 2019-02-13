@@ -323,3 +323,32 @@ parse_embargo = function(xml_source, type) {
     return(paste(time, unit))
   }
 }
+
+#' Validate ISO two-letters country code
+#'
+#' If available uses [`ISOcodes::ISO_3166_1`] to validate country code.
+#' Otherwise assume that the code is valid as long as it is a two-letter code or
+#' `__`. See [`rr_publisher_country()`] for use of country codes.
+#'
+#' @param country `[character(1)]` a two-letter country code or `AA`, `ZZ` or
+#'                `__` (special country codes for SHERPA/RoMEO)
+#'
+#' @return `TRUE` if the country code is valid, errors otherwise
+#' @examples
+#' validate_country_code("IR")
+#' validate_country_code("__")
+validate_country_code = function(country) {
+  if (requireNamespace("ISOcodes", quietly = TRUE)) {
+    if (!(country %in% c(ISOcodes::ISO_3166_1$Alpha_2, "AA", "ZZ", "__"))) {
+      stop(country, " is an invalid country code. ",
+           "The country code should be two letter long or '__' for undefined.")
+    }
+  } else {
+    if (!grepl("^[A-Za-z|\\_]{2}$", "__", perl = FALSE)) {
+      stop(country, " is an invalid country code. ",
+           "The country code should be two letter long or '__' for undefined.")
+    }
+  }
+
+  return(TRUE)
+}

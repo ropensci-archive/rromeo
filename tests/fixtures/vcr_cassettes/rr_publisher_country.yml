@@ -1,0 +1,752 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?country=IR
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Wed, 13 Feb 2019 15:52:46 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '3258'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>country</parametername>
+                <parametervalue>IR</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>18</numhits>
+            <apicontrol></apicontrol>
+            <outcome>publisherFound</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>13-Feb-2019:15:52:46</timestamp>
+          </header>
+          <journals />
+          <publishers>
+            <publisher id="1936">
+              <name>Acta Advances in Agricultural Sciences</name>
+              <alias />
+              <homeurl>http://www.aaasjournal.com/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Creative Commons Attribution Non-Commercial License</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>On a non-profit server</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 04/04/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.aaasjournal.com/index.php/instructions-authors</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2014-05-22 10:09:21</dateadded>
+              <dateupdated>2014-05-22 10:23:46</dateupdated>
+            </publisher>
+            <publisher id="2786">
+              <name>Avicenna Journals</name>
+              <alias>Advancements in Science</alias>
+              <homeurl>http://ajournals.com/index.php</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Creative Commons Attribution License 4.0</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 08/10/2015</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://ajournals.com/index.php/faqs</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2016-05-09 15:21:28</dateadded>
+              <dateupdated>2016-05-09 15:21:28</dateupdated>
+            </publisher>
+            <publisher id="1556">
+              <name>Azad University, Mahlkesi Branch, Mechanical Engineering Department</name>
+              <alias />
+              <homeurl>http://www.iaumajlesi.ac.ir/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>cannot</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF must be used</condition>
+                <condition>On open access repositories</condition>
+                <condition>Publisher last contacted on 19/05/2013</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks />
+              <romeocolour>blue</romeocolour>
+              <dateadded>2013-05-30 09:52:20</dateadded>
+              <dateupdated>2013-05-30 09:52:20</dateupdated>
+            </publisher>
+            <publisher id="2741">
+              <name>Geodynamics Research International Bulletin</name>
+              <alias />
+              <homeurl>http://www.geo-dynamica.com/index.html</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>cannot</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On an open access repository</condition>
+                <condition>Creative Commons Attribution License</condition>
+                <condition>Publisher's version/PDF must be used</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 29/09/2015</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.geo-dynamica.com/English%20Shivename.html</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2016-02-15 10:30:09</dateadded>
+              <dateupdated>2016-02-15 10:30:09</dateupdated>
+            </publisher>
+            <publisher id="2159">
+              <name>International Journal of Management, Accounting and Economics</name>
+              <alias />
+              <homeurl>http://www.ijmae.com/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Creative Commons Attribution License 4.0</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 03/10/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.ijmae.com/index.php?mod=website&amp;act=1&amp;id=7</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2014-11-20 09:47:42</dateadded>
+              <dateupdated>2014-11-20 09:47:42</dateupdated>
+            </publisher>
+            <publisher id="1823">
+              <name>Islamic Azad University, Najafabad Branch</name>
+              <alias />
+              <homeurl>http://www.iaun.ac.ir/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Publisher copyright and source must be acknowledged</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 06/02/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks />
+              <romeocolour>blue</romeocolour>
+              <dateadded>2014-03-20 10:51:41</dateadded>
+              <dateupdated>2014-03-20 10:51:41</dateupdated>
+            </publisher>
+            <publisher id="1745">
+              <name>Islamic Azad University, Shahreza Branch</name>
+              <alias />
+              <homeurl>http://www.iaush.ac.ir/portal/main/r/?lan=1</homeurl>
+              <preprints>
+                <prearchiving>unclear</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Publisher last contacted on 08/11/2013</condition>
+                <condition>All titles are open access journals</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://ijc.iaush.ac.ir/ijc/pagecontent.php?rQV=8BEMApTZwlHV05WZ052bjxHQwAkOlBXeUVmc1R3Y1JHdzxHQwAkOlBXeURGbpZGfAZDQ6UGb0lGd</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2014-01-02 10:13:59</dateadded>
+              <dateupdated>2014-01-02 10:13:59</dateupdated>
+            </publisher>
+            <publisher id="1726">
+              <name>Islamic Press</name>
+              <alias />
+              <homeurl>http://www.jcrs010.com/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>cannot</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF must be used</condition>
+                <condition>On open access repositories</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 12/10/2013</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://jcrs010.com/files/Guide.pdf</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2013-12-04 11:36:05</dateadded>
+              <dateupdated>2013-12-04 11:36:05</dateupdated>
+            </publisher>
+            <publisher id="1742">
+              <name>Jahan Elm Institute of Higher Education</name>
+              <alias />
+              <homeurl>http://jahanelm.com/</homeurl>
+              <preprints>
+                <prearchiving>unclear</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Publisher copyright and source must be acknowledged</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Publisher last contacted on 31/10/2013</condition>
+                <condition>All titles are open access journals</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.mjltm.com/index.php?option=content&amp;t=co&amp;i=14</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2013-12-12 10:39:35</dateadded>
+              <dateupdated>2013-12-12 10:39:35</dateupdated>
+            </publisher>
+            <publisher id="1414">
+              <name>Kerman University of Medical Sciences</name>
+              <alias />
+              <homeurl>http://www.kmu.ac.ir/Default8.aspx?Id=1</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>On open access repositories</condition>
+                <condition>Publisher copyright and source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Creative Commons Attribution License</condition>
+                <condition>Publisher last contacted on 05/08/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks />
+              <romeocolour>blue</romeocolour>
+              <dateadded>2013-01-23 15:51:02</dateadded>
+              <dateupdated>2014-08-08 14:35:17</dateupdated>
+            </publisher>
+            <publisher id="1867">
+              <name>Oboor Publishing Group</name>
+              <alias />
+              <homeurl>http://www.modern-sight.com/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 12/02/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.modern-sight.com/index.php/author-guidlines</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2014-04-16 09:47:42</dateadded>
+              <dateupdated>2014-04-16 09:47:42</dateupdated>
+            </publisher>
+            <publisher id="3078">
+              <name>Shahid Sadoughi University of Medical Sciences</name>
+              <alias />
+              <homeurl>http://web.ssu.ac.ir/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>Written permission must be obtained from the publisher</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>restricted</pdfarchiving>
+                <pdfrestrictions>
+                  <pdfrestriction>Written permission must be obtained from the publisher</pdfrestriction>
+                </pdfrestrictions>
+              </pdfversion>
+              <conditions>
+                <condition>On institutional repository</condition>
+                <condition>Creative Commons Attribution Licence</condition>
+                <condition>Publisher copyright and source must be acknowledged with citation</condition>
+                <condition>Publisher copyright must be acknowledged with set statement</condition>
+                <condition>Must link to publisher version with DOI</condition>
+                <condition>Must link to publisher version with set statement</condition>
+                <condition>Authors retain copyright</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 02/08/2017</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://sbrh.ssu.ac.ir/page/14/Aims-YW_AND-amp;-Scopes</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2017-08-17 14:45:16</dateadded>
+              <dateupdated>2017-08-21 14:08:01</dateupdated>
+            </publisher>
+            <publisher id="2084">
+              <name>Shefa Neuroscience Research Center</name>
+              <alias />
+              <homeurl>http://www.shefayekhatam.ir/page.php?slc_lang=en&amp;sid=1&amp;slct_pg_id=29</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Creative Commons Attribution Non-Commercial License</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 05/08/2014</condition>
+                <condition>Applies to Neuroscience Journal of Shefaye Khatam</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks />
+              <romeocolour>green</romeocolour>
+              <dateadded>2014-08-27 09:04:43</dateadded>
+              <dateupdated>2014-08-27 09:04:43</dateupdated>
+            </publisher>
+            <publisher id="1362">
+              <name>Shiraz University</name>
+              <alias />
+              <homeurl>http://www.shirazu.ac.ir/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Applies to Molecular Biology Research Communications</condition>
+                <condition>Publisher last contacted on 05/10/2012</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://mbrc.shirazu.ac.ir/journal/faq</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2012-10-17 16:13:15</dateadded>
+              <dateupdated>2012-10-17 16:13:15</dateupdated>
+            </publisher>
+            <publisher id="1753">
+              <name>Society of Diabetic Nephropathy Prevention</name>
+              <alias />
+              <homeurl>http://nephropathol.com/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>cannot</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Creative Commons Attribution License</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Deposit due to Funding Body, Institutional policy or mandate only allowed where separate agreement between repository, agency or institution and the publisher exists</condition>
+                <condition>Publisher's version/PDF must be used</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 21/11/2013</condition>
+                <condition>Publisher last reviewed on 09/07/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://nephropathol.com/Document/Authors-Form-JNP.pdf</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2014-01-03 10:07:48</dateadded>
+              <dateupdated>2015-07-09 15:09:26</dateupdated>
+            </publisher>
+            <publisher id="2922">
+              <name>Tabriz University of Medical Sciences</name>
+              <alias />
+              <homeurl>http://publications.tbzmed.ac.ir/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>On open access repositories</condition>
+                <condition>Creative Commons Attribution License 4.0</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 11/11/2016</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://publications.tbzmed.ac.ir/Page/9/Open-access-and-copyright-policy.html</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2016-12-14 09:24:14</dateadded>
+              <dateupdated>2016-12-14 09:24:14</dateupdated>
+            </publisher>
+            <publisher id="1208">
+              <name>Tehran University of Medical Sciences</name>
+              <alias />
+              <homeurl>http://journals.tums.ac.ir/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Requested to link to publisher version</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Creative Commons Attribution Non-Commercial 3.0 Unported License</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 23/03/2012</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks />
+              <romeocolour>green</romeocolour>
+              <dateadded>2012-03-23 10:52:36</dateadded>
+              <dateupdated>2012-03-23 16:06:48</dateupdated>
+            </publisher>
+            <publisher id="2845">
+              <name>University of Maragheh, Department of Mathematics</name>
+              <alias />
+              <homeurl>http://science.maragheh.ac.ir/?pageid=17&amp;ID=2&amp;BasesID=4</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Authors personal website and institutional repository</condition>
+                <condition>Creative Commons Attribution License</condition>
+                <condition>Authors retain copyright</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Publisher last contacted on 15/11/2016</condition>
+                <condition>All titles are open access journals</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://scma.maragheh.ac.ir/journal/about</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2016-08-04 15:21:47</dateadded>
+              <dateupdated>2016-08-04 15:21:47</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-13 15:52:46 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
