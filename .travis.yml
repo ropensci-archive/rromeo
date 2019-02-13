@@ -17,6 +17,7 @@ r_packages:
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
+  - Rscript -e 'if(!requireNamespace("miniCRAN")) install.packages("miniCRAN"); if(!requireNamespace("igraph")) install.packages("igraph"); if(!requireNamespace("ggnetwork")) install.packages("ggnetwork");'
 
 deploy:
   provider: script
