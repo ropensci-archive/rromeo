@@ -14,10 +14,13 @@ matrix:
 r_packages:
   - covr
   - pkgdown
+  - miniCRAN
+  - igraph
+  - ggnetwork
+  - intergraph
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
-  - Rscript -e 'if(!requireNamespace("miniCRAN")) install.packages("miniCRAN"); if(!requireNamespace("igraph")) install.packages("igraph"); if(!requireNamespace("ggnetwork")) install.packages("ggnetwork"); if(!requireNamespace("intergraph")) install.packages("intergraph");'
 
 deploy:
   provider: script
