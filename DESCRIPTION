@@ -21,7 +21,6 @@ Imports:
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
 Suggests:
-    dplyr,
     ggplot2,
     knitr,
     rmarkdown,

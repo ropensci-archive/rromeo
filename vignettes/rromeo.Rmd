@@ -59,20 +59,17 @@ This tool is useful in bibliometric studies. For example, we can now have a
 visual overview of the policies of journals in a given field:
 
 ```{r bar_graph}
-library("dplyr")
 library("ggplot2")
 theme_set(theme_minimal())
-res %>% 
-  select(preprint, postprint, pdf) %>%
-  stack() %>%
-  ggplot(aes(x = ind, fill = values)) +
+
+stacked_res <- stack(res[, 4:6])
+ggplot(stacked_res, aes(x = ind, fill = values)) +
   geom_bar() +
   xlab(NULL)
 ```
 
 ```{r pie_chart}
-res %>%
-  ggplot(aes(x = "a", fill = romeocolour)) +
+ggplot(res, aes(x = "a", fill = romeocolour)) +
   geom_bar() + 
   coord_polar("y") +
   xlab(NULL)
