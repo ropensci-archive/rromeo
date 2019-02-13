@@ -64,14 +64,14 @@ library("ggplot2")
 theme_set(theme_minimal())
 res %>% 
   select(preprint, postprint, pdf) %>%
-  tidyr::gather(key = "file", value = "policy") %>%
-  ggplot(aes(x = factor(file, c("preprint", "postprint", "pdf")), 
-             fill = policy)) +
-    geom_histogram(stat = "count") +
-    xlab("")
+  tidyr::gather(key = "ms", value = "policy") %>%
+  ggplot(aes(x = ms, fill = policy)) +
+  geom_bar() +
+  xlab(NULL)
 
 res %>%
   ggplot(aes(x = "", fill = romeocolour)) +
-    geom_histogram(stat = "count") + 
-    coord_polar("y")
+  geom_bar() + 
+  coord_polar("y") +
+  xlab(NULL)
 ```
