@@ -1,0 +1,148 @@
+#' Get Publisher Policy from Publisher ID
+#'
+#' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
+#' archival
+#'
+#' @param romeo_id  `[integer(1+)]` one or a vector of SHERPA/RoMEO publisher's
+#'                                  ID
+#' @inheritParams check_key
+#'
+#' @return Returns a data frame with the following columns:
+#' * `romeoid`     `[integer(1)]` the internal index of the publisher in
+#'                 the SHERPA/RoMEO database
+#' * `publisher`   `[character(1)]` the name of the publisher
+#' * `alias`       `[character(1)]` if applicable an alternative name of the
+#'                 publisher or the name of the specific publishing branch
+#' * `romeocolour` `[character(1)]` a colour assigned by the database that
+#'                 reflects the default policies of the publisher
+#' * `preprint`    `[character(1)]` is the preprint (not reviewed) archivable?
+#' * `postprint`   `[character(1)]` is the postprint (reviewed but not
+#'                 typesetted) archivable?
+#' * `pdf`         `[character(1)]` is the publisher's version (reviewed and
+#'                 typesetted) archivable?
+#'
+#' @inherit check_key details
+#'
+#' @importFrom httr GET
+#' @export
+#' @examples
+#' rr_publisher(romeo_id = 55)
+#' rr_publisher(romeo_id = c(55, 735))
+rr_publisher = function(romeo_id, key = NULL) {
+
+  if (any(!grepl("^[[:digit:]]+$", romeo_id))) {
+    stop("All provided IDs should be integers", call. = FALSE)
+  }
+
+  api_key = check_key(key)
+
+  answer_list = lapply(romeo_id, function(publisher_id) {
+    api_answer = GET(rr_base_api(), query = list(id = publisher_id,
+                                                 ak = api_key))
+
+    parse_publisher(api_answer)
+  })
+
+  publishers_df = do.call(rbind.data.frame,
+                          c(answer_list, stringsAsFactors = FALSE))
+
+  return(publishers_df)
+}
+
+#' Query publisher by RoMEO colour
+#'
+#' SHERPA/RoMEO classifies publisher in different colours depending on their
+#' archiving policies.
+#' - **green** publishers let authors archive pre-print and post-print or
+#'   publisher's version/PDF,
+#' - **blue** publishers let authors archive post-print or publisher's
+#'   version/PDF,
+#' - **yellow** publishers let authors archive pre-print,
+#' - **white** publishers do not formally support archival.
+#'
+#' For more details about the definitions of RoMEO colours check the
+#' [FAQ section](http://sherpa.ac.uk/romeo/definitions.php#colours) of
+#' SHERPA/RoMEO
+#'
+#' Note that when using `rr_romeo_colour()` the API returns **all** the
+#' publishers in the selected category, so the results are generally bigger in
+#' size than specific functions like [`rr_journal_name()`] or [`rr_publisher()`]
+#'
+#' @param romeo_colour `[character(1)]` in
+#'                      `c("green", "blue", "yellow", "white")`
+#'                      the SHERPA/RoMEO colour to retrieve
+#' @inheritParams check_key
+#'
+#' @inherit rr_publisher return
+#'
+#' @inherit check_key details
+#'
+#' @importFrom httr GET
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' rr_romeo_colour(romeo_colour = "green")
+#' }
+rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
+                           key = NULL) {
+
+  romeo_colour = match.arg(romeo_colour)
+
+  api_answer = GET(rr_base_api(), query = list(colour = romeo_colour,
+                                               ak = check_key(key)))
+
+  parse_publisher(api_answer)
+}
+
+
+#' Get Publisher Policy by Publisher Name
+#'
+#' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
+#' archival based on matching the name of the publishers.
+#'
+#' @param name  `[character(1+)]`
+#'              One or a vector of query string(s) to search publisher name
+#' @param qtype `[character(1)]`
+#'              in `c("all", "any", "exact")` define the type of matching:
+#'              * `all` means that all strings in `name` must appear in any
+#'                order or location
+#'              * `any` means that at least one of the strings in `name` must
+#'                appear
+#'              * `exact` means that the `name` string must appear in the
+#'                publisher's name or its alias.
+#'
+#' @inheritParams check_key
+#'
+#' @inherit rr_publisher return
+#'
+#' @inherit check_key details
+#'
+#' @importFrom httr GET
+#' @export
+#'
+#' @examples
+#'
+#' rr_publisher_name(name = "Optical Society", qtype = "all")
+#' rr_publisher_name(name = "Swiss Chemistry", qtype = "any")
+#' rr_publisher_name(name = "Swiss Chemistry", qtype = "exact")
+rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
+                             key = NULL) {
+
+  qtype = match.arg(qtype)
+
+  api_key = check_key(key)
+
+  answer_list = lapply(name, function(publisher_name) {
+    api_answer = GET(rr_base_api(), query = list(pub   = publisher_name,
+                                                 qtype = qtype,
+                                                 ak    = api_key))
+
+    parse_publisher(api_answer)
+  })
+
+  publishers_df = do.call(rbind.data.frame,
+                          c(answer_list, stringsAsFactors = FALSE))
+
+  return(publishers_df)
+}
