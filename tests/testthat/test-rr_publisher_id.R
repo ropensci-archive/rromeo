@@ -1,12 +1,12 @@
-context("rr_publisher")
+context("rr_publisher_id")
 
-test_that("rr_publisher() works", {
-  expect_error(rr_publisher("a"),
+test_that("rr_publisher_id() works", {
+  expect_error(rr_publisher_id("a"),
                regexp = "All provided IDs should be integers")
 
   # Regular Query
-  use_cassette("rr_publisher", {
-    res = rr_publisher(55)
+  use_cassette("rr_publisher_id", {
+    res = rr_publisher_id(55)
 
     expect_is(res, "data.frame")
 
@@ -26,8 +26,8 @@ test_that("rr_publisher() works", {
   })
 
   # Multiple publishers
-  use_cassette("rr_publisher_multiple", {
-    res = rr_publisher(c(55, 735))
+  use_cassette("rr_publisher_id_multiple", {
+    res = rr_publisher_id(c(55, 735))
 
     expect_is(res, "data.frame")
 
@@ -46,17 +46,17 @@ test_that("rr_publisher() works", {
   })
 
   # When Publisher is not found
-  use_cassette("rr_publisher_notfound", {
-    expect_error(rr_publisher(1500000, key = ""),
+  use_cassette("rr_publisher_id_notfound", {
+    expect_error(rr_publisher_id(1500000, key = ""),
                  "No publisher matches the provided id. Please try another id.")
   })
 
   # Invalid ID
-  expect_error(rr_publisher("azerty"), "All provided IDs should be integers")
+  expect_error(rr_publisher_id("azerty"), "All provided IDs should be integers")
 
   # When server is not reachable
   use_cassette("api_unreachable_publisher", {
-    expect_error(rr_publisher(55),
+    expect_error(rr_publisher_id(55),
                  paste0("The API endpoint could not be reached. Please try",
                         " again later."))
   })

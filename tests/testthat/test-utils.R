@@ -43,9 +43,23 @@ test_that("Parse answer fails with invalid API", {
   })
 
   use_cassette("invalid_api_key_publisher", {
-    expect_error(rr_publisher(55, key = "azertyuiop"),
+    expect_error(rr_publisher_id(55, key = "azertyuiop"),
                  paste0("The provided API key is invalid. ",
                         "You can register for a free API at ",
                         "http://www.sherpa.ac.uk/romeo/apiregistry.php"))
   })
+})
+
+test_that("Can validate country two-letters ISO codes", {
+  expect_true(validate_country_code("__"))
+  expect_true(validate_country_code("AA"))
+  expect_true(validate_country_code("ZZ"))
+  expect_error(validate_country_code("Albania"),
+               paste0("Albania is an invalid country code. The country code ",
+                      "should be two letter long or '__' for undefined."))
+
+  if (requireNamespace("ISOcodes", quietly = TRUE)) {
+    expect_true(validate_country_code("IR"))
+    expect_error(validate_country_code("WD"))
+  }
 })

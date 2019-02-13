@@ -51,7 +51,8 @@ SHERPA/RoMEO
 
 Note that when using \code{rr_romeo_colour()} the API returns \strong{all} the
 publishers in the selected category, so the results are generally bigger in
-size than specific functions like \code{\link[=rr_journal_name]{rr_journal_name()}} or \code{\link[=rr_publisher]{rr_publisher()}}
+size than specific functions like \code{\link[=rr_journal_name]{rr_journal_name()}} or
+\code{\link[=rr_publisher_id]{rr_publisher_id()}}
 }
 \examples{
 \dontrun{

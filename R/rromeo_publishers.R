@@ -3,8 +3,8 @@
 #' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 #' archival
 #'
-#' @param romeo_id  `[integer(1+)]` one or a vector of SHERPA/RoMEO publisher's
-#'                                  ID
+#' @param id `[integer(1+)]` one or a vector of SHERPA/RoMEO publisher's
+#'            ID
 #' @inheritParams check_key
 #'
 #' @return Returns a data frame with the following columns:
@@ -26,17 +26,17 @@
 #' @importFrom httr GET
 #' @export
 #' @examples
-#' rr_publisher(romeo_id = 55)
-#' rr_publisher(romeo_id = c(55, 735))
-rr_publisher = function(romeo_id, key = NULL) {
+#' rr_publisher_id(id = 55)
+#' rr_publisher_id(id = c(55, 735))
+rr_publisher_id = function(id, key = NULL) {
 
-  if (any(!grepl("^[[:digit:]]+$", romeo_id))) {
+  if (any(!grepl("^[[:digit:]]+$", id))) {
     stop("All provided IDs should be integers", call. = FALSE)
   }
 
   api_key = check_key(key)
 
-  answer_list = lapply(romeo_id, function(publisher_id) {
+  answer_list = lapply(id, function(publisher_id) {
     api_answer = GET(rr_base_api(), query = list(id = publisher_id,
                                                  ak = api_key))
 
@@ -66,14 +66,15 @@ rr_publisher = function(romeo_id, key = NULL) {
 #'
 #' Note that when using `rr_romeo_colour()` the API returns **all** the
 #' publishers in the selected category, so the results are generally bigger in
-#' size than specific functions like [`rr_journal_name()`] or [`rr_publisher()`]
+#' size than specific functions like [`rr_journal_name()`] or
+#' [`rr_publisher_id()`]
 #'
 #' @param romeo_colour `[character(1)]` in
 #'                      `c("green", "blue", "yellow", "white")`
 #'                      the SHERPA/RoMEO colour to retrieve
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher return
+#' @inherit rr_publisher_id return
 #'
 #' @inherit check_key details
 #'
@@ -114,7 +115,7 @@ rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
 #'
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher return
+#' @inherit rr_publisher_id return
 #'
 #' @inherit check_key details
 #'
@@ -161,7 +162,7 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
 #'                  the continent name to retrieve
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher return
+#' @inherit rr_publisher_id return
 #'
 #' @inherit check_key details
 #'
@@ -204,7 +205,7 @@ rr_publisher_continent = function(continent = c("Africa",
 #'                (case insensitive).
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher return
+#' @inherit rr_publisher_id return
 #'
 #' @inherit check_key details
 #'
@@ -243,7 +244,7 @@ rr_publisher_country = function(country, key = NULL) {
 #'
 #' @inheritParams check_key
 #'
-#' @inherit rr_publisher return
+#' @inherit rr_publisher_id return
 #'
 #' @inherit check_key details
 #'
@@ -251,7 +252,8 @@ rr_publisher_country = function(country, key = NULL) {
 #' @export
 rr_publisher_all = function(key = NULL) {
 
-  message("This function can take a long time to run, please be patient.")
+  message("This function can take a long time to run, please be patient.",
+          call. = FALSE)
 
   api_key = check_key(key)
 
