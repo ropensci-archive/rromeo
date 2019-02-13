@@ -334,9 +334,6 @@ parse_embargo = function(xml_source, type) {
 #'                `__` (special country codes for SHERPA/RoMEO)
 #'
 #' @return `TRUE` if the country code is valid, errors otherwise
-#' @examples
-#' validate_country_code("IR")
-#' validate_country_code("__")
 validate_country_code = function(country) {
   if (requireNamespace("ISOcodes", quietly = TRUE)) {
     if (!(country %in% c(ISOcodes::ISO_3166_1$Alpha_2, "AA", "ZZ", "__"))) {

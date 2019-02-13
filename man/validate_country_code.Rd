@@ -18,7 +18,3 @@ If available uses \code{\link[ISOcodes:ISO_3166_1]{ISOcodes::ISO_3166_1}} to val
 Otherwise assume that the code is valid as long as it is a two-letter code or
 \code{__}. See \code{\link[=rr_publisher_country]{rr_publisher_country()}} for use of country codes.
 }
-\examples{
-validate_country_code("IR")
-validate_country_code("__")
-}
