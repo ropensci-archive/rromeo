@@ -8,8 +8,13 @@ test_that("rr_publisher_continent() works", {
                                "\"Europe\", \"North America\", \"Oceania\", ",
                                "\"South America\""))
 
+  # When Publisher is not found
+  use_cassette("rr_publisher_continent_notfound", {
+    expect_error(rr_publisher_continent("Antarctica"),
+                 "No publisher matches the provided id. Please try another id.")
+  })
 
-
+  skip("Not possible because of encoding problems waiting for a fix in vcr")
   # Regular Query
   use_cassette("rr_publisher_continent", {
     res = rr_publisher_continent("Caribbean")
@@ -30,10 +35,4 @@ test_that("rr_publisher_continent() works", {
     expect_equal(dim(res), c(11, 7))
     expect_equal(res$romeoid[[1]], 2192)
   }, preserve_exact_body_bytes = TRUE)
-
-  # When Publisher is not found
-  use_cassette("rr_publisher_continent_notfound", {
-    expect_error(rr_publisher_continent("Antarctica"),
-                 "No publisher matches the provided id. Please try another id.")
-  })
 })
