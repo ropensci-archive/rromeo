@@ -341,7 +341,7 @@ validate_country_code = function(country) {
            "The country code should be two letter long or '__' for undefined.")
     }
   } else {
-    if (!grepl("^[A-Za-z|\\_]{2}$", "__", perl = FALSE)) {
+    if (!grepl("^[A-Za-z|\\_]{2}$", country, perl = FALSE)) {
       stop(country, " is an invalid country code. ",
            "The country code should be two letter long or '__' for undefined.")
     }
