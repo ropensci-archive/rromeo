@@ -2,7 +2,8 @@ context("rr_publisher_name")
 
 test_that("rr_publisher_name() works", {
   expect_error(rr_publisher_name("a", qtype = "bla"),
-               regexp = "'arg' should be one of \"all\", \"any\", \"exact\"")
+               regexp = paste0("'arg' should be one of ", dQuote("all"), ", ",
+                               dQuote("any"), ", ", dQuote("exact")))
 
   # Regular Query
   use_cassette("rr_publisher_name", {
