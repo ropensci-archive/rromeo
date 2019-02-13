@@ -146,3 +146,48 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
 
   return(publishers_df)
 }
+
+#' Get Publisher Policy by Publisher Continent
+#'
+#' Retrieve publisher's policy based on publisher's continent. This function
+#' does not work for unclassified or international publishers.
+#'
+#' @param romeo_colour `[character(1)]`\cr{}
+#'                      in ```
+#'                      c("Africa", "Antarctica",  "Asia",  "Australasia",
+#'                      "Carribean",  "Central America",  "Europe",
+#'                      "North America",  "Oceania",  "South America")
+#'                      ```\cr{}
+#'                      the continent name to retrieve
+#' @inheritParams check_key
+#'
+#' @inherit rr_publisher return
+#'
+#' @inherit check_key details
+#'
+#' @importFrom httr GET
+#' @export
+#'
+#' @examples
+#'
+#' rr_publisher_continent(continent = "Caribbean")
+#' rr_publisher_continent(continent = "Central America")
+rr_publisher_continent = function(continent = c("Africa",
+                                                "Antarctica",
+                                                "Asia",
+                                                "Australasia",
+                                                "Caribbean",
+                                                "Central America",
+                                                "Europe",
+                                                "North America",
+                                                "Oceania",
+                                                "South America"),
+                                  key = NULL) {
+
+  continent = match.arg(continent)
+
+  api_answer = GET(rr_base_api(), query = list(country = continent,
+                                               ak = check_key(key)))
+
+  parse_publisher(api_answer)
+}
