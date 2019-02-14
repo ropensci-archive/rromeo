@@ -104,7 +104,7 @@ the journal" />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Retrieve journal policy using ISSN</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/rromeo_functions.R'><code>R/rromeo_functions.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/rromeo_journals.R'><code>R/rromeo_journals.R</code></a></small>
     <div class="hidden name"><code>rr_journal_issn.Rd</code></div>
     </div>
 
@@ -122,32 +122,41 @@ the journal</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>issn</th>
-      <td><p><code>[character(1+)]</code> one or a vector of journal(s) ISSN(s)</p></td>
+      <td><p><code>character(1+)</code><br />
+one or a vector of journal(s) ISSN(s)</p></td>
     </tr>
     <tr>
       <th>key</th>
-      <td><p>a character string containing the API key or <code>NULL</code>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+a character string containing the API key or <code>NULL</code>
 (see Details section on how to specify it)</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns a data frame as follow:</p><ul>
-<li><p><code>title</code>        <code>[character(1)]</code> the name of the journal</p></li>
-<li><p><code>issn</code>         <code>[character(1)]</code> the ISSN of the journal</p></li>
-<li><p><code>romeocolour</code>  <code>[character(1)]</code> the SHERPA/RoMEO colour of the journal</p></li>
-<li><p><code>preprint</code>     <code>[character(1)]</code> is the preprint (not reviewed) archivable?</p></li>
-<li><p><code>postprint</code>    <code>[character(1)]</code> is the postprint (reviewed but not
-typesetted) archivable?</p></li>
-<li><p><code>pdf</code>          <code>[character(1)]</code> is the publisher's version
-(reviewed and typesetted)</p></li>
-<li><p><code>pre_embargo</code>  <code>[character(1)]</code> if applicable the embargo period before
-the author(s) can archive the pre-print</p></li>
-<li><p><code>post_embargo</code> <code>[character(1)]</code> if applicable the embargo period before
-the author(s) can archive the post-print</p></li>
-<li><p><code>pdf_embargo</code>  <code>[character(1)]</code> if applicable the embargo period before
-the author(s) can archive the publisher's version</p></li>
+    <p>Returns a data.frame with the following columns:</p><ul>
+<li><p><code>title</code>        <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+the name of the journal</p></li>
+<li><p><code>issn</code>         <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+the ISSN of the journal</p></li>
+<li><p><code>romeocolour</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+the SHERPA/RoMEO colour of the journal</p></li>
+<li><p><code>preprint</code>     <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the preprint (not reviewed) archivable?</p></li>
+<li><p><code>postprint</code>    <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the postprint (reviewed but not formatted) archivable?</p></li>
+<li><p><code>pdf</code>          <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the publisher's version (reviewed and formatted)</p></li>
+<li><p><code>pre_embargo</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+if applicable the embargo period before the author(s) can
+archive the preprint</p></li>
+<li><p><code>post_embargo</code> <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+if applicable the embargo period before the author(s) can
+archive the postprint</p></li>
+<li><p><code>pdf_embargo</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+if applicable the embargo period before the author(s) can
+archive the publisher's version</p></li>
 </ul>
 
     

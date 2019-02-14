@@ -72,7 +72,7 @@
                         <h4 class="author">Matthias Grenié</h4>
                         <h4 class="author">Hugo Gruson</h4>
             
-            <h4 class="date">2019-02-13</h4>
+            <h4 class="date">2019-02-14</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/Rekyt/rromeo/blob/master/vignettes/rromeo.Rmd"><code>vignettes/rromeo.Rmd</code></a></small>
       <div class="hidden name"><code>rromeo.Rmd</code></div>
@@ -107,47 +107,47 @@
 <p>If rromeo finds multiple journals matching your query terms, it will only return the list of titles and ISSN by default.</p>
 <p>You can then use this list to select the exact journal you are looking for (in this case, it is recommended to use the ISSN).</p>
 <p>Alternatively, you may want to get data for all those journals. To achieve this, you may enable the <code>multiple</code> option:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Evolutionary"</span>, <span class="dt">qtype =</span> <span class="st">"contains"</span>, <span class="dt">multiple =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
-<pre><code>## Warning: 43 journals match your query terms.</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Biostatistics"</span>, <span class="dt">qtype =</span> <span class="st">"contains"</span>, <span class="dt">multiple =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>## Warning: 17 journals match your query terms.</code></pre>
 <pre><code>## Recursively fetching data from each journal. This may take some time...</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">tail</a></span>(res, <span class="dv">3</span>)</a></code></pre></div>
-<pre><code>##                                 title      issn romeocolour preprint
-## 41               Revolutionary Russia 0954-6545       green      can
-## 42 Swarm and Evolutionary Computation 2210-6502       green      can
-## 43     Trends in Evolutionary Biology 2036-265X       green      can
-##    postprint    pdf pre_embargo post_embargo pdf_embargo
-## 41       can cannot        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
-## 42       can cannot        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
-## 43       can    can        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</code></pre>
-<p>Unfortunately, the API does not provide any way to search for full words. So in this case, when searching for journal with <code>"Evolutionary"</code> in their titles, we also get results such as <code>"Revolutionary Russia"</code>. We can manually remove those false positives:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">has_evolutionary_title &lt;-<span class="st"> </span><span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"</span><span class="ch">\\</span><span class="st">w+evolutionary|evolutionary</span><span class="ch">\\</span><span class="st">w+"</span>, </a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">                                 res<span class="op">$</span>title, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3">res &lt;-<span class="st"> </span>res[has_evolutionary_title,]</a></code></pre></div>
+<pre><code>## Warning: 2 journals match your query terms.</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">tail</a></span>(res, <span class="dv">3</span>)</a></code></pre></div>
+<pre><code>##                                           title      issn romeocolour
+## 15    Journal of epidemiology and biostatistics 1359-5229        &lt;NA&gt;
+## 16                  JP journal of biostatistics 0973-5143        &lt;NA&gt;
+## 17 Monographs in Epidemiology and Biostatistics 0740-0845      yellow
+##    preprint  postprint     pdf pre_embargo post_embargo pdf_embargo
+## 15     &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
+## 16     &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
+## 17      can restricted unclear        &lt;NA&gt;    12 months        &lt;NA&gt;</code></pre>
 <p>This tool is useful in bibliometric studies. For example, we can now have a visual overview of the policies of journals in a given field:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"dplyr"</span>)</a></code></pre></div>
-<pre><code>## 
-## Attaching package: 'dplyr'</code></pre>
-<pre><code>## The following objects are masked from 'package:stats':
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"ggplot2"</span>)</a>
-<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span>())</a>
-<a class="sourceLine" id="cb18-3" data-line-number="3">res <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb18-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(preprint, postprint, pdf) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span>(<span class="dt">key =</span> <span class="st">"ms"</span>, <span class="dt">value =</span> <span class="st">"policy"</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb18-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> ms, <span class="dt">fill =</span> policy)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb18-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="ot">NULL</span>)</a></code></pre></div>
-<p><img src="rromeo_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">res <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> <span class="st">""</span>, <span class="dt">fill =</span> romeocolour)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb19-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span>(<span class="st">"y"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="ot">NULL</span>)</a></code></pre></div>
-<p><img src="rromeo_files/figure-html/unnamed-chunk-6-2.png" width="700"></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"ggplot2"</span>)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span>())</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4">stacked_res &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/stack">stack</a></span>(res[, <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>])</a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(stacked_res, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> ind, <span class="dt">fill =</span> values)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="ot">NULL</span>)</a></code></pre></div>
+<p><img src="rromeo_files/figure-html/bar_graph-1.png" width="700"></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(res, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> <span class="st">"a"</span>, <span class="dt">fill =</span> romeocolour)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span>(<span class="st">"y"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="ot">NULL</span>)</a></code></pre></div>
+<p><img src="rromeo_files/figure-html/pie_chart-1.png" width="700"></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">eject_cassette</span>(<span class="st">"vignette_cassette"</span>)</a></code></pre></div>
+<pre><code>## ejecting cassette: vignette_cassette</code></pre>
+<pre><code>## CrulAdapter disabled!</code></pre>
+<pre><code>## HttrAdapter disabled!</code></pre>
+<pre><code>## &lt;vcr - Cassette&gt; vignette_cassette
+##   Record method: once
+##   Serialize with: yaml
+##   Persist with: FileSystem
+##   update_content_length_header: FALSE
+##   decode_compressed_response: 
+##   allow_playback_repeats: FALSE
+##   allow_unused_http_interactions: 
+##   exclusive: 
+##   preserve_exact_body_bytes: FALSE</code></pre>
 </div>
   </div>
 

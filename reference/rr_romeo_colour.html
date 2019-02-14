@@ -34,11 +34,11 @@
 
 <meta property="og:description" content="SHERPA/RoMEO classifies publisher in different colours depending on their
 archiving policies.
-green publishers let authors archive pre-print and post-print or
+green publishers let authors archive preprint and postprint or
 publisher's version/PDF,
-blue publishers let authors archive post-print or publisher's
+blue publishers let authors archive postprint or publisher's
 version/PDF,
-yellow publishers let authors archive pre-print,
+yellow publishers let authors archive preprint,
 white publishers do not formally support archival.
 " />
 <meta name="twitter:card" content="summary" />
@@ -111,7 +111,7 @@ white publishers do not formally support archival.
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Query publisher by RoMEO colour</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/rromeo_functions.R'><code>R/rromeo_functions.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/rromeo_publishers.R'><code>R/rromeo_publishers.R</code></a></small>
     <div class="hidden name"><code>rr_romeo_colour.Rd</code></div>
     </div>
 
@@ -119,11 +119,11 @@ white publishers do not formally support archival.
     
     <p>SHERPA/RoMEO classifies publisher in different colours depending on their
 archiving policies.</p><ul>
-<li><p><strong>green</strong> publishers let authors archive pre-print and post-print or
+<li><p><strong>green</strong> publishers let authors archive preprint and postprint or
 publisher's version/PDF,</p></li>
-<li><p><strong>blue</strong> publishers let authors archive post-print or publisher's
+<li><p><strong>blue</strong> publishers let authors archive postprint or publisher's
 version/PDF,</p></li>
-<li><p><strong>yellow</strong> publishers let authors archive pre-print,</p></li>
+<li><p><strong>yellow</strong> publishers let authors archive preprint,</p></li>
 <li><p><strong>white</strong> publishers do not formally support archival.</p></li>
 </ul>
     
@@ -137,13 +137,14 @@ version/PDF,</p></li>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>romeo_colour</th>
-      <td><p><code>[character(1)]</code> in
-<code><a href='https://www.rdocumentation.org/packages/base/topics/c'>c("green", "blue", "yellow", "white")</a></code>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+in <code><a href='https://www.rdocumentation.org/packages/base/topics/c'>c("green", "blue", "yellow", "white")</a></code>
 the SHERPA/RoMEO colour to retrieve</p></td>
     </tr>
     <tr>
       <th>key</th>
-      <td><p>a character string containing the API key or <code>NULL</code>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+a character string containing the API key or <code>NULL</code>
 (see Details section on how to specify it)</p></td>
     </tr>
     </table>
@@ -151,18 +152,24 @@ the SHERPA/RoMEO colour to retrieve</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns a data frame with the following columns:</p><ul>
-<li><p><code>romeoid</code>     <code>[integer(1)]</code> the internal index of the publisher in
-the SHERPA/RoMEO database</p></li>
-<li><p><code>publisher</code>   <code>[character(1)]</code> the name of the publisher</p></li>
-<li><p><code>alias</code>       <code>[character(1)]</code> if applicable an alternative name of the
-publisher or the name of the specific publishing branch</p></li>
-<li><p><code>romeocolour</code> <code>[character(1)]</code> a colour assigned by the database that
-reflects the default policies of the publisher</p></li>
-<li><p><code>preprint</code>    <code>[character(1)]</code> is the preprint (not reviewed) archivable?</p></li>
-<li><p><code>postprint</code>   <code>[character(1)]</code> is the postprint (reviewed but not
-typesetted) archivable?</p></li>
-<li><p><code>pdf</code>         <code>[character(1)]</code> is the publisher's version (reviewed and
-typesetted) archivable?</p></li>
+<li><p><code>romeoid</code>     <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer(1)</a></code><br />
+the internal index of the publisher in the SHERPA/RoMEO
+database</p></li>
+<li><p><code>publisher</code>   <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+the name of the publisher</p></li>
+<li><p><code>alias</code>       <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+if applicable an alternative name of the publisher or the
+name of the specific publishing branch</p></li>
+<li><p><code>romeocolour</code> <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+a colour assigned by the database that reflects the default
+policies of the publisher</p></li>
+<li><p><code>preprint</code>    <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the preprint (not reviewed) archivable?</p></li>
+<li><p><code>postprint</code>   <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the postprint (reviewed but not formatted) archivable?</p></li>
+<li><p><code>pdf</code>         <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the publisher's version (reviewed and formatted)
+archivable?</p></li>
 </ul>
 
     
@@ -173,7 +180,8 @@ typesetted) archivable?</p></li>
 SHERPA/RoMEO</p>
 <p>Note that when using <code>rr_romeo_colour()</code> the API returns <strong>all</strong> the
 publishers in the selected category, so the results are generally bigger in
-size than specific functions like <code><a href='rr_journal_name.html'>rr_journal_name()</a></code> or <code><a href='rr_publisher.html'>rr_publisher()</a></code></p>
+size than specific functions like <code><a href='rr_journal_name.html'>rr_journal_name()</a></code> or
+<code><a href='rr_publisher_id.html'>rr_publisher_id()</a></code></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

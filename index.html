@@ -79,7 +79,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#rromeo-an-r-interface-for-sherparomeo-api" class="anchor"></a><code>rromeo</code> – an R interface for SHERPA/RoMEO API</h1></div>
 
-<p><code>rromeo</code> is an R client for the <a href="http://www.sherpa.ac.uk/romeo/index.php?la=en&amp;fIDnum=&amp;mode=simple">SHERPA/RoMEO API</a>. SHERPA/RoMEO is a database that gives information on editorial policies of scientific journals regarding the archival of pre-print, post-print and typesetted manuscripts.</p>
+<p><code>rromeo</code> is an R client for the <a href="http://www.sherpa.ac.uk/romeo/index.php?la=en&amp;fIDnum=&amp;mode=simple">SHERPA/RoMEO API</a>. SHERPA/RoMEO is a database that gives information on editorial policies of scientific journals regarding the archival of preprint, postprint and publishers’ manuscripts.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -103,7 +103,7 @@
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; 1 Journal of Biogeography 0305-0270      yellow      can restricted cannot</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;   pre_embargo post_embargo pdf_embargo</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; 1        &lt;NA&gt;    12 months        &lt;NA&gt;</span></a></code></pre></div>
-<p><code>rromeo</code> also provides a function to retrieve information based on publisher ID <code><a href="reference/rr_publisher.html">rr_publisher()</a></code>.</p>
+<p><code>rromeo</code> also provides a function to retrieve information based on publisher ID <code>rr_publisher()</code>.</p>
 <p>SHERPA/RoMEO provides a synthetic “colour” for each journal, the colour summarizes the editorial policy of a journal:</p>
 <table class="table table">
 <thead><tr class="header">
@@ -113,15 +113,15 @@
 <tbody>
 <tr class="odd">
 <td align="left"><code>green</code></td>
-<td align="left">can archive pre-print, post-print and publisher’s version</td>
+<td align="left">can archive preprint, postprint and publisher’s version</td>
 </tr>
 <tr class="even">
 <td align="left"><code>blue</code></td>
-<td align="left">can archive post-print <strong>or</strong> publisher’s version</td>
+<td align="left">can archive postprint <strong>or</strong> publisher’s version</td>
 </tr>
 <tr class="odd">
 <td align="left"><code>yellow</code></td>
-<td align="left">can archive pre-print</td>
+<td align="left">can archive preprint</td>
 </tr>
 <tr class="even">
 <td align="left"><code>white</code></td>
@@ -154,15 +154,15 @@
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Journal of Geology"</span>, <span class="dt">key =</span> <span class="st">"Iq83AIL5bss"</span>)</a></code></pre></div>
 <p>or you can specify the environment variable <code>SHERPAROMEO_KEY</code> in an <code>.Rprofile</code> or in an <code>.Renviron</code> file and <code>rromeo</code> will automatically retrieve the API key.</p>
 </div>
-<div id="dependency-netwrok" class="section level2">
+<div id="dependency-network" class="section level2">
 <h2 class="hasAnchor">
-<a href="#dependency-netwrok" class="anchor"></a>Dependency netwrok</h2>
+<a href="#dependency-network" class="anchor"></a>Dependency network</h2>
 <p><img src="reference/figures/README-dependency_network-1.png" width="100%"></p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
 <a href="#code-of-conduct" class="anchor"></a>Code of Conduct</h2>
-<p>Please note that the ‘rromeo’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the <code>rromeo</code> project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>

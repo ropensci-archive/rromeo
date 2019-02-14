@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Check SHERPA/RoMEO API key — check_key • rromeo</title>
+<title>Get Publisher Policy from Publisher ID — rr_publisher_id • rromeo</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,10 @@
 
 
 
-<meta property="og:title" content="Check SHERPA/RoMEO API key — check_key" />
+<meta property="og:title" content="Get Publisher Policy from Publisher ID — rr_publisher_id" />
 
-<meta property="og:description" content="The key can be either specified in various ways see the Details section." />
+<meta property="og:description" content="Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
+archival" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -102,22 +103,28 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Check SHERPA/RoMEO API key</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
-    <div class="hidden name"><code>check_key.Rd</code></div>
+    <h1>Get Publisher Policy from Publisher ID</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/rromeo_publishers.R'><code>R/rromeo_publishers.R</code></a></small>
+    <div class="hidden name"><code>rr_publisher_id.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>The key can be either specified in various ways see the Details section.</p>
+    <p>Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
+archival</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>check_key</span>(<span class='no'>key</span>)</pre>
+    <pre class="usage"><span class='fu'>rr_publisher_id</span>(<span class='no'>id</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>id</th>
+      <td><p><code>integer(1+)</code><br />
+one or a vector of SHERPA/RoMEO publisher's ID</p></td>
+    </tr>
     <tr>
       <th>key</th>
       <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
@@ -128,7 +135,27 @@ a character string containing the API key or <code>NULL</code>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>if found the character string of the key, <code>NULL</code> otherwise</p>
+    <p>Returns a data frame with the following columns:</p><ul>
+<li><p><code>romeoid</code>     <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer(1)</a></code><br />
+the internal index of the publisher in the SHERPA/RoMEO
+database</p></li>
+<li><p><code>publisher</code>   <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+the name of the publisher</p></li>
+<li><p><code>alias</code>       <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+if applicable an alternative name of the publisher or the
+name of the specific publishing branch</p></li>
+<li><p><code>romeocolour</code> <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+a colour assigned by the database that reflects the default
+policies of the publisher</p></li>
+<li><p><code>preprint</code>    <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the preprint (not reviewed) archivable?</p></li>
+<li><p><code>postprint</code>   <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the postprint (reviewed but not formatted) archivable?</p></li>
+<li><p><code>pdf</code>         <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+is the publisher's version (reviewed and formatted)
+archivable?</p></li>
+</ul>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -144,6 +171,11 @@ in your working directory, the file should contain the following line
 </ol>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>rr_publisher_id</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='fl'>55</span>)</div><div class='output co'>#&gt;   romeoid               publisher alias romeocolour preprint  postprint     pdf
+#&gt; 1      55 Oxford University Press   OUP      yellow      can restricted unclear</div><div class='input'><span class='fu'>rr_publisher_id</span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>55</span>, <span class='fl'>735</span>))</div><div class='output co'>#&gt;   romeoid               publisher alias romeocolour preprint  postprint     pdf
+#&gt; 1      55 Oxford University Press   OUP      yellow      can restricted unclear
+#&gt; 2     735   AgroParisTech, ENGREF  &lt;NA&gt;       green      can        can  cannot</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -153,7 +185,9 @@ in your working directory, the file should contain the following line
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
