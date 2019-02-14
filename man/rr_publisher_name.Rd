@@ -7,10 +7,10 @@
 rr_publisher_name(name, qtype = c("all", "any", "exact"), key = NULL)
 }
 \arguments{
-\item{name}{\code{[character(1+)]}
+\item{name}{\code{\link{character(1+)}}\cr{}
 One or a vector of query string(s) to search publisher name}
 
-\item{qtype}{\code{[character(1)]}
+\item{qtype}{\code{\link{character(1)}}\cr{}
 in \code{c("all", "any", "exact")} define the type of matching:
 * \code{all} means that all strings in \code{name} must appear in any
 order or location
@@ -19,24 +19,31 @@ appear
 * \code{exact} means that the \code{name} string must appear in the
 publisher's name or its alias.}
 
-\item{key}{a character string containing the API key or \code{NULL}
+\item{key}{\code{\link{character(1)}}\cr{}
+a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
 Returns a data frame with the following columns:
 \itemize{
-\item \code{romeoid}     \code{[integer(1)]} the internal index of the publisher in
-the SHERPA/RoMEO database
-\item \code{publisher}   \code{[character(1)]} the name of the publisher
-\item \code{alias}       \code{[character(1)]} if applicable an alternative name of the
-publisher or the name of the specific publishing branch
-\item \code{romeocolour} \code{[character(1)]} a colour assigned by the database that
-reflects the default policies of the publisher
-\item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
-\item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
-formatted) archivable?
-\item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
-formatted) archivable?
+\item \code{romeoid}     \code{\link{integer(1)}}\cr{}
+the internal index of the publisher in the SHERPA/RoMEO
+database
+\item \code{publisher}   \code{\link{character(1)}}\cr{}
+the name of the publisher
+\item \code{alias}       \code{\link{character(1)}}\cr{}
+if applicable an alternative name of the publisher or the
+name of the specific publishing branch
+\item \code{romeocolour} \code{\link{character(1)}}\cr{}
+a colour assigned by the database that reflects the default
+policies of the publisher
+\item \code{preprint}    \code{\link{character(1)}}\cr{}
+is the preprint (not reviewed) archivable?
+\item \code{postprint}   \code{\link{character(1)}}\cr{}
+is the postprint (reviewed but not formatted) archivable?
+\item \code{pdf}         \code{\link{character(1)}}\cr{}
+is the publisher's version (reviewed and formatted)
+archivable?
 }
 }
 \description{

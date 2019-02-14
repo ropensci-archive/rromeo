@@ -4,12 +4,14 @@
 \alias{parse_embargo}
 \title{Parse embargo period from API return}
 \usage{
-parse_embargo(xml_source, type)
+parse_embargo(xml_source, type = c("pre", "post", "pdf"))
 }
 \arguments{
-\item{xml_source}{a parsed xml document}
+\item{xml_source}{\code{\link{xml_document}}\cr{}
+a parsed xml document}
 
-\item{type}{name of the embargo type must be in \code{"pre"}, \code{"post"}, and
+\item{type}{\code{\link{character(1)}}
+name of the embargo type must be in \code{"pre"}, \code{"post"}, and
 \code{"pdf"}}
 }
 \value{

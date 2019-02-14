@@ -5,49 +5,66 @@
 \title{Retrieve journals policies by matching title}
 \usage{
 rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
-  "starts with"), key = NULL)
+  "starts"), key = NULL)
 }
 \arguments{
-\item{name}{\code{[character(1+)]} one or several strings to match the titles of
-the journals}
+\item{name}{\code{\link{character(1+)}}\cr{}
+one or several strings to match the titles of the journals}
 
-\item{multiple}{\code{[logical(1)]} If multiple results match your query, should
-the function recursively fetch data for each of one of them
-(\code{multiple = TRUE}) or return a data.frame containing only titles and ISSN of
-all matches (\code{multiple = FALSE})}
+\item{multiple}{\code{\link{logical(1)}}\cr{}
+If multiple results match your query, should the function
+recursively fetch data for each of one of them
+(\code{multiple = TRUE}) or return a data.frame containing only
+titles and ISSN of all matches (\code{multiple = FALSE})}
 
-\item{qtype}{\code{[character(1)]} in \code{c("exact", "contains", "starts with")} to
-set match type for the \code{name} search string}
+\item{qtype}{\code{\link{character(1)}}\cr{}
+in:
+* \code{"exact"} full title must be exactly to provided \code{name},
+* \code{"contains"} the provided \code{name} must appear anywhere in the
+title of the journal,
+* \code{"starts"} the provided \code{name} must appear at the start of
+title of the journal.}
 
-\item{key}{a character string containing the API key or \code{NULL}
+\item{key}{\code{\link{character(1)}}\cr{}
+a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
 Returns a data frame if multiple journals are found and
 \code{multiple = FALSE}:
 \itemize{
-\item \code{title}        \code{[character(1)]} the name of the journal
-\item \code{issn}         \code{[character(1)]} the ISSN of the journal
+\item \code{title}        \code{\link{character(1)}}\cr{}
+the name of the journal
+\item \code{issn}         \code{\link{character(1)}}\cr{}
+the ISSN of the journal
 if a single journal is found or if \code{multiple = TRUE} returns a larger
 data frame:
-\item \code{title}        \code{[character(1)]} the name of the journal
-\item \code{issn}         \code{[character(1)]} the ISSN of the journal
-\item \code{romeocolour}  \code{[character(1)]} the SHERPA/RoMEO colour of the journal
-\item \code{preprint}     \code{[character(1)]} is the preprint (not reviewed) archivable?
-\item \code{postprint}    \code{[character(1)]} is the postprint (reviewed but not
-formatted)?
-\item \code{pdf}          \code{[character(1)]} is the publisher's version
-(reviewed and formatted)
-\item \code{pre_embargo}  \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the preprint
-\item \code{post_embargo} \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the postprint
-\item \code{pdf_embargo}  \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the publisher's version
+\item \code{title}        \code{\link{character(1)}}\cr{}
+the name of the journal
+\item \code{issn}         \code{\link{character(1)}}\cr{}
+the ISSN of the journal
+\item \code{romeocolour}  \code{\link{character(1)}}\cr{}
+the SHERPA/RoMEO colour of the journal
+\item \code{preprint}     \code{\link{character(1)}}\cr{}
+is the preprint (not reviewed) archivable?
+\item \code{postprint}    \code{\link{character(1)}}\cr{}
+is the postprint (reviewed but not formatted)?
+\item \code{pdf}          \code{\link{character(1)}}\cr{}
+is the publisher's version (reviewed and formatted)
+\item \code{pre_embargo}  \code{\link{character(1)}}\cr{}
+if applicable the embargo period before the author(s) can
+archive the preprint
+\item \code{post_embargo} \code{\link{character(1)}}\cr{}
+if applicable the embargo period before the author(s) can
+archive the postprint
+\item \code{pdf_embargo}  \code{\link{character(1)}}\cr{}
+if applicable the embargo period before the author(s) can
+archive the publisher's version
 }
 }
 \description{
-Retrieve journals policies by matching title
+Note that SHERPARoMEO will not return more than 50 journals in a single
+query. The function will warn you if you are in this case.
 }
 \details{
 To provide your API key to \code{rromeo} you can:

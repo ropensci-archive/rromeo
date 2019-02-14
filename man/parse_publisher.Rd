@@ -12,18 +12,24 @@ parse_publisher(api_answer)
 \value{
 Returns a data frame with the following columns:
 \itemize{
-\item \code{romeoid}     \code{[integer(1)]} the internal index of the publisher in
-the SHERPA/RoMEO database
-\item \code{publisher}   \code{[character(1)]} the name of the publisher
-\item \code{alias}       \code{[character(1)]} if applicable an alternative name of the
-publisher or the name of the specific publishing branch
-\item \code{romeocolour} \code{[character(1)]} a colour assigned by the database that
-reflects the default policies of the publisher
-\item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
-\item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
-formatted) archivable?
-\item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
-formatted) archivable?
+\item \code{romeoid}     \code{\link{integer(1)}}\cr{}
+the internal index of the publisher in the SHERPA/RoMEO
+database
+\item \code{publisher}   \code{\link{character(1)}}\cr{}
+the name of the publisher
+\item \code{alias}       \code{\link{character(1)}}\cr{}
+if applicable an alternative name of the publisher or the
+name of the specific publishing branch
+\item \code{romeocolour} \code{\link{character(1)}}\cr{}
+a colour assigned by the database that reflects the default
+policies of the publisher
+\item \code{preprint}    \code{\link{character(1)}}\cr{}
+is the preprint (not reviewed) archivable?
+\item \code{postprint}   \code{\link{character(1)}}\cr{}
+is the postprint (reviewed but not formatted) archivable?
+\item \code{pdf}         \code{\link{character(1)}}\cr{}
+is the publisher's version (reviewed and formatted)
+archivable?
 }
 }
 \description{

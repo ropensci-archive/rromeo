@@ -7,7 +7,8 @@
 validate_country_code(country)
 }
 \arguments{
-\item{country}{\code{[character(1)]} a two-letter country code or \code{AA}, \code{ZZ} or
+\item{country}{\code{\link{character(1)}}\cr{}
+a two-letter country code or \code{AA}, \code{ZZ} or
 \code{__} (special country codes for SHERPA/RoMEO)}
 }
 \value{

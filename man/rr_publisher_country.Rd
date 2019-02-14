@@ -7,35 +7,43 @@
 rr_publisher_country(country, key = NULL)
 }
 \arguments{
-\item{country}{\code{[character(1)]}\cr{}
+\item{country}{\code{\link{character(1)}}\cr{}
 one or a vector of ISO two-letter country code or \code{AA} for
 international publisher, \code{ZZ} for publisher of unknown
 countries and \code{__} for publishers without specified country
 (case insensitive).}
 
-\item{key}{a character string containing the API key or \code{NULL}
+\item{key}{\code{\link{character(1)}}\cr{}
+a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
 Returns a data frame with the following columns:
 \itemize{
-\item \code{romeoid}     \code{[integer(1)]} the internal index of the publisher in
-the SHERPA/RoMEO database
-\item \code{publisher}   \code{[character(1)]} the name of the publisher
-\item \code{alias}       \code{[character(1)]} if applicable an alternative name of the
-publisher or the name of the specific publishing branch
-\item \code{romeocolour} \code{[character(1)]} a colour assigned by the database that
-reflects the default policies of the publisher
-\item \code{preprint}    \code{[character(1)]} is the preprint (not reviewed) archivable?
-\item \code{postprint}   \code{[character(1)]} is the postprint (reviewed but not
-formatted) archivable?
-\item \code{pdf}         \code{[character(1)]} is the publisher's version (reviewed and
-formatted) archivable?
+\item \code{romeoid}     \code{\link{integer(1)}}\cr{}
+the internal index of the publisher in the SHERPA/RoMEO
+database
+\item \code{publisher}   \code{\link{character(1)}}\cr{}
+the name of the publisher
+\item \code{alias}       \code{\link{character(1)}}\cr{}
+if applicable an alternative name of the publisher or the
+name of the specific publishing branch
+\item \code{romeocolour} \code{\link{character(1)}}\cr{}
+a colour assigned by the database that reflects the default
+policies of the publisher
+\item \code{preprint}    \code{\link{character(1)}}\cr{}
+is the preprint (not reviewed) archivable?
+\item \code{postprint}   \code{\link{character(1)}}\cr{}
+is the postprint (reviewed but not formatted) archivable?
+\item \code{pdf}         \code{\link{character(1)}}\cr{}
+is the publisher's version (reviewed and formatted)
+archivable?
 }
 }
 \description{
-Retrieve publisher's policy based on publisher's country. This function works
-for international, unknown and not specified countries.
+Retrieve publisher's policy based on publisher's country. The code should be
+the ISO_3166-1_alpha-2 code of the country
+\url{https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}.
 }
 \details{
 To provide your API key to \code{rromeo} you can:
