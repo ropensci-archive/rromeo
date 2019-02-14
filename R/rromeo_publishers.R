@@ -240,12 +240,12 @@ rr_publisher_country = function(country, key = NULL) {
 #' @export
 rr_publisher_all = function(key = NULL) {
 
-  message("This function can take a long time to run, please be patient.",
-          call. = FALSE)
+  message("This function can take a long time to run, please be patient.")
 
   api_key = check_key(key)
 
-  api_answer = GET(rr_base_api(), query = list(all = "yes"))
+  api_answer = GET(rr_base_api(), query = list(all = "yes",
+                                               ak = api_key))
 
   parse_publisher(api_answer)
 }
