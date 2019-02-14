@@ -22,15 +22,10 @@ r_packages:
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
-  - Rscript -e 'spelling::spell_check_setup(vignettes = TRUE, error = FALSE)'
+  - Rscript -e 'spelling::spell_check_package(vignettes = TRUE)'
 
 deploy:
   provider: script
   script: Rscript -e 'pkgdown::deploy_site_github()'
   skip_cleanup: true
-
-jobs:
-  include:
-    - stage: deploy
-      os: linux
-      r: release
+  if: branch = master AND os = linux
