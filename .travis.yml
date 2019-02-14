@@ -15,6 +15,10 @@ r_packages:
   - covr
   - pkgdown
   - spelling
+  - miniCRAN
+  - igraph
+  - ggnetwork
+  - intergraph
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
