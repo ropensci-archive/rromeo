@@ -141,8 +141,8 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
 #' Retrieve publisher's policy based on publisher's continent. This function
 #' does not work for unclassified or international publishers.
 #'
-#' @param continent {`character(1)`}\cr{}
-#'                  in ```
+#' @param continent {`character(1+)`}\cr{}
+#'                  one or a vector of strings in ```
 #'                  c("Africa", "Antarctica",  "Asia",  "Australasia",
 #'                  "Carribean",  "Central America",  "Europe",
 #'                  "North America",  "Oceania",  "South America")
@@ -161,6 +161,7 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
 #'
 #' rr_publisher_continent(continent = "Caribbean")
 #' rr_publisher_continent(continent = "Central America")
+#' rr_publisher_continent(continent = c("Caribbean", "Central America"))
 rr_publisher_continent = function(continent = c("Africa",
                                                 "Antarctica",
                                                 "Asia",
@@ -173,12 +174,30 @@ rr_publisher_continent = function(continent = c("Africa",
                                                 "South America"),
                                   key = NULL) {
 
-  continent = match.arg(continent)
+  valid_continents = lapply(continent, function(single_continent) {
+    single_continent %in% c("Africa", "Antarctica", "Asia", "Australasia",
+                            "Caribbean", "Central America", "Europe",
+                            "North America", "Oceania", "South America")
+  })
 
-  api_answer = GET(rr_base_api(), query = list(country = continent,
-                                               ak = check_key(key)))
+  if (!any(valid_continents)) {
+    stop("Some continents are not valid, see ?rr_publisher_continent to get ",
+         "the list of valid continents", call. = FALSE)
+  }
 
-  parse_publisher(api_answer)
+  api_key = check_key(key)
+
+  answer_list = lapply(continent, function(single_continent) {
+    api_answer = GET(rr_base_api(), query = list(country = single_continent,
+                                                 ak = api_key))
+
+    parse_publisher(api_answer)
+  })
+
+  publishers_df = do.call(rbind.data.frame,
+                          c(answer_list, stringsAsFactors = FALSE))
+
+  return(publishers_df)
 }
 
 #' Get Publisher Policy by Publisher's Country
@@ -187,7 +206,7 @@ rr_publisher_continent = function(continent = c("Africa",
 #' the ISO_3166-1_alpha-2 code of the country
 #' <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>.
 #'
-#' @param country {`character(1)`}\cr{}
+#' @param country {`character(1+)`}\cr{}
 #'                one or a vector of ISO two-letter country code or `AA` for
 #'                international publisher, `ZZ` for publisher of unknown
 #'                countries and `__` for publishers without specified country
@@ -243,10 +262,8 @@ rr_publisher_all = function(key = NULL) {
 
   message("This function can take a long time to run, please be patient.")
 
-  api_key = check_key(key)
-
   api_answer = GET(rr_base_api(), query = list(all = "yes",
-                                               ak = api_key))
+                                               ak = check_key(key)))
 
   parse_publisher(api_answer)
 }

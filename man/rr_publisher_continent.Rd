@@ -9,8 +9,8 @@ rr_publisher_continent(continent = c("Africa", "Antarctica", "Asia",
   "Oceania", "South America"), key = NULL)
 }
 \arguments{
-\item{continent}{{\code{character(1)}}\cr{}
-in \code{c("Africa", "Antarctica",  "Asia",  "Australasia", "Carribean",  "Central America",  "Europe", "North America",  "Oceania",  "South America")}\cr{}
+\item{continent}{{\code{character(1+)}}\cr{}
+one or a vector of strings in \code{c("Africa", "Antarctica",  "Asia",  "Australasia", "Carribean",  "Central America",  "Europe", "North America",  "Oceania",  "South America")}\cr{}
 the continent name to retrieve}
 
 \item{key}{{\code{character(1)}}\cr{}
@@ -61,4 +61,5 @@ in your working directory, the file should contain the following line
 
 rr_publisher_continent(continent = "Caribbean")
 rr_publisher_continent(continent = "Central America")
+rr_publisher_continent(continent = c("Caribbean", "Central America"))
 }
