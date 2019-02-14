@@ -24,10 +24,8 @@ Suggests:
     ggplot2,
     knitr,
     rmarkdown,
-    spelling,
     testthat,
     vcr,
-    covr,
     ISOcodes,
     mockery
 Language: en-US
