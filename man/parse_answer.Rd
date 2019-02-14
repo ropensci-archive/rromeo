@@ -9,31 +9,40 @@ parse_answer(api_answer, multiple = FALSE, key = NULL)
 \arguments{
 \item{api_answer}{xml API answer}
 
-\item{multiple}{If multiple results match your query, should the function
-recursively fetch data for each of one of them (\code{multiple = TRUE}) or
-return a data.frame containing only titles and ISSN of all matches
-(\code{multiple = FALSE})}
+\item{multiple}{{\code{logical(1)}}\cr{}
+If multiple results match your query, should the function
+recursively fetch data for each of one of them
+(\code{multiple = TRUE}) or return a data.frame containing only
+titles and ISSN of all matches (\code{multiple = FALSE})}
 
-\item{key}{a character string containing the API key or \code{NULL}
+\item{key}{{\code{character(1)}}\cr{}
+a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
 Returns a data.frame with the following columns:
 \itemize{
-\item \code{title}        \code{[character(1)]} the name of the journal
-\item \code{issn}         \code{[character(1)]} the ISSN of the journal
-\item \code{romeocolour}  \code{[character(1)]} the SHERPA/RoMEO colour of the journal
-\item \code{preprint}     \code{[character(1)]} is the preprint (not reviewed) archivable?
-\item \code{postprint}    \code{[character(1)]} is the postprint (reviewed but not
-typesetted) archivable?
-\item \code{pdf}          \code{[character(1)]} is the publisher's version
-(reviewed and typesetted)
-\item \code{pre_embargo}  \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the pre-print
-\item \code{post_embargo} \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the post-print
-\item \code{pdf_embargo}  \code{[character(1)]} if applicable the embargo period before
-the author(s) can archive the publisher's version
+\item \code{title}        {\code{character(1)}}\cr{}
+the name of the journal
+\item \code{issn}         {\code{character(1)}}\cr{}
+the ISSN of the journal
+\item \code{romeocolour}  {\code{character(1)}}\cr{}
+the SHERPA/RoMEO colour of the journal
+\item \code{preprint}     {\code{character(1)}}\cr{}
+is the preprint (not reviewed) archivable?
+\item \code{postprint}    {\code{character(1)}}\cr{}
+is the postprint (reviewed but not formatted) archivable?
+\item \code{pdf}          {\code{character(1)}}\cr{}
+is the publisher's version (reviewed and formatted)
+\item \code{pre_embargo}  {\code{character(1)}}\cr{}
+if applicable the embargo period before the author(s) can
+archive the preprint
+\item \code{post_embargo} {\code{character(1)}}\cr{}
+if applicable the embargo period before the author(s) can
+archive the postprint
+\item \code{pdf_embargo}  {\code{character(1)}}\cr{}
+if applicable the embargo period before the author(s) can
+archive the publisher's version
 }
 }
 \description{

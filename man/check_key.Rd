@@ -7,7 +7,8 @@
 check_key(key)
 }
 \arguments{
-\item{key}{a character string containing the API key or \code{NULL}
+\item{key}{{\code{character(1)}}\cr{}
+a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{

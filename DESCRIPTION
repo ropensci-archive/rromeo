@@ -21,15 +21,13 @@ Imports:
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
 Suggests:
-    dplyr,
     ggplot2,
     knitr,
     rmarkdown,
-    spelling,
     testthat,
-    tidyr,
     vcr,
-    covr
+    ISOcodes,
+    mockery
 Language: en-US
 VignetteBuilder: knitr
 URL: https://github.com/Rekyt/rromeo

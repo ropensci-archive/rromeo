@@ -11,6 +11,21 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+
+```{r setup, include = FALSE}
+library(vcr)
+
+vcr_configure("../inst/")
+
+use_cassette("vignette_cassette", {
+  rromeo::rr_journal_issn("1947-6264")
+  rromeo::rr_journal_name("Biogeography", qtype = "contains")
+  rromeo::rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
+})
+
+insert_cassette("vignette_cassette")
+```
+
 ```{r}
 library(rromeo)
 ```
@@ -40,38 +55,30 @@ Alternatively, you may want to get data for all those journals. To achieve this,
 you may enable the `multiple` option:
 
 ```{r}
-res <- rr_journal_name("Evolutionary", qtype = "contains", multiple = TRUE)
+res <- rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
 tail(res, 3)
-```
-
-Unfortunately, the API does not provide any way to search for full words. So in
-this case, when searching for journal with `"Evolutionary"` in their titles, we
-also get results such as `"Revolutionary Russia"`. We can manually remove those
-false positives:
-
-```{r}
-has_evolutionary_title <- !grepl("\\w+evolutionary|evolutionary\\w+", 
-                                 res$title, ignore.case = TRUE)
-res <- res[has_evolutionary_title,]
 ```
 
 This tool is useful in bibliometric studies. For example, we can now have a 
 visual overview of the policies of journals in a given field:
 
-```{r}
-library("dplyr")
+```{r bar_graph}
 library("ggplot2")
 theme_set(theme_minimal())
-res %>% 
-  select(preprint, postprint, pdf) %>%
-  tidyr::gather(key = "ms", value = "policy") %>%
-  ggplot(aes(x = ms, fill = policy)) +
+
+stacked_res <- stack(res[, 4:6])
+ggplot(stacked_res, aes(x = ind, fill = values)) +
   geom_bar() +
   xlab(NULL)
+```
 
-res %>%
-  ggplot(aes(x = "", fill = romeocolour)) +
+```{r pie_chart}
+ggplot(res, aes(x = "a", fill = romeocolour)) +
   geom_bar() + 
   coord_polar("y") +
   xlab(NULL)
+```
+
+```{r eject_cassette}
+eject_cassette("vignette_cassette")
 ```

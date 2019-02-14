@@ -7,7 +7,8 @@
 validate_issn(issn)
 }
 \arguments{
-\item{issn}{The ISSN of a journal}
+\item{issn}{{\code{character(1)}}\cr{}
+The ISSN of a journal}
 }
 \value{
 \code{NULL} if the ISSN is valid, errors otherwise

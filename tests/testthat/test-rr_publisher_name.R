@@ -1,12 +1,13 @@
-context("rr_publisher")
+context("rr_publisher_name")
 
-test_that("rr_publisher() works", {
-  expect_error(rr_publisher("a"),
-               regexp = "All provided IDs should be integers")
+test_that("rr_publisher_name() works", {
+  expect_error(rr_publisher_name("a", qtype = "bla"),
+               regexp = paste0("'arg' should be one of ", dQuote("all"), ", ",
+                               dQuote("any"), ", ", dQuote("exact")))
 
   # Regular Query
-  use_cassette("rr_publisher", {
-    res = rr_publisher(55)
+  use_cassette("rr_publisher_name", {
+    res = rr_publisher_name("Swiss Chemistry", qtype = "exact")
 
     expect_is(res, "data.frame")
 
@@ -21,13 +22,14 @@ test_that("rr_publisher() works", {
     expect_is(res$postprint,   "character")
     expect_is(res$pdf,         "character")
 
-    expect_equal(res$alias, "OUP")
-    expect_equal(res$pdf,   "unclear")
+    expect_equal(res$alias, "Swiss Chemistry Society")
+    expect_equal(res$pdf,   "restricted")
   })
 
   # Multiple publishers
-  use_cassette("rr_publisher_multiple", {
-    res = rr_publisher(c(55, 735))
+  use_cassette("rr_publisher_name_multiple", {
+    res = rr_publisher_name(c("Swiss Chemistry", "Nordic Ecological Society"),
+                            qtype = "exact")
 
     expect_is(res, "data.frame")
 
@@ -42,22 +44,12 @@ test_that("rr_publisher() works", {
     expect_is(res$preprint,    "character")
     expect_is(res$postprint,   "character")
     expect_is(res$pdf,         "character")
-    expect_equal(res$romeoid, c(55, 735))
+    expect_equal(res$romeoid, c(411, 88))
   })
 
   # When Publisher is not found
-  use_cassette("rr_publisher_notfound", {
-    expect_error(rr_publisher(1500000, key = ""),
+  use_cassette("rr_publisher_name_notfound", {
+    expect_error(rr_publisher_name("huhuhqsdhqdjh"),
                  "No publisher matches the provided id. Please try another id.")
-  })
-
-  # Invalid ID
-  expect_error(rr_publisher("azerty"), "All provided IDs should be integers")
-
-  # When server is not reachable
-  use_cassette("api_unreachable_publisher", {
-    expect_error(rr_publisher(55),
-                 paste0("The API endpoint could not be reached. Please try",
-                        " again later."))
   })
 })

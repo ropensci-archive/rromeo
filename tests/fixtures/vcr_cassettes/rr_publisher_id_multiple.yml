@@ -9,20 +9,21 @@ http_interactions:
       Accept: application/json, text/xml, application/xml, */*
   response:
     status:
+      status_code: 200
       category: Success
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 14 Jan 2019 16:43:04 GMT
+      date: Wed, 13 Feb 2019 16:20:27 GMT
       server: Apache/2.4.7 (Ubuntu)
       x-powered-by: PHP/5.5.9-1ubuntu4.26
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1761'
-      Content-Type: text/xml
+      content-length: '1763'
+      content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -53,7 +54,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>14-Jan-2019:16:43:04</timestamp>
+            <timestamp>13-Feb-2019:16:20:27</timestamp>
           </header>
           <journals />
           <publishers>
@@ -126,5 +127,98 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-01-14 16:43:04 GMT
-  recorded_with: vcr/0.2.2, webmockr/0.3.0
+  recorded_at: 2019-02-13 16:20:28 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?id=735
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Wed, 13 Feb 2019 16:20:27 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '986'
+      content-type: text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>id</parametername>
+                <parametervalue>735</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>identifier</apicontrol>
+            <outcome>publisherFound</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>13-Feb-2019:16:20:27</timestamp>
+          </header>
+          <journals />
+          <publishers>
+            <publisher id="735">
+              <name>AgroParisTech, ENGREF</name>
+              <alias />
+              <homeurl>http://documents.irevues.inist.fr/handle/2042/4752</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF cannot be used</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks />
+              <romeocolour>green</romeocolour>
+              <dateadded>2010-02-11 09:56:28</dateadded>
+              <dateupdated>2010-02-11 09:56:28</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-13 16:20:28 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4

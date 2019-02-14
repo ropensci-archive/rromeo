@@ -1,7 +1,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?id=55
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?pub=Swiss%20Chemistry&qtype=exact
     body:
       encoding: ''
       string: ''
@@ -14,13 +14,13 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Sun, 10 Feb 2019 18:03:19 GMT
+      date: Wed, 13 Feb 2019 13:21:10 GMT
       server: Apache/2.4.7 (Ubuntu)
       x-powered-by: PHP/5.5.9-1ubuntu4.26
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1760'
+      content-length: '1377'
       content-type: text/xml
     body:
       encoding: ISO-8859-1
@@ -31,8 +31,12 @@ http_interactions:
           <header>
             <parameters>
               <parameter source="specified">
-                <parametername>id</parametername>
-                <parametervalue>55</parametervalue>
+                <parametername>pub</parametername>
+                <parametervalue>Swiss Chemistry</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
               </parameter>
               <parameter source="default">
                 <parametername>showfunder</parametername>
@@ -48,20 +52,129 @@ http_interactions:
               </parameter>
             </parameters>
             <numhits>1</numhits>
-            <apicontrol>identifier</apicontrol>
+            <apicontrol>publisher</apicontrol>
             <outcome>publisherFound</outcome>
             <message />
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>10-Feb-2019:18:03:19</timestamp>
+            <timestamp>13-Feb-2019:13:21:10</timestamp>
           </header>
           <journals />
           <publishers>
-            <publisher id="55">
-              <name>Oxford University Press</name>
-              <alias>OUP</alias>
-              <homeurl>http://www.oxfordjournals.org/</homeurl>
+            <publisher id="411">
+              <name>Schweizerische Chemische Gesellschaft</name>
+              <alias>Swiss Chemistry Society</alias>
+              <homeurl>http://www.swiss-chem-soc.ch/</homeurl>
+              <preprints>
+                <prearchiving>unclear</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>cannot</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>restricted</pdfarchiving>
+                <pdfrestrictions>
+                  <pdfrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</pdfrestriction>
+                </pdfrestrictions>
+              </pdfversion>
+              <conditions>
+                <condition>On authors personal website and/or in a non-profit and non-commercial institutional repository or funding body repository</condition>
+                <condition>Publisher copyright and source must be acknowledged with citation</condition>
+                <condition>Must link to journal homepage</condition>
+                <condition>Publisher's version/PDF must be used (free to members of the society)</condition>
+                <condition>Must link to publisher version with DOI</condition>
+                <condition>Publisher last contacted on 01/03/2017</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>https://chimia.ch/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=431&amp;Itemid=674&amp;lang=en</paidaccessurl>
+                <paidaccessname>Open Access</paidaccessname>
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>https://chimia.ch/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=431&amp;Itemid=674&amp;lang=en</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>white</romeocolour>
+              <dateadded>2008-03-04 00:00:00</dateadded>
+              <dateupdated>2011-08-12 11:23:35</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-13 13:21:11 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?pub=Nordic%20Ecological%20Society&qtype=exact
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Wed, 13 Feb 2019 13:21:11 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1319'
+      content-type: text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>pub</parametername>
+                <parametervalue>Nordic Ecological Society</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>publisher</apicontrol>
+            <outcome>publisherFound</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>13-Feb-2019:13:21:11</timestamp>
+          </header>
+          <journals />
+          <publishers>
+            <publisher id="88">
+              <name>Nordic Ecological Society</name>
+              <alias />
+              <homeurl>http://www.oikos.ekol.lu.se/</homeurl>
               <preprints>
                 <prearchiving>can</prearchiving>
                 <prerestrictions />
@@ -69,156 +182,37 @@ http_interactions:
               <postprints>
                 <postarchiving>restricted</postarchiving>
                 <postrestrictions>
-                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo on science, technology, medicine articles</postrestriction>
-                  <postrestriction>&lt;num&gt;2&lt;/num&gt; &lt;period units=&quot;year&quot;&gt;years&lt;/period&gt; embargo on arts and humanities articles</postrestriction>
-                  <postrestriction>Some titles may have different embargoes</postrestriction>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
                 </postrestrictions>
-              </postprints>
-              <pdfversion>
-                <pdfarchiving>unclear</pdfarchiving>
-                <pdfrestrictions />
-              </pdfversion>
-              <conditions>
-                <condition>Pre-print can only be posted prior to acceptance</condition>
-                <condition>Pre-print must be accompanied by set statement (see link)</condition>
-                <condition>Pre-print must not be replaced with post-print, instead a link to published version with amended set statement should be made</condition>
-                <condition>Pre-print on author's personal website, employer website, free public server or pre-prints in subject area</condition>
-                <condition>Post-print in Institutional repositories or Central repositories</condition>
-                <condition>Publisher version cannot be used except for Nucleic Acids Research articles</condition>
-                <condition>Published source must be acknowledged</condition>
-                <condition>Must link to publisher version</condition>
-                <condition>Set phrase to accompany archived copy (see policy)</condition>
-                <condition>Articles in &lt;a href=&quot;http://www.oxfordjournals.org/oxfordopen/&quot; target=&quot;_blank&quot;&gt;some journals&lt;/a&gt; can be made Open Access on payment of additional charge</condition>
-                <condition>Eligible UK authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
-                <condition>Publisher will deposit on behalf of NIH funded authors to PubMed Central, Nucleic Acids Research authors must pay their fee first</condition>
-                <condition>Some titles may use different policies</condition>
-              </conditions>
-              <mandates />
-              <paidaccess>
-                <paidaccessurl>http://www.oxfordjournals.org/oxfordopen/</paidaccessurl>
-                <paidaccessname>Oxford Open</paidaccessname>
-                <paidaccessnotes>Covers 90 journals</paidaccessnotes>
-              </paidaccess>
-              <copyrightlinks>
-                <copyrightlink>
-                  <copyrightlinktext>Policy A</copyrightlinktext>
-                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/self-archiving_policya.html</copyrightlinkurl>
-                </copyrightlink>
-                <copyrightlink>
-                  <copyrightlinktext>Policy B</copyrightlinktext>
-                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/self-archiving_policyb.html</copyrightlinkurl>
-                </copyrightlink>
-                <copyrightlink>
-                  <copyrightlinktext>publication rights</copyrightlinktext>
-                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/publication_rights.html</copyrightlinkurl>
-                </copyrightlink>
-                <copyrightlink>
-                  <copyrightlinktext>NIH policy</copyrightlinktext>
-                  <copyrightlinkurl>http://www.oxfordjournals.org/news/2008/08/04/nih_deposits.html</copyrightlinkurl>
-                </copyrightlink>
-                <copyrightlink>
-                  <copyrightlinktext>Other funding agencies</copyrightlinktext>
-                  <copyrightlinkurl>http://www.oxfordjournals.org/for_authors/repositories.html</copyrightlinkurl>
-                </copyrightlink>
-              </copyrightlinks>
-              <romeocolour>yellow</romeocolour>
-              <dateadded>2004-01-10 00:00:00</dateadded>
-              <dateupdated>2013-09-02 13:26:34</dateupdated>
-            </publisher>
-          </publishers>
-        </romeoapi>
-  recorded_at: 2019-02-10 18:03:18 GMT
-  recorded_with: vcr/0.2.4.9211, webmockr/0.3.4.9100
-- request:
-    method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?id=735
-    body:
-      encoding: ''
-      string: ''
-    headers:
-      Accept: application/json, text/xml, application/xml, */*
-  response:
-    status:
-      status_code: 200
-      category: Success
-      reason: OK
-      message: 'Success: (200) OK'
-    headers:
-      date: Sun, 10 Feb 2019 18:03:19 GMT
-      server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
-      access-control-allow-origin: '*'
-      vary: Accept-Encoding
-      content-encoding: gzip
-      content-length: '987'
-      content-type: text/xml
-    body:
-      encoding: ISO-8859-1
-      string: |
-        <?xml version="1.0" encoding="ISO-8859-1" ?>
-        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
-        <romeoapi version="2.9.9">
-          <header>
-            <parameters>
-              <parameter source="specified">
-                <parametername>id</parametername>
-                <parametervalue>735</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>showfunder</parametername>
-                <parametervalue>none</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>fIDnum</parametername>
-                <parametervalue>|</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>la</parametername>
-                <parametervalue>en</parametervalue>
-              </parameter>
-            </parameters>
-            <numhits>1</numhits>
-            <apicontrol>identifier</apicontrol>
-            <outcome>publisherFound</outcome>
-            <message />
-            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
-            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
-            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>10-Feb-2019:18:03:19</timestamp>
-          </header>
-          <journals />
-          <publishers>
-            <publisher id="735">
-              <name>AgroParisTech, ENGREF</name>
-              <alias />
-              <homeurl>http://documents.irevues.inist.fr/handle/2042/4752</homeurl>
-              <preprints>
-                <prearchiving>can</prearchiving>
-                <prerestrictions />
-              </preprints>
-              <postprints>
-                <postarchiving>can</postarchiving>
-                <postrestrictions />
               </postprints>
               <pdfversion>
                 <pdfarchiving>cannot</pdfarchiving>
                 <pdfrestrictions />
               </pdfversion>
               <conditions>
+                <condition>On author's personal website, employer's website, employer's repository, or free public servers in the subject area</condition>
+                <condition>Pre-print must be accompanied by statement that submitted for publication in journal</condition>
+                <condition>Publisher copyright and source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
                 <condition>Publisher's version/PDF cannot be used</condition>
               </conditions>
               <mandates />
               <paidaccess>
-                <paidaccessurl />
-                <paidaccessname />
+                <paidaccessurl>http://olabout.wiley.com/WileyCDA/Section/id-828081.html</paidaccessurl>
+                <paidaccessname>Wiley OnlineOpen</paidaccessname>
                 <paidaccessnotes />
               </paidaccess>
-              <copyrightlinks />
-              <romeocolour>green</romeocolour>
-              <dateadded>2010-02-11 09:56:28</dateadded>
-              <dateupdated>2010-02-11 09:56:28</dateupdated>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.blackwellpublishing.com/pdf/ECO_ELF_7102011.pdf</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2004-04-17 00:00:00</dateadded>
+              <dateupdated>2016-10-27 10:10:09</dateupdated>
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-10 18:03:18 GMT
-  recorded_with: vcr/0.2.4.9211, webmockr/0.3.4.9100
+  recorded_at: 2019-02-13 13:21:11 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
