@@ -79,6 +79,6 @@ ggplot(res, aes(x = "a", fill = romeocolour)) +
   xlab(NULL)
 ```
 
-```{r eject_cassette}
+```{r eject_cassette, include = FALSE}
 eject_cassette("vignette_cassette")
 ```
