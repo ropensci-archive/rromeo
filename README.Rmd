@@ -76,11 +76,18 @@ rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
 
 or you can specify the environment variable `SHERPAROMEO_KEY` in an `.Rprofile` or in an `.Renviron` file and `rromeo` will automatically retrieve the API key.
 
-## Dependency network
+## Dependency network (Imports only)
 
-```{r dependency_network, echo=FALSE, message=FALSE, warning=FALSE}
-source("https://gist.githubusercontent.com/Rekyt/261c2c3040715dcd8c211d7f5d18c9c8/raw/46980bd7a00b89f291af57a90a579b521bb6a87e/plot_dependencies.R")
+```{r dependency_network_imports, echo=FALSE, message=FALSE, warning=FALSE}
+source("https://gist.githubusercontent.com/Rekyt/261c2c3040715dcd8c211d7f5d18c9c8/raw/")
 plot_dependencies()
+```
+
+## Dependency network (Imports and Suggests)
+
+```{r dependency_network_full, echo=FALSE, message=FALSE, warning=FALSE}
+source("https://gist.githubusercontent.com/Rekyt/261c2c3040715dcd8c211d7f5d18c9c8/raw/")
+plot_dependencies(type = "full")
 ```
 
 ## Code of Conduct

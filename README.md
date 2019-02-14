@@ -1,26 +1,41 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-`rromeo` – an R interface for SHERPA/RoMEO API
-==============================================
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Travis build status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/Rekyt/rromeo?branch=master&svg=true)](https://ci.appveyor.com/project/Rekyt/rromeo) [![codecov](https://codecov.io/gh/Rekyt/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/rromeo)
+# `rromeo` – an R interface for SHERPA/RoMEO API
 
-`rromeo` is an R client for the [SHERPA/RoMEO API](http://www.sherpa.ac.uk/romeo/index.php?la=en&fIDnum=&mode=simple). SHERPA/RoMEO is a database that gives information on editorial policies of scientific journals regarding the archival of preprint, postprint and publishers' manuscripts.
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Travis build
+status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/Rekyt/rromeo?branch=master&svg=true)](https://ci.appveyor.com/project/Rekyt/rromeo)
+[![codecov](https://codecov.io/gh/Rekyt/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/rromeo)
 
-Installation
-------------
+`rromeo` is an R client for the [SHERPA/RoMEO
+API](http://www.sherpa.ac.uk/romeo/index.php?la=en&fIDnum=&mode=simple).
+SHERPA/RoMEO is a database that gives information on editorial policies
+of scientific journals regarding the archival of preprint, postprint and
+publishers’ manuscripts.
 
-`rromeo` is not yet on CRAN but you can install the development version of `rromeo` with:
+## Installation
+
+`rromeo` is not yet on CRAN but you can install the development version
+of `rromeo` with:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("Rekyt/rromeo")
 ```
 
-Usage
------
+## Usage
 
-`rromeo` contains functions to retrieve data from the SHERPA/RoMEO API (for a complete overview please refer to the [vignette](https://rekyt.github.io/rromeo/articles/overview.html)). Usable functions are prefixed with `rr_` such as `rr_journal_name()` that lets you retrieve a journal policy information using the title of a journal:
+`rromeo` contains functions to retrieve data from the SHERPA/RoMEO API
+(for a complete overview please refer to the
+[vignette](https://rekyt.github.io/rromeo/articles/overview.html)).
+Usable functions are prefixed with `rr_` such as `rr_journal_name()`
+that lets you retrieve a journal policy information using the title of a
+journal:
 
 ``` r
 rromeo::rr_journal_name("Journal of Biogeography", qtype = "exact")
@@ -30,7 +45,9 @@ rromeo::rr_journal_name("Journal of Biogeography", qtype = "exact")
 #> 1        <NA>    12 months        <NA>
 ```
 
-the `qtype` argument indicates the type of query to make (`exact` for exact matching of the title, `contains` for partial matching and `starts with` to match only the beginning of the title).
+the `qtype` argument indicates the type of query to make (`exact` for
+exact matching of the title, `contains` for partial matching and `starts
+with` to match only the beginning of the title).
 
 You can also retrieve a journal information using its ISSN:
 
@@ -42,20 +59,26 @@ rromeo::rr_journal_issn("0305-0270")
 #> 1        <NA>    12 months        <NA>
 ```
 
-`rromeo` also provides a function to retrieve information based on publisher ID `rr_publisher()`.
+`rromeo` also provides a function to retrieve information based on
+publisher ID `rr_publisher()`.
 
-SHERPA/RoMEO provides a synthetic "colour" for each journal, the colour summarizes the editorial policy of a journal:
+SHERPA/RoMEO provides a synthetic “colour” for each journal, the colour
+summarizes the editorial policy of a
+journal:
 
 | RoMEO colour | Archiving policy                                        |
-|:-------------|:--------------------------------------------------------|
-| `green`      | can archive preprint, postprint and publisher's version |
-| `blue`       | can archive postprint **or** publisher's version        |
+| :----------- | :------------------------------------------------------ |
+| `green`      | can archive preprint, postprint and publisher’s version |
+| `blue`       | can archive postprint **or** publisher’s version        |
 | `yellow`     | can archive preprint                                    |
 | `white`      | archiving not formally supported                        |
 
-(Table taken from <http://www.sherpa.ac.uk/romeo/definitions.php#colours>)
+(Table taken from
+<http://www.sherpa.ac.uk/romeo/definitions.php#colours>)
 
-`rromeo` lets you retrieve the policies of all journals of a given colour using the function `rr_romeo_colour()` (**NOTE:** this function can be slow as there many journals to retrieve):
+`rromeo` lets you retrieve the policies of all journals of a given
+colour using the function `rr_romeo_colour()` (**NOTE:** this function
+can be slow as there many journals to retrieve):
 
 ``` r
 green_journals = rromeo::rr_romeo_colour("green")
@@ -74,25 +97,35 @@ green_journals[8:12,]
 #> 12      can       can        can
 ```
 
-API Key
--------
+## API Key
 
-Note that SHERPA/RoMEO lets you run 500 requests per day per IP address, by [registering for a free API key](http://www.sherpa.ac.uk/romeo/apiregistry.php) you can bypass this limit.
+Note that SHERPA/RoMEO lets you run 500 requests per day per IP address,
+by [registering for a free API
+key](http://www.sherpa.ac.uk/romeo/apiregistry.php) you can bypass this
+limit.
 
-`rromeo` can use your registered SHERPA/RoMEO API key; you can either pass it as a string when querying the data with the argument `key`:
+`rromeo` can use your registered SHERPA/RoMEO API key; you can either
+pass it as a string when querying the data with the argument `key`:
 
 ``` r
 rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
 ```
 
-or you can specify the environment variable `SHERPAROMEO_KEY` in an `.Rprofile` or in an `.Renviron` file and `rromeo` will automatically retrieve the API key.
+or you can specify the environment variable `SHERPAROMEO_KEY` in an
+`.Rprofile` or in an `.Renviron` file and `rromeo` will automatically
+retrieve the API
+key.
 
-Dependency network
-------------------
+## Dependency network (Imports only)
 
-<img src="man/figures/README-dependency_network-1.png" width="100%" />
+<img src="man/figures/README-dependency_network_imports-1.png" width="100%" />
 
-Code of Conduct
----------------
+## Dependency network (Imports and Suggests)
 
-Please note that the `rromeo` project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+<img src="man/figures/README-dependency_network_full-1.png" width="100%" />
+
+## Code of Conduct
+
+Please note that the `rromeo` project is released with a [Contributor
+Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
+you agree to abide by its terms.
