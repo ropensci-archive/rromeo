@@ -1,0 +1,732 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=real-Time&qtype=contains
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 12:54:11 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1064'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>real-Time</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>contains</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>6</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>manyJournals</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:12:54:11</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>IEEE NPSS Real Time Conference : conference record. Conference on Real-Time Computer Applications in Nuclear, Particle, and Plasma Physics</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>International Journal of Embedded and Real-Time Communication Systems</jtitle>
+              <issn>1947-3176</issn>
+              <zetocpub>IGI Global</zetocpub>
+              <romeopub>IGI Global</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Journal of Real-Time Image Processing</jtitle>
+              <issn>1861-8200</issn>
+              <zetocpub>Springer Verlag (Germany) / Speinger Sceince    Business Media</zetocpub>
+              <romeopub>Springer Verlag (Germany)</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Real Time Imaging</jtitle>
+              <issn>1077-2014</issn>
+              <zetocpub>Elsevier Science B.V., Amsterdam</zetocpub>
+              <romeopub>Elsevier</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Real Time Magazine</jtitle>
+              <issn>1018-0303</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Real-Time Systems</jtitle>
+              <issn>0922-6443</issn>
+              <zetocpub>Springer Verlag (Germany) / Springer Science   Business Media</zetocpub>
+              <romeopub>Springer Verlag (Germany)</romeopub>
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 12:54:12 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=IEEE%20NPSS%20Real%20Time%20Conference%20%3A%20conference%20record.%20Conference%20on%20Real-Time%20Computer%20Applications%20in%20Nuclear%2C%20Particle%2C%20and%20Plasma%20Physics&qtype=exact
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 12:54:11 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '847'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>IEEE NPSS Real Time Conference : conference record. Conference on Real-Time Computer Applications in Nuclear, Particle, and Plasma Physics</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>0</numhits>
+            <apicontrol>pastfreelimit</apicontrol>
+            <outcome>pastfreelimit</outcome>
+            <message>You have exceeded the free use limit of 500 requests per day. You need to register with RoMEO if you require unlimited usage</message>
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:12:54:11</timestamp>
+          </header>
+          <journals />
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 12:54:12 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1947-3176
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 12:54:11 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1384'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1947-3176</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:12:54:11</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>International Journal of Embedded and Real-Time Communication Systems</jtitle>
+              <issn>1947-3176</issn>
+              <zetocpub>IGI Global</zetocpub>
+              <romeopub>IGI Global</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="455">
+              <name>IGI Global</name>
+              <alias />
+              <homeurl>http://www.igi-global.com/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>cannot</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF must be used</condition>
+                <condition>On author's personal website, employer's website or institutional repository only</condition>
+                <condition>Publisher copyright and source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Authors may not upload their manuscript to general open access sites such as ResearchGate, Academia.edu, SSRN, arXiv</condition>
+                <condition>Publisher last contacted on 19/03/2018</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.igi-global.com/publish/contributor-resources/open-access/</paidaccessurl>
+                <paidaccessname>Hybrid open access</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Open Access</copyrightlinktext>
+                  <copyrightlinkurl>http://www.igi-global.com/publish/contributor-resources/open-access/</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Fair Use Policy</copyrightlinktext>
+                  <copyrightlinkurl>https://www.igi-global.com/about/rights-permissions/content-reuse/</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2008-10-02 10:10:59</dateadded>
+              <dateupdated>2018-08-13 11:49:20</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 12:54:12 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1861-8200
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 12:54:11 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1483'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1861-8200</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:12:54:11</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Journal of Real-Time Image Processing</jtitle>
+              <issn>1861-8200</issn>
+              <zetocpub>Springer Verlag (Germany)</zetocpub>
+              <romeopub>Springer Verlag (Germany)</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="74">
+              <name>Springer Verlag</name>
+              <alias>Germany</alias>
+              <homeurl>http://www.springerlink.com/?MUD=MP</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Author's pre-print on pre-print servers such as arXiv.org</condition>
+                <condition>Author's post-print on author's personal website immediately</condition>
+                <condition>Author's post-print on any open access repository after &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; after publication</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Set phrase to accompany link to published version (see policy)</condition>
+                <condition>Articles in some journals can be made Open Access on payment of additional charge</condition>
+                <condition>Publisher last reviewed on 26/07/2016</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.springer.com/gp/open-access/springer-open-choice</paidaccessurl>
+                <paidaccessname>Open Choice</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Self-archiving policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.springer.com/gp/open-access/authors-rights/self-archiving-policy/2124</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Authors Rights</copyrightlinktext>
+                  <copyrightlinkurl>http://www.springer.com/gp/open-access/authors-rights</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Funder Compliance</copyrightlinktext>
+                  <copyrightlinkurl>http://www.springer.com/gp/open-access/authors-rights/funder-compliance/6332</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2004-01-10 00:00:00</dateadded>
+              <dateupdated>2014-05-16 15:39:42</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 12:54:12 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1077-2014
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 12:54:12 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1793'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1077-2014</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:12:54:12</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Real Time Imaging</jtitle>
+              <issn>1077-2014</issn>
+              <zetocpub>Elsevier Science B.V., Amsterdam</zetocpub>
+              <romeopub>Elsevier</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="30">
+              <name>Elsevier</name>
+              <alias />
+              <homeurl>http://www.elsevier.com/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Authors pre-print on any website, including arXiv and RePEC</condition>
+                <condition>Author's post-print on author's personal website immediately</condition>
+                <condition>Author's post-print on open access repository after an embargo period of between &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; and &lt;num&gt;48&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt;</condition>
+                <condition>Permitted deposit due to Funding Body, Institutional and Governmental policy or mandate, may be required to comply with embargo periods of &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; to &lt;num&gt;48&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt;</condition>
+                <condition>Author's post-print may be used to update arXiv and RepEC</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>Must link to publisher version with DOI</condition>
+                <condition>Author's post-print must be released with a Creative Commons Attribution Non-Commercial No Derivatives License</condition>
+                <condition>Publisher last reviewed on 03/06/2015</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.elsevier.com/about/open-access/sponsored-articles</paidaccessurl>
+                <paidaccessname>Open Access</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Unleashing the power of academic sharing</copyrightlinktext>
+                  <copyrightlinkurl>http://www.elsevier.com/connect/elsevier-updates-its-policies-perspectives-and-services-on-article-sharing</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Sharing Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.elsevier.com/about/company-information/policies/sharing</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Sharing and Hosting Policy FAQ</copyrightlinktext>
+                  <copyrightlinkurl>https://www.elsevier.com/about/our-business/policies/sharing/policy-faq</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Green open access</copyrightlinktext>
+                  <copyrightlinkurl>http://www.elsevier.com/about/open-access/green-open-access</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Journal Embargo Period List</copyrightlinktext>
+                  <copyrightlinkurl>https://www.elsevier.com/__data/assets/pdf_file/0005/78476/external-embargo-list.pdf</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Journal Embargo List for UK Authors&lt;a/&gt; - &lt;a href=https://www.elsevier.com/about/our-business/policies/sharing/how-to-attach-a-user-license&gt;Attaching a User License</copyrightlinktext>
+                  <copyrightlinkurl>https://www.elsevier.com/__data/assets/pdf_file/0011/78473/UK-Embargo-Periods.pdf</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Funding Body Agreements</copyrightlinktext>
+                  <copyrightlinkurl>https://www.elsevier.com/about/open-science/open-access/agreements</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2004-01-10 00:00:00</dateadded>
+              <dateupdated>2015-05-01 09:50:58</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 12:54:12 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1018-0303
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 12:54:12 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '746'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1018-0303</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>uniqueZetoc</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:12:54:12</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Real Time Magazine</jtitle>
+              <issn>1018-0303</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 12:54:12 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0922-6443
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 12:54:12 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1474'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>0922-6443</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:12:54:12</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Real-Time Systems</jtitle>
+              <issn>0922-6443</issn>
+              <zetocpub>Springer Verlag (Germany)</zetocpub>
+              <romeopub>Springer Verlag (Germany)</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="74">
+              <name>Springer Verlag</name>
+              <alias>Germany</alias>
+              <homeurl>http://www.springerlink.com/?MUD=MP</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Author's pre-print on pre-print servers such as arXiv.org</condition>
+                <condition>Author's post-print on author's personal website immediately</condition>
+                <condition>Author's post-print on any open access repository after &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; after publication</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Set phrase to accompany link to published version (see policy)</condition>
+                <condition>Articles in some journals can be made Open Access on payment of additional charge</condition>
+                <condition>Publisher last reviewed on 26/07/2016</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.springer.com/gp/open-access/springer-open-choice</paidaccessurl>
+                <paidaccessname>Open Choice</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Self-archiving policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.springer.com/gp/open-access/authors-rights/self-archiving-policy/2124</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Authors Rights</copyrightlinktext>
+                  <copyrightlinkurl>http://www.springer.com/gp/open-access/authors-rights</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Funder Compliance</copyrightlinktext>
+                  <copyrightlinkurl>http://www.springer.com/gp/open-access/authors-rights/funder-compliance/6332</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2004-01-10 00:00:00</dateadded>
+              <dateupdated>2014-05-16 15:39:42</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 12:54:12 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4

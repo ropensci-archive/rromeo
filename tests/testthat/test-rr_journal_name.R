@@ -114,4 +114,28 @@ test_that("rr_journal_name() works", {
                  paste0("The API endpoint could not be reached. Please try",
                         " again later."))
   })
+
+  use_cassette("missing_issn", {
+    res = suppressWarnings({
+      suppressMessages({
+        rr_journal_name("real-Time", qtype = "contains", multiple = TRUE)
+      })
+    })
+
+    expect_is(res, "data.frame")
+
+    expect_equal(dim(res), c(5, 9))
+    expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
+                        "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
+
+    expect_is(res$title, "character")
+    expect_is(res$issn, "character")
+    expect_is(res$romeocolour, "character")
+    expect_is(res$preprint, "character")
+    expect_is(res$postprint, "character")
+    expect_is(res$pdf, "character")
+    expect_is(res$pre_embargo, "character")
+    expect_is(res$post_embargo, "character")
+    expect_is(res$pdf_embargo, "character")
+  })
 })
