@@ -14,13 +14,13 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 14 Feb 2019 08:10:05 GMT
+      date: Thu, 14 Feb 2019 08:41:02 GMT
       server: Apache/2.4.7 (Ubuntu)
       x-powered-by: PHP/5.5.9-1ubuntu4.26
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '764'
+      content-length: '1608'
       content-type: text/xml
     body:
       encoding: ISO-8859-1
@@ -47,19 +47,75 @@ http_interactions:
                 <parametervalue>en</parametervalue>
               </parameter>
             </parameters>
-            <numhits>0</numhits>
-            <apicontrol>pastfreelimit</apicontrol>
-            <outcome>pastfreelimit</outcome>
-            <message>You have exceeded the free use limit of 500 requests per day. You need to register with RoMEO if you require unlimited usage</message>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>14-Feb-2019:08:10:05</timestamp>
+            <timestamp>14-Feb-2019:08:41:02</timestamp>
           </header>
-          <journals />
-          <publishers />
+          <journals>
+            <journal>
+              <jtitle>A Critical Introduction to Media and Communication Theory</jtitle>
+              <issn>1947-6264</issn>
+              <zetocpub>Peter Lang International Academic Publishers</zetocpub>
+              <romeopub>Peter Lang International Academic Publishers</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="1084">
+              <name>Peter Lang International Academic Publishers</name>
+              <alias />
+              <homeurl>http://www.peterlang.com/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>restricted</pdfarchiving>
+                <pdfrestrictions>
+                  <pdfrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</pdfrestriction>
+                </pdfrestrictions>
+              </pdfversion>
+              <conditions>
+                <condition>Author's pre-print on author's personal website, non-commercial institutional repository, non-commercial subject repository, non-commercial open access repository, pre-print server, arXiv, PubMed Central, Research Gate, Academia.edu or SSRN</condition>
+                <condition>Author's post-print on author's personal website, non-commercial institutional repository, non-commercial subject repository, non-commercial open access repository, pre-print server, arXiv or PubMed Central.</condition>
+                <condition>Publisher's version/PDF may be used on author's personal website,</condition>
+                <condition>Publisher's version/PDF may be used on author's personal website or non-commercial institutional repository only</condition>
+                <condition>Published version may only be shared with the statement: &quot;All rights reserved.&quot;</condition>
+                <condition>Only one book chapter or journal article may be shared.</condition>
+                <condition>Must link to publisher version with DOI and set statement</condition>
+                <condition>Publisher copyright and source must be acknowledged with citation</condition>
+                <condition>Exceptions to policy are possible to comply with funder's individual requirements, please contact publisher directly</condition>
+                <condition>Publisher last contacted on 08/03/2018</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>https://www.peterlang.com/page/Repository$0020Policy/repository-policy</paidaccessurl>
+                <paidaccessname>Paid Open Access</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>https://www.peterlang.com/page/Repository$0020Policy/repository-policy</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2011-10-26 16:07:53</dateadded>
+              <dateupdated>2018-03-13 11:29:11</dateupdated>
+            </publisher>
+          </publishers>
         </romeoapi>
-  recorded_at: 2019-02-14 08:10:07 GMT
+  recorded_at: 2019-02-14 08:41:09 GMT
   recorded_with: vcr/0.2.6, webmockr/0.3.4
 - request:
     method: get
@@ -76,13 +132,13 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 14 Feb 2019 08:10:06 GMT
+      date: Thu, 14 Feb 2019 08:41:02 GMT
       server: Apache/2.4.7 (Ubuntu)
       x-powered-by: PHP/5.5.9-1ubuntu4.26
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '781'
+      content-length: '938'
       content-type: text/xml
     body:
       encoding: ISO-8859-1
@@ -113,19 +169,50 @@ http_interactions:
                 <parametervalue>en</parametervalue>
               </parameter>
             </parameters>
-            <numhits>0</numhits>
-            <apicontrol>pastfreelimit</apicontrol>
-            <outcome>pastfreelimit</outcome>
-            <message>You have exceeded the free use limit of 500 requests per day. You need to register with RoMEO if you require unlimited usage</message>
+            <numhits>5</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>manyJournals</outcome>
+            <message />
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>14-Feb-2019:08:10:06</timestamp>
+            <timestamp>14-Feb-2019:08:41:03</timestamp>
           </header>
-          <journals />
+          <journals>
+            <journal>
+              <jtitle>Biogeography</jtitle>
+              <issn>1345-0662</issn>
+              <zetocpub>Biogeographical Society of Japan</zetocpub>
+              <romeopub>Biogeographical Society of Japan</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Frontiers of Biogeography</jtitle>
+              <issn>1948-6596</issn>
+              <zetocpub>International Biogeography Society</zetocpub>
+              <romeopub>International Biogeography Society</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Global Ecology and Biogeography</jtitle>
+              <issn>1466-822X</issn>
+              <zetocpub>Wiley: 12 months / Blackwell Publishing Ltd</zetocpub>
+              <romeopub>Wiley: 12 months</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Global Ecology and Biogeography Letters</jtitle>
+              <issn>0960-7447</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Journal of Biogeography</jtitle>
+              <issn>0305-0270</issn>
+              <zetocpub>Wiley: 12 months / Blackwell Publishing Ltd</zetocpub>
+              <romeopub>Wiley: 12 months</romeopub>
+            </journal>
+          </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-14 08:10:07 GMT
+  recorded_at: 2019-02-14 08:41:09 GMT
   recorded_with: vcr/0.2.6, webmockr/0.3.4
 - request:
     method: get
@@ -142,13 +229,13 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 14 Feb 2019 08:10:06 GMT
+      date: Thu, 14 Feb 2019 08:41:03 GMT
       server: Apache/2.4.7 (Ubuntu)
       x-powered-by: PHP/5.5.9-1ubuntu4.26
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '781'
+      content-length: '1279'
       content-type: text/xml
     body:
       encoding: ISO-8859-1
@@ -179,17 +266,1779 @@ http_interactions:
                 <parametervalue>en</parametervalue>
               </parameter>
             </parameters>
-            <numhits>0</numhits>
-            <apicontrol>pastfreelimit</apicontrol>
-            <outcome>pastfreelimit</outcome>
-            <message>You have exceeded the free use limit of 500 requests per day. You need to register with RoMEO if you require unlimited usage</message>
+            <numhits>17</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>manyJournals</outcome>
+            <message />
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>14-Feb-2019:08:10:06</timestamp>
+            <timestamp>14-Feb-2019:08:41:03</timestamp>
           </header>
-          <journals />
+          <journals>
+            <journal>
+              <jtitle>American Journal of Biostatistics</jtitle>
+              <issn>1948-9889</issn>
+              <zetocpub>Science Publications</zetocpub>
+              <romeopub>Science Publications</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Annals of Biometrics and Biostatistics</jtitle>
+              <issn>2374-0116</issn>
+              <zetocpub>JSciMed Central</zetocpub>
+              <romeopub>JSciMed Central</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Annals of biometrics &amp; biostatistics</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Austin Biometrics and Biostatistics</jtitle>
+              <issn>2378-9840</issn>
+              <zetocpub>Austin Publishing Group</zetocpub>
+              <romeopub>Austin Publishing Group</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Biometrics &amp; biostatistics international journal</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Biostatistics</jtitle>
+              <issn>1465-4644</issn>
+              <zetocpub>Oxford University Press (OUP): Policy B - Oxford Open Option A / Oxford University Press</zetocpub>
+              <romeopub>Oxford University Press (OUP): Policy B - Oxford Open Option A</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Biostatistics -Basel-</jtitle>
+              <issn>1527-2486</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Biostatistics, bioinformatics and biomathematics</jtitle>
+              <issn>0976-1594</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Edorium Journal of Biostatistics</jtitle>
+              <issn />
+              <zetocpub>Edorium Journals</zetocpub>
+              <romeopub>Edorium Journals</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Enliven: Biostatistics and Metrics</jtitle>
+              <issn />
+              <zetocpub>Enliven Archive</zetocpub>
+              <romeopub>Enliven Archive</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Epidemiology Biostatistics and Public Health</jtitle>
+              <issn>2282-2305</issn>
+              <zetocpub>Prex S.r.l.</zetocpub>
+              <romeopub>Prex S.r.l.</romeopub>
+            </journal>
+            <journal>
+              <jtitle>International Journal of Biostatistics</jtitle>
+              <issn>1557-4679</issn>
+              <zetocpub>De Gruyter</zetocpub>
+              <romeopub>De Gruyter</romeopub>
+            </journal>
+            <journal>
+              <jtitle>International journal of clinical biostatistics and biometrics</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Journal of Biometrics and Biostatistics</jtitle>
+              <issn>2155-6180</issn>
+              <zetocpub>OMICS International</zetocpub>
+              <romeopub>OMICS International</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Journal of epidemiology and biostatistics</jtitle>
+              <issn>1359-5229</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>JP journal of biostatistics</jtitle>
+              <issn>0973-5143</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Monographs in Epidemiology and Biostatistics</jtitle>
+              <issn>0740-0845</issn>
+              <zetocpub>Oxford Univ Press</zetocpub>
+              <romeopub>Oxford University Press</romeopub>
+            </journal>
+          </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-14 08:10:07 GMT
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1948-9889
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:04 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1178'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1948-9889</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:04</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>American Journal of Biostatistics</jtitle>
+              <issn>1948-9889</issn>
+              <zetocpub>Science Publications</zetocpub>
+              <romeopub>Science Publications</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="2131">
+              <name>Science Publications</name>
+              <alias />
+              <homeurl>http://www.thescipub.com/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Author's pre-print and author's post-print on open access repositories</condition>
+                <condition>Publisher's version/PDF may be used, on author's personal website or institutional website only.</condition>
+                <condition>Creative Commons Attribution License</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Publisher last contacted on 19/09/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://thescipub.com/license</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2014-10-29 09:01:23</dateadded>
+              <dateupdated>2014-10-29 09:01:23</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=2374-0116
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:04 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1166'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>2374-0116</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:04</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Annals of Biometrics and Biostatistics</jtitle>
+              <issn>2374-0116</issn>
+              <zetocpub>JSciMed Central</zetocpub>
+              <romeopub>JSciMed Central</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="2077">
+              <name>JSciMed Central</name>
+              <alias />
+              <homeurl>http://www.jscimedcentral.com/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Creative Commons Attribution License 3.0</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 05/08/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.jscimedcentral.com/authorfaqs.php</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2014-08-14 09:49:17</dateadded>
+              <dateupdated>2014-08-14 09:49:17</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Annals%20of%20biometrics%20%26%20biostatistics&qtype=exact
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:04 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '825'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>Annals of biometrics &amp; biostatistics</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>2</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>manyJournals</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:04</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Annals of Biometrics and Biostatistics</jtitle>
+              <issn>2374-0116</issn>
+              <zetocpub>JSciMed Central</zetocpub>
+              <romeopub>JSciMed Central</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Annals of biometrics &amp; biostatistics</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=2378-9840
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:04 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1216'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>2378-9840</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:04</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Austin Biometrics and Biostatistics</jtitle>
+              <issn>2378-9840</issn>
+              <zetocpub>Austin Publishing Group</zetocpub>
+              <romeopub>Austin Publishing Group</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="2873">
+              <name>Austin Publishing Group</name>
+              <alias />
+              <homeurl>http://www.austinpublishinggroup.com/</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Creative Commons Attribution License 4.0</condition>
+                <condition>Authors retain copyright</condition>
+                <condition>Published source must be acknowledged with citation</condition>
+                <condition>On author's or employer's web site only</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last contacted on 27/01/2016</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://austinpublishinggroup.com/openaccess.php</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2016-09-13 13:40:35</dateadded>
+              <dateupdated>2016-09-13 13:40:35</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biometrics%20%26%20biostatistics%20international%20journal&qtype=exact
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:05 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '768'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>Biometrics &amp; biostatistics international journal</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>uniqueZetoc</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:05</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Biometrics &amp; biostatistics international journal</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1465-4644
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:05 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1710'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1465-4644</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:05</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Biostatistics</jtitle>
+              <issn>1465-4644</issn>
+              <zetocpub>Oxford University Press (OUP): Policy B - Oxford Open Option A</zetocpub>
+              <romeopub>Oxford University Press (OUP): Policy B - Oxford Open Option A</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="1474"  parentid="55">
+              <name>Oxford University Press (OUP)</name>
+              <alias>Policy B - Oxford Open Option A</alias>
+              <homeurl>http://www.oxfordjournals.org/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Pre-print can only be posted prior to acceptance</condition>
+                <condition>Pre-print must be accompanied by set statement (see link)</condition>
+                <condition>Pre-print must not be replaced with post-print, instead a link to published version with amended set statement should be made</condition>
+                <condition>Pre-print on author's personal website, employer website, free public server or pre-prints in subject area</condition>
+                <condition>Post-print on author's personal website immediately</condition>
+                <condition>Post-print in Institutional repositories or Central repositories after &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Set phrase to accompany archived copy (see policy)</condition>
+                <condition>Eligible authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
+                <condition>The publisher will deposit in PubMed Central on behalf of NIH authors</condition>
+                <condition>Publisher last contacted on 19/02/2015</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.oxfordjournals.org/oxfordopen/</paidaccessurl>
+                <paidaccessname>Oxford Open</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy B</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/en/access-purchase/rights-and-permissions/self-archiving-policyb.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>publication rights</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/publication_rights.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>NIH policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/news/2008/08/04/nih_deposits.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Other funding agencies</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/for_authors/repositories.html</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2013-03-26 15:08:20</dateadded>
+              <dateupdated>2017-05-30 10:41:44</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1527-2486
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:05 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '751'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1527-2486</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>uniqueZetoc</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:05</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Biostatistics -Basel-</jtitle>
+              <issn>1527-2486</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0976-1594
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:06 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '761'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>0976-1594</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>uniqueZetoc</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:06</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Biostatistics, bioinformatics and biomathematics</jtitle>
+              <issn>0976-1594</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Edorium%20Journal%20of%20Biostatistics&qtype=exact
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:06 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1203'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>Edorium Journal of Biostatistics</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:06</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Edorium Journal of Biostatistics</jtitle>
+              <issn />
+              <zetocpub>Edorium Journals</zetocpub>
+              <romeopub>Edorium Journals</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="1854">
+              <name>Edorium Journals</name>
+              <alias />
+              <homeurl>http://www.edoriumjournals.com/home.php</homeurl>
+              <preprints>
+                <prearchiving>cannot</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On any website or open access repository</condition>
+                <condition>Published source must be acknowledged with citation</condition>
+                <condition>Creative Commons Attribution License</condition>
+                <condition>Authors retain copyright</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Publisher last contacted on 12/04/2014</condition>
+                <condition>All titles are open access journals</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.edoriumjournals.com/copyright-policy-edorium-journals.php</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2014-04-11 12:00:41</dateadded>
+              <dateupdated>2014-05-29 10:30:25</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Enliven%3A%20Biostatistics%20and%20Metrics&qtype=exact
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:06 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1109'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>Enliven: Biostatistics and Metrics</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:06</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Enliven: Biostatistics and Metrics</jtitle>
+              <issn />
+              <zetocpub>Enliven Archive</zetocpub>
+              <romeopub>Enliven Archive</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="2122">
+              <name>Enliven Archive</name>
+              <alias />
+              <homeurl>http://www.enlivenarchive.org/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Creative Commons Attribution License</condition>
+                <condition>Authors retain copyright</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Publisher last contacted on 15/09/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks />
+              <romeocolour>green</romeocolour>
+              <dateadded>2014-10-03 09:17:47</dateadded>
+              <dateupdated>2014-10-03 09:17:47</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=2282-2305
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:07 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1363'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>2282-2305</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:07</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Epidemiology Biostatistics and Public Health</jtitle>
+              <issn>2282-0930</issn>
+              <zetocpub>Prex S.r.l.</zetocpub>
+              <romeopub>Prex S.r.l.</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="DOAJ">
+              <name>Prex S.r.l.</name>
+              <alias />
+              <homeurl>http://www.ebph.it/</homeurl>
+              <preprints>
+                <prearchiving>unknown</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>unknown</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>unknown</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>This publisher's policies have not been checked by RoMEO.</condition>
+                <condition>DOAJ says it is an open access journal, but this may only mean that it is freely available to read.</condition>
+                <condition>Most open access publishers also permit self-archiving and re-use, but some do not.</condition>
+                <condition>Do not assume that self-archiving is allowed, unless it is published under a &lt;a href=&quot;http://creativecommons.org/&quot; target=&quot;_blank&quot;&gt;Creative Commons&lt;/a&gt; license.</condition>
+                <condition>Please contact the publisher for further information if necessary</condition>
+                <condition>Email &lt;a href=&quot;mailto:romeo@jisc.ac.uk&quot;&gt;romeo@jisc.ac.uk&lt;/a&gt; if you wish to suggest adding this publisher properly to RoMEO.</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>See the publisher/journal website</copyrightlinktext>
+                  <copyrightlinkurl>http://www.ebph.it/</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>gray</romeocolour>
+              <dateadded>2018-11-12 15:21:29</dateadded>
+              <dateupdated>2018-11-12 15:21:29</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1557-4679
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:07 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1451'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1557-4679</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:07</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>International Journal of Biostatistics</jtitle>
+              <issn>1557-4679</issn>
+              <zetocpub>De Gruyter</zetocpub>
+              <romeopub>De Gruyter</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="414">
+              <name>De Gruyter</name>
+              <alias />
+              <homeurl>http://www.degruyter.com/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>restricted</pdfarchiving>
+                <pdfrestrictions>
+                  <pdfrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</pdfrestriction>
+                </pdfrestrictions>
+              </pdfversion>
+              <conditions>
+                <condition>Pre-print and abstract on author's personal website only</condition>
+                <condition>Author's post-print on funder's repository or funder's designated repository at the funding agency's request or as a result of legal obligation.</condition>
+                <condition>Publisher's version/PDF may be used, on author's personal website, editor's personal website or institutional repository</condition>
+                <condition>Authors cannot deposit in subject repositories</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Must link to publisher version and article's DOI must be given</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>https://www.degruyter.com/dg/page/open-access-policy</paidaccessurl>
+                <paidaccessname>De Gruyter Open Access</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Repository Policy</copyrightlinktext>
+                  <copyrightlinkurl>https://www.degruyter.com/dg/page/repository-policy</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Copyright Agreement</copyrightlinktext>
+                  <copyrightlinkurl>http://www.degruyter.com/dg/page/308/copyright-agreement</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2008-04-14 00:00:00</dateadded>
+              <dateupdated>2014-04-01 15:46:03</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=International%20journal%20of%20clinical%20biostatistics%20and%20biometrics&qtype=exact
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:07 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '774'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>International journal of clinical biostatistics and biometrics</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>uniqueZetoc</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:07</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>International journal of clinical biostatistics and biometrics</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=2155-6180
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:08 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1176'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>2155-6180</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:08</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Journal of Biometrics and Biostatistics</jtitle>
+              <issn>2155-6180</issn>
+              <zetocpub>OMICS International</zetocpub>
+              <romeopub>OMICS International</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="672">
+              <name>OMICS International</name>
+              <alias />
+              <homeurl>http://www.omicsonline.org/</homeurl>
+              <preprints>
+                <prearchiving>unclear</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>On open access repositories</condition>
+                <condition>Creative Commons Attribution License</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>All titles are open access journals</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Example Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.omicsonline.org/InstructionsForAuthorsJBTBM.php</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>blue</romeocolour>
+              <dateadded>2009-11-05 15:13:42</dateadded>
+              <dateupdated>2015-04-28 10:19:52</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1359-5229
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:08 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '758'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1359-5229</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>uniqueZetoc</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:08</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Journal of epidemiology and biostatistics</jtitle>
+              <issn>1359-5229</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0973-5143
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:08 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '751'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>0973-5143</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>uniqueZetoc</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:08</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>JP journal of biostatistics</jtitle>
+              <issn>0973-5143</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
+  recorded_with: vcr/0.2.6, webmockr/0.3.4
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0740-0845
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Thu, 14 Feb 2019 08:41:09 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1880'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>0740-0845</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>14-Feb-2019:08:41:09</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Monographs in Epidemiology and Biostatistics</jtitle>
+              <issn>0740-0845</issn>
+              <zetocpub>Oxford Univ Press</zetocpub>
+              <romeopub>Oxford University Press (OUP)</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="55">
+              <name>Oxford University Press</name>
+              <alias>OUP</alias>
+              <homeurl>http://www.oxfordjournals.org/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo on science, technology, medicine articles</postrestriction>
+                  <postrestriction>&lt;num&gt;2&lt;/num&gt; &lt;period units=&quot;year&quot;&gt;years&lt;/period&gt; embargo on arts and humanities articles</postrestriction>
+                  <postrestriction>Some titles may have different embargoes</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>unclear</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Pre-print can only be posted prior to acceptance</condition>
+                <condition>Pre-print must be accompanied by set statement (see link)</condition>
+                <condition>Pre-print must not be replaced with post-print, instead a link to published version with amended set statement should be made</condition>
+                <condition>Pre-print on author's personal website, employer website, free public server or pre-prints in subject area</condition>
+                <condition>Post-print in Institutional repositories or Central repositories</condition>
+                <condition>Publisher version cannot be used except for Nucleic Acids Research articles</condition>
+                <condition>Published source must be acknowledged</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Set phrase to accompany archived copy (see policy)</condition>
+                <condition>Articles in &lt;a href=&quot;http://www.oxfordjournals.org/oxfordopen/&quot; target=&quot;_blank&quot;&gt;some journals&lt;/a&gt; can be made Open Access on payment of additional charge</condition>
+                <condition>Eligible UK authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
+                <condition>Publisher will deposit on behalf of NIH funded authors to PubMed Central, Nucleic Acids Research authors must pay their fee first</condition>
+                <condition>Some titles may use different policies</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.oxfordjournals.org/oxfordopen/</paidaccessurl>
+                <paidaccessname>Oxford Open</paidaccessname>
+                <paidaccessnotes>Covers 90 journals. This journal is not in the list for the paid open access option.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy A</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/self-archiving_policya.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Policy B</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/self-archiving_policyb.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>publication rights</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/access_purchase/publication_rights.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>NIH policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/news/2008/08/04/nih_deposits.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Other funding agencies</copyrightlinktext>
+                  <copyrightlinkurl>http://www.oxfordjournals.org/for_authors/repositories.html</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2004-01-10 00:00:00</dateadded>
+              <dateupdated>2013-09-02 13:26:34</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-14 08:41:09 GMT
   recorded_with: vcr/0.2.6, webmockr/0.3.4
