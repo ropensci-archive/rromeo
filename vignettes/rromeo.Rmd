@@ -18,9 +18,9 @@ library(vcr)
 vcr_configure("../inst/")
 
 use_cassette("vignette_cassette", {
-  rr_journal_issn("1947-6264")
-  rr_journal_name("Biogeography", qtype = "contains")
-  rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
+  rromeo::rr_journal_issn("1947-6264")
+  rromeo::rr_journal_name("Biogeography", qtype = "contains")
+  rromeo::rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
 })
 
 insert_cassette("vignette_cassette")
