@@ -3,7 +3,7 @@
 #' Returns data.frame from parsed xml API answer.
 #'
 #' @inheritParams parse_publisher
-#' @param multiple [`logical(1)`]\cr{}
+#' @param multiple {`logical(1)`}\cr{}
 #'                 If multiple results match your query, should the function
 #'                 recursively fetch data for each of one of them
 #'                 (`multiple = TRUE`) or return a data.frame containing only
@@ -11,25 +11,25 @@
 #' @inheritParams check_key
 #'
 #' @return Returns a data.frame with the following columns:
-#' * `title`        [`character(1)`]\cr{}
+#' * `title`        {`character(1)`}\cr{}
 #'                  the name of the journal
-#' * `issn`         [`character(1)`]\cr{}
+#' * `issn`         {`character(1)`}\cr{}
 #'                  the ISSN of the journal
-#' * `romeocolour`  [`character(1)`]\cr{}
+#' * `romeocolour`  {`character(1)`}\cr{}
 #'                  the SHERPA/RoMEO colour of the journal
-#' * `preprint`     [`character(1)`]\cr{}
+#' * `preprint`     {`character(1)`}\cr{}
 #'                  is the preprint (not reviewed) archivable?
-#' * `postprint`    [`character(1)`]\cr{}
+#' * `postprint`    {`character(1)`}\cr{}
 #'                  is the postprint (reviewed but not formatted) archivable?
-#' * `pdf`          [`character(1)`]\cr{}
+#' * `pdf`          {`character(1)`}\cr{}
 #'                  is the publisher's version (reviewed and formatted)
-#' * `pre_embargo`  [`character(1)`]\cr{}
+#' * `pre_embargo`  {`character(1)`}\cr{}
 #'                  if applicable the embargo period before the author(s) can
 #'                  archive the preprint
-#' * `post_embargo` [`character(1)`]\cr{}
+#' * `post_embargo` {`character(1)`}\cr{}
 #'                  if applicable the embargo period before the author(s) can
 #'                  archive the postprint
-#' * `pdf_embargo`  [`character(1)`]\cr{}
+#' * `pdf_embargo`  {`character(1)`}\cr{}
 #'                  if applicable the embargo period before the author(s) can
 #'                  archive the publisher's version
 #'
@@ -165,22 +165,22 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 #' @param api_answer xml API answer
 #'
 #' @return Returns a data frame with the following columns:
-#' * `romeoid`     [`integer(1)`]\cr{}
+#' * `romeoid`     {`integer(1)`}\cr{}
 #'                 the internal index of the publisher in the SHERPA/RoMEO
 #'                 database
-#' * `publisher`   [`character(1)`]\cr{}
+#' * `publisher`   {`character(1)`}\cr{}
 #'                 the name of the publisher
-#' * `alias`       [`character(1)`]\cr{}
+#' * `alias`       {`character(1)`}\cr{}
 #'                 if applicable an alternative name of the publisher or the
 #'                 name of the specific publishing branch
-#' * `romeocolour` [`character(1)`]\cr{}
+#' * `romeocolour` {`character(1)`}\cr{}
 #'                 a colour assigned by the database that reflects the default
 #'                 policies of the publisher
-#' * `preprint`    [`character(1)`]\cr{}
+#' * `preprint`    {`character(1)`}\cr{}
 #'                 is the preprint (not reviewed) archivable?
-#' * `postprint`   [`character(1)`]\cr{}
+#' * `postprint`   {`character(1)`}\cr{}
 #'                 is the postprint (reviewed but not formatted) archivable?
-#' * `pdf`         [`character(1)`]\cr{}
+#' * `pdf`         {`character(1)`}\cr{}
 #'                 is the publisher's version (reviewed and formatted)
 #'                 archivable?
 #'
@@ -247,7 +247,7 @@ parse_publisher = function(api_answer) {
 #' please go to
 #' <https://en.wikipedia.org/wiki/International_Standard_Serial_Number>
 #'
-#' @param issn [`character(1)`]\cr{}
+#' @param issn {`character(1)`}\cr{}
 #'             The ISSN of a journal
 #' @return `NULL` if the ISSN is valid, errors otherwise
 #'
@@ -285,7 +285,7 @@ validate_issn = function(issn) {
 #'
 #' The key can be either specified in various ways see the Details section.
 #'
-#' @param key [`character(1)`]\cr{}
+#' @param key {`character(1)`}\cr{}
 #'            a character string containing the API key or `NULL`
 #'            (see Details section on how to specify it)
 #'
@@ -315,9 +315,9 @@ check_key = function(key) {
 #'
 #' This function provides an easy way to return the embargo period in the
 #' different categories
-#' @param xml_source [`xml_document`]\cr{}
+#' @param xml_source {`xml_document`}\cr{}
 #'                   a parsed xml document
-#' @param type       [`character(1)`]
+#' @param type       {`character(1)`}
 #'                   name of the embargo type must be in `"pre"`, `"post"`, and
 #'                   `"pdf"`
 #'
@@ -350,7 +350,7 @@ parse_embargo = function(xml_source, type = c("pre", "post", "pdf")) {
 #' Otherwise assume that the code is valid as long as it is a two-letter code or
 #' `__`. See [`rr_publisher_country()`] for use of country codes.
 #'
-#' @param country [`character(1)`]\cr{}
+#' @param country {`character(1)`}\cr{}
 #'                a two-letter country code or `AA`, `ZZ` or
 #'                `__` (special country codes for SHERPA/RoMEO)
 #'

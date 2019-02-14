@@ -7,10 +7,10 @@
 parse_embargo(xml_source, type = c("pre", "post", "pdf"))
 }
 \arguments{
-\item{xml_source}{\code{\link{xml_document}}\cr{}
+\item{xml_source}{{\code{xml_document}}\cr{}
 a parsed xml document}
 
-\item{type}{\code{\link{character(1)}}
+\item{type}{{\code{character(1)}}
 name of the embargo type must be in \code{"pre"}, \code{"post"}, and
 \code{"pdf"}}
 }
