@@ -22,7 +22,7 @@ r_packages:
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
-  - Rscript -e 'spelling::spell_check_test(vignettes = TRUE, error = FALSE)'
+  - Rscript -e 'spelling::spell_check_setup(vignettes = TRUE, error = FALSE)'
 
 deploy:
   provider: script
