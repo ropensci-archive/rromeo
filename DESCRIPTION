@@ -28,7 +28,8 @@ Suggests:
     testthat,
     vcr,
     covr,
-    ISOcodes
+    ISOcodes,
+    mockery
 Language: en-US
 VignetteBuilder: knitr
 URL: https://github.com/Rekyt/rromeo
