@@ -14,13 +14,21 @@ test_that("rr_journal_name() works", {
   })
 
   use_cassette("rr_journal_name_multiple", {
-    false_multiple = capture_warnings(
-      res <- rr_journal_name("Biogeography", qtype = "contains", key = NULL)
+    given_warnings = capture_warnings(
+      suppressMessages({
+        res <- rr_journal_name("Biogeography", qtype = "contains", key = NULL)
+      })
     )
 
-    expect_match(false_multiple[1], "5 journals match your query terms")
+    given_messages = capture_messages(
+      suppressWarnings({
+        rr_journal_name("Biogeography", qtype = "contains", key = NULL)
+      })
+    )
+
+    expect_match(given_messages[1], "5 journals match your query terms")
     expect_match(
-      false_multiple[2],
+      given_warnings[1],
       "Select one journal from the provided list or enable multiple = TRUE")
 
     expect_is(res, "data.frame")
@@ -61,7 +69,7 @@ test_that("rr_journal_name() works", {
 
   use_cassette("rr_journal_name_multiple_fetch", {
 
-    recursive_message = capture_message(
+    recursive_message = capture_messages(
       suppressWarnings({
         res = rr_journal_name("Biogeography", qtype = "contains",
                                multiple = TRUE, key = NULL)
@@ -75,9 +83,9 @@ test_that("rr_journal_name() works", {
       })
     })
 
-    expect_match(recursive_message$message,
+    expect_match(recursive_message[2],
                  paste0("Recursively fetching data from each journal. ",
-                        "This may take some time..."))
+                        "This may take some time..."), fixed = TRUE)
 
     expect_is(res, "data.frame")
 
@@ -124,7 +132,7 @@ test_that("rr_journal_name() works", {
 
     expect_is(res, "data.frame")
 
-    expect_equal(dim(res), c(5, 9))
+    expect_equal(dim(res), c(6, 9))
     expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
                         "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
 

@@ -28,7 +28,7 @@ rr_journal_issn = function(issn, key = NULL) {
     api_answer = GET(rr_base_api(), query = list(issn = journal_issn,
                                                  ak   = api_key))
 
-    parse_answer(api_answer, multiple = FALSE, key = api_key)
+    parse_generic(api_answer, multiple = FALSE, key = api_key)
   })
 
   journals_df = do.call(rbind.data.frame,
@@ -112,7 +112,7 @@ rr_journal_name = function(name, multiple = FALSE,
                                                  qtype  = qtype,
                                                  ak     = api_key))
 
-    parse_answer(api_answer, multiple = multiple, key = api_key)
+    parse_generic(api_answer, multiple = multiple, key = api_key)
   })
 
   journals_df = do.call(rbind.data.frame,
