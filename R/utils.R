@@ -1,3 +1,11 @@
+#' Generic parsing function
+#'
+#' @param api_answer {`httr::response()`}\cr{}
+#'                   The API answer
+#'
+#' @param ... Other options passed to parsing functions
+#'
+#' @return either results from [`parse_journal()`] or [`parse_publisher()`]
 parse_generic = function(api_answer, ...) {
 
   if (http_error(api_answer)) {
@@ -38,7 +46,7 @@ parse_generic = function(api_answer, ...) {
 
   # Parsing branches
   if (apicontrol == "journal") {
-    parsed = parse_answer(xml_source, outcome = outcome, hits = hits, ...)
+    parsed = parse_journal(xml_source, outcome = outcome, hits = hits, ...)
   } else if (apicontrol == "publisher" | apicontrol == "identifier" |
              apicontrol == "colour" |
              (apicontrol == "" & outcome == "publisherFound")) {
@@ -87,7 +95,7 @@ parse_generic = function(api_answer, ...) {
 #'
 #' @importFrom httr content
 #' @importFrom xml2 xml_text xml_find_all xml_find_first
-parse_answer = function(xml_source, outcome, hits, multiple = FALSE, key = NULL) {
+parse_journal = function(xml_source, outcome, hits, multiple = FALSE, key = NULL) {
 
   if (outcome %in% c("singleJournal", "uniqueZetoc")) {
     # Some journals have multiple policies because they are owned by multiple

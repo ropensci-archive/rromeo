@@ -7,7 +7,7 @@
 #'             one or a vector of journal(s) ISSN(s)
 #' @inheritParams check_key
 #'
-#' @inherit parse_answer return
+#' @inherit parse_journal return
 #'
 #' @inherit check_key details
 #'
@@ -51,7 +51,7 @@ rr_journal_issn = function(issn, key = NULL) {
 #'                title of the journal,
 #'              * `"starts"` the provided `name` must appear at the start of
 #'                title of the journal.
-#' @inheritParams parse_answer
+#' @inheritParams parse_journal
 #' @inheritParams check_key
 #'
 #' @return Returns a data frame if multiple journals are found and
