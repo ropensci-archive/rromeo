@@ -207,7 +207,7 @@ parse_publisher = function(api_answer) {
   }
 
   if (outcome == "notFound") {
-    stop("No publisher matches the provided id. Please try another id.",
+    stop("No publisher was found. Maybe try another query? ;)",
          call. = FALSE)
   }
 

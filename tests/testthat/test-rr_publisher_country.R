@@ -31,6 +31,7 @@ test_that("rr_publisher_country() works", {
   # When Publisher is not found
   use_cassette("rr_publisher_country_notfound", {
     expect_error(rr_publisher_country("CM"),
-                 "No publisher matches the provided id. Please try another id.")
+                 "No publisher was found. Maybe try another query? ;)",
+                 fixed = TRUE)
   })
 })

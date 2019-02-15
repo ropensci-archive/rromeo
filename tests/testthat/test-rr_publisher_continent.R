@@ -10,7 +10,8 @@ test_that("rr_publisher_continent() works", {
   # When Publisher is not found
   use_cassette("rr_publisher_continent_notfound", {
     expect_error(rr_publisher_continent("Antarctica"),
-                 "No publisher matches the provided id. Please try another id.")
+                 "No publisher was found. Maybe try another query? ;)",
+                 fixed = TRUE)
   })
 
   skip("Not possible because of encoding problems waiting for a fix in vcr")
