@@ -7,7 +7,7 @@
 #'             one or a vector of journal(s) ISSN(s)
 #' @inheritParams check_key
 #'
-#' @inherit parse_answer return
+#' @inherit parse_journal return
 #'
 #' @inherit check_key details
 #'
@@ -28,7 +28,7 @@ rr_journal_issn = function(issn, key = NULL) {
     api_answer = GET(rr_base_api(), query = list(issn = journal_issn,
                                                  ak   = api_key))
 
-    parse_answer(api_answer, multiple = FALSE, key = api_key)
+    parse_generic(api_answer, multiple = FALSE, key = api_key)
   })
 
   journals_df = do.call(rbind.data.frame,
@@ -51,7 +51,7 @@ rr_journal_issn = function(issn, key = NULL) {
 #'                title of the journal,
 #'              * `"starts"` the provided `name` must appear at the start of
 #'                title of the journal.
-#' @inheritParams parse_answer
+#' @inheritParams parse_journal
 #' @inheritParams check_key
 #'
 #' @return Returns a data frame if multiple journals are found and
@@ -112,7 +112,7 @@ rr_journal_name = function(name, multiple = FALSE,
                                                  qtype  = qtype,
                                                  ak     = api_key))
 
-    parse_answer(api_answer, multiple = multiple, key = api_key)
+    parse_generic(api_answer, multiple = multiple, key = api_key)
   })
 
   journals_df = do.call(rbind.data.frame,

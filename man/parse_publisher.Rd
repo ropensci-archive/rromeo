@@ -4,7 +4,7 @@
 \alias{parse_publisher}
 \title{Parse publisher list}
 \usage{
-parse_publisher(api_answer)
+parse_publisher(xml_source, outcome, hits)
 }
 \arguments{
 \item{api_answer}{xml API answer}

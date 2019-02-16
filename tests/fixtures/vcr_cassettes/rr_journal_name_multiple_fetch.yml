@@ -23,7 +23,7 @@ http_interactions:
       content-length: '937'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -94,8 +94,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biogeography&qtype=contains&ak=DDKJFnXZpio
@@ -120,7 +120,7 @@ http_interactions:
       content-length: '937'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -191,8 +191,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biogeography&qtype=contains&ak=DDKJFnXZpio
@@ -217,7 +217,7 @@ http_interactions:
       content-length: '937'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -288,8 +288,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1345-0662&ak=DDKJFnXZpio
@@ -314,7 +314,7 @@ http_interactions:
       content-length: '1040'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -389,8 +389,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1948-6596&ak=DDKJFnXZpio
@@ -415,7 +415,7 @@ http_interactions:
       content-length: '1361'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -499,8 +499,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1466-822X&ak=DDKJFnXZpio
@@ -525,7 +525,7 @@ http_interactions:
       content-length: '1652'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -623,8 +623,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0960-7447&ak=DDKJFnXZpio
@@ -649,7 +649,7 @@ http_interactions:
       content-length: '766'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -692,8 +692,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0305-0270&ak=DDKJFnXZpio
@@ -718,7 +718,7 @@ http_interactions:
       content-length: '1641'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -816,8 +816,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biogeography&qtype=contains
@@ -842,7 +842,7 @@ http_interactions:
       content-length: '937'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -913,8 +913,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biogeography&qtype=contains
@@ -939,7 +939,7 @@ http_interactions:
       content-length: '937'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1010,8 +1010,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1345-0662
@@ -1036,7 +1036,7 @@ http_interactions:
       content-length: '1040'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1111,8 +1111,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1948-6596
@@ -1137,7 +1137,7 @@ http_interactions:
       content-length: '1360'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1221,8 +1221,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1466-822X
@@ -1247,7 +1247,7 @@ http_interactions:
       content-length: '1652'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1345,8 +1345,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0960-7447
@@ -1371,7 +1371,7 @@ http_interactions:
       content-length: '766'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1414,8 +1414,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0305-0270
@@ -1440,7 +1440,7 @@ http_interactions:
       content-length: '1642'
       content-type: text/xml
     body:
-      encoding: UTF-8
+      encoding: ISO-8859-1
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1538,5 +1538,533 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-12 12:24:18 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1345-0662
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 15 Feb 2019 21:35:54 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1040'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1345-0662</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>15-Feb-2019:21:35:54</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Biogeography</jtitle>
+              <issn>1345-0662</issn>
+              <zetocpub>Biogeographical Society of Japan</zetocpub>
+              <romeopub>Biogeographical Society of Japan</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="journal"  status="">
+              <name>Biogeographical Society of Japan</name>
+              <alias />
+              <homeurl />
+              <preprints>
+                <prearchiving>unknown</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>unknown</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>unknown</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>This publisher's policies have not been checked by RoMEO.</condition>
+                <condition>Please contact the publisher for further information if necessary</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks />
+              <romeocolour>gray</romeocolour>
+              <dateadded />
+              <dateupdated />
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1948-6596
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 15 Feb 2019 21:35:54 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1359'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1948-6596</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>15-Feb-2019:21:35:54</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Frontiers of Biogeography</jtitle>
+              <issn>1948-6596</issn>
+              <zetocpub>International Biogeography Society</zetocpub>
+              <romeopub>International Biogeography Society</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="DOAJ">
+              <name>International Biogeography Society</name>
+              <alias />
+              <homeurl>http://escholarship.org/uc/fb</homeurl>
+              <preprints>
+                <prearchiving>unknown</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>unknown</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>unknown</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>This publisher's policies have not been checked by RoMEO.</condition>
+                <condition>DOAJ says it is an open access journal, but this may only mean that it is freely available to read.</condition>
+                <condition>Most open access publishers also permit self-archiving and re-use, but some do not.</condition>
+                <condition>Do not assume that self-archiving is allowed, unless it is published under a &lt;a href=&quot;http://creativecommons.org/&quot; target=&quot;_blank&quot;&gt;Creative Commons&lt;/a&gt; license.</condition>
+                <condition>Please contact the publisher for further information if necessary</condition>
+                <condition>Email &lt;a href=&quot;mailto:romeo@jisc.ac.uk&quot;&gt;romeo@jisc.ac.uk&lt;/a&gt; if you wish to suggest adding this publisher properly to RoMEO.</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>See the publisher/journal website</copyrightlinktext>
+                  <copyrightlinkurl>http://escholarship.org/uc/fb</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>gray</romeocolour>
+              <dateadded>2018-11-12 15:21:21</dateadded>
+              <dateupdated>2018-11-12 15:21:21</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1466-822X
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 15 Feb 2019 21:35:54 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1652'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1466-822X</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>15-Feb-2019:21:35:54</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Global Ecology and Biogeography</jtitle>
+              <issn>1466-822X</issn>
+              <zetocpub>Wiley: 12 months</zetocpub>
+              <romeopub>Wiley: 12 months</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="2050"  parentid="580">
+              <name>Wiley</name>
+              <alias>12 months</alias>
+              <homeurl>http://eu.wiley.com/WileyCDA/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Some journals have separate policies, please check with each journal directly</condition>
+                <condition>On author's personal website, institutional repositories, arXiv, AgEcon, PhilPapers, PubMed Central, RePEc or Social Science Research Network</condition>
+                <condition>Author's pre-print may not be updated with Publisher's Version/PDF</condition>
+                <condition>Author's pre-print must acknowledge acceptance for publication</condition>
+                <condition>Non-Commercial</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>Publisher source must be acknowledged with citation</condition>
+                <condition>Must link to publisher version with set statement (see policy)</condition>
+                <condition>If OnlineOpen is available, BBSRC, EPSRC, MRC, NERC and STFC authors, may self-archive after 12 months</condition>
+                <condition>Publisher last contacted on 07/08/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>https://authorservices.wiley.com/author-resources/Journal-Authors/licensing-open-access/open-access/onlineopen.html</paidaccessurl>
+                <paidaccessname>OnlineOpen</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Self-archiving</copyrightlinktext>
+                  <copyrightlinkurl>http://olabout.wiley.com/WileyCDA/Section/id-828039.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Authors Compliance Tool</copyrightlinktext>
+                  <copyrightlinkurl>http://olabout.wiley.com/WileyCDA/Section/id-828038.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Funder Policies</copyrightlinktext>
+                  <copyrightlinkurl>https://authorservices.wiley.com/author-resources/Journal-Authors/licensing-open-access/open-access/funder-agreements.html</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2014-08-08 15:08:35</dateadded>
+              <dateupdated>2017-11-24 10:22:27</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0960-7447
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 15 Feb 2019 21:35:55 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '766'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>0960-7447</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>uniqueZetoc</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>15-Feb-2019:21:35:55</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Global Ecology and Biogeography Letters</jtitle>
+              <issn>0960-7447</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0305-0270
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Fri, 15 Feb 2019 21:35:55 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1642'
+      content-type: text/xml
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>0305-0270</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>15-Feb-2019:21:35:55</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Journal of Biogeography</jtitle>
+              <issn>0305-0270</issn>
+              <zetocpub>Wiley: 12 months</zetocpub>
+              <romeopub>Wiley: 12 months</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="2050"  parentid="580">
+              <name>Wiley</name>
+              <alias>12 months</alias>
+              <homeurl>http://eu.wiley.com/WileyCDA/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Some journals have separate policies, please check with each journal directly</condition>
+                <condition>On author's personal website, institutional repositories, arXiv, AgEcon, PhilPapers, PubMed Central, RePEc or Social Science Research Network</condition>
+                <condition>Author's pre-print may not be updated with Publisher's Version/PDF</condition>
+                <condition>Author's pre-print must acknowledge acceptance for publication</condition>
+                <condition>Non-Commercial</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>Publisher source must be acknowledged with citation</condition>
+                <condition>Must link to publisher version with set statement (see policy)</condition>
+                <condition>If OnlineOpen is available, BBSRC, EPSRC, MRC, NERC and STFC authors, may self-archive after 12 months</condition>
+                <condition>Publisher last contacted on 07/08/2014</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>https://authorservices.wiley.com/author-resources/Journal-Authors/licensing-open-access/open-access/onlineopen.html</paidaccessurl>
+                <paidaccessname>OnlineOpen</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Self-archiving</copyrightlinktext>
+                  <copyrightlinkurl>http://olabout.wiley.com/WileyCDA/Section/id-828039.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Authors Compliance Tool</copyrightlinktext>
+                  <copyrightlinkurl>http://olabout.wiley.com/WileyCDA/Section/id-828038.html</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Funder Policies</copyrightlinktext>
+                  <copyrightlinkurl>https://authorservices.wiley.com/author-resources/Journal-Authors/licensing-open-access/open-access/funder-agreements.html</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2014-08-08 15:08:35</dateadded>
+              <dateupdated>2017-11-24 10:22:27</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-02-15 21:35:56 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100

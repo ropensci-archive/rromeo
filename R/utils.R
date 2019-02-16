@@ -1,3 +1,61 @@
+#' Generic parsing function
+#'
+#' @param api_answer {`httr::response()`}\cr{}
+#'                   The API answer
+#'
+#' @param ... Other options passed to parsing functions
+#'
+#' @return either results from [`parse_journal()`] or [`parse_publisher()`]
+parse_generic = function(api_answer, ...) {
+
+  if (http_error(api_answer)) {
+    stop("The API endpoint could not be reached. Please try again later.",
+         call. = FALSE)
+  }
+
+  xml_source = content(api_answer, encoding = "ISO-8859-1")
+
+  # API Control Block
+  apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
+
+  if (apicontrol == "invalidapikey") {
+    stop("The provided API key is invalid. ",
+         "You can register for a free API at ",
+         "http://www.sherpa.ac.uk/romeo/apiregistry.php", call. = FALSE)
+  } else if (apicontrol == "pastfreelimit") {
+    stop("You have exceeded the free use limit of 500 requests per day. ",
+         "To go beyond this limit you should register for a free API key ",
+         "available at http://www.sherpa.ac.uk/romeo/apiregistry.php",
+         call. = FALSE)
+  } else if (apicontrol == "invalid") {
+    stop("The query is invalid. Please check the query")
+  }
+
+  hits = xml_text(xml_find_all(xml_source, "//numhits"))
+  outcome = xml_text(xml_find_all(xml_source, "//outcome"))
+
+  # Outcome Block
+  if (apicontrol == "journal" & (outcome == "notFound" | hits == 0)) {
+    stop("No journal matches your query terms. Please try another query.",
+         call. = FALSE)
+  } else if ((apicontrol == "" | apicontrol == "publisher" |
+              apicontrol == "identifier") &
+             (outcome == "notFound" | hits == 0)) {
+    stop("No publisher was found. Maybe try another query? ;)", call. = FALSE)
+  }
+
+  # Parsing branches
+  if (apicontrol == "journal") {
+    parsed = parse_journal(xml_source, outcome = outcome, hits = hits, ...)
+  } else if (apicontrol == "publisher" | apicontrol == "identifier" |
+             apicontrol == "colour" |
+             (apicontrol == "" & outcome == "publisherFound")) {
+    parsed = parse_publisher(xml_source)
+  }
+
+  return(parsed)
+}
+
 #' Parse API answer
 #'
 #' Returns data.frame from parsed xml API answer.
@@ -37,30 +95,9 @@
 #'
 #' @importFrom httr content
 #' @importFrom xml2 xml_text xml_find_all xml_find_first
-parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
+parse_journal = function(xml_source, outcome, hits, multiple = FALSE, key = NULL) {
 
-  if (http_error(api_answer)) {
-    stop("The API endpoint could not be reached. Please try again later.",
-         call. = FALSE)
-  }
-
-  xml_source = content(api_answer, encoding = "ISO-8859-1")
-
-  apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
-
-  if (apicontrol == "invalidapikey") {
-    stop("The provided API key is invalid. ",
-         "You can register for a free API at ",
-         "http://www.sherpa.ac.uk/romeo/apiregistry.php", call. = FALSE)
-  }
-
-  hits = xml_text(xml_find_all(xml_source, "//numhits"))
-  outcome = xml_text(xml_find_all(xml_source, "//outcome"))
-
-  if (outcome == "notFound") {
-    stop("No journal matches your query terms. Please try another query.",
-         call. = FALSE)
-  } else if (outcome %in% c("singleJournal", "uniqueZetoc")) {
+  if (outcome %in% c("singleJournal", "uniqueZetoc")) {
     # Some journals have multiple policies because they are owned by multiple
     # publishers or because of historic data. They return hits == 2 but it's
     # still a single journal. They are identified by a specific outcome
@@ -102,7 +139,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
   } else if (outcome %in% c("manyJournals", "excessJournals")) {
 
-    warning(hits, " journals match your query terms.\n", call. = FALSE)
+    message(hits, " journals match your query terms.")
 
     if (outcome == "excessJournals") {
       warning("Your request exceeded SHERPA/RoMEO API's cap of 50 results. ",
@@ -124,7 +161,6 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 
       return(journal_df)
     } else {
-
       message("Recursively fetching data from each journal. ",
               "This may take some time...")
 
@@ -188,28 +224,7 @@ parse_answer = function(api_answer, multiple = FALSE, key = NULL) {
 #'
 #' @importFrom httr content http_error
 #' @importFrom xml2 xml_text xml_find_all xml_find_first xml_attr
-parse_publisher = function(api_answer) {
-  if (http_error(api_answer)) {
-    stop("The API endpoint could not be reached. Please try again later.",
-         call. = FALSE)
-  }
-
-  xml_source = content(api_answer, encoding = "ISO-8859-1")
-
-  apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
-  outcome = xml_text(xml_find_all(xml_source, "//outcome"))
-
-  if (apicontrol == "invalidapikey") {
-    stop("The provided API key is invalid. ",
-         "You can register for a free API at ",
-         "http://www.sherpa.ac.uk/romeo/apiregistry.php",
-         call. = FALSE)
-  }
-
-  if (outcome == "notFound") {
-    stop("No publisher matches the provided id. Please try another id.",
-         call. = FALSE)
-  }
+parse_publisher = function(xml_source, outcome, hits) {
 
   romeoid     = xml_attr(xml_find_all(xml_source, "//publisher"), "id")
 

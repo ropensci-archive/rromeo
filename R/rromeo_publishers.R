@@ -28,7 +28,7 @@ rr_publisher_id = function(id, key = NULL) {
     api_answer = GET(rr_base_api(), query = list(id = publisher_id,
                                                  ak = api_key))
 
-    parse_publisher(api_answer)
+    parse_generic(api_answer)
   })
 
   publishers_df = do.call(rbind.data.frame,
@@ -81,7 +81,7 @@ rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
   api_answer = GET(rr_base_api(), query = list(colour = romeo_colour,
                                                ak = check_key(key)))
 
-  parse_publisher(api_answer)
+  parse_generic(api_answer)
 }
 
 
@@ -127,7 +127,7 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
                                                  qtype = qtype,
                                                  ak    = api_key))
 
-    parse_publisher(api_answer)
+    parse_generic(api_answer)
   })
 
   publishers_df = do.call(rbind.data.frame,
@@ -180,7 +180,7 @@ rr_publisher_continent = function(continent = c("Africa",
                             "North America", "Oceania", "South America")
   }, logical(1))
 
-  if (!any(valid_continents)) {
+  if (any(!valid_continents)) {
     stop("Some continents are not valid, see ?rr_publisher_continent to get ",
          "the list of valid continents", call. = FALSE)
   }
@@ -191,7 +191,7 @@ rr_publisher_continent = function(continent = c("Africa",
     api_answer = GET(rr_base_api(), query = list(country = single_continent,
                                                  ak = api_key))
 
-    parse_publisher(api_answer)
+    parse_generic(api_answer)
   })
 
   publishers_df = do.call(rbind.data.frame,
@@ -237,7 +237,7 @@ rr_publisher_country = function(country, key = NULL) {
     api_answer = GET(rr_base_api(), query = list(country = given_country,
                                                  ak = api_key))
 
-    parse_publisher(api_answer)
+    parse_generic(api_answer)
   })
 
   publishers_df = do.call(rbind.data.frame,
@@ -265,5 +265,5 @@ rr_publisher_all = function(key = NULL) {
   api_answer = GET(rr_base_api(), query = list(all = "yes",
                                                ak = check_key(key)))
 
-  parse_publisher(api_answer)
+  parse_generic(api_answer)
 }
