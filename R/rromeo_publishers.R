@@ -180,7 +180,7 @@ rr_publisher_continent = function(continent = c("Africa",
                             "North America", "Oceania", "South America")
   }, logical(1))
 
-  if (!any(valid_continents)) {
+  if (any(!valid_continents)) {
     stop("Some continents are not valid, see ?rr_publisher_continent to get ",
          "the list of valid continents", call. = FALSE)
   }
