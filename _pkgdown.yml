@@ -1,0 +1,17 @@
+reference:
+- title: Utility functions
+  desc: ~
+  contents:
+  - '`check_key`'
+  - '`rr_api_version`'
+- title: Journal Functions
+  desc: >
+    Functions to access journals' policies
+  contents:
+  - starts_with("rr_journal")
+- title: Publisher functions
+  desc: >
+    Functions to access information on publishers' policies
+  contents:
+  - starts_with("rr_publisher")
+  - '`rr_romeo_colour`'
