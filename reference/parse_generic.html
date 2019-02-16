@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • rromeo</title>
+<title>Generic parsing function — parse_generic • rromeo</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Generic parsing function — parse_generic" />
+
+<meta property="og:description" content="Generic parsing function" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +50,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -97,114 +100,49 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Generic parsing function</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
+    <div class="hidden name"><code>parse_generic.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Generic parsing function</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-utility-functions" class="hasAnchor"><a href="#section-utility-functions" class="anchor"></a>Utility functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="check_key.html">check_key()</a></code> </p>
-        </td>
-        <td><p>Check SHERPA/RoMEO API key</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rr_api_version.html">rr_api_version()</a></code> </p>
-        </td>
-        <td><p>Return SHERPA/RoMEO API version</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-journal-functions" class="hasAnchor"><a href="#section-journal-functions" class="anchor"></a>Journal Functions</h2>
-          <p class="section-desc"><p>Functions to access journals’ policies</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="rr_journal_issn.html">rr_journal_issn()</a></code> </p>
-        </td>
-        <td><p>Retrieve journal policy using ISSN</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rr_journal_name.html">rr_journal_name()</a></code> </p>
-        </td>
-        <td><p>Retrieve journals policies by matching title</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-publisher-functions" class="hasAnchor"><a href="#section-publisher-functions" class="anchor"></a>Publisher functions</h2>
-          <p class="section-desc"><p>Functions to access information on publishers’ policies</p></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="rr_publisher_all.html">rr_publisher_all()</a></code> </p>
-        </td>
-        <td><p>Get all Publisher Policies</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rr_publisher_continent.html">rr_publisher_continent()</a></code> </p>
-        </td>
-        <td><p>Get Publisher Policy by Publisher's Continent</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rr_publisher_country.html">rr_publisher_country()</a></code> </p>
-        </td>
-        <td><p>Get Publisher Policy by Publisher's Country</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rr_publisher_id.html">rr_publisher_id()</a></code> </p>
-        </td>
-        <td><p>Get Publisher Policy from Publisher ID</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rr_publisher_name.html">rr_publisher_name()</a></code> </p>
-        </td>
-        <td><p>Get Publisher Policy by Publisher Name</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rr_romeo_colour.html">rr_romeo_colour()</a></code> </p>
-        </td>
-        <td><p>Query publisher by RoMEO colour</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>parse_generic</span>(<span class='no'>api_answer</span>, <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>api_answer</th>
+      <td><p><code><a href='https://www.rdocumentation.org/packages/httr/topics/response'>httr::response()</a></code><br />
+The API answer</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Other options passed to parsing functions</p></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>either results from <code><a href='parse_journal.html'>parse_journal()</a></code> or <code><a href='parse_publisher.html'>parse_publisher()</a></code></p>
+    
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-utility-functions">Utility functions</a></li>
-      <li><a href="#section-journal-functions">Journal Functions</a></li>
-      <li><a href="#section-publisher-functions">Publisher functions</a></li>
-    </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 
