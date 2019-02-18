@@ -32,7 +32,7 @@ remotes::install_github("Rekyt/rromeo")
 
 `rromeo` contains functions to retrieve data from the SHERPA/RoMEO API
 (for a complete overview please refer to the
-[vignette](https://rekyt.github.io/rromeo/articles/overview.html)). The
+[vignette](https://rekyt.github.io/rromeo/articles/rromeo.html)). The
 data is released under the [Creative Commons
 Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5)
 license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A
