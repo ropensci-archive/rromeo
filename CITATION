@@ -1,0 +1,20 @@
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(bibtype = "misc",
+         title = "{rromeo}: An {R} Client for {SHERPA/RoMEO} {API}",
+         author = c(person("Matthias", "Grenié"),
+                    person("Hugo", "Gruson")),
+         year = year,
+         note = note,
+         header = "To cite this package in publications, please use:",
+         url = "http://CRAN.R-project.org/package=rromeo")
+
+data_year <- format(Sys.Date(), "%Y")
+
+bibentry(bibtype = "misc",
+         header = "Please also cite the data provider:",
+         author = c(person("SHERPA/RoMEO")),
+         url = "http://www.sherpa.ac.uk/romeo/",
+         year = data_year,
+         note = "Data released under the Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license")

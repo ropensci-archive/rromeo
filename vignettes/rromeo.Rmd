@@ -32,6 +32,8 @@ library(rromeo)
 
 # Get summary data
 
+**NOTE:** SHERPA/RoMEO data is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A suggestion of citation is included in `rromeo` via `citation("rromeo")`
+
 Let's try to access summary data for . We can access this data using its full
 name or its unique ISSN identifier.
 
