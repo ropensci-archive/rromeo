@@ -32,8 +32,13 @@ remotes::install_github("Rekyt/rromeo")
 
 `rromeo` contains functions to retrieve data from the SHERPA/RoMEO API
 (for a complete overview please refer to the
-[vignette](https://rekyt.github.io/rromeo/articles/overview.html)).
-Usable functions are prefixed with `rr_` such as `rr_journal_name()`
+[vignette](https://rekyt.github.io/rromeo/articles/overview.html)). The
+data is released under the [Creative Commons
+Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5)
+license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A
+suggestion of citation is included in `rromeo` via `citation("rromeo")`.
+
+`rromeo` functions are prefixed with `rr_` such as `rr_journal_name()`
 that lets you retrieve a journal policy information using the title of a
 journal:
 
