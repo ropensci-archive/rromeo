@@ -34,32 +34,42 @@ library(rromeo)
 
 **NOTE:** SHERPA/RoMEO data is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A suggestion of citation is included in `rromeo` via `citation("rromeo")`
 
-Let's try to access summary data for . We can access this data using its full
-name or its unique ISSN identifier.
+The SHERPA/RoMEO database contains information on the archival policies of academic journals and publishers. Some journals let you archive a version of a submitted manuscript or book chapter (= preprint) before it's reviewed, some also let you archive the peer-reviewed but not formatted version (= postprint) and some even let you archive the peer-reviewed **and** formatted version of the manuscript (= pdf or publisher's version). The goal of `rromeo` is to make this database accessible through R.
+
+Let's try to access summary data using the ISSN of a journal:
 
 ```{r}
 rr_journal_issn("1947-6264")
 ```
 
-You can also search for partial matches.
+From this we see that the archival of the preprint is permitted while some restrictions apply for both postprint and pdf version of the manuscript. The restrictions are visible in the `*_embargo` field: the authors have to wait 12 months after publication before archiving postprint and formatted manuscript.
+
+We can also search journal by names using `rr_journal_name()` the first argument `name` is the string to look for and the second argument `qtype` defines the way to match. If we want to look at journals that have the word `Biostatistics` in their title we can use the following code:
 
 ```{r}
-rr_journal_name("Biogeography", qtype = "contains")
+rr_journal_name("Biostatistics", qtype = "contains")
 ```
 
-If rromeo finds multiple journals matching your query terms, it will only return
+Because `rromeo` finds multiple journals matching your query terms, it will only return
 the list of titles and ISSN by default.
-
 You can then use this list to select the exact journal you are looking for (in
 this case, it is recommended to use the ISSN).
-
 Alternatively, you may want to get data for all those journals. To achieve this,
-you may enable the `multiple` option:
+you may enable the `multiple` argument to `TRUE`:
 
 ```{r}
 res <- rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
 tail(res, 3)
 ```
+The query may run for longer but it gives you all the information on all returned journals.
+
+You can also use other type of name matching with other options for `qtype`, for example when `qtype = "starts"` the query string have to begin the title of the journal:
+
+```{r}
+rr_journal_name("Biostatistics", qtype = "starts", multiple = TRUE)
+```
+
+While using `qtype = exact` the exact submitted 
 
 This tool is useful in bibliometric studies. For example, we can now have a 
 visual overview of the policies of journals in a given field:
