@@ -94,12 +94,12 @@ rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
 #'              One or a vector of query string(s) to search publisher name
 #' @param qtype {`character(1)`}\cr{}
 #'              in `c("all", "any", "exact")` define the type of matching:
-#'              * `all` means that all strings in `name` must appear in any
-#'                order or location
-#'              * `any` means that at least one of the strings in `name` must
-#'                appear
-#'              * `exact` means that the `name` string must appear in the
-#'                publisher's name or its alias.
+#' * `all` means that all strings in `name` must appear in any
+#'   order or location
+#' * `any` means that at least one of the strings in `name` must
+#'   appear
+#' * `exact` means that the `name` string must appear in the
+#'   publisher's name or its alias.
 #'
 #' @inheritParams check_key
 #'

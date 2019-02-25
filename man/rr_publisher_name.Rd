@@ -12,12 +12,14 @@ One or a vector of query string(s) to search publisher name}
 
 \item{qtype}{{\code{character(1)}}\cr{}
 in \code{c("all", "any", "exact")} define the type of matching:
-* \code{all} means that all strings in \code{name} must appear in any
+\itemize{
+\item \code{all} means that all strings in \code{name} must appear in any
 order or location
-* \code{any} means that at least one of the strings in \code{name} must
+\item \code{any} means that at least one of the strings in \code{name} must
 appear
-* \code{exact} means that the \code{name} string must appear in the
-publisher's name or its alias.}
+\item \code{exact} means that the \code{name} string must appear in the
+publisher's name or its alias.
+}}
 
 \item{key}{{\code{character(1)}}\cr{}
 a character string containing the API key or \code{NULL}
