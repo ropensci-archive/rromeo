@@ -25,7 +25,7 @@ Suggests:
     knitr,
     rmarkdown,
     testthat,
-    vcr,
+    vcr (>= 0.2.6),
     ISOcodes,
     mockery
 Language: en-US
