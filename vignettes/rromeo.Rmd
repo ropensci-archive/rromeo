@@ -15,38 +15,49 @@ vignette: >
 ```{r setup, include = FALSE}
 library(vcr)
 
-vcr_configure("../inst/")
+vcr_configure("../inst")
 
 use_cassette("vignette_cassette", {
   rromeo::rr_journal_issn("1947-6264")
-  rromeo::rr_journal_name("Biogeography", qtype = "contains")
+  rromeo::rr_journal_name("Biostatistics", qtype = "contains")
   rromeo::rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
-})
+  rromeo::rr_journal_name("Biostatistics", qtype = "starts", multiple = TRUE)
+  rromeo::rr_journal_name("Biostatistics", qtype = "exact", multiple = TRUE)
+  rromeo::rr_publisher_name(name = "Oxford", qtype = "all")
+  rromeo::rr_publisher_name(name = "Oxford University", qtype = "all")
+  rromeo::rr_publisher_name(name = "Oxford University", qtype = "exact")
+  rromeo::rr_publisher_id(id = 55)
+  rromeo::rr_publisher_country(country = "IR")
+  rromeo::rr_publisher_continent(continent = "Australasia")
+}, record = "once")
 
 insert_cassette("vignette_cassette")
 ```
 
-```{r}
-library(rromeo)
-```
-
-# Get summary data
+## Query Journal Data
 
 **NOTE:** SHERPA/RoMEO data is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A suggestion of citation is included in `rromeo` via `citation("rromeo")`
 
 The SHERPA/RoMEO database contains information on the archival policies of academic journals and publishers. Some journals let you archive a version of a submitted manuscript or book chapter (= preprint) before it's reviewed, some also let you archive the peer-reviewed but not formatted version (= postprint) and some even let you archive the peer-reviewed **and** formatted version of the manuscript (= pdf or publisher's version). The goal of `rromeo` is to make this database accessible through R.
 
+### Query using ISSN
+
 Let's try to access summary data using the ISSN of a journal:
 
-```{r}
+```{r query_issn}
+library(rromeo)
+
 rr_journal_issn("1947-6264")
 ```
 
 From this we see that the archival of the preprint is permitted while some restrictions apply for both postprint and pdf version of the manuscript. The restrictions are visible in the `*_embargo` field: the authors have to wait 12 months after publication before archiving postprint and formatted manuscript.
 
+
+### Query by Journal Title
+
 We can also search journal by names using `rr_journal_name()` the first argument `name` is the string to look for and the second argument `qtype` defines the way to match. If we want to look at journals that have the word `Biostatistics` in their title we can use the following code:
 
-```{r}
+```{r query_name_contains}
 rr_journal_name("Biostatistics", qtype = "contains")
 ```
 
@@ -57,7 +68,7 @@ this case, it is recommended to use the ISSN).
 Alternatively, you may want to get data for all those journals. To achieve this,
 you may enable the `multiple` argument to `TRUE`:
 
-```{r}
+```{r query_name_contains_multiple}
 res <- rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
 tail(res, 3)
 ```
@@ -65,14 +76,105 @@ The query may run for longer but it gives you all the information on all returne
 
 You can also use other type of name matching with other options for `qtype`, for example when `qtype = "starts"` the query string have to begin the title of the journal:
 
-```{r}
+```{r query_name_starts}
 rr_journal_name("Biostatistics", qtype = "starts", multiple = TRUE)
 ```
 
-While using `qtype = exact` the exact submitted 
+While using `qtype = exact` the title of the journal should match exactly the used string:
 
-This tool is useful in bibliometric studies. For example, we can now have a 
-visual overview of the policies of journals in a given field:
+```{r query_name_exact}
+rr_journal_name("Biostatistics", qtype = "exact", multiple = TRUE)
+```
+
+
+## Query Publisher Data
+
+Not only can `rromeo` query journals archival policies but it can do the same for publishers. Indeed the SHERPA/RoMEO database contains much information on publishers' policies, with many ways to retrieve the information.
+
+### Query by Publisher's Name
+
+With `rr_publisher_name()` you can query publishers' informations using the name of the publishers. The first argument `name` is the string to match publisher's names the second argument `qtype` gives the type of matching:
+
+```{r query_publisher_name}
+rr_publisher_name(name = "Oxford", qtype = "all")
+```
+
+When `qtype = "all"` the publishers' names should contain all the words, in any order, included in provided string:
+```{r query_publisher_name_all}
+rr_publisher_name(name = "Oxford University", qtype = "all")
+```
+
+While when `qtype = "exact"` the publishers' names should contain all the words in the same order as provided in the string:
+```{r query_publisher_name_exact}
+rr_publisher_name(name = "Oxford University", qtype = "exact")
+```
+
+Finally, when `qtype = "any"` publishers' names can contain any words of the provided string.
+
+
+### Query by RoMEO's ID
+
+The first column of publishers' policies data frame returned by `rromeo` is named `romeoid` it corresponds to the identifier used by SHERPA/RoMEO to identify publishers in a unique way:
+
+```{r query_romeo_id}
+rr_publisher_id(id = 55)
+```
+
+
+### Query by Country or Region
+
+You can also query publishers information based on the country they are in using their two-letters ISO codes (see `?rr_publisher_country` for more information):
+
+```{r query_publisher_country}
+rr_publisher_country(country = "IR")
+```
+
+It is also possible to query publisher's information on a specific region or continent using `rr_publisher_continent()` (see the help page for the list of available regions):
+
+```{r query_publisher_continent}
+rr_publisher_continent(continent = "Australasia")
+```
+
+### Query by RoMEO colour
+
+RoMEO assigns a colour depending on the different policies of publishers.
+
+  | RoMEO colour | Archiving policy                                        |
+  |:-------------|:--------------------------------------------------------|
+  | `green`      | can archive preprint, postprint and publisher's version |
+  | `blue`       | can archive postprint **or** publisher's version        |
+  | `yellow`     | can archive preprint                                    |
+  | `white`      | archiving not formally supported                        |
+  
+(Table taken from <http://www.sherpa.ac.uk/romeo/definitions.php#colours>)
+
+You can query journals using this classification with the function `rr_romeo_colour()`:
+
+```{r query_romeo_colour, eval = FALSE}
+rr_romeo_colour(romeo_colour = "green")
+```
+
+In this example vignette we do not run the query because it can run for quite long as it returns the policies of all publishers of the given colour (you can see the numbers of publishers in each category in the following web page <http://www.sherpa.ac.uk/romeo/statistics.php?la=en&fIDnum=|&mode=simple>).
+
+
+## Setting up an API key
+
+SHERPA/RoMEO lets you make 500 queries per day per IP address for free. If you get past this limit you will get the following error:
+```
+You have exceeded the free use limit of 500 requests per day. To go beyond this limit you should register for a free API key available at http://www.sherpa.ac.uk/romeo/apiregistry.php
+```
+We encourage you to register for a **free** API key at the above-mentioned address.
+
+To provide your API key to `rromeo` you can:
+1. provide it as a character string as the `key` arguments of `rromeo` functions as `rr_*(..., key = "my_key_as_a_string")`, we **do not recommend** this method as your API key will be available from your history;
+1. you can define the variable `SHERPAROMEO_KEY` in an `.Renviron` file in your working directory, the file should contain the following line
+  `SHERPAROMEO_KEY=my_key_without_quotes`;
+1. you can also define the variable `SHERPAROMEO_KEY` in an `.Rprofile` file in your working directory, the file should contain the following line
+  `SHERPAROMEO_KEY="my_key_with_quotes"`.
+
+## Visualization Example
+
+`rromeo` can be quite useful in bibliometric studies to report on archival policies. For example, we can now have a quick visual overview of the policies of journals in a given field from the results obtained in a query:
 
 ```{r bar_graph}
 library("ggplot2")
@@ -81,16 +183,18 @@ theme_set(theme_minimal())
 stacked_res <- stack(res[, 4:6])
 ggplot(stacked_res, aes(x = ind, fill = values)) +
   geom_bar() +
-  xlab(NULL)
+  labs(x = NULL,
+       subtitle = "Archiving Policies of Journals with 'Biostatistics' in their title")
 ```
 
 ```{r pie_chart}
 ggplot(res, aes(x = "a", fill = romeocolour)) +
   geom_bar() + 
   coord_polar("y") +
-  xlab(NULL)
+  labs(x = NULL,
+       subtitle = "RoMEO colours of Journals with 'Biostatistics' in their title")
 ```
 
-```{r eject_cassette, include = FALSE}
+```{r eject_vignette_cassette, include = FALSE}
 eject_cassette("vignette_cassette")
 ```
