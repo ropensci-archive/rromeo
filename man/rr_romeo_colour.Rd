@@ -2,6 +2,7 @@
 % Please edit documentation in R/rromeo_publishers.R
 \name{rr_romeo_colour}
 \alias{rr_romeo_colour}
+\alias{rr_romeo_color}
 \title{Query publisher by RoMEO colour}
 \usage{
 rr_romeo_colour(romeo_colour = c("green", "blue", "yellow", "white"),

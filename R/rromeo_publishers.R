@@ -66,6 +66,8 @@ rr_publisher_id = function(id, key = NULL) {
 #'
 #' @inherit check_key details
 #'
+#' @aliases rr_romeo_color
+#'
 #' @importFrom httr GET
 #' @export
 #'
@@ -73,8 +75,8 @@ rr_publisher_id = function(id, key = NULL) {
 #' \dontrun{
 #' rr_romeo_colour(romeo_colour = "green")
 #' }
-rr_romeo_colour = function(romeo_colour = c("green", "blue", "yellow", "white"),
-                           key = NULL) {
+rr_romeo_colour = rr_romeo_color = function(
+  romeo_colour = c("green", "blue","yellow", "white"), key = NULL) {
 
   romeo_colour = match.arg(romeo_colour)
 
