@@ -81,38 +81,76 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(rromeo)</a></code></pre></div>
-<div id="get-summary-data" class="section level1">
-<h1 class="hasAnchor">
-<a href="#get-summary-data" class="anchor"></a>Get summary data</h1>
+<div id="query-journal-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#query-journal-data" class="anchor"></a>Query Journal Data</h2>
 <p><strong>NOTE:</strong> SHERPA/RoMEO data is released under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license</a>. A suggestion of citation is included in <code>rromeo</code> via <code><a href="https://www.rdocumentation.org/packages/utils/topics/citation">citation("rromeo")</a></code></p>
-<p>Let’s try to access summary data for . We can access this data using its full name or its unique ISSN identifier.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="../reference/rr_journal_issn.html">rr_journal_issn</a></span>(<span class="st">"1947-6264"</span>)</a></code></pre></div>
+<p>The SHERPA/RoMEO database contains information on the archival policies of academic journals and publishers. Some journals let you archive a version of a submitted manuscript or book chapter (= preprint) before it’s reviewed, some also let you archive the peer-reviewed but not formatted version (= postprint) and some even let you archive the peer-reviewed <strong>and</strong> formatted version of the manuscript (= pdf or publisher’s version). The goal of <code>rromeo</code> is to make this database accessible through R.</p>
+<div id="query-using-issn" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-using-issn" class="anchor"></a>Query using ISSN</h3>
+<p>Let’s try to access summary data using the ISSN of a journal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(rromeo)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw"><a href="../reference/rr_journal_issn.html">rr_journal_issn</a></span>(<span class="st">"1947-6264"</span>)</a></code></pre></div>
 <pre><code>##                                                       title      issn
 ## 1 A Critical Introduction to Media and Communication Theory 1947-6264
 ##   romeocolour preprint  postprint        pdf pre_embargo post_embargo
 ## 1      yellow      can restricted restricted        &lt;NA&gt;    12 months
 ##   pdf_embargo
 ## 1   12 months</code></pre>
-<p>You can also search for partial matches.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Biogeography"</span>, <span class="dt">qtype =</span> <span class="st">"contains"</span>)</a></code></pre></div>
-<pre><code>## 5 journals match your query terms.</code></pre>
+<p>From this we see that the archival of the preprint is permitted while some restrictions apply for both postprint and pdf version of the manuscript. The restrictions are visible in the <code>*_embargo</code> field: the authors have to wait 12 months after publication before archiving postprint and formatted manuscript.</p>
+</div>
+<div id="query-by-journal-title" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-by-journal-title" class="anchor"></a>Query by Journal Title</h3>
+<p>We can also search journal by names using <code><a href="../reference/rr_journal_name.html">rr_journal_name()</a></code> the first argument <code>name</code> is the string to look for and the second argument <code>qtype</code> defines the way to match. If we want to look at journals that have the word <code>Biostatistics</code> in their title we can use the following code:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Biostatistics"</span>, <span class="dt">qtype =</span> <span class="st">"contains"</span>)</a></code></pre></div>
+<pre><code>## 17 journals match your query terms.</code></pre>
 <pre><code>## Warning: Select one journal from the provided list or enable multiple =
 ## TRUE</code></pre>
-<pre><code>##                                     title      issn
-## 1                            Biogeography 1345-0662
-## 2               Frontiers of Biogeography 1948-6596
-## 3         Global Ecology and Biogeography 1466-822X
-## 4 Global Ecology and Biogeography Letters 0960-7447
-## 5                 Journal of Biogeography 0305-0270</code></pre>
-<p>If rromeo finds multiple journals matching your query terms, it will only return the list of titles and ISSN by default.</p>
-<p>You can then use this list to select the exact journal you are looking for (in this case, it is recommended to use the ISSN).</p>
-<p>Alternatively, you may want to get data for all those journals. To achieve this, you may enable the <code>multiple</code> option:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Biostatistics"</span>, <span class="dt">qtype =</span> <span class="st">"contains"</span>, <span class="dt">multiple =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>##                                                             title
+## 1                               American Journal of Biostatistics
+## 2                          Annals of Biometrics and Biostatistics
+## 3                            Annals of biometrics &amp; biostatistics
+## 4                             Austin Biometrics and Biostatistics
+## 5                Biometrics &amp; biostatistics international journal
+## 6                                                   Biostatistics
+## 7                                           Biostatistics -Basel-
+## 8                Biostatistics, bioinformatics and biomathematics
+## 9                                Edorium Journal of Biostatistics
+## 10                             Enliven: Biostatistics and Metrics
+## 11                   Epidemiology Biostatistics and Public Health
+## 12                         International Journal of Biostatistics
+## 13 International journal of clinical biostatistics and biometrics
+## 14                        Journal of Biometrics and Biostatistics
+## 15                      Journal of epidemiology and biostatistics
+## 16                                    JP journal of biostatistics
+## 17                   Monographs in Epidemiology and Biostatistics
+##         issn
+## 1  1948-9889
+## 2  2374-0116
+## 3       &lt;NA&gt;
+## 4  2378-9840
+## 5       &lt;NA&gt;
+## 6  1465-4644
+## 7  1527-2486
+## 8  0976-1594
+## 9       &lt;NA&gt;
+## 10      &lt;NA&gt;
+## 11 2282-2305
+## 12 1557-4679
+## 13      &lt;NA&gt;
+## 14 2155-6180
+## 15 1359-5229
+## 16 0973-5143
+## 17 0740-0845</code></pre>
+<p>Because <code>rromeo</code> finds multiple journals matching your query terms, it will only return the list of titles and ISSN by default. You can then use this list to select the exact journal you are looking for (in this case, it is recommended to use the ISSN). Alternatively, you may want to get data for all those journals. To achieve this, you may enable the <code>multiple</code> argument to <code>TRUE</code>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Biostatistics"</span>, <span class="dt">qtype =</span> <span class="st">"contains"</span>, <span class="dt">multiple =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## 17 journals match your query terms.</code></pre>
 <pre><code>## Recursively fetching data from each journal. This may take some time...</code></pre>
 <pre><code>## 2 journals match your query terms.</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">tail</a></span>(res, <span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">tail</a></span>(res, <span class="dv">3</span>)</a></code></pre></div>
 <pre><code>##                                           title      issn romeocolour
 ## 15    Journal of epidemiology and biostatistics 1359-5229        &lt;NA&gt;
 ## 16                  JP journal of biostatistics 0973-5143        &lt;NA&gt;
@@ -121,19 +159,437 @@
 ## 15     &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
 ## 16     &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
 ## 17      can restricted unclear        &lt;NA&gt;    12 months        &lt;NA&gt;</code></pre>
-<p>This tool is useful in bibliometric studies. For example, we can now have a visual overview of the policies of journals in a given field:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"ggplot2"</span>)</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span>())</a>
-<a class="sourceLine" id="cb14-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb14-4" data-line-number="4">stacked_res &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/stack">stack</a></span>(res[, <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>])</a>
-<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(stacked_res, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> ind, <span class="dt">fill =</span> values)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb14-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="ot">NULL</span>)</a></code></pre></div>
+<p>The query may run for longer but it gives you all the information on all returned journals.</p>
+<p>You can also use other type of name matching with other options for <code>qtype</code>, for example when <code>qtype = "starts"</code> the query string have to begin the title of the journal:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Biostatistics"</span>, <span class="dt">qtype =</span> <span class="st">"starts"</span>, <span class="dt">multiple =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>## 3 journals match your query terms.</code></pre>
+<pre><code>## Recursively fetching data from each journal. This may take some time...</code></pre>
+<pre><code>##                                              title      issn romeocolour
+## 1                                    Biostatistics 1465-4644       green
+## 2                            Biostatistics -Basel- 1527-2486        &lt;NA&gt;
+## 3 Biostatistics, bioinformatics and biomathematics 0976-1594        &lt;NA&gt;
+##   preprint postprint    pdf pre_embargo post_embargo pdf_embargo
+## 1      can       can cannot        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
+## 2     &lt;NA&gt;      &lt;NA&gt;   &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
+## 3     &lt;NA&gt;      &lt;NA&gt;   &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</code></pre>
+<p>While using <code>qtype = exact</code> the title of the journal should match exactly the used string:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="kw"><a href="../reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Biostatistics"</span>, <span class="dt">qtype =</span> <span class="st">"exact"</span>, <span class="dt">multiple =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<pre><code>##           title      issn romeocolour preprint postprint    pdf
+## 1 Biostatistics 1465-4644       green      can       can cannot
+##   pre_embargo post_embargo pdf_embargo
+## 1        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</code></pre>
+</div>
+</div>
+<div id="query-publisher-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#query-publisher-data" class="anchor"></a>Query Publisher Data</h2>
+<p>Not only can <code>rromeo</code> query journals archival policies but it can do the same for publishers. Indeed the SHERPA/RoMEO database contains much information on publishers’ policies, with many ways to retrieve the information.</p>
+<div id="query-by-publishers-name" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-by-publishers-name" class="anchor"></a>Query by Publisher’s Name</h3>
+<p>With <code><a href="../reference/rr_publisher_name.html">rr_publisher_name()</a></code> you can query publishers’ information using the name of the publishers. The first argument <code>name</code> is the string to match publisher’s names the second argument <code>qtype</code> gives the type of matching:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw"><a href="../reference/rr_publisher_name.html">rr_publisher_name</a></span>(<span class="dt">name =</span> <span class="st">"Oxford"</span>, <span class="dt">qtype =</span> <span class="st">"all"</span>)</a></code></pre></div>
+<pre><code>##   romeoid                                                       publisher
+## 1    2632                                       Oxford Brookes University
+## 2    1892                     Oxford Centre for Hebrew and Jewish Studies
+## 3     986                       Oxford University Anthropological Society
+## 4      55                                         Oxford University Press
+## 5    2072 University of Oxford, Oxford Uehiro Centre for Practical Ethics
+##   alias romeocolour preprint  postprint     pdf
+## 1  &lt;NA&gt;        blue   cannot        can     can
+## 2  &lt;NA&gt;        blue  unclear        can  cannot
+## 3  &lt;NA&gt;       green      can        can     can
+## 4   OUP      yellow      can restricted unclear
+## 5  &lt;NA&gt;       green      can        can     can</code></pre>
+<p>When <code>qtype = "all"</code> the publishers’ names should contain all the words, in any order, included in provided string:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw"><a href="../reference/rr_publisher_name.html">rr_publisher_name</a></span>(<span class="dt">name =</span> <span class="st">"Oxford University"</span>, <span class="dt">qtype =</span> <span class="st">"all"</span>)</a></code></pre></div>
+<pre><code>##   romeoid                                                       publisher
+## 1    2632                                       Oxford Brookes University
+## 2     986                       Oxford University Anthropological Society
+## 3      55                                         Oxford University Press
+## 4    2072 University of Oxford, Oxford Uehiro Centre for Practical Ethics
+##   alias romeocolour preprint  postprint     pdf
+## 1  &lt;NA&gt;        blue   cannot        can     can
+## 2  &lt;NA&gt;       green      can        can     can
+## 3   OUP      yellow      can restricted unclear
+## 4  &lt;NA&gt;       green      can        can     can</code></pre>
+<p>While when <code>qtype = "exact"</code> the publishers’ names should contain all the words in the same order as provided in the string:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw"><a href="../reference/rr_publisher_name.html">rr_publisher_name</a></span>(<span class="dt">name =</span> <span class="st">"Oxford University"</span>, <span class="dt">qtype =</span> <span class="st">"exact"</span>)</a></code></pre></div>
+<pre><code>##   romeoid                                 publisher alias romeocolour
+## 1     986 Oxford University Anthropological Society  &lt;NA&gt;       green
+## 2      55                   Oxford University Press   OUP      yellow
+##   preprint  postprint     pdf
+## 1      can        can     can
+## 2      can restricted unclear</code></pre>
+<p>Finally, when <code>qtype = "any"</code> publishers’ names can contain any words of the provided string.</p>
+</div>
+<div id="query-by-romeos-id" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-by-romeos-id" class="anchor"></a>Query by RoMEO’s ID</h3>
+<p>The first column of publishers’ policies data frame returned by <code>rromeo</code> is named <code>romeoid</code> it corresponds to the identifier used by SHERPA/RoMEO to identify publishers in a unique way:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw"><a href="../reference/rr_publisher_id.html">rr_publisher_id</a></span>(<span class="dt">id =</span> <span class="dv">55</span>)</a></code></pre></div>
+<pre><code>##   romeoid               publisher alias romeocolour preprint  postprint
+## 1      55 Oxford University Press   OUP      yellow      can restricted
+##       pdf
+## 1 unclear</code></pre>
+</div>
+<div id="query-by-country-or-region" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-by-country-or-region" class="anchor"></a>Query by Country or Region</h3>
+<p>You can also query publishers information based on the country they are in using their two-letters ISO codes (see <code><a href="../reference/rr_publisher_country.html">?rr_publisher_country</a></code> for more information):</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw"><a href="../reference/rr_publisher_country.html">rr_publisher_country</a></span>(<span class="dt">country =</span> <span class="st">"IR"</span>)</a></code></pre></div>
+<pre><code>##    romeoid
+## 1     1936
+## 2     2786
+## 3     1556
+## 4     2741
+## 5     2159
+## 6     1823
+## 7     1745
+## 8     1726
+## 9     1742
+## 10    1414
+## 11    1867
+## 12    3078
+## 13    2084
+## 14    1362
+## 15    1753
+## 16    2922
+## 17    1208
+## 18    2845
+##                                                              publisher
+## 1                               Acta Advances in Agricultural Sciences
+## 2                                                    Avicenna Journals
+## 3  Azad University, Mahlkesi Branch, Mechanical Engineering Department
+## 4                          Geodynamics Research International Bulletin
+## 5        International Journal of Management, Accounting and Economics
+## 6                            Islamic Azad University, Najafabad Branch
+## 7                             Islamic Azad University, Shahreza Branch
+## 8                                                        Islamic Press
+## 9                              Jahan Elm Institute of Higher Education
+## 10                               Kerman University of Medical Sciences
+## 11                                              Oboor Publishing Group
+## 12                      Shahid Sadoughi University of Medical Sciences
+## 13                                  Shefa Neuroscience Research Center
+## 14                                                   Shiraz University
+## 15                          Society of Diabetic Nephropathy Prevention
+## 16                               Tabriz University of Medical Sciences
+## 17                               Tehran University of Medical Sciences
+## 18                   University of Maragheh, Department of Mathematics
+##                      alias romeocolour preprint  postprint        pdf
+## 1                     &lt;NA&gt;        blue   cannot        can        can
+## 2  Advancements in Science       green      can        can        can
+## 3                     &lt;NA&gt;        blue   cannot     cannot        can
+## 4                     &lt;NA&gt;        blue   cannot     cannot        can
+## 5                     &lt;NA&gt;       green      can        can        can
+## 6                     &lt;NA&gt;        blue   cannot        can        can
+## 7                     &lt;NA&gt;        blue  unclear        can        can
+## 8                     &lt;NA&gt;        blue   cannot     cannot        can
+## 9                     &lt;NA&gt;        blue  unclear        can        can
+## 10                    &lt;NA&gt;        blue   cannot        can        can
+## 11                    &lt;NA&gt;       green      can        can        can
+## 12                    &lt;NA&gt;      yellow      can restricted restricted
+## 13                    &lt;NA&gt;       green      can        can        can
+## 14                    &lt;NA&gt;        blue   cannot        can        can
+## 15                    &lt;NA&gt;        blue   cannot     cannot        can
+## 16                    &lt;NA&gt;        blue   cannot        can        can
+## 17                    &lt;NA&gt;       green      can        can        can
+## 18                    &lt;NA&gt;       green      can        can        can</code></pre>
+<p>It is also possible to query publisher’s information on a specific region or continent using <code><a href="../reference/rr_publisher_continent.html">rr_publisher_continent()</a></code> (see the help page for the list of available regions):</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw"><a href="../reference/rr_publisher_continent.html">rr_publisher_continent</a></span>(<span class="dt">continent =</span> <span class="st">"Australasia"</span>)</a></code></pre></div>
+<pre><code>##    romeoid
+## 1     1514
+## 2     1853
+## 3      959
+## 4      736
+## 5      222
+## 6     2343
+## 7     1358
+## 8      220
+## 9       98
+## 10     518
+## 11     638
+## 12      97
+## 13    1813
+## 14     255
+## 15     248
+## 16     151
+## 17     161
+## 18     383
+## 19     290
+## 20     150
+## 21     160
+## 22     553
+## 23     550
+## 24    2501
+## 25    2453
+## 26     571
+## 27     626
+## 28    1928
+## 29    1026
+## 30     557
+## 31    3226
+## 32     163
+## 33     745
+## 34     284
+## 35    1397
+## 36    1310
+## 37     665
+## 38    2471
+## 39    2472
+## 40     598
+## 41     623
+## 42     666
+## 43    2134
+## 44     670
+## 45    2755
+## 46    2385
+## 47     581
+## 48    1767
+## 49     264
+## 50    1329
+## 51    1432
+## 52    3041
+## 53    3016
+## 54     164
+## 55    1946
+## 56    2532
+## 57     380
+##                                                                                   publisher
+## 1                                                                                 ANU Press
+## 2                                                                                  ANZAMEMS
+## 3                                                                                ARRB Group
+## 4                                                       Association of Occupational Science
+## 5  Auckland University of Technology, School of Communication Studies, Pacific Media Centre
+## 6                                          Australasian Association for Information Systems
+## 7                                                              Australasian Medical Journal
+## 8                      Australasian Society for Computers in Learning in Tertiary Education
+## 9                                                                 Australian Academic Press
+## 10                                                           Australian Accoustical Society
+## 11                                               Australian Clearinghouse for Youth Studies
+## 12                                                          Australian Computer Society Inc
+## 13                                                 Australian International Academic Centre
+## 14                                           Australian Library and Information Association
+## 15                                                          Australian Mathematical Society
+## 16                                                     Australian Physiotherapy Association
+## 17                                                         Australian Psychological Society
+## 18                                                 Australian Rock Art Research Association
+## 19                                                      Australian Society of Anaesthetists
+## 20                          College of Intensive Care Medicine of Australia and New Zealand
+## 21                                                                         CSIRO Publishing
+## 22                                                                     e-Content Management
+## 23                                                                Early Childhood Australia
+## 24                                                                   Edith Cowan University
+## 25                                                                                     EMAJ
+## 26                                                       Field Naturalists Club of Victoria
+## 27                    Griffith University, Griffith Law School, Socio-Legal Research Centre
+## 28                                                                           Infinity Press
+## 29                                                      Institute of Foresters of Australia
+## 30                                       International Association for Statistics Education
+## 31                                                                     LexisNexis Australia
+## 32                                                                       Libertas Academica
+## 33                          Macquarie University, Department of International Communication
+## 34                                                                           Magnolia Press
+## 35                                      Mathematics Education Research Group of Australasia
+## 36                                             Melbourne University, Law Review Association
+## 37                                                                 Monash University ePress
+## 38                                                           New Zealand Ecological Society
+## 39                                                        New Zealand Institute of Forestry
+## 40                                                          New Zealand Medical Association
+## 41                                                          New Zealand Nurses Organisation
+## 42                                                 New Zealand Society of Animal Production
+## 43                                                             Outdoor Council of Australia
+## 44                                                                            Python Papers
+## 45                                                      Queensland University of Technology
+## 46                                      Queensland University of Technology, Faculty of Law
+## 47                                                                          RMIT Publishing
+## 48                                       Royal New Zealand College of General Practitioners
+## 49                                                             Royal Society of New Zealand
+## 50                                                                Royal Society of Victoria
+## 51                                                                              SETScholars
+## 52                                                             Studies in Material Thinking
+## 53                                                                        Sydney Law School
+## 54                                                                          Thomson Reuters
+## 55                                                                               UTS ePRESS
+## 56                                   Western Australian Institutes for Educational Research
+## 57                                 World Institute for Engineering and Technology Education
+##                                                                           alias
+## 1                                                                          &lt;NA&gt;
+## 2  Australian and New Zealand Association for Medieval and Early Modern Studies
+## 3                                                                          &lt;NA&gt;
+## 4                                                                          &lt;NA&gt;
+## 5                                                                          &lt;NA&gt;
+## 6                                                                          AAIS
+## 7                                                                          &lt;NA&gt;
+## 8                                                                      ascilite
+## 9                                                                          &lt;NA&gt;
+## 10                                                                         &lt;NA&gt;
+## 11                                                                         &lt;NA&gt;
+## 12                                                                         &lt;NA&gt;
+## 13                                                                         AIAC
+## 14                                                                         &lt;NA&gt;
+## 15                                                                         &lt;NA&gt;
+## 16                                                                         &lt;NA&gt;
+## 17                                                                         &lt;NA&gt;
+## 18                                                                         &lt;NA&gt;
+## 19                                                                         &lt;NA&gt;
+## 20                                                                         &lt;NA&gt;
+## 21                                                                         &lt;NA&gt;
+## 22                                                                         &lt;NA&gt;
+## 23                                                                         &lt;NA&gt;
+## 24                                                                         &lt;NA&gt;
+## 25                                                                         &lt;NA&gt;
+## 26                                                                         &lt;NA&gt;
+## 27                                                                         &lt;NA&gt;
+## 28                                                                         &lt;NA&gt;
+## 29                                                                         &lt;NA&gt;
+## 30                                                                         IASE
+## 31                                                                         &lt;NA&gt;
+## 32                                                                         &lt;NA&gt;
+## 33                                                                         &lt;NA&gt;
+## 34                                                                         &lt;NA&gt;
+## 35                                                                         &lt;NA&gt;
+## 36                                                                         &lt;NA&gt;
+## 37                                                                         &lt;NA&gt;
+## 38                                                                         &lt;NA&gt;
+## 39                                                                         &lt;NA&gt;
+## 40                                                                         &lt;NA&gt;
+## 41                                                                         &lt;NA&gt;
+## 42                                                                         &lt;NA&gt;
+## 43                                                                         &lt;NA&gt;
+## 44                                                                         &lt;NA&gt;
+## 45                                                                         &lt;NA&gt;
+## 46                                                                         &lt;NA&gt;
+## 47                                                                         &lt;NA&gt;
+## 48                                                                         &lt;NA&gt;
+## 49                                                                         &lt;NA&gt;
+## 50                                                                         &lt;NA&gt;
+## 51                                                                         &lt;NA&gt;
+## 52                                                                         &lt;NA&gt;
+## 53                                                                         &lt;NA&gt;
+## 54                                                                 Professional
+## 55                                                                         &lt;NA&gt;
+## 56                                                                         &lt;NA&gt;
+## 57                                                                        WIETE
+##    romeocolour preprint  postprint        pdf
+## 1        green      can        can       &lt;NA&gt;
+## 2        green      can        can        can
+## 3         blue   cannot        can     cannot
+## 4        white   cannot restricted     cannot
+## 5         blue   cannot        can        can
+## 6        green      can        can        can
+## 7        green      can        can       &lt;NA&gt;
+## 8        green      can        can        can
+## 9         blue   cannot        can     cannot
+## 10       white   cannot     cannot       &lt;NA&gt;
+## 11       green      can        can restricted
+## 12       green      can        can       &lt;NA&gt;
+## 13       green      can        can        can
+## 14        blue  unclear        can       &lt;NA&gt;
+## 15      yellow      can     cannot restricted
+## 16        blue   cannot     cannot        can
+## 17       white  unclear restricted     cannot
+## 18       white   cannot restricted       &lt;NA&gt;
+## 19       white   cannot restricted       &lt;NA&gt;
+## 20       white   cannot     cannot     cannot
+## 21       green      can        can     cannot
+## 22       green      can        can     cannot
+## 23       white  unclear    unclear       &lt;NA&gt;
+## 24        blue   cannot        can        can
+## 25       green      can        can        can
+## 26        blue  unclear        can        can
+## 27        blue   cannot        can        can
+## 28       green      can        can        can
+## 29       white   cannot restricted restricted
+## 30        blue  unclear        can       &lt;NA&gt;
+## 31        blue  unclear        can restricted
+## 32       green      can        can        can
+## 33       white  unclear    unclear       &lt;NA&gt;
+## 34       white   cannot     cannot     cannot
+## 35        blue  unclear     cannot        can
+## 36        blue   cannot        can        can
+## 37      yellow      can     cannot       &lt;NA&gt;
+## 38      yellow      can restricted restricted
+## 39      yellow      can restricted restricted
+## 40       white   cannot     cannot restricted
+## 41        blue   cannot     cannot        can
+## 42       white  unclear restricted       &lt;NA&gt;
+## 43        blue  unclear     cannot        can
+## 44        blue  unclear        can       &lt;NA&gt;
+## 45       green      can        can        can
+## 46       green      can        can        can
+## 47       green      can        can     cannot
+## 48        blue   cannot        can        can
+## 49      yellow      can restricted     cannot
+## 50       white   cannot     cannot     cannot
+## 51       green      can        can        can
+## 52        blue  unclear     cannot        can
+## 53        blue   cannot     cannot        can
+## 54        blue   cannot        can       &lt;NA&gt;
+## 55       green      can        can        can
+## 56        blue   cannot        can        can
+## 57       white   cannot     cannot       &lt;NA&gt;</code></pre>
+</div>
+<div id="query-by-romeo-colour" class="section level3">
+<h3 class="hasAnchor">
+<a href="#query-by-romeo-colour" class="anchor"></a>Query by RoMEO colour</h3>
+<p>RoMEO assigns a colour depending on the different policies of publishers.</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">RoMEO colour</th>
+<th align="left">Archiving policy</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>green</code></td>
+<td align="left">can archive preprint, postprint and publisher’s version</td>
+</tr>
+<tr class="even">
+<td align="left"><code>blue</code></td>
+<td align="left">can archive postprint <strong>or</strong> publisher’s version</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>yellow</code></td>
+<td align="left">can archive preprint</td>
+</tr>
+<tr class="even">
+<td align="left"><code>white</code></td>
+<td align="left">archiving not formally supported</td>
+</tr>
+</tbody>
+</table>
+<p>(Table taken from <a href="http://www.sherpa.ac.uk/romeo/definitions.php#colours" class="uri">http://www.sherpa.ac.uk/romeo/definitions.php#colours</a>)</p>
+<p>You can query journals using this classification with the function <code><a href="../reference/rr_romeo_colour.html">rr_romeo_colour()</a></code>:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="kw"><a href="../reference/rr_romeo_colour.html">rr_romeo_colour</a></span>(<span class="dt">romeo_colour =</span> <span class="st">"green"</span>)</a></code></pre></div>
+<p>In this example vignette we do not run the query because it can run for quite long as it returns the policies of all publishers of the given colour (you can see the numbers of publishers in each category in the following web page <a href="http://www.sherpa.ac.uk/romeo/statistics.php?la=en&amp;fIDnum=%7C&amp;mode=simple" class="uri">http://www.sherpa.ac.uk/romeo/statistics.php?la=en&amp;fIDnum=|&amp;mode=simple</a>).</p>
+</div>
+</div>
+<div id="setting-up-an-api-key" class="section level2">
+<h2 class="hasAnchor">
+<a href="#setting-up-an-api-key" class="anchor"></a>Setting up an API key</h2>
+<p>SHERPA/RoMEO lets you make 500 queries per day per IP address for free. If you get past this limit you will get the following error:</p>
+<pre><code>You have exceeded the free use limit of 500 requests per day. To go beyond this limit you should register for a free API key available at http://www.sherpa.ac.uk/romeo/apiregistry.php</code></pre>
+<p>We encourage you to register for a <strong>free</strong> API key at the above-mentioned address.</p>
+<p>To provide your API key to <code>rromeo</code> you can: 1. provide it as a character string as the <code>key</code> arguments of <code>rromeo</code> functions as <code>rr_*(..., key = "my_key_as_a_string")</code>, we <strong>do not recommend</strong> this method as your API key will be available from your history; 1. you can define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Renviron</code> file in your working directory, the file should contain the following line <code>SHERPAROMEO_KEY=my_key_without_quotes</code>; 1. you can also define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Rprofile</code> file in your working directory, the file should contain the following line <code>SHERPAROMEO_KEY="my_key_with_quotes"</code>.</p>
+</div>
+<div id="visualization-example" class="section level2">
+<h2 class="hasAnchor">
+<a href="#visualization-example" class="anchor"></a>Visualization Example</h2>
+<p><code>rromeo</code> can be quite useful in bibliometric studies to report on archival policies. For example, we can now have a quick visual overview of the policies of journals in a given field from the results obtained in a query:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/theme_get.html">theme_set</a></span>(<span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span>())</a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4">stacked_res &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/stack">stack</a></span>(res[, <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>])</a>
+<a class="sourceLine" id="cb33-5" data-line-number="5"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(stacked_res, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> ind, <span class="dt">fill =</span> values)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb33-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">x =</span> <span class="ot">NULL</span>,</a>
+<a class="sourceLine" id="cb33-8" data-line-number="8">       <span class="dt">subtitle =</span> <span class="st">"Archiving Policies of Journals with 'Biostatistics' in their title"</span>)</a></code></pre></div>
 <p><img src="rromeo_files/figure-html/bar_graph-1.png" width="700"></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(res, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> <span class="st">"a"</span>, <span class="dt">fill =</span> romeocolour)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb15-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span>(<span class="st">"y"</span>) <span class="op">+</span></a>
-<a class="sourceLine" id="cb15-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span>(<span class="ot">NULL</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(res, <span class="kw"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="dt">x =</span> <span class="st">"a"</span>, <span class="dt">fill =</span> romeocolour)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/coord_polar.html">coord_polar</a></span>(<span class="st">"y"</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb34-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span>(<span class="dt">x =</span> <span class="ot">NULL</span>,</a>
+<a class="sourceLine" id="cb34-5" data-line-number="5">       <span class="dt">subtitle =</span> <span class="st">"RoMEO colours of Journals with 'Biostatistics' in their title"</span>)</a></code></pre></div>
 <p><img src="rromeo_files/figure-html/pie_chart-1.png" width="700"></p>
 </div>
   </div>
@@ -143,7 +599,10 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#get-summary-data">Get summary data</a></li>
+<li><a href="#query-journal-data">Query Journal Data</a></li>
+      <li><a href="#query-publisher-data">Query Publisher Data</a></li>
+      <li><a href="#setting-up-an-api-key">Setting up an API key</a></li>
+      <li><a href="#visualization-example">Visualization Example</a></li>
       </ul>
 </div>
       </div>
