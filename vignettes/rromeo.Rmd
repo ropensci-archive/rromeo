@@ -93,7 +93,7 @@ Not only can `rromeo` query journals archival policies but it can do the same fo
 
 ### Query by Publisher's Name
 
-With `rr_publisher_name()` you can query publishers' informations using the name of the publishers. The first argument `name` is the string to match publisher's names the second argument `qtype` gives the type of matching:
+With `rr_publisher_name()` you can query publishers' information using the name of the publishers. The first argument `name` is the string to match publisher's names the second argument `qtype` gives the type of matching:
 
 ```{r query_publisher_name}
 rr_publisher_name(name = "Oxford", qtype = "all")
@@ -177,7 +177,7 @@ To provide your API key to `rromeo` you can:
 `rromeo` can be quite useful in bibliometric studies to report on archival policies. For example, we can now have a quick visual overview of the policies of journals in a given field from the results obtained in a query:
 
 ```{r bar_graph}
-library("ggplot2")
+library(ggplot2)
 theme_set(theme_minimal())
 
 stacked_res <- stack(res[, 4:6])
