@@ -4,21 +4,15 @@ language: R
 sudo: false
 cache: packages
 
+before_script:
+  - Rscript -e 'remotes::install_cran(c("covr", "pkgdown", "spelling", "miniCRAN", "igraph", "ggnetwork", "intergraph"))'
+
 matrix:
   include:
     - os: linux
       r: release
     - os: osx
       r: release
-
-r_packages:
-  - covr
-  - pkgdown
-  - spelling
-  - miniCRAN
-  - igraph
-  - ggnetwork
-  - intergraph
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
