@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 # `rromeo` – an R interface for SHERPA/RoMEO API
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Travis build status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/Rekyt/rromeo?branch=master&svg=true)](https://ci.appveyor.com/project/Rekyt/rromeo) [![codecov](https://codecov.io/gh/Rekyt/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/rromeo)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Travis build status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/Rekyt/rromeo?branch=master&svg=true)](https://ci.appveyor.com/project/Rekyt/rromeo) [![codecov](https://codecov.io/gh/Rekyt/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/rromeo) [![](https://badges.ropensci.org/285_status.svg)](https://github.com/ropensci/onboarding/issues/285)
 
 `rromeo` is an R client for the [SHERPA/RoMEO API](http://www.sherpa.ac.uk/romeo/index.php?la=en&fIDnum=&mode=simple). SHERPA/RoMEO is a database that gives information on editorial policies of scientific journals regarding the archival of preprint, postprint and publishers' manuscripts.
 

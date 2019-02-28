@@ -95,7 +95,8 @@ parse_generic = function(api_answer, ...) {
 #'
 #' @importFrom httr content
 #' @importFrom xml2 xml_text xml_find_all xml_find_first
-parse_journal = function(xml_source, outcome, hits, multiple = FALSE, key = NULL) {
+parse_journal = function(xml_source, outcome, hits, multiple = FALSE,
+                         key = NULL) {
 
   if (outcome %in% c("singleJournal", "uniqueZetoc")) {
     # Some journals have multiple policies because they are owned by multiple

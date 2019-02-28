@@ -11,6 +11,7 @@ status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/Rekyt/rromeo?branch=master&svg=true)](https://ci.appveyor.com/project/Rekyt/rromeo)
 [![codecov](https://codecov.io/gh/Rekyt/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/rromeo)
+[![](https://badges.ropensci.org/285_status.svg)](https://github.com/ropensci/onboarding/issues/285)
 
 `rromeo` is an R client for the [SHERPA/RoMEO
 API](http://www.sherpa.ac.uk/romeo/index.php?la=en&fIDnum=&mode=simple).
