@@ -28,7 +28,7 @@ parse_generic = function(api_answer, ...) {
          "available at http://www.sherpa.ac.uk/romeo/apiregistry.php",
          call. = FALSE)
   } else if (apicontrol == "invalid") {
-    stop("The query is invalid. Please check the query")
+    stop("The query is invalid. Please check the query", call. = FALSE)
   }
 
   hits = xml_text(xml_find_all(xml_source, "//numhits"))
@@ -275,7 +275,7 @@ validate_issn = function(issn) {
 
   # Pre-check: does it look like a valid ISSN?
   if (!grepl("^\\d{4}-\\d{3}[\\dxX]$", issn, perl = TRUE)) {
-    stop("ISSN is invalid, please check the format")
+    stop("ISSN is invalid, please check the format", call. = FALSE)
   }
 
   # Weighted sum check
@@ -291,7 +291,7 @@ validate_issn = function(issn) {
                         weighted_sum + as.numeric(control_digit))
 
   if (weighted_sum %% 11 != 0) {
-    stop("ISSN is invalid, please check the format")
+    stop("ISSN is invalid, please check the format", call. = FALSE)
   }
 
   return(TRUE)
@@ -377,12 +377,14 @@ validate_country_code = function(country) {
   if (requireNamespace("ISOcodes", quietly = TRUE)) {
     if (!(country %in% c(ISOcodes::ISO_3166_1$Alpha_2, "AA", "ZZ", "__"))) {
       stop(country, " is an invalid country code. ",
-           "The country code should be two letter long or '__' for undefined.")
+           "The country code should be two letter long or '__' for undefined.",
+           call. = FALSE)
     }
   } else {
     if (!grepl("^[A-Za-z|\\_]{2}$", country, perl = FALSE)) {
       stop(country, " is an invalid country code. ",
-           "The country code should be two letter long or '__' for undefined.")
+           "The country code should be two letter long or '__' for undefined.",
+           call. = FALSE)
     }
   }
 
