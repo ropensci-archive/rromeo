@@ -7,7 +7,7 @@
 validate_issn(issn)
 }
 \arguments{
-\item{issn}{{\code{character(1)}}\cr{}
+\item{issn}{[\code{character(1)}]\cr{}
 The ISSN of a journal}
 }
 \value{

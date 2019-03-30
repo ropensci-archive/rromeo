@@ -7,35 +7,35 @@
 rr_publisher_country(country, key = NULL)
 }
 \arguments{
-\item{country}{{\code{character(1+)}}\cr{}
+\item{country}{[\code{character(1+)}]\cr{}
 one or a vector of ISO two-letter country code or \code{AA} for
 international publisher, \code{ZZ} for publisher of unknown
 countries and \code{__} for publishers without specified country
 (case insensitive).}
 
-\item{key}{{\code{character(1)}}\cr{}
+\item{key}{[\code{character(1)}]\cr{}
 a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
 Returns a data frame with the following columns:
 \itemize{
-\item \code{romeoid}     {\code{integer(1)}}\cr{}
+\item \code{romeoid}     [\code{integer(1)}]\cr{}
 the internal index of the publisher in the SHERPA/RoMEO
 database
-\item \code{publisher}   {\code{character(1)}}\cr{}
+\item \code{publisher}   [\code{character(1)}]\cr{}
 the name of the publisher
-\item \code{alias}       {\code{character(1)}}\cr{}
+\item \code{alias}       [\code{character(1)}]\cr{}
 if applicable an alternative name of the publisher or the
 name of the specific publishing branch
-\item \code{romeocolour} {\code{character(1)}}\cr{}
+\item \code{romeocolour} [\code{character(1)}]\cr{}
 a colour assigned by the database that reflects the default
 policies of the publisher
-\item \code{preprint}    {\code{character(1)}}\cr{}
+\item \code{preprint}    [\code{character(1)}]\cr{}
 is the preprint (not reviewed) archivable?
-\item \code{postprint}   {\code{character(1)}}\cr{}
+\item \code{postprint}   [\code{character(1)}]\cr{}
 is the postprint (reviewed but not formatted) archivable?
-\item \code{pdf}         {\code{character(1)}}\cr{}
+\item \code{pdf}         [\code{character(1)}]\cr{}
 is the publisher's version (reviewed and formatted)
 archivable?
 }

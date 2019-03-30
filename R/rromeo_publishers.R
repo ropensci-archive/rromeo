@@ -3,7 +3,7 @@
 #' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 #' archival
 #'
-#' @param id {`integer(1+)`}\cr{}
+#' @param id \[`integer(1+)`\]\cr{}
 #'           one or a vector of SHERPA/RoMEO publisher's ID
 #' @inheritParams check_key
 #'
@@ -55,10 +55,10 @@ rr_publisher_id <- function(id, key = NULL) {
 #'
 #' Note that when using `rr_romeo_colour()` the API returns **all** the
 #' publishers in the selected category, so the results are generally bigger in
-#' size than specific functions like {`rr_journal_name()`} or
-#' {`rr_publisher_id()`}
+#' size than specific functions like \[`rr_journal_name()`\] or
+#' \[`rr_publisher_id()`\]
 #'
-#' @param romeo_colour {`character(1)`}\cr{}
+#' @param romeo_colour \[`character(1)`\]\cr{}
 #'                     in `c("green", "blue", "yellow", "white")`
 #'                     the SHERPA/RoMEO colour to retrieve
 #' @inheritParams check_key
@@ -94,9 +94,9 @@ rr_romeo_colour <- rr_romeo_color <- function(
 #' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 #' archival based on matching the name of the publishers.
 #'
-#' @param name  {`character(1+)`}\cr{}
+#' @param name  \[`character(1+)`\]\cr{}
 #'              One or a vector of query string(s) to search publisher name
-#' @param qtype {`character(1)`}\cr{}
+#' @param qtype \[`character(1)`\]\cr{}
 #'              in `c("all", "any", "exact")` define the type of matching:
 #' * `all` means that all strings in `name` must appear in any
 #'   order or location
@@ -146,7 +146,7 @@ rr_publisher_name <- function(name, qtype = c("all", "any", "exact"),
 #' Retrieve publisher's policy based on publisher's continent. This function
 #' does not work for unclassified or international publishers.
 #'
-#' @param continent {`character(1+)`}\cr{}
+#' @param continent \[`character(1+)`\]\cr{}
 #'                  one or a vector of strings in ```
 #'                  c("Africa", "Antarctica",  "Asia",  "Australasia",
 #'                  "Carribean",  "Central America",  "Europe",
@@ -212,7 +212,7 @@ rr_publisher_continent <- function(continent = c("Africa",
 #' the ISO_3166-1_alpha-2 code of the country
 #' <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>.
 #'
-#' @param country {`character(1+)`}\cr{}
+#' @param country \[`character(1+)`\]\cr{}
 #'                one or a vector of ISO two-letter country code or `AA` for
 #'                international publisher, `ZZ` for publisher of unknown
 #'                countries and `__` for publishers without specified country
