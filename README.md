@@ -19,7 +19,7 @@ SHERPA/RoMEO is a database that gives information on editorial policies
 of scientific journals regarding the archival of preprint, postprint and
 publishers’ manuscripts.
 
-## Installation
+## Install
 
 `rromeo` is not yet on CRAN but you can install the development version
 of `rromeo` with:
@@ -28,6 +28,24 @@ of `rromeo` with:
 # install.packages("remotes")
 remotes::install_github("Rekyt/rromeo")
 ```
+
+## API Key
+
+Note that SHERPA/RoMEO lets you run 500 requests per day per IP address,
+by [registering for a free API
+key](http://www.sherpa.ac.uk/romeo/apiregistry.php) you can bypass this
+limit.
+
+`rromeo` can use your registered SHERPA/RoMEO API key; you can either
+pass it as a string when querying the data with the argument `key`:
+
+``` r
+rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
+```
+
+or you can specify the environment variable `SHERPAROMEO_KEY` in an
+`.Rprofile` or in an `.Renviron` file and `rromeo` will automatically
+retrieve the API key.
 
 ## Usage
 
@@ -103,25 +121,6 @@ green_journals[8:12,]
 #> 12      can       can        can
 ```
 
-## API Key
-
-Note that SHERPA/RoMEO lets you run 500 requests per day per IP address,
-by [registering for a free API
-key](http://www.sherpa.ac.uk/romeo/apiregistry.php) you can bypass this
-limit.
-
-`rromeo` can use your registered SHERPA/RoMEO API key; you can either
-pass it as a string when querying the data with the argument `key`:
-
-``` r
-rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
-```
-
-or you can specify the environment variable `SHERPAROMEO_KEY` in an
-`.Rprofile` or in an `.Renviron` file and `rromeo` will automatically
-retrieve the API
-key.
-
 ## Dependency network (Imports only)
 
 <img src="man/figures/README-dependency_network_imports-1.png" width="100%" />
@@ -129,6 +128,12 @@ key.
 ## Dependency network (Imports and Suggests)
 
 <img src="man/figures/README-dependency_network_full-1.png" width="100%" />
+
+## Contributing to `rromeo`
+
+We welcome contribution to `rromeo`\! Please read the [contribution
+guidelines](.github/CONTRIBUTING.md) if you want to contribute, as well
+as the below-mentioned Code of Conduct.
 
 ## Code of Conduct
 
