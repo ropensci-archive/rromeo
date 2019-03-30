@@ -2,7 +2,7 @@ context("rr_journal_name")
 
 test_that("rr_journal_name() works", {
   use_cassette("rr_journal_name", {
-    res = rr_journal_name("Journal of Geology")
+    res <- rr_journal_name("Journal of Geology")
 
     expect_is(res, "data.frame")
 
@@ -14,13 +14,13 @@ test_that("rr_journal_name() works", {
   })
 
   use_cassette("rr_journal_name_multiple", {
-    given_warnings = capture_warnings(
+    given_warnings <- capture_warnings(
       suppressMessages({
         res <- rr_journal_name("Biogeography", qtype = "contains", key = NULL)
       })
     )
 
-    given_messages = capture_messages(
+    given_messages <- capture_messages(
       suppressWarnings({
         rr_journal_name("Biogeography", qtype = "contains", key = NULL)
       })
@@ -44,8 +44,8 @@ test_that("rr_journal_name() works", {
 
   use_cassette("rr_journal_name_multiple_exact", {
 
-    res = rr_journal_name(c("Journal of Biogeography", "PLOS one"),
-                          qtype = "exact", key = NULL)
+    res <- rr_journal_name(c("Journal of Biogeography", "PLOS one"),
+                           qtype = "exact", key = NULL)
 
     expect_is(res, "data.frame")
 
@@ -69,12 +69,12 @@ test_that("rr_journal_name() works", {
 
   use_cassette("rr_journal_name_multiple_fetch", {
 
-    recursive_message = capture_messages(
+    recursive_message <- capture_messages(
       suppressWarnings({
-        res = rr_journal_name("Biogeography", qtype = "contains",
+        res <- rr_journal_name("Biogeography", qtype = "contains",
                                multiple = TRUE, key = NULL)
       })
-      )
+    )
 
     suppressMessages({
       suppressWarnings({
@@ -124,7 +124,7 @@ test_that("rr_journal_name() works", {
   })
 
   use_cassette("missing_issn", {
-    res = suppressWarnings({
+    res <- suppressWarnings({
       suppressMessages({
         rr_journal_name("real-Time", qtype = "contains", multiple = TRUE)
       })

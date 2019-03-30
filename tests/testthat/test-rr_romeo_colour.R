@@ -9,7 +9,7 @@ test_that("rr_romeo_colour() works", {
 
 
   use_cassette("rr_romeo_colour", {
-    res = rr_romeo_colour("green")
+    res <- rr_romeo_colour("green")
 
     expect_is(res, "data.frame")
 

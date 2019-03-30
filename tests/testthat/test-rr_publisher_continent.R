@@ -17,7 +17,7 @@ test_that("rr_publisher_continent() works", {
   skip("Not possible because of encoding problems waiting for a fix in vcr")
   # Regular Query
   use_cassette("rr_publisher_continent", {
-    res = rr_publisher_continent("Caribbean")
+    res <- rr_publisher_continent("Caribbean")
 
     expect_is(res, "data.frame")
 
@@ -38,7 +38,7 @@ test_that("rr_publisher_continent() works", {
 
   # Multiple continents
   use_cassette("rr_publisher_continent_multiple", {
-    res = rr_publisher_continent(c("Caribbean", "Central America"))
+    res <- rr_publisher_continent(c("Caribbean", "Central America"))
 
     expect_is(res, "data.frame")
 

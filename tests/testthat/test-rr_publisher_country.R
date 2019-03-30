@@ -8,7 +8,7 @@ test_that("rr_publisher_country() works", {
 
   # Regular Query
   use_cassette("rr_publisher_country", {
-    res = rr_publisher_country("IR")
+    res <- rr_publisher_country("IR")
 
     expect_is(res, "data.frame")
 

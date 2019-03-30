@@ -16,23 +16,23 @@
 #' @examples
 #' rr_publisher_id(id = 55)
 #' rr_publisher_id(id = c(55, 735))
-rr_publisher_id = function(id, key = NULL) {
+rr_publisher_id <- function(id, key = NULL) {
 
   if (any(!grepl("^[[:digit:]]+$", id))) {
     stop("All provided IDs should be integers", call. = FALSE)
   }
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(id, function(publisher_id) {
-    api_answer = GET(rr_base_api(), query = list(id = publisher_id,
-                                                 ak = api_key))
+  answer_list <- lapply(id, function(publisher_id) {
+    api_answer <- GET(rr_base_api(), query = list(id = publisher_id,
+                                                  ak = api_key))
 
     parse_generic(api_answer)
   })
 
-  publishers_df = do.call(rbind.data.frame,
-                          c(answer_list, stringsAsFactors = FALSE))
+  publishers_df <- do.call(rbind.data.frame,
+                           c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -75,13 +75,13 @@ rr_publisher_id = function(id, key = NULL) {
 #' \dontrun{
 #' rr_romeo_colour(romeo_colour = "green")
 #' }
-rr_romeo_colour = rr_romeo_color = function(
+rr_romeo_colour <- rr_romeo_color <- function(
   romeo_colour = c("green", "blue","yellow", "white"), key = NULL) {
 
-  romeo_colour = match.arg(romeo_colour)
+  romeo_colour <- match.arg(romeo_colour)
 
-  api_answer = GET(rr_base_api(), query = list(colour = romeo_colour,
-                                               ak = check_key(key)))
+  api_answer <- GET(rr_base_api(), query = list(colour = romeo_colour,
+                                                ak = check_key(key)))
 
   parse_generic(api_answer)
 }
@@ -117,23 +117,23 @@ rr_romeo_colour = rr_romeo_color = function(
 #' rr_publisher_name(name = "Optical Society", qtype = "all")
 #' rr_publisher_name(name = "Swiss Chemistry", qtype = "any")
 #' rr_publisher_name(name = "Swiss Chemistry", qtype = "exact")
-rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
-                             key = NULL) {
+rr_publisher_name <- function(name, qtype = c("all", "any", "exact"),
+                              key = NULL) {
 
-  qtype = match.arg(qtype)
+  qtype <- match.arg(qtype)
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(name, function(publisher_name) {
-    api_answer = GET(rr_base_api(), query = list(pub   = publisher_name,
-                                                 qtype = qtype,
-                                                 ak    = api_key))
+  answer_list <- lapply(name, function(publisher_name) {
+    api_answer <- GET(rr_base_api(), query = list(pub   = publisher_name,
+                                                  qtype = qtype,
+                                                  ak    = api_key))
 
     parse_generic(api_answer)
   })
 
-  publishers_df = do.call(rbind.data.frame,
-                          c(answer_list, stringsAsFactors = FALSE))
+  publishers_df <- do.call(rbind.data.frame,
+                           c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -164,19 +164,19 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
 #' rr_publisher_continent(continent = "Caribbean")
 #' rr_publisher_continent(continent = "Central America")
 #' rr_publisher_continent(continent = c("Caribbean", "Central America"))
-rr_publisher_continent = function(continent = c("Africa",
-                                                "Antarctica",
-                                                "Asia",
-                                                "Australasia",
-                                                "Caribbean",
-                                                "Central America",
-                                                "Europe",
-                                                "North America",
-                                                "Oceania",
-                                                "South America"),
-                                  key = NULL) {
+rr_publisher_continent <- function(continent = c("Africa",
+                                                 "Antarctica",
+                                                 "Asia",
+                                                 "Australasia",
+                                                 "Caribbean",
+                                                 "Central America",
+                                                 "Europe",
+                                                 "North America",
+                                                 "Oceania",
+                                                 "South America"),
+                                   key = NULL) {
 
-  valid_continents = vapply(continent, function(single_continent) {
+  valid_continents <- vapply(continent, function(single_continent) {
     single_continent %in% c("Africa", "Antarctica", "Asia", "Australasia",
                             "Caribbean", "Central America", "Europe",
                             "North America", "Oceania", "South America")
@@ -187,17 +187,17 @@ rr_publisher_continent = function(continent = c("Africa",
          "the list of valid continents", call. = FALSE)
   }
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(continent, function(single_continent) {
-    api_answer = GET(rr_base_api(), query = list(country = single_continent,
+  answer_list <- lapply(continent, function(single_continent) {
+    api_answer <- GET(rr_base_api(), query = list(country = single_continent,
                                                  ak = api_key))
 
     parse_generic(api_answer)
   })
 
-  publishers_df = do.call(rbind.data.frame,
-                          c(answer_list, stringsAsFactors = FALSE))
+  publishers_df <- do.call(rbind.data.frame,
+                           c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -229,21 +229,21 @@ rr_publisher_continent = function(continent = c("Africa",
 #' # Egypt
 #' rr_publisher_country("EG")
 #' rr_publisher_country(c("TW", "EG"))
-rr_publisher_country = function(country, key = NULL) {
+rr_publisher_country <- function(country, key = NULL) {
 
   vapply(country, validate_country_code, logical(1))
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(country, function(given_country) {
-    api_answer = GET(rr_base_api(), query = list(country = given_country,
-                                                 ak = api_key))
+  answer_list <- lapply(country, function(given_country) {
+    api_answer <- GET(rr_base_api(), query = list(country = given_country,
+                                                  ak = api_key))
 
     parse_generic(api_answer)
   })
 
-  publishers_df = do.call(rbind.data.frame,
-                          c(answer_list, stringsAsFactors = FALSE))
+  publishers_df <- do.call(rbind.data.frame,
+                           c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -260,11 +260,11 @@ rr_publisher_country = function(country, key = NULL) {
 #'
 #' @importFrom httr GET
 #' @export
-rr_publisher_all = function(key = NULL) {
+rr_publisher_all <- function(key = NULL) {
 
   message("This function can take a long time to run, please be patient.")
 
-  api_answer = GET(rr_base_api(), query = list(all = "yes",
+  api_answer <- GET(rr_base_api(), query = list(all = "yes",
                                                ak = check_key(key)))
 
   parse_generic(api_answer)

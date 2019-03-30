@@ -6,17 +6,17 @@
 #' @param ... Other options passed to parsing functions
 #'
 #' @return either results from [`parse_journal()`] or [`parse_publisher()`]
-parse_generic = function(api_answer, ...) {
+parse_generic <- function(api_answer, ...) {
 
   if (http_error(api_answer)) {
     stop("The API endpoint could not be reached. Please try again later.",
          call. = FALSE)
   }
 
-  xml_source = content(api_answer, encoding = "ISO-8859-1")
+  xml_source <- content(api_answer, encoding = "ISO-8859-1")
 
   # API Control Block
-  apicontrol = xml_text(xml_find_all(xml_source, "//apicontrol"))
+  apicontrol <- xml_text(xml_find_all(xml_source, "//apicontrol"))
 
   if (apicontrol == "invalidapikey") {
     stop("The provided API key is invalid. ",
@@ -31,8 +31,8 @@ parse_generic = function(api_answer, ...) {
     stop("The query is invalid. Please check the query", call. = FALSE)
   }
 
-  hits = xml_text(xml_find_all(xml_source, "//numhits"))
-  outcome = xml_text(xml_find_all(xml_source, "//outcome"))
+  hits <- xml_text(xml_find_all(xml_source, "//numhits"))
+  outcome <- xml_text(xml_find_all(xml_source, "//outcome"))
 
   # Outcome Block
   if (apicontrol == "journal" & (outcome == "notFound" | hits == 0)) {
@@ -46,11 +46,11 @@ parse_generic = function(api_answer, ...) {
 
   # Parsing branches
   if (apicontrol == "journal") {
-    parsed = parse_journal(xml_source, outcome = outcome, hits = hits, ...)
+    parsed <- parse_journal(xml_source, outcome = outcome, hits = hits, ...)
   } else if (apicontrol == "publisher" | apicontrol == "identifier" |
              apicontrol == "colour" |
              (apicontrol == "" & outcome == "publisherFound")) {
-    parsed = parse_publisher(xml_source)
+    parsed <- parse_publisher(xml_source)
   }
 
   return(parsed)
@@ -95,8 +95,8 @@ parse_generic = function(api_answer, ...) {
 #'
 #' @importFrom httr content
 #' @importFrom xml2 xml_text xml_find_all xml_find_first
-parse_journal = function(xml_source, outcome, hits, multiple = FALSE,
-                         key = NULL) {
+parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
+                          key = NULL) {
 
   if (outcome %in% c("singleJournal", "uniqueZetoc")) {
     # Some journals have multiple policies because they are owned by multiple
@@ -114,24 +114,24 @@ parse_journal = function(xml_source, outcome, hits, multiple = FALSE,
     # TODO: check whether xml_find_first returns the policy with the highest
     # priority.
 
-    title = xml_text(xml_find_first(xml_source, "//jtitle"))
-    issn = xml_text(xml_find_first(xml_source, "//issn"))
+    title <- xml_text(xml_find_first(xml_source, "//jtitle"))
+    issn <- xml_text(xml_find_first(xml_source, "//issn"))
 
-    romeocolour = xml_text(xml_find_first(xml_source, "//romeocolour"))
-    romeocolour = ifelse(romeocolour == "gray", NA_character_, romeocolour)
+    romeocolour <- xml_text(xml_find_first(xml_source, "//romeocolour"))
+    romeocolour <- ifelse(romeocolour == "gray", NA_character_, romeocolour)
 
-    preprint = xml_text(xml_find_first(xml_source, "//prearchiving"))
-    preprint = ifelse(preprint == "unknown", NA_character_, preprint)
+    preprint <- xml_text(xml_find_first(xml_source, "//prearchiving"))
+    preprint <- ifelse(preprint == "unknown", NA_character_, preprint)
 
-    postprint = xml_text(xml_find_first(xml_source, "//postarchiving"))
-    postprint = ifelse(postprint == "unknown", NA_character_, postprint)
+    postprint <- xml_text(xml_find_first(xml_source, "//postarchiving"))
+    postprint <- ifelse(postprint == "unknown", NA_character_, postprint)
 
-    pdf = xml_text(xml_find_first(xml_source, "//pdfarchiving"))
-    pdf = ifelse(pdf == "unknown", NA_character_, pdf)
+    pdf <- xml_text(xml_find_first(xml_source, "//pdfarchiving"))
+    pdf <- ifelse(pdf == "unknown", NA_character_, pdf)
 
-    pre_embargo = parse_embargo(xml_source, "pre")
-    post_embargo = parse_embargo(xml_source, "post")
-    pdf_embargo = parse_embargo(xml_source, "pdf")
+    pre_embargo <- parse_embargo(xml_source, "pre")
+    post_embargo <- parse_embargo(xml_source, "post")
+    pdf_embargo <- parse_embargo(xml_source, "pdf")
 
     return(data.frame(title, issn, romeocolour,
                       preprint,    postprint,    pdf,
@@ -148,13 +148,13 @@ parse_journal = function(xml_source, outcome, hits, multiple = FALSE,
               call. = FALSE)
     }
 
-    journals = xml_text(xml_find_all(xml_source, "//jtitle"))
-    issns = xml_text(xml_find_all(xml_source, "//issn"))
+    journals <- xml_text(xml_find_all(xml_source, "//jtitle"))
+    issns <- xml_text(xml_find_all(xml_source, "//issn"))
 
-    journal_df = data.frame(title = journals,
-                            issn  = issns,
-                            stringsAsFactors = FALSE)
-    journal_df[journal_df == ""] = NA
+    journal_df <- data.frame(title = journals,
+                             issn  = issns,
+                             stringsAsFactors = FALSE)
+    journal_df[journal_df == ""] <- NA
 
     if (!multiple) {
       warning("Select one journal from the provided list or enable multiple = ",
@@ -167,11 +167,11 @@ parse_journal = function(xml_source, outcome, hits, multiple = FALSE,
 
       # Retrieve RoMEO data for all matched journals
       # Use ISSN if available, use title otherwise to retrieve info
-      result_df = apply(journal_df, 1, function(x) {
+      result_df <- apply(journal_df, 1, function(x) {
         if (!is.na(x["issn"])) {
-          journal_policy = rr_journal_issn(x["issn"], key)
+          journal_policy <- rr_journal_issn(x["issn"], key)
         } else {
-          journal_policy = tryCatch({
+          journal_policy <- tryCatch({
             rr_journal_name(x["title"], key, qtype = "exact")
           },
           error = function(err) {
@@ -225,25 +225,25 @@ parse_journal = function(xml_source, outcome, hits, multiple = FALSE,
 #'
 #' @importFrom httr content http_error
 #' @importFrom xml2 xml_text xml_find_all xml_find_first xml_attr
-parse_publisher = function(xml_source, outcome, hits) {
+parse_publisher <- function(xml_source, outcome, hits) {
 
-  romeoid     = xml_attr(xml_find_all(xml_source, "//publisher"), "id")
+  romeoid     <- xml_attr(xml_find_all(xml_source, "//publisher"), "id")
 
-  publisher   = xml_text(xml_find_all(xml_source, "//name"))
+  publisher   <- xml_text(xml_find_all(xml_source, "//name"))
 
-  alias       = xml_text(xml_find_all(xml_source, "//alias"))
-  alias       = ifelse(alias == "", NA_character_, alias)
+  alias       <- xml_text(xml_find_all(xml_source, "//alias"))
+  alias       <- ifelse(alias == "", NA_character_, alias)
 
-  romeocolour = xml_text(xml_find_all(xml_source, "//romeocolour"))
+  romeocolour <- xml_text(xml_find_all(xml_source, "//romeocolour"))
 
-  preprint    = xml_text(xml_find_all(xml_source, "//prearchiving"))
-  preprint    = ifelse(preprint == "unknown", NA_character_, preprint)
+  preprint    <- xml_text(xml_find_all(xml_source, "//prearchiving"))
+  preprint    <- ifelse(preprint == "unknown", NA_character_, preprint)
 
-  postprint   = xml_text(xml_find_all(xml_source, "//postarchiving"))
-  postprint   = ifelse(postprint == "unknown", NA_character_, postprint)
+  postprint   <- xml_text(xml_find_all(xml_source, "//postarchiving"))
+  postprint   <- ifelse(postprint == "unknown", NA_character_, postprint)
 
-  pdf         = xml_text(xml_find_all(xml_source, "//pdfarchiving"))
-  pdf         = ifelse(pdf == "unknown", NA_character_, pdf)
+  pdf         <- xml_text(xml_find_all(xml_source, "//pdfarchiving"))
+  pdf         <- ifelse(pdf == "unknown", NA_character_, pdf)
 
   data.frame(romeoid = as.numeric(romeoid),
              publisher,
@@ -268,7 +268,7 @@ parse_publisher = function(xml_source, outcome, hits) {
 #' @return `NULL` if the ISSN is valid, errors otherwise
 #'
 #' @keywords internal
-validate_issn = function(issn) {
+validate_issn <- function(issn) {
 
   # How to validate ISSN?
   # https://en.wikipedia.org/wiki/International_Standard_Serial_Number
@@ -279,16 +279,16 @@ validate_issn = function(issn) {
   }
 
   # Weighted sum check
-  issn_digits = strsplit(gsub("-", "", issn), "")[[1]]
+  issn_digits <- strsplit(gsub("-", "", issn), "")[[1]]
 
-  non_control_digits = as.numeric(issn_digits[1:7])
-  control_digit = toupper(issn_digits[8])
+  non_control_digits <- as.numeric(issn_digits[1:7])
+  control_digit <- toupper(issn_digits[8])
 
-  weighted_sum = sum(seq(8, 2, by = -1) * non_control_digits)
+  weighted_sum <- sum(seq(8, 2, by = -1) * non_control_digits)
 
-  weighted_sum = ifelse(control_digit == "X",
-                        weighted_sum + 10,
-                        weighted_sum + as.numeric(control_digit))
+  weighted_sum <- ifelse(control_digit == "X",
+                         weighted_sum + 10,
+                         weighted_sum + as.numeric(control_digit))
 
   if (weighted_sum %% 11 != 0) {
     stop("ISSN is invalid, please check the format", call. = FALSE)
@@ -317,11 +317,11 @@ validate_issn = function(issn) {
 #'
 #' @return if found the character string of the key, `NULL` otherwise
 #' @export
-check_key = function(key) {
-  tmp = ifelse(is.null(key), Sys.getenv("SHERPAROMEO_KEY"), key)
+check_key <- function(key) {
+  tmp <- ifelse(is.null(key), Sys.getenv("SHERPAROMEO_KEY"), key)
 
   if (tmp == "") {
-    tmp = NULL
+    tmp <- NULL
   }
 
   return(tmp)
@@ -342,20 +342,20 @@ check_key = function(key) {
 #' @keywords internal
 #'
 #' @importFrom xml2 xml_text xml_find_first read_html
-parse_embargo = function(xml_source, type = c("pre", "post", "pdf")) {
+parse_embargo <- function(xml_source, type = c("pre", "post", "pdf")) {
 
-  type = match.arg(type)
+  type <- match.arg(type)
 
-  tag = paste0("//", type, "restriction[contains(text(), 'embargo')]")
-  embargo_field = xml_text(xml_find_first(xml_source, tag))
+  tag <- paste0("//", type, "restriction[contains(text(), 'embargo')]")
+  embargo_field <- xml_text(xml_find_first(xml_source, tag))
 
   if (is.na(embargo_field)) {
     return(NA_character_)
   }
   else {
-    embargo_field = read_html(embargo_field)
-    time = xml_text(xml_find_first(embargo_field, "//num"))
-    unit = xml_text(xml_find_first(embargo_field, "//period"))
+    embargo_field <- read_html(embargo_field)
+    time <- xml_text(xml_find_first(embargo_field, "//num"))
+    unit <- xml_text(xml_find_first(embargo_field, "//period"))
     return(paste(time, unit))
   }
 }
@@ -373,7 +373,7 @@ parse_embargo = function(xml_source, type = c("pre", "post", "pdf")) {
 #' @return `TRUE` if the country code is valid, errors otherwise
 #'
 #' @keywords internal
-validate_country_code = function(country) {
+validate_country_code <- function(country) {
   if (requireNamespace("ISOcodes", quietly = TRUE)) {
     if (!(country %in% c(ISOcodes::ISO_3166_1$Alpha_2, "AA", "ZZ", "__"))) {
       stop(country, " is an invalid country code. ",

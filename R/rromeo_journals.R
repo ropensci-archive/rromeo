@@ -17,22 +17,22 @@
 #' @examples
 #' rr_journal_issn(issn = "1947-6264")
 #' rr_journal_issn(issn = c("1947-6264", "0030-1299"))
-rr_journal_issn = function(issn, key = NULL) {
+rr_journal_issn <- function(issn, key = NULL) {
 
   vapply(issn, validate_issn, logical(1))
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(issn, function(journal_issn) {
+  answer_list <- lapply(issn, function(journal_issn) {
 
-    api_answer = GET(rr_base_api(), query = list(issn = journal_issn,
-                                                 ak   = api_key))
+    api_answer <- GET(rr_base_api(), query = list(issn = journal_issn,
+                                                  ak   = api_key))
 
     parse_generic(api_answer, multiple = FALSE, key = api_key)
   })
 
-  journals_df = do.call(rbind.data.frame,
-                        c(answer_list, stringsAsFactors = FALSE))
+  journals_df <- do.call(rbind.data.frame,
+                         c(answer_list, stringsAsFactors = FALSE))
 
   return(journals_df)
 }
@@ -98,24 +98,24 @@ rr_journal_issn = function(issn, key = NULL) {
 #' rr_journal_name(name = c("Journal of Biogeography", "PLoS ONE"),
 #'                 qtype = "exact")
 #' }
-rr_journal_name = function(name, multiple = FALSE,
-                           qtype = c("exact", "contains", "starts"),
-                           key = NULL) {
+rr_journal_name <- function(name, multiple = FALSE,
+                            qtype = c("exact", "contains", "starts"),
+                            key = NULL) {
 
-  qtype = match.arg(qtype)
+  qtype <- match.arg(qtype)
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(name, function(journal_name) {
+  answer_list <- lapply(name, function(journal_name) {
 
-    api_answer = GET(rr_base_api(), query = list(jtitle = journal_name,
+    api_answer <- GET(rr_base_api(), query = list(jtitle = journal_name,
                                                  qtype  = qtype,
                                                  ak     = api_key))
 
     parse_generic(api_answer, multiple = multiple, key = api_key)
   })
 
-  journals_df = do.call(rbind.data.frame,
+  journals_df <- do.call(rbind.data.frame,
                         c(answer_list, stringsAsFactors = FALSE))
 
   return(journals_df)

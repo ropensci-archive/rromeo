@@ -2,7 +2,7 @@ context("rr_journal_issn")
 
 test_that("rr_journal_issn() works", {
   use_cassette("rr_journal_issn", {
-    res = rr_journal_issn("1947-6264")
+    res <- rr_journal_issn("1947-6264")
 
     expect_is(res, "data.frame")
 
@@ -19,7 +19,7 @@ test_that("rr_journal_issn() works", {
     expect_is(res$post_embargo, "character")
     expect_is(res$pdf_embargo,  "character")
 
-    res_expect = structure(
+    res_expect <- structure(
       list(title = "A Critical Introduction to Media and Communication Theory",
            issn = "1947-6264", romeocolour = "yellow", preprint = "can",
            postprint = "restricted", pdf = "restricted",
@@ -31,7 +31,7 @@ test_that("rr_journal_issn() works", {
   })
 
   use_cassette("rr_journal_issn_multiple", {
-    res = rr_journal_issn(c("1947-6264", "0030-1299"))
+    res <- rr_journal_issn(c("1947-6264", "0030-1299"))
 
     expect_is(res, "data.frame")
 
