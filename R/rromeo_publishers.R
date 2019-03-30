@@ -11,7 +11,7 @@
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET add_headers
 #' @export
 #' @examples
 #' rr_publisher_id(id = 55)
@@ -25,8 +25,9 @@ rr_publisher_id <- function(id, key = NULL) {
   api_key <- check_key(key)
 
   answer_list <- lapply(id, function(publisher_id) {
-    api_answer <- GET(rr_base_api(), query = list(id = publisher_id,
-                                                  ak = api_key))
+    api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                      query = list(id = publisher_id,
+                                   ak = api_key))
 
     parse_generic(api_answer)
   })
@@ -68,7 +69,7 @@ rr_publisher_id <- function(id, key = NULL) {
 #'
 #' @aliases rr_romeo_color
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET add_headers
 #' @export
 #'
 #' @examples
@@ -80,8 +81,9 @@ rr_romeo_colour <- rr_romeo_color <- function(
 
   romeo_colour <- match.arg(romeo_colour)
 
-  api_answer <- GET(rr_base_api(), query = list(colour = romeo_colour,
-                                                ak = check_key(key)))
+  api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                    query = list(colour = romeo_colour,
+                                 ak     = check_key(key)))
 
   parse_generic(api_answer)
 }
@@ -109,7 +111,7 @@ rr_romeo_colour <- rr_romeo_color <- function(
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET add_headers
 #' @export
 #'
 #' @examples
@@ -125,9 +127,10 @@ rr_publisher_name <- function(name, qtype = c("all", "any", "exact"),
   api_key <- check_key(key)
 
   answer_list <- lapply(name, function(publisher_name) {
-    api_answer <- GET(rr_base_api(), query = list(pub   = publisher_name,
-                                                  qtype = qtype,
-                                                  ak    = api_key))
+    api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                      query = list(pub   = publisher_name,
+                                   qtype = qtype,
+                                   ak    = api_key))
 
     parse_generic(api_answer)
   })
@@ -156,7 +159,7 @@ rr_publisher_name <- function(name, qtype = c("all", "any", "exact"),
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET add_headers
 #' @export
 #'
 #' @examples
@@ -190,8 +193,9 @@ rr_publisher_continent <- function(continent = c("Africa",
   api_key <- check_key(key)
 
   answer_list <- lapply(continent, function(single_continent) {
-    api_answer <- GET(rr_base_api(), query = list(country = single_continent,
-                                                 ak = api_key))
+    api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                      query = list(country = single_continent,
+                                   ak      = api_key))
 
     parse_generic(api_answer)
   })
@@ -219,7 +223,7 @@ rr_publisher_continent <- function(continent = c("Africa",
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET add_headers
 #' @export
 #'
 #' @examples
@@ -236,8 +240,9 @@ rr_publisher_country <- function(country, key = NULL) {
   api_key <- check_key(key)
 
   answer_list <- lapply(country, function(given_country) {
-    api_answer <- GET(rr_base_api(), query = list(country = given_country,
-                                                  ak = api_key))
+    api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                      query = list(country = given_country,
+                                   ak      = api_key))
 
     parse_generic(api_answer)
   })
@@ -258,14 +263,15 @@ rr_publisher_country <- function(country, key = NULL) {
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET add_headers
 #' @export
 rr_publisher_all <- function(key = NULL) {
 
   message("This function can take a long time to run, please be patient.")
 
-  api_answer <- GET(rr_base_api(), query = list(all = "yes",
-                                               ak = check_key(key)))
+  api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                    query = list(all = "yes",
+                                 ak  = check_key(key)))
 
   parse_generic(api_answer)
 }

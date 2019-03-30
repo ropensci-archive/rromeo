@@ -390,3 +390,10 @@ validate_country_code <- function(country) {
 
   return(TRUE)
 }
+
+
+#' rromeo User Agent
+rr_ua <- function() {
+  paste0("http://github.com/Rekyt/rromeo R package rromeo/v.",
+         utils::packageVersion("rromeo"))
+}

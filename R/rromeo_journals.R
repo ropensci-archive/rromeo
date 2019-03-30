@@ -11,7 +11,7 @@
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET add_headers
 #' @export
 #'
 #' @examples
@@ -25,8 +25,9 @@ rr_journal_issn <- function(issn, key = NULL) {
 
   answer_list <- lapply(issn, function(journal_issn) {
 
-    api_answer <- GET(rr_base_api(), query = list(issn = journal_issn,
-                                                  ak   = api_key))
+    api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                      query = list(issn = journal_issn,
+                                   ak   = api_key))
 
     parse_generic(api_answer, multiple = FALSE, key = api_key)
   })
@@ -86,7 +87,7 @@ rr_journal_issn <- function(issn, key = NULL) {
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
+#' @importFrom httr GET add_headers
 #' @export
 #'
 #' @examples
@@ -108,9 +109,10 @@ rr_journal_name <- function(name, multiple = FALSE,
 
   answer_list <- lapply(name, function(journal_name) {
 
-    api_answer <- GET(rr_base_api(), query = list(jtitle = journal_name,
-                                                 qtype  = qtype,
-                                                 ak     = api_key))
+    api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                      query = list(jtitle = journal_name,
+                                   qtype  = qtype,
+                                   ak     = api_key))
 
     parse_generic(api_answer, multiple = multiple, key = api_key)
   })
