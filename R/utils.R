@@ -38,8 +38,7 @@ parse_generic <- function(api_answer, ...) {
   if (apicontrol == "journal" & (outcome == "notFound" | hits == 0)) {
     stop("No journal matches your query terms. Please try another query.",
          call. = FALSE)
-  } else if ((apicontrol == "" | apicontrol == "publisher" |
-              apicontrol == "identifier") &
+  } else if (apicontrol %in% c("", "publisher", "identifier") &
              (outcome == "notFound" | hits == 0)) {
     stop("No publisher was found. Maybe try another query? ;)", call. = FALSE)
   }
@@ -47,10 +46,8 @@ parse_generic <- function(api_answer, ...) {
   # Parsing branches
   if (apicontrol == "journal") {
     parsed <- parse_journal(xml_source, outcome = outcome, hits = hits, ...)
-  } else if (apicontrol == "publisher" | apicontrol == "identifier" |
-             apicontrol == "colour" |
-             (apicontrol == "all" & outcome == "publisherFound") |
-             (apicontrol == "" & outcome == "publisherFound")) {
+  } else if (apicontrol %in% c("publisher", "identifier", "colour") |
+             (apicontrol %in% c("all", "") & outcome == "publisherFound")) {
     parsed <- parse_publisher(xml_source)
   }
 
