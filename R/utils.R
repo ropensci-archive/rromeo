@@ -49,6 +49,7 @@ parse_generic <- function(api_answer, ...) {
     parsed <- parse_journal(xml_source, outcome = outcome, hits = hits, ...)
   } else if (apicontrol == "publisher" | apicontrol == "identifier" |
              apicontrol == "colour" |
+             (apicontrol == "all" & outcome == "publisherFound") |
              (apicontrol == "" & outcome == "publisherFound")) {
     parsed <- parse_publisher(xml_source)
   }
