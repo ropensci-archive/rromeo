@@ -1,0 +1,64 @@
+---
+title: "How to setup and use an API key?"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{setting_up_api_key}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+## What is an API key?
+
+Like many other R packages that are API clients, `rromeo` let's you setup and use an API key.
+An API key is a string that you communicates to the server. The key is used by the server to identify you. This helps the server to manage your access, for example, giving access to specific services.
+
+
+## Why use one?
+
+Many APIs have a limit in the number of queries you can make along time. Using an API key, because it identifies you, lets you go over this limit so the server knows it is not under a [Denial of Service (DoS) attack](https://en.wikipedia.org/wiki/Denial-of-service_attack).
+
+Some APIs also grant you special access when you register an API key.
+
+
+## Registering for an API key for SHERPA/RoMEO
+
+SHERPA/RoMEO lets you register for a free API key to exceed the 500 queries per day limit. You can register a free API key [here](http://www.sherpa.ac.uk/romeo/apiregistry.php)
+You have to provide your name, your job title as well as a valid email address to regrester for an API key.
+
+It is considered good practice to register one API key per project (e.g. software or research project), in order to avoid making too many queries to the API. Do fill out the description of your application to help the people who made SHERPA/RoMEO data freely available make statistics.
+
+
+## How to setup your API key in `rromeo`
+
+Now that you have registered for an API key, you can use it in `rromeo`. There are several ways to set up your API key in `rromeo`.
+
+### Using the `key` function argument (**NOT RECOMMENDED**)
+
+All the functions in `rromeo` that can use an API key have a `key` argument.
+To use your API key you have to provide it as a string in the `key` argument of the functions for example:
+
+```
+rr_journal_issn("1947-6264", key = "YOUR_API_KEY")
+```
+However, **we do not recommend** this approach as your API key will be available in your R history and in your R scripts. While your API key should stay secret as it grants unlimited access to the server and can be maliciously used in wrong hands.
+
+Furthermore using this method you have to specify it at each function call while the other methods shown below only needs to be setup once.
+
+### Using `Sys.setenv()` during an interactive session
+
+One way to set up your API key without using 
+
+### Setting up your API key in an `.Renviron` file
+
+
+### Setting up your API key in an `.Rprofile` file
+
+put `.Rprofile` file where your launched R. You can check that it has worked using `Sys.getenv(SHERPAROMEO_KEY)`
