@@ -57,7 +57,11 @@ Sys.setenv(SHERPAROMEO_KEY = "Iq83AIL5bss")
 Sys.getenv("SHERPAROMEO_KEY")
 ```
 
-It is setup for the rest of your R session and `rromeo` will automatically use it when you call the different functions.
+It is setup for the rest of your R session and `rromeo` will automatically use it when you call the different functions. You can also use the `check_key()` function that should give the same result if your key is well set-up:
+
+```{r}
+check_key()
+```
 
 
 ### Setting up your API key in an `.Rprofile` file
@@ -79,7 +83,7 @@ SHERPAROMEO_KEY = "Iq83AIL5bss"
 You can then reload your session and check that `rromeo` managed to get your key by using the `check_key()` function:
 
 ```{r check_api_key}
-check_key(NULL)
+check_key()
 ```
 
 Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://rekyt.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
@@ -97,7 +101,7 @@ SHERPAROMEO_KEY=Iq83AIL5bss
 You can then check that your key has been found using `check_key()`:
 
 ```{r check_key_renviron}
-check_key(NULL)
+check_key()
 ```
 
 Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://rekyt.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
