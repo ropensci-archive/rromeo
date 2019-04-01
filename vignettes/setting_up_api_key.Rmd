@@ -1,0 +1,122 @@
+---
+title: "How to setup and use an API key?"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{setting_up_api_key}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+## What is an API key?
+
+Like many other R packages that are API clients, `rromeo` lets you setup and use an API key.
+An API key is a string that you communicate to the server (see [Wikipedia Page](https://en.wikipedia.org/wiki/Application_programming_interface_key)). The key is used by the server to identify you. This helps the server to manage your access, for example, giving access to specific services.
+
+
+## Why use one?
+
+Many APIs have a limit in the number of queries you can make in a given amount of time. Using an API key, because it identifies you, lets you go over this limit so the server knows it is not under a [Denial of Service (DoS) attack](https://en.wikipedia.org/wiki/Denial-of-service_attack).
+SHERPA/RoMEO has a limit of 500 queries per day without an API key. Registering for an API key lets you exceed this limit.
+
+## Registering for an API key for SHERPA/RoMEO
+
+You can register a free API key at <http://www.sherpa.ac.uk/romeo/apiregistry.php>
+You have to provide your name, your job title as well as a valid email address to register for an API key.
+
+It is considered good practice to register one API key per project (e.g. software or research project), in order to avoid making too many queries to the API. Do fill out the description of your application to help the people who made SHERPA/RoMEO data freely available make statistics.
+
+
+## How to setup your API key in `rromeo`
+
+Now that you have registered for an API key, you can use it in `rromeo`. There are several ways to set up your API key in `rromeo`.
+
+
+### Using `Sys.setenv()` during an interactive session
+
+One way to set up your API key without using the `key` argument is to use **environment variables**. Environment variables are system or user-defined variables that are used to store information during your R session.
+
+`rromeo` searches the environment variable `SHERPAROMEO_KEY` to check if an API key has been defined.
+You can access it using the function `Sys.getenv()` with the name of the variable as as a string:
+
+```
+Sys.getenv("SHERPAROMEO_KEY")
+```
+
+If none has been defined it should return `""`. You can then set the environment variable using the function `Sys.setenv()`:
+
+```{r set_env_var}
+Sys.setenv(SHERPAROMEO_KEY = "Iq83AIL5bss")
+Sys.getenv("SHERPAROMEO_KEY")
+```
+
+It is setup for the rest of your R session and `rromeo` will automatically use it when you call the different functions. You can also use the `check_key()` function that should give the same result if your key is well set-up:
+
+```{r}
+check_key()
+```
+
+
+### Setting up your API key in an `.Rprofile` file
+
+Every time R starts it looks for `.Rprofile` files in different locations:
+
+- `R_HOME` the directory in which R is installed,
+- `HOME` the user's home directory,
+- R's current working directory.
+
+R only loads one `.Rprofile` file per session and thus an `.Rprofile` file at the project-level overrides files in other locations.
+
+The `.Rprofile` file is an R script that is launch each time R starts. Put it at the root of your project and type the following:
+
+```
+SHERPAROMEO_KEY = "Iq83AIL5bss"
+```
+
+You can then reload your session and check that `rromeo` managed to get your key by using the `check_key()` function:
+
+```{r check_api_key}
+check_key()
+```
+
+Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://rekyt.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
+
+
+### Setting up your API key in an `.Renviron` file
+
+`.Renviron` file follow the same loading rules as `.Rprofile` files, the only difference is that it is is a file whose only purpose is to store environment variables. To use your API key in an `.Renviron` you have to type the following (note the absence of quotes):
+
+```
+SHERPAROMEO_KEY=Iq83AIL5bss
+
+```
+
+You can then check that your key has been found using `check_key()`:
+
+```{r check_key_renviron}
+check_key()
+```
+
+Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://rekyt.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
+
+
+### Using the `key` function argument (**NOT RECOMMENDED**)
+
+**NOTE:** This method is **NOT RECOMMENDED** but stil available for testing and development purposes. 
+
+All the functions in `rromeo` that can use an API key have a `key` argument.
+To use your API key you have to provide it as a string in the `key` argument of the functions for example:
+
+```
+rr_journal_issn("1947-6264", key = "YOUR_API_KEY")
+```
+However, **we do not recommend** this approach as your API key will be available in your R history and in your R scripts. While your API key should stay secret as it grants unlimited access to the server and can be maliciously used in wrong hands.
+
+Furthermore using this method you have to specify it at each function call while the other methods shown above only needs to be setup once.
