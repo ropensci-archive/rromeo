@@ -38,17 +38,6 @@ It is considered good practice to register one API key per project (e.g. softwar
 
 Now that you have registered for an API key, you can use it in `rromeo`. There are several ways to set up your API key in `rromeo`.
 
-### Using the `key` function argument (**NOT RECOMMENDED**)
-
-All the functions in `rromeo` that can use an API key have a `key` argument.
-To use your API key you have to provide it as a string in the `key` argument of the functions for example:
-
-```
-rr_journal_issn("1947-6264", key = "YOUR_API_KEY")
-```
-However, **we do not recommend** this approach as your API key will be available in your R history and in your R scripts. While your API key should stay secret as it grants unlimited access to the server and can be maliciously used in wrong hands.
-
-Furthermore using this method you have to specify it at each function call while the other methods shown below only needs to be setup once.
 
 ### Using `Sys.setenv()` during an interactive session
 
@@ -69,6 +58,7 @@ Sys.getenv("SHERPAROMEO_KEY")
 ```
 
 It is setup for the rest of your R session and `rromeo` will automatically use it when you call the different functions.
+
 
 ### Setting up your API key in an `.Rprofile` file
 
@@ -95,7 +85,7 @@ check_key(NULL)
 Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://rekyt.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
 
 
-### Setting up your API key in an `.Renviron` file (**RECOMMENDED METHOD**)
+### Setting up your API key in an `.Renviron` file
 
 `.Renviron` file follow the same loading rules as `.Rprofile` files, the only difference is that it is is a file whose only purpose is to store environment variables. To use your API key in an `.Renviron` you have to type the following (note the absence of quotes):
 
@@ -111,3 +101,18 @@ check_key(NULL)
 ```
 
 Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://rekyt.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
+
+
+### Using the `key` function argument (**NOT RECOMMENDED**)
+
+**NOTE:** This method is **NOT RECOMMENDED** but stil available for testing and development purposes. 
+
+All the functions in `rromeo` that can use an API key have a `key` argument.
+To use your API key you have to provide it as a string in the `key` argument of the functions for example:
+
+```
+rr_journal_issn("1947-6264", key = "YOUR_API_KEY")
+```
+However, **we do not recommend** this approach as your API key will be available in your R history and in your R scripts. While your API key should stay secret as it grants unlimited access to the server and can be maliciously used in wrong hands.
+
+Furthermore using this method you have to specify it at each function call while the other methods shown above only needs to be setup once.
