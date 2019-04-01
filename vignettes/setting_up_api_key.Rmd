@@ -17,19 +17,19 @@ knitr::opts_chunk$set(
 
 ## What is an API key?
 
-Like many other R packages that are API clients, `rromeo` let's you setup and use an API key.
-An API key is a string that you communicates to the server (see [Wikipedia Page](https://en.wikipedia.org/wiki/Application_programming_interface_key)). The key is used by the server to identify you. This helps the server to manage your access, for example, giving access to specific services.
+Like many other R packages that are API clients, `rromeo` lets you setup and use an API key.
+An API key is a string that you communicate to the server (see [Wikipedia Page](https://en.wikipedia.org/wiki/Application_programming_interface_key)). The key is used by the server to identify you. This helps the server to manage your access, for example, giving access to specific services.
 
 
 ## Why use one?
 
-Many APIs have a limit in the number of queries you can make along time. Using an API key, because it identifies you, lets you go over this limit so the server knows it is not under a [Denial of Service (DoS) attack](https://en.wikipedia.org/wiki/Denial-of-service_attack).
-SHERPA/RoMEO has a limit of 500 queries per day without API key. Registering for an API key lets exceed this limit.
+Many APIs have a limit in the number of queries you can make in a given amount of time. Using an API key, because it identifies you, lets you go over this limit so the server knows it is not under a [Denial of Service (DoS) attack](https://en.wikipedia.org/wiki/Denial-of-service_attack).
+SHERPA/RoMEO has a limit of 500 queries per day without an API key. Registering for an API key lets you exceed this limit.
 
 ## Registering for an API key for SHERPA/RoMEO
 
-You can register a free API key at (http://www.sherpa.ac.uk/romeo/apiregistry.php)
-You have to provide your name, your job title as well as a valid email address to regrester for an API key.
+You can register a free API key at <http://www.sherpa.ac.uk/romeo/apiregistry.php>
+You have to provide your name, your job title as well as a valid email address to register for an API key.
 
 It is considered good practice to register one API key per project (e.g. software or research project), in order to avoid making too many queries to the API. Do fill out the description of your application to help the people who made SHERPA/RoMEO data freely available make statistics.
 
@@ -97,7 +97,7 @@ Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignett
 
 ### Setting up your API key in an `.Renviron` file (**RECOMMENDED METHOD**)
 
-`.Renviron` file follow the same loading rules as `.Rprofile` files, the only difference is that it is is a file that only purpose is to store environment variables. To use your API key in an `.Renviron` you have to type the following (note the absence of quotes):
+`.Renviron` file follow the same loading rules as `.Rprofile` files, the only difference is that it is is a file whose only purpose is to store environment variables. To use your API key in an `.Renviron` you have to type the following (note the absence of quotes):
 
 ```
 SHERPAROMEO_KEY=Iq83AIL5bss
