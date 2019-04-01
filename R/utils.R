@@ -317,7 +317,7 @@ validate_issn = function(issn) {
 #'
 #' @return if found the character string of the key, `NULL` otherwise
 #' @export
-check_key = function(key) {
+check_key = function(key = NULL) {
   tmp = ifelse(is.null(key), Sys.getenv("SHERPAROMEO_KEY"), key)
 
   if (tmp == "") {
