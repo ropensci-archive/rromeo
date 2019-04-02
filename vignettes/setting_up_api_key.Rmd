@@ -60,6 +60,7 @@ Sys.getenv("SHERPAROMEO_KEY")
 It is set up for the rest of your R session and `rromeo` will automatically use it when you call the different functions. You can also use the `check_key()` function that should give the same result if your key is well set-up:
 
 ```{r}
+library("rromeo")
 check_key()
 ```
 
