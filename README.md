@@ -17,7 +17,11 @@ status](https://ci.appveyor.com/api/projects/status/github/Rekyt/rromeo?branch=m
 API](http://www.sherpa.ac.uk/romeo/index.php?la=en&fIDnum=&mode=simple).
 SHERPA/RoMEO is a database that gives information on editorial policies
 of scientific journals regarding the archival of preprint, postprint and
-publishers’ manuscripts.
+publishers’ manuscripts. `rromeo` is aimed at scientists interested in
+archival practices of scientific journals, such as professionals of
+[scientometrics](https://en.wikipedia.org/wiki/Scientometrics) but also
+at scientist of specific fields interested in the practices of their
+fields.
 
 ## Install
 
