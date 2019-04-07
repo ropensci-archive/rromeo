@@ -96,7 +96,7 @@ parse_generic <- function(api_answer, ...) {
 parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
                           key = NULL) {
 
-  if (outcome %in% c("singleJournal", "uniqueZetoc")) {
+  if (outcome %in% c("singleJournal", "uniqueZetoc") & multiple == TRUE) {
     # Some journals have multiple policies because they are owned by multiple
     # publishers or because of historic data. They return hits == 2 but it's
     # still a single journal. They are identified by a specific outcome
@@ -136,7 +136,9 @@ parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
                       pre_embargo, post_embargo, pdf_embargo,
                       stringsAsFactors = FALSE))
 
-  } else if (outcome %in% c("manyJournals", "excessJournals")) {
+  } else if (outcome %in% c("manyJournals", "excessJournals") |
+             (outcome %in% c("singleJournal", "uniqueZetoc") &
+              multiple == FALSE)) {
 
     message(hits, " journals match your query terms.")
 
@@ -155,8 +157,8 @@ parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
     journal_df[journal_df == ""] <- NA
 
     if (!multiple) {
-      warning("Select one journal from the provided list or enable multiple = ",
-              "TRUE", call. = FALSE)
+      message("Only titles and ISSNs of journals returned. Get more ",
+              "information using `rr_journal_name()`")
 
       return(journal_df)
     } else {
