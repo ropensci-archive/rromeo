@@ -29,7 +29,7 @@ rr_journal_issn <- function(issn, key = NULL) {
                       query = list(issn = journal_issn,
                                    ak   = api_key))
 
-    parse_generic(api_answer, multiple = FALSE, key = api_key)
+    parse_generic(api_answer, multiple = TRUE, key = api_key)
   })
 
   journals_df <- do.call(rbind.data.frame,
@@ -55,15 +55,8 @@ rr_journal_issn <- function(issn, key = NULL) {
 #' @inheritParams parse_journal
 #' @inheritParams check_key
 #'
-#' @return Returns a data frame if multiple journals are found and
-#'         `multiple = FALSE`:
-#' * `title`        \[`character(1)`\]\cr{}
-#'                  the name of the journal
-#' * `issn`         \[`character(1)`\]\cr{}
-#'                  the ISSN of the journal
-#'
-#' If a single journal is found or if `multiple = TRUE` returns a larger
-#' data frame:
+#' @return
+#' Returns a data.frame with complete information from journal:
 #' * `title`        \[`character(1)`\]\cr{}
 #'                  the name of the journal
 #' * `issn`         \[`character(1)`\]\cr{}
@@ -100,7 +93,7 @@ rr_journal_issn <- function(issn, key = NULL) {
 #' rr_journal_name(name = c("Journal of Biogeography", "PLoS ONE"),
 #'                 qtype = "exact")
 #' }
-rr_journal_name <- function(name, multiple = FALSE,
+rr_journal_name <- function(name,
                             qtype = c("exact", "contains", "starts"),
                             key = NULL) {
 
@@ -115,11 +108,50 @@ rr_journal_name <- function(name, multiple = FALSE,
                                    qtype  = qtype,
                                    ak     = api_key))
 
-    parse_generic(api_answer, multiple = multiple, key = api_key)
+    parse_generic(api_answer, multiple = TRUE, key = api_key)
   })
 
   journals_df <- do.call(rbind.data.frame,
                         c(answer_list, stringsAsFactors = FALSE))
+
+  return(journals_df)
+}
+
+#' Find if journals are available in SHERPA/RoMEO
+#'
+#' @inheritParams rr_journal_name
+#'
+#' @return
+#' Returns a data frame:
+#' * `title`        \[`character(1)`\]\cr{}
+#'                  the name of the journal
+#' * `issn`         \[`character(1)`\]\cr{}
+#'                  the ISSN of the journal
+#'
+#' @examples
+#' rr_journal_find(name = "Biostatistics", qtype = "contains")
+#'
+#' @export
+rr_journal_find  <- function(name,
+                             qtype = c("exact", "contains", "starts"),
+                             key = NULL) {
+
+  qtype <- match.arg(qtype)
+
+  api_key <- check_key(key)
+
+  answer_list <- lapply(name, function(journal_name) {
+
+    api_answer <- GET(rr_base_api(), add_headers("user-agent" = rr_ua()),
+                      query = list(jtitle = journal_name,
+                                   qtype  = qtype,
+                                   ak     = api_key))
+
+    parse_generic(api_answer, multiple = FALSE, key = api_key)
+  })
+
+  journals_df <- do.call(rbind.data.frame,
+                         c(answer_list, stringsAsFactors = FALSE))
 
   return(journals_df)
 }
