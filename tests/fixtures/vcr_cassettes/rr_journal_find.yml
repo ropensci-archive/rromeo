@@ -1,0 +1,115 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Geology&qtype=exact
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Mon, 08 Apr 2019 14:29:14 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1260'
+      content-type: text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>Geology</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>exact</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>08-Apr-2019:15:29:14</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Geology</jtitle>
+              <issn>0091-7613</issn>
+              <zetocpub>Geological Society of America</zetocpub>
+              <romeopub>Geological Society of America</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="105">
+              <name>Geological Society of America</name>
+              <alias />
+              <homeurl>http://www.geosociety.org/</homeurl>
+              <preprints>
+                <prearchiving>unclear</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>On author's personal website or open access repository</condition>
+                <condition>Must link to publisher version</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.geosociety.org/gsa/pubs/openaccess.aspx</paidaccessurl>
+                <paidaccessname>Gold Open Access</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.geosociety.org/gsa/pubs/openaccess.aspx</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>white</romeocolour>
+              <dateadded>2004-10-20 00:00:00</dateadded>
+              <dateupdated>2018-04-26 08:49:33</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-04-08 14:29:14 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4

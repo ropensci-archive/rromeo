@@ -2,6 +2,7 @@
 
 export(check_key)
 export(rr_api_version)
+export(rr_journal_find)
 export(rr_journal_issn)
 export(rr_journal_name)
 export(rr_publisher_all)

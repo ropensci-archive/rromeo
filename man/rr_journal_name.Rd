@@ -4,18 +4,12 @@
 \alias{rr_journal_name}
 \title{Retrieve journals policies by matching title}
 \usage{
-rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
-  "starts"), key = NULL)
+rr_journal_name(name, qtype = c("exact", "contains", "starts"),
+  key = NULL)
 }
 \arguments{
 \item{name}{[\code{character(1+)}]\cr{}
 one or several strings to match the titles of the journals}
-
-\item{multiple}{[\code{logical(1)}]\cr{}
-If multiple results match your query, should the function
-recursively fetch data for each of one of them
-(\code{multiple = TRUE}) or return a data.frame containing only
-titles and ISSN of all matches (\code{multiple = FALSE})}
 
 \item{qtype}{[\code{character(1)}]\cr{}
 in:
@@ -30,17 +24,7 @@ a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
-Returns a data frame if multiple journals are found and
-\code{multiple = FALSE}:
-\itemize{
-\item \code{title}        [\code{character(1)}]\cr{}
-the name of the journal
-\item \code{issn}         [\code{character(1)}]\cr{}
-the ISSN of the journal
-}
-
-If a single journal is found or if \code{multiple = TRUE} returns a larger
-data frame:
+Returns a data.frame with complete information from journal:
 \itemize{
 \item \code{title}        [\code{character(1)}]\cr{}
 the name of the journal
