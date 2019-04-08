@@ -67,10 +67,9 @@ in your working directory, the file should contain the following line
 }
 }
 \examples{
-rr_journal_name(name = "Journal of Geology")
-rr_journal_name(name = "Biogeography", multiple = FALSE, qtype = "contains")
 \dontrun{
-rr_journal_name(name = "Biogeography", multiple = TRUE, qtype = "contains")
+rr_journal_name(name = "Journal of Geology")
+rr_journal_name(name = "Biogeography", qtype = "contains")
 # You can also query multiple journals with exact titles in a single call
 rr_journal_name(name = c("Journal of Biogeography", "PLoS ONE"),
                 qtype = "exact")
