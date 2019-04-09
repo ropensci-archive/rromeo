@@ -179,11 +179,10 @@ rr_publisher_continent <- function(continent = c("Africa",
                                                  "South America"),
                                    key = NULL) {
 
-  valid_continents <- vapply(continent, function(single_continent) {
-    single_continent %in% c("Africa", "Antarctica", "Asia", "Australasia",
+  valid_continents <- continent %in% c("Africa", "Antarctica", "Asia",
+                                       "Australasia",
                             "Caribbean", "Central America", "Europe",
                             "North America", "Oceania", "South America")
-  }, logical(1))
 
   if (any(!valid_continents)) {
     stop("Some continents are not valid, see ?rr_publisher_continent to get ",
