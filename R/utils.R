@@ -59,11 +59,10 @@ parse_generic <- function(api_answer, ...) {
 #' Returns data.frame from parsed xml API answer.
 #'
 #' @inheritParams parse_publisher
-#' @param multiple \[`logical(1)`\]\cr{}
-#'                 If multiple results match your query, should the function
-#'                 recursively fetch data for each of one of them
-#'                 (`multiple = TRUE`) or return a data.frame containing only
-#'                 titles and ISSN of all matches (`multiple = FALSE`)
+#' @param type \[`character(1)` in `c("find", "name")`\]\cr{}
+#'             If `type = "find"` returns only `title` and `issn` columns if
+#'             `type = "name"` returns full data.frame as specified in Returns
+#'             sections.
 #' @inheritParams check_key
 #'
 #' @return Returns a data.frame with the following columns:
@@ -93,10 +92,10 @@ parse_generic <- function(api_answer, ...) {
 #'
 #' @importFrom httr content
 #' @importFrom xml2 xml_text xml_find_all xml_find_first
-parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
+parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
                           key = NULL) {
 
-  if (outcome %in% c("singleJournal", "uniqueZetoc") & multiple) {
+  if (outcome %in% c("singleJournal", "uniqueZetoc")) {
     # Some journals have multiple policies because they are owned by multiple
     # publishers or because of historic data. They return hits == 2 but it's
     # still a single journal. They are identified by a specific outcome
@@ -115,30 +114,35 @@ parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
     title <- xml_text(xml_find_first(xml_source, "//jtitle"))
     issn <- xml_text(xml_find_first(xml_source, "//issn"))
 
-    romeocolour <- xml_text(xml_find_first(xml_source, "//romeocolour"))
-    romeocolour[romeocolour == "gray"] <- NA_character_
+    if (type == "find") {
+      return(data.frame(title, issn,
+                        stringsAsFactors = FALSE))
+    } else {
+      romeocolour <- xml_text(xml_find_first(xml_source, "//romeocolour"))
+      romeocolour[romeocolour == "gray"] <- NA_character_
 
-    preprint <- xml_text(xml_find_first(xml_source, "//prearchiving"))
-    preprint[preprint == "unknown"] <- NA_character_
+      preprint <- xml_text(xml_find_first(xml_source, "//prearchiving"))
+      preprint[preprint == "unknown"] <- NA_character_
 
-    postprint <- xml_text(xml_find_first(xml_source, "//postarchiving"))
-    postprint[postprint == "unknown"] <- NA_character_
+      postprint <- xml_text(xml_find_first(xml_source, "//postarchiving"))
+      postprint[postprint == "unknown"] <- NA_character_
 
-    pdf <- xml_text(xml_find_first(xml_source, "//pdfarchiving"))
-    pdf[pdf == "unknown"] <- NA_character_
+      pdf <- xml_text(xml_find_first(xml_source, "//pdfarchiving"))
+      pdf[pdf == "unknown"] <- NA_character_
 
-    pre_embargo <- parse_embargo(xml_source, "pre")
-    post_embargo <- parse_embargo(xml_source, "post")
-    pdf_embargo <- parse_embargo(xml_source, "pdf")
+      pre_embargo <- parse_embargo(xml_source, "pre")
+      post_embargo <- parse_embargo(xml_source, "post")
+      pdf_embargo <- parse_embargo(xml_source, "pdf")
 
-    return(data.frame(title, issn, romeocolour,
-                      preprint,    postprint,    pdf,
-                      pre_embargo, post_embargo, pdf_embargo,
-                      stringsAsFactors = FALSE))
+      return(data.frame(title, issn, romeocolour,
+                        preprint,    postprint,    pdf,
+                        pre_embargo, post_embargo, pdf_embargo,
+                        stringsAsFactors = FALSE))
+    }
+
 
   } else if (outcome %in% c("manyJournals", "excessJournals") |
-             (outcome %in% c("singleJournal", "uniqueZetoc") &
-              !multiple)) {
+             (outcome %in% c("singleJournal", "uniqueZetoc"))) {
 
     message(hits, " journals match your query terms.")
 
@@ -156,7 +160,12 @@ parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
                              stringsAsFactors = FALSE)
     journal_df[journal_df == ""] <- NA
 
-    if (!multiple) {
+    # Keep only journal with unique titles or unique ISSNs
+    unique_titles <- gsub("&", "and", tolower(journal_df$title), fixed = TRUE)
+    journal_df <- journal_df[!duplicated(unique_titles) |
+                               !is.na(journal_df$issn),]
+
+    if (type == "find") {
       message("Only titles and ISSNs of journals returned. Get more ",
               "information using `rr_journal_name()`")
 

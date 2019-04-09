@@ -7,6 +7,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -14,16 +15,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:38 GMT
+      date: Tue, 09 Apr 2019 17:08:26 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '1608'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -54,7 +55,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:38</timestamp>
+            <timestamp>09-Apr-2019:18:08:26</timestamp>
           </header>
           <journals>
             <journal>
@@ -115,8 +116,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:02 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biostatistics&qtype=contains
@@ -125,6 +126,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -132,16 +134,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:38 GMT
+      date: Tue, 09 Apr 2019 17:08:29 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1280'
+      content-length: '1278'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -176,7 +178,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:38</timestamp>
+            <timestamp>09-Apr-2019:18:08:29</timestamp>
           </header>
           <journals>
             <journal>
@@ -284,8 +286,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:02 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biostatistics&qtype=contains
@@ -294,6 +296,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -301,185 +304,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:39 GMT
+      date: Tue, 09 Apr 2019 17:08:29 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
-      access-control-allow-origin: '*'
-      vary: Accept-Encoding
-      content-encoding: gzip
-      content-length: '1279'
-      content-type: text/xml
-    body:
-      encoding: ISO-8859-1
-      string: |
-        <?xml version="1.0" encoding="ISO-8859-1" ?>
-        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
-        <romeoapi version="2.9.9">
-          <header>
-            <parameters>
-              <parameter source="specified">
-                <parametername>jtitle</parametername>
-                <parametervalue>Biostatistics</parametervalue>
-              </parameter>
-              <parameter source="specified">
-                <parametername>qtype</parametername>
-                <parametervalue>contains</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>showfunder</parametername>
-                <parametervalue>none</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>fIDnum</parametername>
-                <parametervalue>|</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>la</parametername>
-                <parametervalue>en</parametervalue>
-              </parameter>
-            </parameters>
-            <numhits>17</numhits>
-            <apicontrol>journal</apicontrol>
-            <outcome>manyJournals</outcome>
-            <message />
-            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
-            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
-            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:39</timestamp>
-          </header>
-          <journals>
-            <journal>
-              <jtitle>American Journal of Biostatistics</jtitle>
-              <issn>1948-9889</issn>
-              <zetocpub>Science Publications</zetocpub>
-              <romeopub>Science Publications</romeopub>
-            </journal>
-            <journal>
-              <jtitle>Annals of Biometrics and Biostatistics</jtitle>
-              <issn>2374-0116</issn>
-              <zetocpub>JSciMed Central</zetocpub>
-              <romeopub>JSciMed Central</romeopub>
-            </journal>
-            <journal>
-              <jtitle>Annals of biometrics &amp; biostatistics</jtitle>
-              <issn />
-              <zetocpub />
-              <romeopub />
-            </journal>
-            <journal>
-              <jtitle>Austin Biometrics and Biostatistics</jtitle>
-              <issn>2378-9840</issn>
-              <zetocpub>Austin Publishing Group</zetocpub>
-              <romeopub>Austin Publishing Group</romeopub>
-            </journal>
-            <journal>
-              <jtitle>Biometrics &amp; biostatistics international journal</jtitle>
-              <issn />
-              <zetocpub />
-              <romeopub />
-            </journal>
-            <journal>
-              <jtitle>Biostatistics</jtitle>
-              <issn>1465-4644</issn>
-              <zetocpub>Oxford University Press (OUP): Policy B - Oxford Open Option A / Oxford University Press</zetocpub>
-              <romeopub>Oxford University Press (OUP): Policy B - Oxford Open Option A</romeopub>
-            </journal>
-            <journal>
-              <jtitle>Biostatistics -Basel-</jtitle>
-              <issn>1527-2486</issn>
-              <zetocpub />
-              <romeopub />
-            </journal>
-            <journal>
-              <jtitle>Biostatistics, bioinformatics and biomathematics</jtitle>
-              <issn>0976-1594</issn>
-              <zetocpub />
-              <romeopub />
-            </journal>
-            <journal>
-              <jtitle>Edorium Journal of Biostatistics</jtitle>
-              <issn />
-              <zetocpub>Edorium Journals</zetocpub>
-              <romeopub>Edorium Journals</romeopub>
-            </journal>
-            <journal>
-              <jtitle>Enliven: Biostatistics and Metrics</jtitle>
-              <issn />
-              <zetocpub>Enliven Archive</zetocpub>
-              <romeopub>Enliven Archive</romeopub>
-            </journal>
-            <journal>
-              <jtitle>Epidemiology Biostatistics and Public Health</jtitle>
-              <issn>2282-2305</issn>
-              <zetocpub>Prex S.r.l.</zetocpub>
-              <romeopub>Prex S.r.l.</romeopub>
-            </journal>
-            <journal>
-              <jtitle>International Journal of Biostatistics</jtitle>
-              <issn>1557-4679</issn>
-              <zetocpub>De Gruyter</zetocpub>
-              <romeopub>De Gruyter</romeopub>
-            </journal>
-            <journal>
-              <jtitle>International journal of clinical biostatistics and biometrics</jtitle>
-              <issn />
-              <zetocpub />
-              <romeopub />
-            </journal>
-            <journal>
-              <jtitle>Journal of Biometrics and Biostatistics</jtitle>
-              <issn>2155-6180</issn>
-              <zetocpub>OMICS International</zetocpub>
-              <romeopub>OMICS International</romeopub>
-            </journal>
-            <journal>
-              <jtitle>Journal of epidemiology and biostatistics</jtitle>
-              <issn>1359-5229</issn>
-              <zetocpub />
-              <romeopub />
-            </journal>
-            <journal>
-              <jtitle>JP journal of biostatistics</jtitle>
-              <issn>0973-5143</issn>
-              <zetocpub />
-              <romeopub />
-            </journal>
-            <journal>
-              <jtitle>Monographs in Epidemiology and Biostatistics</jtitle>
-              <issn>0740-0845</issn>
-              <zetocpub>Oxford Univ Press</zetocpub>
-              <romeopub>Oxford University Press</romeopub>
-            </journal>
-          </journals>
-          <publishers />
-        </romeoapi>
-  recorded_at: 2019-02-25 16:42:02 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
-- request:
-    method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biostatistics&qtype=contains
-    body:
-      encoding: ''
-      string: ''
-    headers:
-      Accept: application/json, text/xml, application/xml, */*
-  response:
-    status:
-      status_code: 200
-      category: Success
-      reason: OK
-      message: 'Success: (200) OK'
-    headers:
-      date: Mon, 25 Feb 2019 16:41:39 GMT
-      server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '1279'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -514,7 +348,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:39</timestamp>
+            <timestamp>09-Apr-2019:18:08:30</timestamp>
           </header>
           <journals>
             <journal>
@@ -622,8 +456,178 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:02 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biostatistics&qtype=contains
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Tue, 09 Apr 2019 17:08:30 GMT
+      server: Apache/2.4.7 (Ubuntu)
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+      content-length: '1279'
+      content-type: text/xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>jtitle</parametername>
+                <parametervalue>Biostatistics</parametervalue>
+              </parameter>
+              <parameter source="specified">
+                <parametername>qtype</parametername>
+                <parametervalue>contains</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>17</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>manyJournals</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>09-Apr-2019:18:08:30</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>American Journal of Biostatistics</jtitle>
+              <issn>1948-9889</issn>
+              <zetocpub>Science Publications</zetocpub>
+              <romeopub>Science Publications</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Annals of Biometrics and Biostatistics</jtitle>
+              <issn>2374-0116</issn>
+              <zetocpub>JSciMed Central</zetocpub>
+              <romeopub>JSciMed Central</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Annals of biometrics &amp; biostatistics</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Austin Biometrics and Biostatistics</jtitle>
+              <issn>2378-9840</issn>
+              <zetocpub>Austin Publishing Group</zetocpub>
+              <romeopub>Austin Publishing Group</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Biometrics &amp; biostatistics international journal</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Biostatistics</jtitle>
+              <issn>1465-4644</issn>
+              <zetocpub>Oxford University Press (OUP): Policy B - Oxford Open Option A / Oxford University Press</zetocpub>
+              <romeopub>Oxford University Press (OUP): Policy B - Oxford Open Option A</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Biostatistics -Basel-</jtitle>
+              <issn>1527-2486</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Biostatistics, bioinformatics and biomathematics</jtitle>
+              <issn>0976-1594</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Edorium Journal of Biostatistics</jtitle>
+              <issn />
+              <zetocpub>Edorium Journals</zetocpub>
+              <romeopub>Edorium Journals</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Enliven: Biostatistics and Metrics</jtitle>
+              <issn />
+              <zetocpub>Enliven Archive</zetocpub>
+              <romeopub>Enliven Archive</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Epidemiology Biostatistics and Public Health</jtitle>
+              <issn>2282-2305</issn>
+              <zetocpub>Prex S.r.l.</zetocpub>
+              <romeopub>Prex S.r.l.</romeopub>
+            </journal>
+            <journal>
+              <jtitle>International Journal of Biostatistics</jtitle>
+              <issn>1557-4679</issn>
+              <zetocpub>De Gruyter</zetocpub>
+              <romeopub>De Gruyter</romeopub>
+            </journal>
+            <journal>
+              <jtitle>International journal of clinical biostatistics and biometrics</jtitle>
+              <issn />
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Journal of Biometrics and Biostatistics</jtitle>
+              <issn>2155-6180</issn>
+              <zetocpub>OMICS International</zetocpub>
+              <romeopub>OMICS International</romeopub>
+            </journal>
+            <journal>
+              <jtitle>Journal of epidemiology and biostatistics</jtitle>
+              <issn>1359-5229</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>JP journal of biostatistics</jtitle>
+              <issn>0973-5143</issn>
+              <zetocpub />
+              <romeopub />
+            </journal>
+            <journal>
+              <jtitle>Monographs in Epidemiology and Biostatistics</jtitle>
+              <issn>0740-0845</issn>
+              <zetocpub>Oxford Univ Press</zetocpub>
+              <romeopub>Oxford University Press</romeopub>
+            </journal>
+          </journals>
+          <publishers />
+        </romeoapi>
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1948-9889
@@ -632,6 +636,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -639,16 +644,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:39 GMT
+      date: Tue, 09 Apr 2019 17:08:31 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1179'
+      content-length: '1178'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -679,7 +684,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:39</timestamp>
+            <timestamp>09-Apr-2019:18:08:31</timestamp>
           </header>
           <journals>
             <journal>
@@ -731,8 +736,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:02 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=2374-0116
@@ -741,6 +746,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -748,16 +754,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:40 GMT
+      date: Tue, 09 Apr 2019 17:08:31 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '1166'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -788,7 +794,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:40</timestamp>
+            <timestamp>09-Apr-2019:18:08:31</timestamp>
           </header>
           <journals>
             <journal>
@@ -841,87 +847,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
-- request:
-    method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Annals%20of%20biometrics%20%26%20biostatistics&qtype=exact
-    body:
-      encoding: ''
-      string: ''
-    headers:
-      Accept: application/json, text/xml, application/xml, */*
-  response:
-    status:
-      status_code: 200
-      category: Success
-      reason: OK
-      message: 'Success: (200) OK'
-    headers:
-      date: Mon, 25 Feb 2019 16:41:40 GMT
-      server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
-      access-control-allow-origin: '*'
-      vary: Accept-Encoding
-      content-encoding: gzip
-      content-length: '825'
-      content-type: text/xml
-    body:
-      encoding: ISO-8859-1
-      string: |
-        <?xml version="1.0" encoding="ISO-8859-1" ?>
-        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
-        <romeoapi version="2.9.9">
-          <header>
-            <parameters>
-              <parameter source="specified">
-                <parametername>jtitle</parametername>
-                <parametervalue>Annals of biometrics &amp; biostatistics</parametervalue>
-              </parameter>
-              <parameter source="specified">
-                <parametername>qtype</parametername>
-                <parametervalue>exact</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>showfunder</parametername>
-                <parametervalue>none</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>fIDnum</parametername>
-                <parametervalue>|</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>la</parametername>
-                <parametervalue>en</parametervalue>
-              </parameter>
-            </parameters>
-            <numhits>2</numhits>
-            <apicontrol>journal</apicontrol>
-            <outcome>manyJournals</outcome>
-            <message />
-            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
-            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
-            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:40</timestamp>
-          </header>
-          <journals>
-            <journal>
-              <jtitle>Annals of Biometrics and Biostatistics</jtitle>
-              <issn>2374-0116</issn>
-              <zetocpub>JSciMed Central</zetocpub>
-              <romeopub>JSciMed Central</romeopub>
-            </journal>
-            <journal>
-              <jtitle>Annals of biometrics &amp; biostatistics</jtitle>
-              <issn />
-              <zetocpub />
-              <romeopub />
-            </journal>
-          </journals>
-          <publishers />
-        </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=2378-9840
@@ -930,6 +857,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -937,16 +865,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:41 GMT
+      date: Tue, 09 Apr 2019 17:08:32 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '1215'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -977,7 +905,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:41</timestamp>
+            <timestamp>09-Apr-2019:18:08:32</timestamp>
           </header>
           <journals>
             <journal>
@@ -1032,8 +960,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biometrics%20%26%20biostatistics%20international%20journal&qtype=exact
@@ -1042,6 +970,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1049,16 +978,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:41 GMT
+      date: Tue, 09 Apr 2019 17:08:32 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '767'
+      content-length: '768'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1093,7 +1022,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:41</timestamp>
+            <timestamp>09-Apr-2019:18:08:32</timestamp>
           </header>
           <journals>
             <journal>
@@ -1105,8 +1034,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1465-4644
@@ -1115,6 +1044,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1122,16 +1052,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:42 GMT
+      date: Tue, 09 Apr 2019 17:08:33 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1712'
+      content-length: '1652'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1162,7 +1092,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:42</timestamp>
+            <timestamp>09-Apr-2019:18:08:33</timestamp>
           </header>
           <journals>
             <journal>
@@ -1200,7 +1130,6 @@ http_interactions:
                 <condition>Published source must be acknowledged</condition>
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
-                <condition>Eligible authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>The publisher will deposit in PubMed Central on behalf of NIH authors</condition>
                 <condition>Publisher last contacted on 19/02/2015</condition>
               </conditions>
@@ -1234,8 +1163,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1527-2486
@@ -1244,6 +1173,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1251,16 +1181,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:42 GMT
+      date: Tue, 09 Apr 2019 17:08:33 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '751'
+      content-length: '752'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1291,7 +1221,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:42</timestamp>
+            <timestamp>09-Apr-2019:18:08:33</timestamp>
           </header>
           <journals>
             <journal>
@@ -1303,8 +1233,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0976-1594
@@ -1313,6 +1243,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1320,16 +1251,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:42 GMT
+      date: Tue, 09 Apr 2019 17:08:34 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '761'
+      content-length: '759'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1360,7 +1291,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:42</timestamp>
+            <timestamp>09-Apr-2019:18:08:34</timestamp>
           </header>
           <journals>
             <journal>
@@ -1372,8 +1303,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Edorium%20Journal%20of%20Biostatistics&qtype=exact
@@ -1382,6 +1313,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1389,16 +1321,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:43 GMT
+      date: Tue, 09 Apr 2019 17:08:34 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '1203'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1433,7 +1365,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:43</timestamp>
+            <timestamp>09-Apr-2019:18:08:34</timestamp>
           </header>
           <journals>
             <journal>
@@ -1487,8 +1419,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Enliven%3A%20Biostatistics%20and%20Metrics&qtype=exact
@@ -1497,6 +1429,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1504,16 +1437,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:43 GMT
+      date: Tue, 09 Apr 2019 17:08:35 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '1108'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1548,7 +1481,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:43</timestamp>
+            <timestamp>09-Apr-2019:18:08:35</timestamp>
           </header>
           <journals>
             <journal>
@@ -1596,8 +1529,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=2282-2305
@@ -1606,6 +1539,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1613,16 +1547,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:44 GMT
+      date: Tue, 09 Apr 2019 17:08:35 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1363'
+      content-length: '1362'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1653,7 +1587,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:44</timestamp>
+            <timestamp>09-Apr-2019:18:08:35</timestamp>
           </header>
           <journals>
             <journal>
@@ -1706,8 +1640,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1557-4679
@@ -1716,6 +1650,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1723,16 +1658,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:44 GMT
+      date: Tue, 09 Apr 2019 17:08:36 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '1451'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1763,7 +1698,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:44</timestamp>
+            <timestamp>09-Apr-2019:18:08:36</timestamp>
           </header>
           <journals>
             <journal>
@@ -1824,8 +1759,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=International%20journal%20of%20clinical%20biostatistics%20and%20biometrics&qtype=exact
@@ -1834,6 +1769,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1841,16 +1777,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:45 GMT
+      date: Tue, 09 Apr 2019 17:08:37 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '773'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1885,7 +1821,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:45</timestamp>
+            <timestamp>09-Apr-2019:18:08:37</timestamp>
           </header>
           <journals>
             <journal>
@@ -1897,8 +1833,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=2155-6180
@@ -1907,6 +1843,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -1914,16 +1851,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:45 GMT
+      date: Tue, 09 Apr 2019 17:08:37 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '1176'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -1954,7 +1891,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:45</timestamp>
+            <timestamp>09-Apr-2019:18:08:37</timestamp>
           </header>
           <journals>
             <journal>
@@ -2006,8 +1943,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1359-5229
@@ -2016,6 +1953,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2023,16 +1961,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:46 GMT
+      date: Tue, 09 Apr 2019 17:08:38 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '761'
+      content-length: '760'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2063,7 +2001,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:46</timestamp>
+            <timestamp>09-Apr-2019:18:08:38</timestamp>
           </header>
           <journals>
             <journal>
@@ -2075,8 +2013,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0973-5143
@@ -2085,6 +2023,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2092,16 +2031,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:46 GMT
+      date: Tue, 09 Apr 2019 17:08:38 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '753'
+      content-length: '751'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2132,7 +2071,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:46</timestamp>
+            <timestamp>09-Apr-2019:18:08:38</timestamp>
           </header>
           <journals>
             <journal>
@@ -2144,8 +2083,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0740-0845
@@ -2154,6 +2093,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2161,16 +2101,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:47 GMT
+      date: Tue, 09 Apr 2019 17:08:39 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1880'
+      content-length: '1846'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2201,7 +2141,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:47</timestamp>
+            <timestamp>09-Apr-2019:18:08:39</timestamp>
           </header>
           <journals>
             <journal>
@@ -2243,7 +2183,6 @@ http_interactions:
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
                 <condition>Articles in &lt;a href=&quot;http://www.oxfordjournals.org/oxfordopen/&quot; target=&quot;_blank&quot;&gt;some journals&lt;/a&gt; can be made Open Access on payment of additional charge</condition>
-                <condition>Eligible UK authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>Publisher will deposit on behalf of NIH funded authors to PubMed Central, Nucleic Acids Research authors must pay their fee first</condition>
                 <condition>Some titles may use different policies</condition>
               </conditions>
@@ -2281,8 +2220,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biostatistics&qtype=starts
@@ -2291,6 +2230,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2298,16 +2238,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:48 GMT
+      date: Tue, 09 Apr 2019 17:08:40 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '877'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2342,7 +2282,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:48</timestamp>
+            <timestamp>09-Apr-2019:18:08:40</timestamp>
           </header>
           <journals>
             <journal>
@@ -2366,8 +2306,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1465-4644
@@ -2376,6 +2316,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2383,16 +2324,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:48 GMT
+      date: Tue, 09 Apr 2019 17:08:40 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1713'
+      content-length: '1651'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2423,7 +2364,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:48</timestamp>
+            <timestamp>09-Apr-2019:18:08:40</timestamp>
           </header>
           <journals>
             <journal>
@@ -2461,7 +2402,6 @@ http_interactions:
                 <condition>Published source must be acknowledged</condition>
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
-                <condition>Eligible authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>The publisher will deposit in PubMed Central on behalf of NIH authors</condition>
                 <condition>Publisher last contacted on 19/02/2015</condition>
               </conditions>
@@ -2495,8 +2435,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1465-4644
@@ -2505,6 +2445,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2512,16 +2453,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:48 GMT
+      date: Tue, 09 Apr 2019 17:08:41 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1713'
+      content-length: '1651'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2552,7 +2493,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:48</timestamp>
+            <timestamp>09-Apr-2019:18:08:41</timestamp>
           </header>
           <journals>
             <journal>
@@ -2590,7 +2531,6 @@ http_interactions:
                 <condition>Published source must be acknowledged</condition>
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
-                <condition>Eligible authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>The publisher will deposit in PubMed Central on behalf of NIH authors</condition>
                 <condition>Publisher last contacted on 19/02/2015</condition>
               </conditions>
@@ -2624,8 +2564,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1527-2486
@@ -2634,6 +2574,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2641,16 +2582,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:49 GMT
+      date: Tue, 09 Apr 2019 17:08:41 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '751'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2681,7 +2622,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:49</timestamp>
+            <timestamp>09-Apr-2019:18:08:41</timestamp>
           </header>
           <journals>
             <journal>
@@ -2693,8 +2634,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1527-2486
@@ -2703,6 +2644,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2710,16 +2652,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:49 GMT
+      date: Tue, 09 Apr 2019 17:08:41 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
       content-length: '751'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2750,7 +2692,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:49</timestamp>
+            <timestamp>09-Apr-2019:18:08:41</timestamp>
           </header>
           <journals>
             <journal>
@@ -2762,8 +2704,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0976-1594
@@ -2772,6 +2714,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2779,16 +2722,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:49 GMT
+      date: Tue, 09 Apr 2019 17:08:41 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '761'
+      content-length: '759'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2819,7 +2762,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:49</timestamp>
+            <timestamp>09-Apr-2019:18:08:41</timestamp>
           </header>
           <journals>
             <journal>
@@ -2831,8 +2774,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0976-1594
@@ -2841,6 +2784,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2848,16 +2792,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:49 GMT
+      date: Tue, 09 Apr 2019 17:08:41 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '761'
+      content-length: '759'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2888,7 +2832,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:49</timestamp>
+            <timestamp>09-Apr-2019:18:08:41</timestamp>
           </header>
           <journals>
             <journal>
@@ -2900,8 +2844,8 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biostatistics&qtype=exact
@@ -2910,6 +2854,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -2917,16 +2862,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:50 GMT
+      date: Tue, 09 Apr 2019 17:08:43 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1727'
+      content-length: '1663'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -2961,7 +2906,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:50</timestamp>
+            <timestamp>09-Apr-2019:18:08:44</timestamp>
           </header>
           <journals>
             <journal>
@@ -2999,7 +2944,6 @@ http_interactions:
                 <condition>Published source must be acknowledged</condition>
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
-                <condition>Eligible authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>The publisher will deposit in PubMed Central on behalf of NIH authors</condition>
                 <condition>Publisher last contacted on 19/02/2015</condition>
               </conditions>
@@ -3033,8 +2977,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?pub=Oxford&qtype=all
@@ -3043,6 +2987,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -3050,16 +2995,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:51 GMT
+      date: Tue, 09 Apr 2019 17:08:44 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '2485'
+      content-length: '2452'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -3094,7 +3039,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:51</timestamp>
+            <timestamp>09-Apr-2019:18:08:44</timestamp>
           </header>
           <journals />
           <publishers>
@@ -3249,7 +3194,6 @@ http_interactions:
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
                 <condition>Articles in &lt;a href=&quot;http://www.oxfordjournals.org/oxfordopen/&quot; target=&quot;_blank&quot;&gt;some journals&lt;/a&gt; can be made Open Access on payment of additional charge</condition>
-                <condition>Eligible UK authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>Publisher will deposit on behalf of NIH funded authors to PubMed Central, Nucleic Acids Research authors must pay their fee first</condition>
                 <condition>Some titles may use different policies</condition>
               </conditions>
@@ -3327,8 +3271,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?pub=Oxford%20University&qtype=all
@@ -3337,6 +3281,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -3344,16 +3289,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:51 GMT
+      date: Tue, 09 Apr 2019 17:08:45 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '2316'
+      content-length: '2280'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -3388,7 +3333,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:51</timestamp>
+            <timestamp>09-Apr-2019:18:08:45</timestamp>
           </header>
           <journals />
           <publishers>
@@ -3503,7 +3448,6 @@ http_interactions:
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
                 <condition>Articles in &lt;a href=&quot;http://www.oxfordjournals.org/oxfordopen/&quot; target=&quot;_blank&quot;&gt;some journals&lt;/a&gt; can be made Open Access on payment of additional charge</condition>
-                <condition>Eligible UK authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>Publisher will deposit on behalf of NIH funded authors to PubMed Central, Nucleic Acids Research authors must pay their fee first</condition>
                 <condition>Some titles may use different policies</condition>
               </conditions>
@@ -3581,8 +3525,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?pub=Oxford%20University&qtype=exact
@@ -3591,6 +3535,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -3598,16 +3543,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:53 GMT
+      date: Tue, 09 Apr 2019 17:08:46 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '2020'
+      content-length: '1985'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -3642,7 +3587,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:53</timestamp>
+            <timestamp>09-Apr-2019:18:08:46</timestamp>
           </header>
           <journals />
           <publishers>
@@ -3718,7 +3663,6 @@ http_interactions:
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
                 <condition>Articles in &lt;a href=&quot;http://www.oxfordjournals.org/oxfordopen/&quot; target=&quot;_blank&quot;&gt;some journals&lt;/a&gt; can be made Open Access on payment of additional charge</condition>
-                <condition>Eligible UK authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>Publisher will deposit on behalf of NIH funded authors to PubMed Central, Nucleic Acids Research authors must pay their fee first</condition>
                 <condition>Some titles may use different policies</condition>
               </conditions>
@@ -3756,8 +3700,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?id=55
@@ -3766,6 +3710,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -3773,16 +3718,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:41:55 GMT
+      date: Tue, 09 Apr 2019 17:08:47 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1759'
+      content-length: '1725'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -3813,7 +3758,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:41:55</timestamp>
+            <timestamp>09-Apr-2019:18:08:47</timestamp>
           </header>
           <journals />
           <publishers>
@@ -3848,7 +3793,6 @@ http_interactions:
                 <condition>Must link to publisher version</condition>
                 <condition>Set phrase to accompany archived copy (see policy)</condition>
                 <condition>Articles in &lt;a href=&quot;http://www.oxfordjournals.org/oxfordopen/&quot; target=&quot;_blank&quot;&gt;some journals&lt;/a&gt; can be made Open Access on payment of additional charge</condition>
-                <condition>Eligible UK authors may deposit in &lt;a href=&quot;http://opendepot.org/&quot; target=&quot;_blank&quot;&gt;OpenDepot&lt;/a&gt;</condition>
                 <condition>Publisher will deposit on behalf of NIH funded authors to PubMed Central, Nucleic Acids Research authors must pay their fee first</condition>
                 <condition>Some titles may use different policies</condition>
               </conditions>
@@ -3886,8 +3830,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?country=IR
@@ -3896,6 +3840,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -3903,16 +3848,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:42:01 GMT
+      date: Tue, 09 Apr 2019 17:08:48 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '3260'
+      content-length: '3261'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -3943,7 +3888,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:42:01</timestamp>
+            <timestamp>09-Apr-2019:18:08:48</timestamp>
           </header>
           <journals />
           <publishers>
@@ -4637,8 +4582,8 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100
 - request:
     method: get
     uri: http://www.sherpa.ac.uk/romeo/api29.php?country=Australasia
@@ -4647,6 +4592,7 @@ http_interactions:
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
   response:
     status:
       status_code: 200
@@ -4654,16 +4600,16 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 25 Feb 2019 16:42:02 GMT
+      date: Tue, 09 Apr 2019 17:08:48 GMT
       server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      x-powered-by: PHP/5.5.9-1ubuntu4.27
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '8181'
+      content-length: '8288'
       content-type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -4687,14 +4633,14 @@ http_interactions:
                 <parametervalue>en</parametervalue>
               </parameter>
             </parameters>
-            <numhits>57</numhits>
+            <numhits>58</numhits>
             <apicontrol></apicontrol>
             <outcome>publisherFound</outcome>
             <message />
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>25-Feb-2019:16:42:02</timestamp>
+            <timestamp>09-Apr-2019:18:08:49</timestamp>
           </header>
           <journals />
           <publishers>
@@ -5392,6 +5338,48 @@ http_interactions:
               <romeocolour>white</romeocolour>
               <dateadded>2007-03-09 00:00:00</dateadded>
               <dateupdated>2009-01-29 13:37:05</dateupdated>
+            </publisher>
+            <publisher id="2420">
+              <name>Bareknuckle Books</name>
+              <alias />
+              <homeurl>http://www.bareknucklebooks.com/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>can</postarchiving>
+                <postrestrictions />
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>can</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>On open access repositories</condition>
+                <condition>Authors retain copyright</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Publisher copyright and source must be acknowledged</condition>
+                <condition>Creative Commons Attribution Non-Commercial No Derivatives License</condition>
+                <condition>All titles are open access journals</condition>
+                <condition>Publisher last reviewed on 21/07/2015</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl />
+                <paidaccessname />
+                <paidaccessnotes />
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://bareknucklepoet.com/open-access-statement/</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>green</romeocolour>
+              <dateadded>2015-07-21 15:15:35</dateadded>
+              <dateupdated>2015-07-21 15:15:35</dateupdated>
             </publisher>
             <publisher id="150">
               <name>College of Intensive Care Medicine of Australia and New Zealand</name>
@@ -6833,5 +6821,5 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-02-25 16:42:03 GMT
-  recorded_with: vcr/0.2.6, webmockr/0.3.4
+  recorded_at: 2019-04-09 17:08:50 GMT
+  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4.9100

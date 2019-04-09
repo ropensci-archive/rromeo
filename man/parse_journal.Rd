@@ -4,14 +4,12 @@
 \alias{parse_journal}
 \title{Parse API answer}
 \usage{
-parse_journal(xml_source, outcome, hits, multiple = FALSE, key = NULL)
+parse_journal(xml_source, outcome, hits, type = c("find", "name"),
+  key = NULL)
 }
 \arguments{
-\item{multiple}{[\code{logical(1)}]\cr{}
-If multiple results match your query, should the function
-recursively fetch data for each of one of them
-(\code{multiple = TRUE}) or return a data.frame containing only
-titles and ISSN of all matches (\code{multiple = FALSE})}
+\item{type}{[\code{character(1)} in c("find", "name")\code{\]\cr{} If }type = "find"\code{returns only}title\code{and}issn\code{columns if}type = "name"` returns full data.frame as specified in Returns
+sections.}
 
 \item{key}{[\code{character(1)}]\cr{}
 a character string containing the API key or \code{NULL}
