@@ -14,27 +14,23 @@ test_that("rr_journal_name() works", {
   })
 
   use_cassette("rr_journal_name_multiple", {
-    given_warnings <- capture_warnings(
-      suppressMessages({
+
+    given_messages <- capture_messages(
+      suppressWarnings({
         res <- rr_journal_name("Biogeography", qtype = "contains", key = NULL)
       })
     )
 
-    given_messages <- capture_messages(
-      suppressWarnings({
-        rr_journal_name("Biogeography", qtype = "contains", key = NULL)
-      })
-    )
-
     expect_match(given_messages[1], "5 journals match your query terms")
-    expect_match(
-      given_warnings[1],
-      "Select one journal from the provided list or enable multiple = TRUE")
+    expect_match(given_messages[2],
+                 paste0("Recursively fetching data from each journal. ",
+                        "This may take some time..."))
 
     expect_is(res, "data.frame")
 
-    expect_equal(dim(res), c(5, 2))
-    expect_named(res, c("title", "issn"))
+    expect_equal(dim(res), c(5, 9))
+    expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
+                        "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
     expect_is(res$issn, "character")
     expect_is(res$title, "character")
 
