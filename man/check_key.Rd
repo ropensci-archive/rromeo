@@ -4,7 +4,7 @@
 \alias{check_key}
 \title{Check SHERPA/RoMEO API key}
 \usage{
-check_key(key)
+check_key(key = NULL)
 }
 \arguments{
 \item{key}{[\code{character(1)}]\cr{}
