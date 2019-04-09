@@ -111,18 +111,18 @@ can be slow as there many journals to retrieve):
 ``` r
 green_journals = rromeo::rr_romeo_colour("green")
 green_journals[8:12,]
-#>    romeoid                      publisher                alias romeocolour
-#> 8     1937          University of Arizona          Radiocarbon       green
-#> 9     2951  Geological Society of America            GSA Today       green
-#> 10    2521 University of California Press             Collabra       green
-#> 11    2306     Optical Society of America  No Paid Open Access       green
-#> 12    2305     Optical Society of America Open Access Journals       green
-#>    preprint postprint        pdf
-#> 8       can       can restricted
-#> 9       can       can        can
-#> 10      can       can        can
-#> 11      can       can     cannot
-#> 12      can       can        can
+#>    romeoid                                                   publisher
+#> 8     1128 Association for Information Science and Technology (ASIS&T)
+#> 9     1937                                       University of Arizona
+#> 10    2951                               Geological Society of America
+#> 11    2521                              University of California Press
+#> 12    2306                                  Optical Society of America
+#>                  alias romeocolour preprint postprint        pdf
+#> 8              JASIS&T       green      can       can     cannot
+#> 9          Radiocarbon       green      can       can restricted
+#> 10           GSA Today       green      can       can        can
+#> 11            Collabra       green      can       can        can
+#> 12 No Paid Open Access       green      can       can     cannot
 ```
 
 ## Dependency network (Imports only)
@@ -142,5 +142,5 @@ as the below-mentioned Code of Conduct.
 ## Code of Conduct
 
 Please note that the `rromeo` project is released with a [Contributor
-Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,
-you agree to abide by its terms.
+Code of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this
+project, you agree to abide by its terms.
