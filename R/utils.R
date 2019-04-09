@@ -96,7 +96,7 @@ parse_generic <- function(api_answer, ...) {
 parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
                           key = NULL) {
 
-  if (outcome %in% c("singleJournal", "uniqueZetoc") & multiple == TRUE) {
+  if (outcome %in% c("singleJournal", "uniqueZetoc") & multiple) {
     # Some journals have multiple policies because they are owned by multiple
     # publishers or because of historic data. They return hits == 2 but it's
     # still a single journal. They are identified by a specific outcome
@@ -138,7 +138,7 @@ parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
 
   } else if (outcome %in% c("manyJournals", "excessJournals") |
              (outcome %in% c("singleJournal", "uniqueZetoc") &
-              multiple == FALSE)) {
+              !multiple)) {
 
     message(hits, " journals match your query terms.")
 
