@@ -116,16 +116,16 @@ parse_journal <- function(xml_source, outcome, hits, multiple = FALSE,
     issn <- xml_text(xml_find_first(xml_source, "//issn"))
 
     romeocolour <- xml_text(xml_find_first(xml_source, "//romeocolour"))
-    romeocolour <- ifelse(romeocolour == "gray", NA_character_, romeocolour)
+    romeocolour[romeocolour == "gray"] <- NA_character_
 
     preprint <- xml_text(xml_find_first(xml_source, "//prearchiving"))
-    preprint <- ifelse(preprint == "unknown", NA_character_, preprint)
+    preprint[preprint == "unknown"] <- NA_character_
 
     postprint <- xml_text(xml_find_first(xml_source, "//postarchiving"))
-    postprint <- ifelse(postprint == "unknown", NA_character_, postprint)
+    postprint[postprint == "unknown"] <- NA_character_
 
     pdf <- xml_text(xml_find_first(xml_source, "//pdfarchiving"))
-    pdf <- ifelse(pdf == "unknown", NA_character_, pdf)
+    pdf[pdf == "unknown"] <- NA_character_
 
     pre_embargo <- parse_embargo(xml_source, "pre")
     post_embargo <- parse_embargo(xml_source, "post")
@@ -232,18 +232,18 @@ parse_publisher <- function(xml_source, outcome, hits) {
   publisher   <- xml_text(xml_find_all(xml_source, "//name"))
 
   alias       <- xml_text(xml_find_all(xml_source, "//alias"))
-  alias       <- ifelse(alias == "", NA_character_, alias)
+  alias[alias == ""] <- NA_character_
 
   romeocolour <- xml_text(xml_find_all(xml_source, "//romeocolour"))
 
   preprint    <- xml_text(xml_find_all(xml_source, "//prearchiving"))
-  preprint    <- ifelse(preprint == "unknown", NA_character_, preprint)
+  preprint[preprint == "unknown"] <- NA_character_
 
   postprint   <- xml_text(xml_find_all(xml_source, "//postarchiving"))
-  postprint   <- ifelse(postprint == "unknown", NA_character_, postprint)
+  postprint[postprint == "unknown"] <- NA_character_
 
   pdf         <- xml_text(xml_find_all(xml_source, "//pdfarchiving"))
-  pdf         <- ifelse(pdf == "unknown", NA_character_, pdf)
+  pdf[pdf == "unknown"] <- NA_character_
 
   data.frame(romeoid = as.numeric(romeoid),
              publisher,
