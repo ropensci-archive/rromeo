@@ -7,7 +7,7 @@
 #'             one or a vector of journal(s) ISSN(s)
 #' @inheritParams check_key
 #'
-#' @inherit parse_journal return
+#' @inherit rr_journal_name return
 #'
 #' @inherit check_key details
 #'
@@ -122,6 +122,8 @@ rr_journal_name <- function(name,
 #'                  the name of the journal
 #' * `issn`         \[`character(1)`\]\cr{}
 #'                  the ISSN of the journal
+#'
+#' @inherit check_key details
 #'
 #' @examples
 #' rr_journal_find(name = "Biostatistics", qtype = "contains")

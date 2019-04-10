@@ -314,15 +314,12 @@ validate_issn <- function(issn) {
 #'            a character string containing the API key or `NULL`
 #'            (see Details section on how to specify it)
 #'
-#' @details To provide your API key to `rromeo` you can:
-#' 1. provide it as a character string as the `key` arguments of `rromeo`
-#'    functions as `rr_*(..., key = "my_key_as_a_string")` (**NOT RECOMMENDED**)
-#' 1. you can define the variable `SHERPAROMEO_KEY` in an `.Renviron` file in
-#'    your working directory, the file should contain the following line
-#'    `SHERPAROMEO_KEY=my_key_without_quotes`
-#' 1. you can also define the variable `SHERPAROMEO_KEY` in an `.Rprofile` file
-#'    in your working directory, the file should contain the following line
-#'    `SHERPAROMEO_KEY="my_key_with_quotes"`
+#' @details There are several ways to provide your API key.
+#' The best way to know about them is to refer to the vignette about
+#' "Setting Up Your API key" accessible with the following command:
+#' `vignette("setting_up_api_key", package = "rromeo")`.
+#' You can also use [`rr_auth`] that will use the provided key to store it as
+#' an environmental variable.
 #'
 #' @return if found the character string of the key, `NULL` otherwise
 #' @export

@@ -65,6 +65,18 @@ check_key()
 ```
 
 
+### Using the dedicated function `rr_auth()`
+
+`rromeo` provides the function `rr_auth()` that creates a well named environmental variable that can be used in the rest of your session:
+
+```{r}
+rr_auth("Iq83AIL5bs2")
+check_key()
+```
+
+This works so that you don't have to specify the name of the environmental variable by hand. Under the hood `rr_auth()` uses the same mechanism as explained in the above mentioned section.
+
+
 ### Setting up your API key in an `.Rprofile` file
 
 Every time R starts it looks for `.Rprofile` files in different locations:
@@ -121,3 +133,7 @@ rr_journal_issn("1947-6264", key = "YOUR_API_KEY")
 However, **we do not recommend** this approach as your API key will be available in your R history and in your R scripts. While your API key should stay secret as it grants unlimited access to the server and can be maliciously used in wrong hands.
 
 Furthermore using this method you have to specify it at each function call while the other methods shown above only needs to be set up once.
+
+```{r include = FALSE}
+Sys.setenv("SHERPAROMEO_KEY" = "")
+```

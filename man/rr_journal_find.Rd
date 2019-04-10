@@ -35,6 +35,14 @@ the ISSN of the journal
 \description{
 Find if journals are available in SHERPA/RoMEO
 }
+\details{
+There are several ways to provide your API key.
+The best way to know about them is to refer to the vignette about
+"Setting Up Your API key" accessible with the following command:
+\code{vignette("setting_up_api_key", package = "rromeo")}.
+You can also use \code{\link{rr_auth}} that will use the provided key to store it as
+an environmental variable.
+}
 \examples{
 rr_journal_find(name = "Biostatistics", qtype = "contains")
 

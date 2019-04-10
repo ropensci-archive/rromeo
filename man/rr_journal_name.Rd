@@ -54,17 +54,12 @@ Note that SHERPARoMEO will not return more than 50 journals in a single
 query. The function will warn you if you are in this case.
 }
 \details{
-To provide your API key to \code{rromeo} you can:
-\enumerate{
-\item provide it as a character string as the \code{key} arguments of \code{rromeo}
-functions as \code{rr_*(..., key = "my_key_as_a_string")} (\strong{NOT RECOMMENDED})
-\item you can define the variable \code{SHERPAROMEO_KEY} in an \code{.Renviron} file in
-your working directory, the file should contain the following line
-\code{SHERPAROMEO_KEY=my_key_without_quotes}
-\item you can also define the variable \code{SHERPAROMEO_KEY} in an \code{.Rprofile} file
-in your working directory, the file should contain the following line
-\code{SHERPAROMEO_KEY="my_key_with_quotes"}
-}
+There are several ways to provide your API key.
+The best way to know about them is to refer to the vignette about
+"Setting Up Your API key" accessible with the following command:
+\code{vignette("setting_up_api_key", package = "rromeo")}.
+You can also use \code{\link{rr_auth}} that will use the provided key to store it as
+an environmental variable.
 }
 \examples{
 \dontrun{
