@@ -8,7 +8,9 @@ parse_journal(xml_source, outcome, hits, type = c("find", "name"),
   key = NULL)
 }
 \arguments{
-\item{type}{[\code{character(1)} in c("find", "name")\code{\]\cr{} If }type = "find"\code{returns only}title\code{and}issn\code{columns if}type = "name"` returns full data.frame as specified in Returns
+\item{type}{[\code{character(1)} in \code{c("find", "name")}]\cr{}
+If \code{type = "find"} returns only \code{title} and \code{issn} columns if
+\code{type = "name"} returns full data.frame as specified in Returns
 sections.}
 
 \item{key}{[\code{character(1)}]\cr{}
