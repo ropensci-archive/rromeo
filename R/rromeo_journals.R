@@ -126,7 +126,9 @@ rr_journal_name <- function(name,
 #' @inherit check_key details
 #'
 #' @examples
+#' \dontrun{
 #' rr_journal_find(name = "Biostatistics", qtype = "contains")
+#' }
 #'
 #' @export
 rr_journal_find  <- function(name,
