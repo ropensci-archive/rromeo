@@ -326,8 +326,8 @@ validate_issn <- function(issn) {
 #'
 #' @return if found the character string of the key, `NULL` otherwise
 #' @export
-check_key = function(key = NULL) {
-  tmp = ifelse(is.null(key), Sys.getenv("SHERPAROMEO_KEY"), key)
+check_key <- function(key = NULL) {
+  tmp <- ifelse(is.null(key), Sys.getenv("SHERPAROMEO_KEY"), key)
 
   if (tmp == "") {
     tmp <- NULL
@@ -405,4 +405,14 @@ validate_country_code <- function(country) {
 rr_ua <- function() {
   paste0("http://github.com/Rekyt/rromeo R package rromeo/v.",
          utils::packageVersion("rromeo"))
+}
+
+
+#' rromeo internal GET function
+#'
+#' @param ... additional parameter to [`httr::GET`]
+#'
+#' @importFrom httr GET add_headers
+rr_GET <- function(...) {
+  GET(rr_base_api(), add_headers("user-agent" = rr_ua()), ...)
 }

@@ -11,15 +11,14 @@ rr_base_api <- function() {
 #' Return SHERPA/RoMEO API version
 #'
 #' This function queries SHERPA/RoMEO and returns the version of the API.
-#' @importFrom httr GET content add_headers
+#' @importFrom httr content
 #' @importFrom xml2 xml_attr
 #' @export
 #'
 #' @examples
 #' rr_api_version()
 rr_api_version <- function() {
-  rr_query <- content(GET(rr_base_api(), add_headers("user-agent" = rr_ua())),
-                      encoding = "ISO-8859-1")
+  rr_query <- content(rr_GET(), encoding = "ISO-8859-1")
 
   xml_attr(rr_query, "version")
 }
