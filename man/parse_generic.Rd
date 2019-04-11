@@ -7,7 +7,7 @@
 parse_generic(api_answer, ...)
 }
 \arguments{
-\item{api_answer}{{\code{httr::response()}}\cr{}
+\item{api_answer}{[\code{httr::response()}]\cr{}
 The API answer}
 
 \item{...}{Other options passed to parsing functions}

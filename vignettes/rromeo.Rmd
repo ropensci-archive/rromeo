@@ -19,10 +19,10 @@ vcr_configure("../inst")
 
 use_cassette("vignette_cassette", {
   rromeo::rr_journal_issn("1947-6264")
+  rromeo::rr_journal_find("Biostatistics", qtype = "contains")
   rromeo::rr_journal_name("Biostatistics", qtype = "contains")
-  rromeo::rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
-  rromeo::rr_journal_name("Biostatistics", qtype = "starts", multiple = TRUE)
-  rromeo::rr_journal_name("Biostatistics", qtype = "exact", multiple = TRUE)
+  rromeo::rr_journal_name("Biostatistics", qtype = "starts")
+  rromeo::rr_journal_name("Biostatistics", qtype = "exact")
   rromeo::rr_publisher_name(name = "Oxford", qtype = "all")
   rromeo::rr_publisher_name(name = "Oxford University", qtype = "all")
   rromeo::rr_publisher_name(name = "Oxford University", qtype = "exact")
@@ -55,21 +55,20 @@ From this we see that the archival of the preprint is permitted while some restr
 
 ### Query by Journal Title
 
-We can also search journal by names using `rr_journal_name()` the first argument `name` is the string to look for and the second argument `qtype` defines the way to match. If we want to look at journals that have the word `Biostatistics` in their title we can use the following code:
+We can also search journal by names using `rr_journal_find()` the first argument `name` is the string to look for and the second argument `qtype` defines the way to match. If we want to look at journals that have the word `Biostatistics` in their title we can use the following code:
 
 ```{r query_name_contains}
-rr_journal_name("Biostatistics", qtype = "contains")
+rr_journal_find("Biostatistics", qtype = "contains")
 ```
 
-Because `rromeo` finds multiple journals matching your query terms, it will only return
-the list of titles and ISSN by default.
+`rr_journal_find()` will only return the list of titles and ISSN.
 You can then use this list to select the exact journal you are looking for (in
 this case, it is recommended to use the ISSN).
 Alternatively, you may want to get data for all those journals. To achieve this,
-you may enable the `multiple` argument to `TRUE`:
+you need to use the function `rr_journal_name()` which uses a similar syntax to `rr_journal_find()`:
 
 ```{r query_name_contains_multiple}
-res <- rr_journal_name("Biostatistics", qtype = "contains", multiple = TRUE)
+res <- rr_journal_name("Biostatistics", qtype = "contains")
 tail(res, 3)
 ```
 The query may run for longer but it gives you all the information on all returned journals.
@@ -77,13 +76,13 @@ The query may run for longer but it gives you all the information on all returne
 You can also use other type of name matching with other options for `qtype`, for example when `qtype = "starts"` the query string have to begin the title of the journal:
 
 ```{r query_name_starts}
-rr_journal_name("Biostatistics", qtype = "starts", multiple = TRUE)
+rr_journal_name("Biostatistics", qtype = "starts")
 ```
 
 While using `qtype = exact` the title of the journal should match exactly the used string:
 
 ```{r query_name_exact}
-rr_journal_name("Biostatistics", qtype = "exact", multiple = TRUE)
+rr_journal_name("Biostatistics", qtype = "exact")
 ```
 
 

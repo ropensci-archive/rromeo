@@ -4,20 +4,14 @@
 \alias{rr_journal_name}
 \title{Retrieve journals policies by matching title}
 \usage{
-rr_journal_name(name, multiple = FALSE, qtype = c("exact", "contains",
-  "starts"), key = NULL)
+rr_journal_name(name, qtype = c("exact", "contains", "starts"),
+  key = NULL)
 }
 \arguments{
-\item{name}{{\code{character(1+)}}\cr{}
+\item{name}{[\code{character(1+)}]\cr{}
 one or several strings to match the titles of the journals}
 
-\item{multiple}{{\code{logical(1)}}\cr{}
-If multiple results match your query, should the function
-recursively fetch data for each of one of them
-(\code{multiple = TRUE}) or return a data.frame containing only
-titles and ISSN of all matches (\code{multiple = FALSE})}
-
-\item{qtype}{{\code{character(1)}}\cr{}
+\item{qtype}{[\code{character(1)}]\cr{}
 in:
 * \code{"exact"} full title must be exactly to provided \code{name},
 * \code{"contains"} the provided \code{name} must appear anywhere in the
@@ -25,39 +19,32 @@ title of the journal,
 * \code{"starts"} the provided \code{name} must appear at the start of
 title of the journal.}
 
-\item{key}{{\code{character(1)}}\cr{}
+\item{key}{[\code{character(1)}]\cr{}
 a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
-Returns a data frame if multiple journals are found and
-\code{multiple = FALSE}:
+Returns a data.frame with complete information from journal:
 \itemize{
-\item \code{title}        {\code{character(1)}}\cr{}
+\item \code{title}        [\code{character(1)}]\cr{}
 the name of the journal
-\item \code{issn}         {\code{character(1)}}\cr{}
+\item \code{issn}         [\code{character(1)}]\cr{}
 the ISSN of the journal
-if a single journal is found or if \code{multiple = TRUE} returns a larger
-data frame:
-\item \code{title}        {\code{character(1)}}\cr{}
-the name of the journal
-\item \code{issn}         {\code{character(1)}}\cr{}
-the ISSN of the journal
-\item \code{romeocolour}  {\code{character(1)}}\cr{}
+\item \code{romeocolour}  [\code{character(1)}]\cr{}
 the SHERPA/RoMEO colour of the journal
-\item \code{preprint}     {\code{character(1)}}\cr{}
+\item \code{preprint}     [\code{character(1)}]\cr{}
 is the preprint (not reviewed) archivable?
-\item \code{postprint}    {\code{character(1)}}\cr{}
+\item \code{postprint}    [\code{character(1)}]\cr{}
 is the postprint (reviewed but not formatted)?
-\item \code{pdf}          {\code{character(1)}}\cr{}
+\item \code{pdf}          [\code{character(1)}]\cr{}
 is the publisher's version (reviewed and formatted)
-\item \code{pre_embargo}  {\code{character(1)}}\cr{}
+\item \code{pre_embargo}  [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the preprint
-\item \code{post_embargo} {\code{character(1)}}\cr{}
+\item \code{post_embargo} [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the postprint
-\item \code{pdf_embargo}  {\code{character(1)}}\cr{}
+\item \code{pdf_embargo}  [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the publisher's version
 }
@@ -67,23 +54,17 @@ Note that SHERPARoMEO will not return more than 50 journals in a single
 query. The function will warn you if you are in this case.
 }
 \details{
-To provide your API key to \code{rromeo} you can:
-\enumerate{
-\item provide it as a character string as the \code{key} arguments of \code{rromeo}
-functions as \code{rr_*(..., key = "my_key_as_a_string")} (\strong{NOT RECOMMENDED})
-\item you can define the variable \code{SHERPAROMEO_KEY} in an \code{.Renviron} file in
-your working directory, the file should contain the following line
-\code{SHERPAROMEO_KEY=my_key_without_quotes}
-\item you can also define the variable \code{SHERPAROMEO_KEY} in an \code{.Rprofile} file
-in your working directory, the file should contain the following line
-\code{SHERPAROMEO_KEY="my_key_with_quotes"}
-}
+There are several ways to provide your API key.
+The best way to know about them is to refer to the vignette about
+"Setting Up Your API key" accessible with the following command:
+\code{vignette("setting_up_api_key", package = "rromeo")}.
+You can also use \code{\link{rr_auth}} that will use the provided key to store it as
+an environmental variable.
 }
 \examples{
-rr_journal_name(name = "Journal of Geology")
-rr_journal_name(name = "Biogeography", multiple = FALSE, qtype = "contains")
 \dontrun{
-rr_journal_name(name = "Biogeography", multiple = TRUE, qtype = "contains")
+rr_journal_name(name = "Journal of Geology")
+rr_journal_name(name = "Biogeography", qtype = "contains")
 # You can also query multiple journals with exact titles in a single call
 rr_journal_name(name = c("Journal of Biogeography", "PLoS ONE"),
                 qtype = "exact")

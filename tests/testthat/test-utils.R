@@ -2,9 +2,9 @@ context("Tests utility functions for rromeo")
 
 test_that("Can validate ISSN properly", {
 
-  valid_issn   = c("0395-2037", "1050-124X")
-  invalid_issn = "1234-5678"
-  not_issn     = "12345-678"
+  valid_issn   <- c("0395-2037", "1050-124X")
+  invalid_issn <- "1234-5678"
+  not_issn     <- "12345-678"
 
   expect_true(validate_issn(valid_issn[1]))
   expect_true(validate_issn(valid_issn[2]))
@@ -24,11 +24,11 @@ test_that("Can retrieve the API key", {
 
   expect_match(check_key("abcd"), "abcd")
 
-  actual_key = ifelse(Sys.getenv('SHERPAROMEO_KEY') != "",
-                      Sys.getenv('SHERPAROMEO_KEY'), "")
+  actual_key <- ifelse(Sys.getenv('SHERPAROMEO_KEY') != "",
+                       Sys.getenv('SHERPAROMEO_KEY'), "")
 
   if (actual_key == "") {
-    actual_key = NULL
+    actual_key <- NULL
   }
 
   expect_equal(check_key(NULL), actual_key)

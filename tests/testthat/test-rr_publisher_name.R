@@ -7,7 +7,7 @@ test_that("rr_publisher_name() works", {
 
   # Regular Query
   use_cassette("rr_publisher_name", {
-    res = rr_publisher_name("Swiss Chemistry", qtype = "exact")
+    res <- rr_publisher_name("Swiss Chemistry", qtype = "exact")
 
     expect_is(res, "data.frame")
 
@@ -28,8 +28,8 @@ test_that("rr_publisher_name() works", {
 
   # Multiple publishers
   use_cassette("rr_publisher_name_multiple", {
-    res = rr_publisher_name(c("Swiss Chemistry", "Nordic Ecological Society"),
-                            qtype = "exact")
+    res <- rr_publisher_name(c("Swiss Chemistry", "Nordic Ecological Society"),
+                             qtype = "exact")
 
     expect_is(res, "data.frame")
 

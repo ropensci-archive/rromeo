@@ -3,7 +3,7 @@
 #' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 #' archival
 #'
-#' @param id {`integer(1+)`}\cr{}
+#' @param id \[`integer(1+)`\]\cr{}
 #'           one or a vector of SHERPA/RoMEO publisher's ID
 #' @inheritParams check_key
 #'
@@ -11,28 +11,28 @@
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
 #' @export
-#' @examples
+#' @examples \dontrun{
 #' rr_publisher_id(id = 55)
 #' rr_publisher_id(id = c(55, 735))
-rr_publisher_id = function(id, key = NULL) {
+#' }
+rr_publisher_id <- function(id, key = NULL) {
 
   if (any(!grepl("^[[:digit:]]+$", id))) {
     stop("All provided IDs should be integers", call. = FALSE)
   }
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(id, function(publisher_id) {
-    api_answer = GET(rr_base_api(), query = list(id = publisher_id,
-                                                 ak = api_key))
+  answer_list <- lapply(id, function(publisher_id) {
+    api_answer <- rr_GET(query = list(id = publisher_id,
+                                      ak = api_key))
 
     parse_generic(api_answer)
   })
 
-  publishers_df = do.call(rbind.data.frame,
-                          c(answer_list, stringsAsFactors = FALSE))
+  publishers_df <- do.call(rbind.data.frame,
+                           c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -54,10 +54,10 @@ rr_publisher_id = function(id, key = NULL) {
 #'
 #' Note that when using `rr_romeo_colour()` the API returns **all** the
 #' publishers in the selected category, so the results are generally bigger in
-#' size than specific functions like {`rr_journal_name()`} or
-#' {`rr_publisher_id()`}
+#' size than specific functions like \[`rr_journal_name()`\] or
+#' \[`rr_publisher_id()`\]
 #'
-#' @param romeo_colour {`character(1)`}\cr{}
+#' @param romeo_colour \[`character(1)`\]\cr{}
 #'                     in `c("green", "blue", "yellow", "white")`
 #'                     the SHERPA/RoMEO colour to retrieve
 #' @inheritParams check_key
@@ -68,20 +68,19 @@ rr_publisher_id = function(id, key = NULL) {
 #'
 #' @aliases rr_romeo_color
 #'
-#' @importFrom httr GET
 #' @export
 #'
 #' @examples
 #' \dontrun{
 #' rr_romeo_colour(romeo_colour = "green")
 #' }
-rr_romeo_colour = rr_romeo_color = function(
+rr_romeo_colour <- rr_romeo_color <- function(
   romeo_colour = c("green", "blue","yellow", "white"), key = NULL) {
 
-  romeo_colour = match.arg(romeo_colour)
+  romeo_colour <- match.arg(romeo_colour)
 
-  api_answer = GET(rr_base_api(), query = list(colour = romeo_colour,
-                                               ak = check_key(key)))
+  api_answer <- rr_GET(query = list(colour = romeo_colour,
+                                    ak     = check_key(key)))
 
   parse_generic(api_answer)
 }
@@ -92,9 +91,9 @@ rr_romeo_colour = rr_romeo_color = function(
 #' Use SHERPA/RoMEO API to retrieve a specific publisher policies on manuscript
 #' archival based on matching the name of the publishers.
 #'
-#' @param name  {`character(1+)`}\cr{}
+#' @param name  \[`character(1+)`\]\cr{}
 #'              One or a vector of query string(s) to search publisher name
-#' @param qtype {`character(1)`}\cr{}
+#' @param qtype \[`character(1)`\]\cr{}
 #'              in `c("all", "any", "exact")` define the type of matching:
 #' * `all` means that all strings in `name` must appear in any
 #'   order or location
@@ -109,31 +108,30 @@ rr_romeo_colour = rr_romeo_color = function(
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
 #' @export
 #'
-#' @examples
-#'
+#' @examples \dontrun{
 #' rr_publisher_name(name = "Optical Society", qtype = "all")
 #' rr_publisher_name(name = "Swiss Chemistry", qtype = "any")
 #' rr_publisher_name(name = "Swiss Chemistry", qtype = "exact")
-rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
-                             key = NULL) {
+#' }
+rr_publisher_name <- function(name, qtype = c("all", "any", "exact"),
+                              key = NULL) {
 
-  qtype = match.arg(qtype)
+  qtype <- match.arg(qtype)
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(name, function(publisher_name) {
-    api_answer = GET(rr_base_api(), query = list(pub   = publisher_name,
-                                                 qtype = qtype,
-                                                 ak    = api_key))
+  answer_list <- lapply(name, function(publisher_name) {
+    api_answer <- rr_GET(query = list(pub   = publisher_name,
+                                      qtype = qtype,
+                                      ak    = api_key))
 
     parse_generic(api_answer)
   })
 
-  publishers_df = do.call(rbind.data.frame,
-                          c(answer_list, stringsAsFactors = FALSE))
+  publishers_df <- do.call(rbind.data.frame,
+                           c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -143,7 +141,7 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
 #' Retrieve publisher's policy based on publisher's continent. This function
 #' does not work for unclassified or international publishers.
 #'
-#' @param continent {`character(1+)`}\cr{}
+#' @param continent \[`character(1+)`\]\cr{}
 #'                  one or a vector of strings in ```
 #'                  c("Africa", "Antarctica",  "Asia",  "Australasia",
 #'                  "Carribean",  "Central America",  "Europe",
@@ -156,48 +154,46 @@ rr_publisher_name = function(name, qtype = c("all", "any", "exact"),
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
 #' @export
 #'
-#' @examples
-#'
+#' @examples \dontrun{
 #' rr_publisher_continent(continent = "Caribbean")
 #' rr_publisher_continent(continent = "Central America")
 #' rr_publisher_continent(continent = c("Caribbean", "Central America"))
-rr_publisher_continent = function(continent = c("Africa",
-                                                "Antarctica",
-                                                "Asia",
-                                                "Australasia",
-                                                "Caribbean",
-                                                "Central America",
-                                                "Europe",
-                                                "North America",
-                                                "Oceania",
-                                                "South America"),
-                                  key = NULL) {
+#' }
+rr_publisher_continent <- function(continent = c("Africa",
+                                                 "Antarctica",
+                                                 "Asia",
+                                                 "Australasia",
+                                                 "Caribbean",
+                                                 "Central America",
+                                                 "Europe",
+                                                 "North America",
+                                                 "Oceania",
+                                                 "South America"),
+                                   key = NULL) {
 
-  valid_continents = vapply(continent, function(single_continent) {
-    single_continent %in% c("Africa", "Antarctica", "Asia", "Australasia",
+  valid_continents <- continent %in% c("Africa", "Antarctica", "Asia",
+                                       "Australasia",
                             "Caribbean", "Central America", "Europe",
                             "North America", "Oceania", "South America")
-  }, logical(1))
 
   if (any(!valid_continents)) {
     stop("Some continents are not valid, see ?rr_publisher_continent to get ",
          "the list of valid continents", call. = FALSE)
   }
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(continent, function(single_continent) {
-    api_answer = GET(rr_base_api(), query = list(country = single_continent,
-                                                 ak = api_key))
+  answer_list <- lapply(continent, function(single_continent) {
+    api_answer <- rr_GET(query = list(country = single_continent,
+                                      ak      = api_key))
 
     parse_generic(api_answer)
   })
 
-  publishers_df = do.call(rbind.data.frame,
-                          c(answer_list, stringsAsFactors = FALSE))
+  publishers_df <- do.call(rbind.data.frame,
+                           c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -208,7 +204,7 @@ rr_publisher_continent = function(continent = c("Africa",
 #' the ISO_3166-1_alpha-2 code of the country
 #' <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>.
 #'
-#' @param country {`character(1+)`}\cr{}
+#' @param country \[`character(1+)`\]\cr{}
 #'                one or a vector of ISO two-letter country code or `AA` for
 #'                international publisher, `ZZ` for publisher of unknown
 #'                countries and `__` for publishers without specified country
@@ -219,31 +215,30 @@ rr_publisher_continent = function(continent = c("Africa",
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
 #' @export
 #'
-#' @examples
-#'
+#' @examples \dontrun{
 #' # Taiwan
 #' rr_publisher_country("TW")
 #' # Egypt
 #' rr_publisher_country("EG")
 #' rr_publisher_country(c("TW", "EG"))
-rr_publisher_country = function(country, key = NULL) {
+#' }
+rr_publisher_country <- function(country, key = NULL) {
 
   vapply(country, validate_country_code, logical(1))
 
-  api_key = check_key(key)
+  api_key <- check_key(key)
 
-  answer_list = lapply(country, function(given_country) {
-    api_answer = GET(rr_base_api(), query = list(country = given_country,
-                                                 ak = api_key))
+  answer_list <- lapply(country, function(given_country) {
+    api_answer <- rr_GET(query = list(country = given_country,
+                                      ak      = api_key))
 
     parse_generic(api_answer)
   })
 
-  publishers_df = do.call(rbind.data.frame,
-                          c(answer_list, stringsAsFactors = FALSE))
+  publishers_df <- do.call(rbind.data.frame,
+                           c(answer_list, stringsAsFactors = FALSE))
 
   return(publishers_df)
 }
@@ -258,14 +253,13 @@ rr_publisher_country = function(country, key = NULL) {
 #'
 #' @inherit check_key details
 #'
-#' @importFrom httr GET
 #' @export
-rr_publisher_all = function(key = NULL) {
+rr_publisher_all <- function(key = NULL) {
 
   message("This function can take a long time to run, please be patient.")
 
-  api_answer = GET(rr_base_api(), query = list(all = "yes",
-                                               ak = check_key(key)))
+  api_answer <- rr_GET(query = list(all = "yes",
+                                    ak  = check_key(key)))
 
   parse_generic(api_answer)
 }

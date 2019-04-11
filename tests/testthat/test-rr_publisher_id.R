@@ -6,7 +6,7 @@ test_that("rr_publisher_id() works", {
 
   # Regular Query
   use_cassette("rr_publisher_id", {
-    res = rr_publisher_id(55)
+    res <- rr_publisher_id(55)
 
     expect_is(res, "data.frame")
 
@@ -27,7 +27,7 @@ test_that("rr_publisher_id() works", {
 
   # Multiple publishers
   use_cassette("rr_publisher_id_multiple", {
-    res = rr_publisher_id(c(55, 735))
+    res <- rr_publisher_id(c(55, 735))
 
     expect_is(res, "data.frame")
 
