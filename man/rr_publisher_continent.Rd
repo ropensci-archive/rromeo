@@ -53,8 +53,9 @@ You can also use \code{\link{rr_auth}} that will use the provided key to store i
 an environmental variable.
 }
 \examples{
-
+\dontrun{
 rr_publisher_continent(continent = "Caribbean")
 rr_publisher_continent(continent = "Central America")
 rr_publisher_continent(continent = c("Caribbean", "Central America"))
+}
 }

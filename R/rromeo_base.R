@@ -15,8 +15,9 @@ rr_base_api <- function() {
 #' @importFrom xml2 xml_attr
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' rr_api_version()
+#' }
 rr_api_version <- function() {
   rr_query <- content(rr_GET(), encoding = "ISO-8859-1")
 
@@ -36,8 +37,9 @@ rr_api_version <- function() {
 #'            A string giving the API key to save into the environment
 #'
 #' @export
-#' @examples
+#' @examples \dontrun{
 #' rr_auth("Iq83AIL5bss")
+#' }
 rr_auth <- function(key) {
   Sys.setenv("SHERPAROMEO_KEY" = key)
 }

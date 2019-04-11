@@ -13,9 +13,10 @@
 #'
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' rr_journal_issn(issn = "1947-6264")
 #' rr_journal_issn(issn = c("1947-6264", "0030-1299"))
+#' }
 rr_journal_issn <- function(issn, key = NULL) {
 
   vapply(issn, validate_issn, logical(1))
@@ -81,8 +82,7 @@ rr_journal_issn <- function(issn, key = NULL) {
 #'
 #' @export
 #'
-#' @examples
-#' \dontrun{
+#' @examples \dontrun{
 #' rr_journal_name(name = "Journal of Geology")
 #' rr_journal_name(name = "Biogeography", qtype = "contains")
 #' # You can also query multiple journals with exact titles in a single call
@@ -125,8 +125,7 @@ rr_journal_name <- function(name,
 #'
 #' @inherit check_key details
 #'
-#' @examples
-#' \dontrun{
+#' @examples \dontrun{
 #' rr_journal_find(name = "Biostatistics", qtype = "contains")
 #' }
 #'

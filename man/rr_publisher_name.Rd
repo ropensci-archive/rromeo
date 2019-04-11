@@ -61,8 +61,9 @@ You can also use \code{\link{rr_auth}} that will use the provided key to store i
 an environmental variable.
 }
 \examples{
-
+\dontrun{
 rr_publisher_name(name = "Optical Society", qtype = "all")
 rr_publisher_name(name = "Swiss Chemistry", qtype = "any")
 rr_publisher_name(name = "Swiss Chemistry", qtype = "exact")
+}
 }

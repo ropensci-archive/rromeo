@@ -20,5 +20,7 @@ with the following command
 \code{vignette("setting_up_api_key", package = "rromeo")}
 }
 \examples{
+\dontrun{
 rr_auth("Iq83AIL5bss")
+}
 }

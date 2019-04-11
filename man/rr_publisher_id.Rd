@@ -50,6 +50,8 @@ You can also use \code{\link{rr_auth}} that will use the provided key to store i
 an environmental variable.
 }
 \examples{
+\dontrun{
 rr_publisher_id(id = 55)
 rr_publisher_id(id = c(55, 735))
+}
 }

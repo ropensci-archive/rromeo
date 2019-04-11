@@ -54,10 +54,11 @@ You can also use \code{\link{rr_auth}} that will use the provided key to store i
 an environmental variable.
 }
 \examples{
-
+\dontrun{
 # Taiwan
 rr_publisher_country("TW")
 # Egypt
 rr_publisher_country("EG")
 rr_publisher_country(c("TW", "EG"))
+}
 }

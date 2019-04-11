@@ -12,9 +12,10 @@
 #' @inherit check_key details
 #'
 #' @export
-#' @examples
+#' @examples \dontrun{
 #' rr_publisher_id(id = 55)
 #' rr_publisher_id(id = c(55, 735))
+#' }
 rr_publisher_id <- function(id, key = NULL) {
 
   if (any(!grepl("^[[:digit:]]+$", id))) {
@@ -109,11 +110,11 @@ rr_romeo_colour <- rr_romeo_color <- function(
 #'
 #' @export
 #'
-#' @examples
-#'
+#' @examples \dontrun{
 #' rr_publisher_name(name = "Optical Society", qtype = "all")
 #' rr_publisher_name(name = "Swiss Chemistry", qtype = "any")
 #' rr_publisher_name(name = "Swiss Chemistry", qtype = "exact")
+#' }
 rr_publisher_name <- function(name, qtype = c("all", "any", "exact"),
                               key = NULL) {
 
@@ -155,11 +156,11 @@ rr_publisher_name <- function(name, qtype = c("all", "any", "exact"),
 #'
 #' @export
 #'
-#' @examples
-#'
+#' @examples \dontrun{
 #' rr_publisher_continent(continent = "Caribbean")
 #' rr_publisher_continent(continent = "Central America")
 #' rr_publisher_continent(continent = c("Caribbean", "Central America"))
+#' }
 rr_publisher_continent <- function(continent = c("Africa",
                                                  "Antarctica",
                                                  "Asia",
@@ -216,13 +217,13 @@ rr_publisher_continent <- function(continent = c("Africa",
 #'
 #' @export
 #'
-#' @examples
-#'
+#' @examples \dontrun{
 #' # Taiwan
 #' rr_publisher_country("TW")
 #' # Egypt
 #' rr_publisher_country("EG")
 #' rr_publisher_country(c("TW", "EG"))
+#' }
 rr_publisher_country <- function(country, key = NULL) {
 
   vapply(country, validate_country_code, logical(1))
