@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Checks validity of the ISSN — validate_issn • rromeo</title>
+<title>Find if journals are available in SHERPA/RoMEO — rr_journal_find • rromeo</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,12 +30,9 @@
 
 
 
-<meta property="og:title" content="Checks validity of the ISSN — validate_issn" />
+<meta property="og:title" content="Find if journals are available in SHERPA/RoMEO — rr_journal_find" />
 
-<meta property="og:description" content="International Standard Serial Numbers (ISSNs) have a specific structure and
-this function checks that the provided ISSN is valid. For more information
-please go to
-https://en.wikipedia.org/wiki/International_Standard_Serial_Number" />
+<meta property="og:description" content="Find if journals are available in SHERPA/RoMEO" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -117,37 +114,71 @@ https://en.wikipedia.org/wiki/International_Standard_Serial_Number" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Checks validity of the ISSN</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
-    <div class="hidden name"><code>validate_issn.Rd</code></div>
+    <h1>Find if journals are available in SHERPA/RoMEO</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Rekyt/rromeo/blob/master/R/rromeo_journals.R'><code>R/rromeo_journals.R</code></a></small>
+    <div class="hidden name"><code>rr_journal_find.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>International Standard Serial Numbers (ISSNs) have a specific structure and
-this function checks that the provided ISSN is valid. For more information
-please go to
-<a href='https://en.wikipedia.org/wiki/International_Standard_Serial_Number'>https://en.wikipedia.org/wiki/International_Standard_Serial_Number</a></p>
+    <p>Find if journals are available in SHERPA/RoMEO</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>validate_issn</span>(<span class='no'>issn</span>)</pre>
+    <pre class="usage"><span class='fu'>rr_journal_find</span>(<span class='no'>name</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"exact"</span>, <span class='st'>"contains"</span>, <span class='st'>"starts"</span>),
+  <span class='kw'>key</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>issn</th>
+      <th>name</th>
+      <td><p>[<code>character(1+)</code>]<br />
+one or several strings to match the titles of the journals</p></td>
+    </tr>
+    <tr>
+      <th>qtype</th>
       <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
-The ISSN of a journal</p></td>
+in:
+* <code>"exact"</code> full title must be exactly to provided <code>name</code>,
+* <code>"contains"</code> the provided <code>name</code> must appear anywhere in the
+title of the journal,
+* <code>"starts"</code> the provided <code>name</code> must appear at the start of
+title of the journal.</p></td>
+    </tr>
+    <tr>
+      <th>key</th>
+      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
+a character string containing the API key or <code>NULL</code>
+(see Details section on how to specify it)</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><code>NULL</code> if the ISSN is valid, errors otherwise</p>
+    <p>Returns a data frame:</p><ul>
+<li><p><code>title</code>        [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
+the name of the journal</p></li>
+<li><p><code>issn</code>         [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
+the ISSN of the journal</p></li>
+</ul>
+
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>There are several ways to provide your API key.
+The best way to know about them is to refer to the vignette about
+"Setting Up Your API key" accessible with the following command:
+<code><a href='../articles/setting_up_api_key.html'>vignette("setting_up_api_key", package = "rromeo")</a></code>.
+You can also use <code><a href='rr_auth.html'>rr_auth</a></code> that will use the provided key to store it as
+an environmental variable.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>rr_journal_find</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Biostatistics"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)
+<span class='co'># }</span><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -155,7 +186,11 @@ The ISSN of a journal</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+
+      <li><a href="#details">Details</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

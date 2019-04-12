@@ -91,31 +91,39 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#rromeo-an-r-interface-for-sherparomeo-api" class="anchor"></a><code>rromeo</code> – an R interface for SHERPA/RoMEO API</h1></div>
 
-<p><code>rromeo</code> is an R client for the <a href="http://www.sherpa.ac.uk/romeo/index.php?la=en&amp;fIDnum=&amp;mode=simple">SHERPA/RoMEO API</a>. SHERPA/RoMEO is a database that gives information on editorial policies of scientific journals regarding the archival of preprint, postprint and publishers’ manuscripts.</p>
-<div id="installation" class="section level2">
+<p><code>rromeo</code> is an R client for the <a href="http://www.sherpa.ac.uk/romeo/index.php?la=en&amp;fIDnum=&amp;mode=simple">SHERPA/RoMEO API</a>. SHERPA/RoMEO is a database that gives information on editorial policies of scientific journals regarding the archival of preprint, postprint and publishers’ manuscripts. <code>rromeo</code> is aimed at scientists interested in archival practices of scientific journals, such as professionals of <a href="https://en.wikipedia.org/wiki/Scientometrics">scientometrics</a> but also at scientist of specific fields interested in the practices of their fields.</p>
+<div id="install" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<a href="#install" class="anchor"></a>Install</h2>
 <p><code>rromeo</code> is not yet on CRAN but you can install the development version of <code>rromeo</code> with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("remotes")</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"Rekyt/rromeo"</span>)</a></code></pre></div>
+</div>
+<div id="api-key" class="section level2">
+<h2 class="hasAnchor">
+<a href="#api-key" class="anchor"></a>API Key</h2>
+<p>Note that SHERPA/RoMEO lets you run 500 requests per day per IP address, by <a href="http://www.sherpa.ac.uk/romeo/apiregistry.php">registering for a free API key</a> you can bypass this limit.</p>
+<p><code>rromeo</code> can use your registered SHERPA/RoMEO API key; you can either pass it as a string when querying the data with the argument <code>key</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Journal of Geology"</span>, <span class="dt">key =</span> <span class="st">"Iq83AIL5bss"</span>)</a></code></pre></div>
+<p>or you can specify the environment variable <code>SHERPAROMEO_KEY</code> in an <code>.Rprofile</code> or in an <code>.Renviron</code> file and <code>rromeo</code> will automatically retrieve the API key.</p>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p><code>rromeo</code> contains functions to retrieve data from the SHERPA/RoMEO API (for a complete overview please refer to the <a href="https://rekyt.github.io/rromeo/articles/rromeo.html">vignette</a>). The data is released under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license</a>. A suggestion of citation is included in <code>rromeo</code> via <code><a href="https://www.rdocumentation.org/packages/utils/topics/citation">citation("rromeo")</a></code>.</p>
 <p><code>rromeo</code> functions are prefixed with <code>rr_</code> such as <code><a href="reference/rr_journal_name.html">rr_journal_name()</a></code> that lets you retrieve a journal policy information using the title of a journal:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">rromeo<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rromeo/topics/rr_journal_name">rr_journal_name</a></span>(<span class="st">"Journal of Biogeography"</span>, <span class="dt">qtype =</span> <span class="st">"exact"</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt;                     title      issn romeocolour preprint  postprint    pdf</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; 1 Journal of Biogeography 0305-0270      yellow      can restricted cannot</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;   pre_embargo post_embargo pdf_embargo</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt; 1        &lt;NA&gt;    12 months        &lt;NA&gt;</span></a></code></pre></div>
-<p>the <code>qtype</code> argument indicates the type of query to make (<code>exact</code> for exact matching of the title, <code>contains</code> for partial matching and <code>starts with</code> to match only the beginning of the title).</p>
-<p>You can also retrieve a journal information using its ISSN:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">rromeo<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rromeo/topics/rr_journal_issn">rr_journal_issn</a></span>(<span class="st">"0305-0270"</span>)</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">rromeo<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rromeo/topics/rr_journal_name">rr_journal_name</a></span>(<span class="st">"Journal of Biogeography"</span>, <span class="dt">qtype =</span> <span class="st">"exact"</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">#&gt;                     title      issn romeocolour preprint  postprint    pdf</span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; 1 Journal of Biogeography 0305-0270      yellow      can restricted cannot</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;   pre_embargo post_embargo pdf_embargo</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; 1        &lt;NA&gt;    12 months        &lt;NA&gt;</span></a></code></pre></div>
+<p>the <code>qtype</code> argument indicates the type of query to make (<code>exact</code> for exact matching of the title, <code>contains</code> for partial matching and <code>starts with</code> to match only the beginning of the title).</p>
+<p>You can also retrieve a journal information using its ISSN:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">rromeo<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rromeo/topics/rr_journal_issn">rr_journal_issn</a></span>(<span class="st">"0305-0270"</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;                     title      issn romeocolour preprint  postprint    pdf</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt; 1 Journal of Biogeography 0305-0270      yellow      can restricted cannot</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;   pre_embargo post_embargo pdf_embargo</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; 1        &lt;NA&gt;    12 months        &lt;NA&gt;</span></a></code></pre></div>
 <p><code>rromeo</code> also provides a function to retrieve information based on publisher ID <code>rr_publisher()</code>.</p>
 <p>SHERPA/RoMEO provides a synthetic “colour” for each journal, the colour summarizes the editorial policy of a journal:</p>
 <table class="table table">
@@ -144,28 +152,20 @@
 </table>
 <p>(Table taken from <a href="http://www.sherpa.ac.uk/romeo/definitions.php#colours" class="uri">http://www.sherpa.ac.uk/romeo/definitions.php#colours</a>)</p>
 <p><code>rromeo</code> lets you retrieve the policies of all journals of a given colour using the function <code><a href="reference/rr_romeo_colour.html">rr_romeo_colour()</a></code> (<strong>NOTE:</strong> this function can be slow as there many journals to retrieve):</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">green_journals =<span class="st"> </span>rromeo<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rromeo/topics/rr_romeo_colour">rr_romeo_colour</a></span>(<span class="st">"green"</span>)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">green_journals[<span class="dv">8</span><span class="op">:</span><span class="dv">12</span>,]</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;    romeoid                      publisher                alias romeocolour</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; 8     1937          University of Arizona          Radiocarbon       green</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; 9     2951  Geological Society of America            GSA Today       green</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; 10    2521 University of California Press             Collabra       green</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; 11    2306     Optical Society of America  No Paid Open Access       green</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; 12    2305     Optical Society of America Open Access Journals       green</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt;    preprint postprint        pdf</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; 8       can       can restricted</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; 9       can       can        can</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; 10      can       can        can</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; 11      can       can     cannot</span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; 12      can       can        can</span></a></code></pre></div>
-</div>
-<div id="api-key" class="section level2">
-<h2 class="hasAnchor">
-<a href="#api-key" class="anchor"></a>API Key</h2>
-<p>Note that SHERPA/RoMEO lets you run 500 requests per day per IP address, by <a href="http://www.sherpa.ac.uk/romeo/apiregistry.php">registering for a free API key</a> you can bypass this limit.</p>
-<p><code>rromeo</code> can use your registered SHERPA/RoMEO API key; you can either pass it as a string when querying the data with the argument <code>key</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/rr_journal_name.html">rr_journal_name</a></span>(<span class="st">"Journal of Geology"</span>, <span class="dt">key =</span> <span class="st">"Iq83AIL5bss"</span>)</a></code></pre></div>
-<p>or you can specify the environment variable <code>SHERPAROMEO_KEY</code> in an <code>.Rprofile</code> or in an <code>.Renviron</code> file and <code>rromeo</code> will automatically retrieve the API key.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">green_journals =<span class="st"> </span>rromeo<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/rromeo/topics/rr_romeo_colour">rr_romeo_colour</a></span>(<span class="st">"green"</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">green_journals[<span class="dv">8</span><span class="op">:</span><span class="dv">12</span>,]</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt;    romeoid                                                   publisher</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">#&gt; 8     1128 Association for Information Science and Technology (ASIS&amp;T)</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">#&gt; 9     1937                                       University of Arizona</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt; 10    2951                               Geological Society of America</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; 11    2521                              University of California Press</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">#&gt; 12    2306                                  Optical Society of America</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt;                  alias romeocolour preprint postprint        pdf</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">#&gt; 8              JASIS&amp;T       green      can       can     cannot</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">#&gt; 9          Radiocarbon       green      can       can restricted</span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">#&gt; 10           GSA Today       green      can       can        can</span></a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt; 11            Collabra       green      can       can        can</span></a>
+<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">#&gt; 12 No Paid Open Access       green      can       can     cannot</span></a></code></pre></div>
 </div>
 <div id="dependency-network-imports-only" class="section level2">
 <h2 class="hasAnchor">
@@ -176,6 +176,12 @@
 <h2 class="hasAnchor">
 <a href="#dependency-network-imports-and-suggests" class="anchor"></a>Dependency network (Imports and Suggests)</h2>
 <p><img src="reference/figures/README-dependency_network_full-1.png" width="100%"></p>
+</div>
+<div id="contributing-to-rromeo" class="section level2">
+<h2 class="hasAnchor">
+<a href="#contributing-to-rromeo" class="anchor"></a>Contributing to <code>rromeo</code>
+</h2>
+<p>We welcome contribution to <code>rromeo</code>! Please read the <a href="CONTRIBUTING.html">contribution guidelines</a> if you want to contribute, as well as the below-mentioned Code of Conduct.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">

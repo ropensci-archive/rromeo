@@ -127,28 +127,20 @@ query. The function will warn you if you are in this case.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>rr_journal_name</span>(<span class='no'>name</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"exact"</span>, <span class='st'>"contains"</span>,
-  <span class='st'>"starts"</span>), <span class='kw'>key</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>rr_journal_name</span>(<span class='no'>name</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"exact"</span>, <span class='st'>"contains"</span>, <span class='st'>"starts"</span>),
+  <span class='kw'>key</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>name</th>
-      <td><p><code>character(1+)</code><br />
+      <td><p>[<code>character(1+)</code>]<br />
 one or several strings to match the titles of the journals</p></td>
     </tr>
     <tr>
-      <th>multiple</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code><br />
-If multiple results match your query, should the function
-recursively fetch data for each of one of them
-(<code>multiple = TRUE</code>) or return a data.frame containing only
-titles and ISSN of all matches (<code>multiple = FALSE</code>)</p></td>
-    </tr>
-    <tr>
       <th>qtype</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 in:
 * <code>"exact"</code> full title must be exactly to provided <code>name</code>,
 * <code>"contains"</code> the provided <code>name</code> must appear anywhere in the
@@ -158,7 +150,7 @@ title of the journal.</p></td>
     </tr>
     <tr>
       <th>key</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 a character string containing the API key or <code>NULL</code>
 (see Details section on how to specify it)</p></td>
     </tr>
@@ -166,33 +158,26 @@ a character string containing the API key or <code>NULL</code>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns a data frame if multiple journals are found and
-<code>multiple = FALSE</code>:</p><ul>
-<li><p><code>title</code>        <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+    <p>Returns a data.frame with complete information from journal:</p><ul>
+<li><p><code>title</code>        [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the name of the journal</p></li>
-<li><p><code>issn</code>         <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
-the ISSN of the journal
-if a single journal is found or if <code>multiple = TRUE</code> returns a larger
-data frame:</p></li>
-<li><p><code>title</code>        <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
-the name of the journal</p></li>
-<li><p><code>issn</code>         <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>issn</code>         [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the ISSN of the journal</p></li>
-<li><p><code>romeocolour</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>romeocolour</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the SHERPA/RoMEO colour of the journal</p></li>
-<li><p><code>preprint</code>     <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>preprint</code>     [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the preprint (not reviewed) archivable?</p></li>
-<li><p><code>postprint</code>    <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>postprint</code>    [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the postprint (reviewed but not formatted)?</p></li>
-<li><p><code>pdf</code>          <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pdf</code>          [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the publisher's version (reviewed and formatted)</p></li>
-<li><p><code>pre_embargo</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pre_embargo</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the preprint</p></li>
-<li><p><code>post_embargo</code> <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>post_embargo</code> [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the postprint</p></li>
-<li><p><code>pdf_embargo</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pdf_embargo</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the publisher's version</p></li>
 </ul>
@@ -200,29 +185,18 @@ archive the publisher's version</p></li>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>To provide your API key to <code>rromeo</code> you can:</p><ol>
-<li><p>provide it as a character string as the <code>key</code> arguments of <code>rromeo</code>
-functions as <code>rr_*(..., key = "my_key_as_a_string")</code> (<strong>NOT RECOMMENDED</strong>)</p></li>
-<li><p>you can define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Renviron</code> file in
-your working directory, the file should contain the following line
-<code>SHERPAROMEO_KEY=my_key_without_quotes</code></p></li>
-<li><p>you can also define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Rprofile</code> file
-in your working directory, the file should contain the following line
-<code>SHERPAROMEO_KEY="my_key_with_quotes"</code></p></li>
-</ol>
+    <p>There are several ways to provide your API key.
+The best way to know about them is to refer to the vignette about
+"Setting Up Your API key" accessible with the following command:
+<code><a href='../articles/setting_up_api_key.html'>vignette("setting_up_api_key", package = "rromeo")</a></code>.
+You can also use <code><a href='rr_auth.html'>rr_auth</a></code> that will use the provided key to store it as
+an environmental variable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Journal of Geology"</span>)</div><div class='output co'>#&gt;                title      issn romeocolour preprint postprint pdf pre_embargo
-#&gt; 1 Journal of Geology 0022-1376       green      can       can can        &lt;NA&gt;
-#&gt;   post_embargo pdf_embargo
-#&gt; 1         &lt;NA&gt;        &lt;NA&gt;</div><div class='input'><span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)</div><div class='output co'>#&gt; <span class='message'>5 journals match your query terms.</span></div><div class='output co'>#&gt; <span class='warning'>Warning: Select one journal from the provided list or enable multiple = TRUE</span></div><div class='output co'>#&gt;                                     title      issn
-#&gt; 1                            Biogeography 1345-0662
-#&gt; 2               Frontiers of Biogeography 1948-6596
-#&gt; 3         Global Ecology and Biogeography 1466-822X
-#&gt; 4 Global Ecology and Biogeography Letters 0960-7447
-#&gt; 5                 Journal of Biogeography 0305-0270</div><span class='co'># NOT RUN {</span>
-<span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Biogeography"</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Journal of Geology"</span>)
+<span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Biogeography"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)
 <span class='co'># You can also query multiple journals with exact titles in a single call</span>
 <span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Journal of Biogeography"</span>, <span class='st'>"PLoS ONE"</span>),
                 <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"exact"</span>)

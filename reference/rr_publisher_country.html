@@ -136,7 +136,7 @@ the ISO_3166-1_alpha-2 code of the country
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>country</th>
-      <td><p><code>character(1+)</code><br />
+      <td><p>[<code>character(1+)</code>]<br />
 one or a vector of ISO two-letter country code or <code>AA</code> for
 international publisher, <code>ZZ</code> for publisher of unknown
 countries and <code>__</code> for publishers without specified country
@@ -144,7 +144,7 @@ countries and <code>__</code> for publishers without specified country
     </tr>
     <tr>
       <th>key</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 a character string containing the API key or <code>NULL</code>
 (see Details section on how to specify it)</p></td>
     </tr>
@@ -153,22 +153,22 @@ a character string containing the API key or <code>NULL</code>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns a data frame with the following columns:</p><ul>
-<li><p><code>romeoid</code>     <code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer(1)</a></code><br />
+<li><p><code>romeoid</code>     [<code><a href='https://www.rdocumentation.org/packages/base/topics/integer'>integer(1)</a></code>]<br />
 the internal index of the publisher in the SHERPA/RoMEO
 database</p></li>
-<li><p><code>publisher</code>   <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>publisher</code>   [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the name of the publisher</p></li>
-<li><p><code>alias</code>       <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>alias</code>       [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable an alternative name of the publisher or the
 name of the specific publishing branch</p></li>
-<li><p><code>romeocolour</code> <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>romeocolour</code> [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 a colour assigned by the database that reflects the default
 policies of the publisher</p></li>
-<li><p><code>preprint</code>    <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>preprint</code>    [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the preprint (not reviewed) archivable?</p></li>
-<li><p><code>postprint</code>   <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>postprint</code>   [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the postprint (reviewed but not formatted) archivable?</p></li>
-<li><p><code>pdf</code>         <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pdf</code>         [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the publisher's version (reviewed and formatted)
 archivable?</p></li>
 </ul>
@@ -176,42 +176,22 @@ archivable?</p></li>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>To provide your API key to <code>rromeo</code> you can:</p><ol>
-<li><p>provide it as a character string as the <code>key</code> arguments of <code>rromeo</code>
-functions as <code>rr_*(..., key = "my_key_as_a_string")</code> (<strong>NOT RECOMMENDED</strong>)</p></li>
-<li><p>you can define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Renviron</code> file in
-your working directory, the file should contain the following line
-<code>SHERPAROMEO_KEY=my_key_without_quotes</code></p></li>
-<li><p>you can also define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Rprofile</code> file
-in your working directory, the file should contain the following line
-<code>SHERPAROMEO_KEY="my_key_with_quotes"</code></p></li>
-</ol>
+    <p>There are several ways to provide your API key.
+The best way to know about them is to refer to the vignette about
+"Setting Up Your API key" accessible with the following command:
+<code><a href='../articles/setting_up_api_key.html'>vignette("setting_up_api_key", package = "rromeo")</a></code>.
+You can also use <code><a href='rr_auth.html'>rr_auth</a></code> that will use the provided key to store it as
+an environmental variable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
 <span class='co'># Taiwan</span>
-<span class='fu'>rr_publisher_country</span>(<span class='st'>"TW"</span>)</div><div class='output co'>#&gt;   romeoid                                         publisher alias romeocolour
-#&gt; 1     232 Academia Sinica, Institute of Statistical Science  &lt;NA&gt;        blue
-#&gt;   preprint postprint        pdf
-#&gt; 1  unclear       can restricted</div><div class='input'><span class='co'># Egypt</span>
-<span class='fu'>rr_publisher_country</span>(<span class='st'>"EG"</span>)</div><div class='output co'>#&gt;   romeoid                                                             publisher
-#&gt; 1     100                                        Hindawi Publishing Corporation
-#&gt; 2    1409 International Foundation for Modern Education and Scientific Research
-#&gt; 3    1173                                             Modern Science Publishers
-#&gt;      alias romeocolour preprint postprint pdf
-#&gt; 1     &lt;NA&gt;       green      can       can can
-#&gt; 2 INFOMESR       green      can       can can
-#&gt; 3     &lt;NA&gt;        blue   cannot    cannot can</div><div class='input'><span class='fu'>rr_publisher_country</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"TW"</span>, <span class='st'>"EG"</span>))</div><div class='output co'>#&gt;   romeoid                                                             publisher
-#&gt; 1     232                     Academia Sinica, Institute of Statistical Science
-#&gt; 2     100                                        Hindawi Publishing Corporation
-#&gt; 3    1409 International Foundation for Modern Education and Scientific Research
-#&gt; 4    1173                                             Modern Science Publishers
-#&gt;      alias romeocolour preprint postprint        pdf
-#&gt; 1     &lt;NA&gt;        blue  unclear       can restricted
-#&gt; 2     &lt;NA&gt;       green      can       can        can
-#&gt; 3 INFOMESR       green      can       can        can
-#&gt; 4     &lt;NA&gt;        blue   cannot    cannot        can</div></pre>
+<span class='fu'>rr_publisher_country</span>(<span class='st'>"TW"</span>)
+<span class='co'># Egypt</span>
+<span class='fu'>rr_publisher_country</span>(<span class='st'>"EG"</span>)
+<span class='fu'>rr_publisher_country</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"TW"</span>, <span class='st'>"EG"</span>))
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -125,22 +125,22 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>parse_journal</span>(<span class='no'>xml_source</span>, <span class='no'>outcome</span>, <span class='no'>hits</span>, <span class='kw'>multiple</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>key</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>parse_journal</span>(<span class='no'>xml_source</span>, <span class='no'>outcome</span>, <span class='no'>hits</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"find"</span>, <span class='st'>"name"</span>),
+  <span class='kw'>key</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>multiple</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical(1)</a></code><br />
-If multiple results match your query, should the function
-recursively fetch data for each of one of them
-(<code>multiple = TRUE</code>) or return a data.frame containing only
-titles and ISSN of all matches (<code>multiple = FALSE</code>)</p></td>
+      <th>type</th>
+      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code> in <code><a href='https://www.rdocumentation.org/packages/base/topics/c'>c("find", "name")</a></code>]<br />
+If <code>type = "find"</code> returns only <code>title</code> and <code>issn</code> columns if
+<code>type = "name"</code> returns full data.frame as specified in Returns
+sections.</p></td>
     </tr>
     <tr>
       <th>key</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 a character string containing the API key or <code>NULL</code>
 (see Details section on how to specify it)</p></td>
     </tr>
@@ -149,25 +149,25 @@ a character string containing the API key or <code>NULL</code>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns a data.frame with the following columns:</p><ul>
-<li><p><code>title</code>        <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>title</code>        [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the name of the journal</p></li>
-<li><p><code>issn</code>         <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>issn</code>         [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the ISSN of the journal</p></li>
-<li><p><code>romeocolour</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>romeocolour</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the SHERPA/RoMEO colour of the journal</p></li>
-<li><p><code>preprint</code>     <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>preprint</code>     [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the preprint (not reviewed) archivable?</p></li>
-<li><p><code>postprint</code>    <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>postprint</code>    [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the postprint (reviewed but not formatted) archivable?</p></li>
-<li><p><code>pdf</code>          <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pdf</code>          [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the publisher's version (reviewed and formatted)</p></li>
-<li><p><code>pre_embargo</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pre_embargo</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the preprint</p></li>
-<li><p><code>post_embargo</code> <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>post_embargo</code> [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the postprint</p></li>
-<li><p><code>pdf_embargo</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pdf_embargo</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the publisher's version</p></li>
 </ul>

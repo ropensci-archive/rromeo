@@ -132,7 +132,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>key</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 a character string containing the API key or <code>NULL</code>
 (see Details section on how to specify it)</p></td>
     </tr>
@@ -144,16 +144,12 @@ a character string containing the API key or <code>NULL</code>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>To provide your API key to <code>rromeo</code> you can:</p><ol>
-<li><p>provide it as a character string as the <code>key</code> arguments of <code>rromeo</code>
-functions as <code>rr_*(..., key = "my_key_as_a_string")</code> (<strong>NOT RECOMMENDED</strong>)</p></li>
-<li><p>you can define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Renviron</code> file in
-your working directory, the file should contain the following line
-<code>SHERPAROMEO_KEY=my_key_without_quotes</code></p></li>
-<li><p>you can also define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Rprofile</code> file
-in your working directory, the file should contain the following line
-<code>SHERPAROMEO_KEY="my_key_with_quotes"</code></p></li>
-</ol>
+    <p>There are several ways to provide your API key.
+The best way to know about them is to refer to the vignette about
+"Setting Up Your API key" accessible with the following command:
+<code><a href='../articles/setting_up_api_key.html'>vignette("setting_up_api_key", package = "rromeo")</a></code>.
+You can also use <code><a href='rr_auth.html'>rr_auth</a></code> that will use the provided key to store it as
+an environmental variable.</p>
     
 
   </div>

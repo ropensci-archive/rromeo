@@ -134,12 +134,12 @@ the journal</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>issn</th>
-      <td><p><code>character(1+)</code><br />
+      <td><p>[<code>character(1+)</code>]<br />
 one or a vector of journal(s) ISSN(s)</p></td>
     </tr>
     <tr>
       <th>key</th>
-      <td><p><code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+      <td><p>[<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 a character string containing the API key or <code>NULL</code>
 (see Details section on how to specify it)</p></td>
     </tr>
@@ -147,26 +147,26 @@ a character string containing the API key or <code>NULL</code>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Returns a data.frame with the following columns:</p><ul>
-<li><p><code>title</code>        <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+    <p>Returns a data.frame with complete information from journal:</p><ul>
+<li><p><code>title</code>        [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the name of the journal</p></li>
-<li><p><code>issn</code>         <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>issn</code>         [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the ISSN of the journal</p></li>
-<li><p><code>romeocolour</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>romeocolour</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 the SHERPA/RoMEO colour of the journal</p></li>
-<li><p><code>preprint</code>     <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>preprint</code>     [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the preprint (not reviewed) archivable?</p></li>
-<li><p><code>postprint</code>    <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
-is the postprint (reviewed but not formatted) archivable?</p></li>
-<li><p><code>pdf</code>          <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>postprint</code>    [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
+is the postprint (reviewed but not formatted)?</p></li>
+<li><p><code>pdf</code>          [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 is the publisher's version (reviewed and formatted)</p></li>
-<li><p><code>pre_embargo</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pre_embargo</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the preprint</p></li>
-<li><p><code>post_embargo</code> <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>post_embargo</code> [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the postprint</p></li>
-<li><p><code>pdf_embargo</code>  <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code><br />
+<li><p><code>pdf_embargo</code>  [<code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character(1)</a></code>]<br />
 if applicable the embargo period before the author(s) can
 archive the publisher's version</p></li>
 </ul>
@@ -174,33 +174,19 @@ archive the publisher's version</p></li>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>To provide your API key to <code>rromeo</code> you can:</p><ol>
-<li><p>provide it as a character string as the <code>key</code> arguments of <code>rromeo</code>
-functions as <code>rr_*(..., key = "my_key_as_a_string")</code> (<strong>NOT RECOMMENDED</strong>)</p></li>
-<li><p>you can define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Renviron</code> file in
-your working directory, the file should contain the following line
-<code>SHERPAROMEO_KEY=my_key_without_quotes</code></p></li>
-<li><p>you can also define the variable <code>SHERPAROMEO_KEY</code> in an <code>.Rprofile</code> file
-in your working directory, the file should contain the following line
-<code>SHERPAROMEO_KEY="my_key_with_quotes"</code></p></li>
-</ol>
+    <p>There are several ways to provide your API key.
+The best way to know about them is to refer to the vignette about
+"Setting Up Your API key" accessible with the following command:
+<code><a href='../articles/setting_up_api_key.html'>vignette("setting_up_api_key", package = "rromeo")</a></code>.
+You can also use <code><a href='rr_auth.html'>rr_auth</a></code> that will use the provided key to store it as
+an environmental variable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>rr_journal_issn</span>(<span class='kw'>issn</span> <span class='kw'>=</span> <span class='st'>"1947-6264"</span>)</div><div class='output co'>#&gt;                                                       title      issn
-#&gt; 1 A Critical Introduction to Media and Communication Theory 1947-6264
-#&gt;   romeocolour preprint  postprint        pdf pre_embargo post_embargo
-#&gt; 1      yellow      can restricted restricted        &lt;NA&gt;    12 months
-#&gt;   pdf_embargo
-#&gt; 1   12 months</div><div class='input'><span class='fu'>rr_journal_issn</span>(<span class='kw'>issn</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"1947-6264"</span>, <span class='st'>"0030-1299"</span>))</div><div class='output co'>#&gt;                                                       title      issn
-#&gt; 1 A Critical Introduction to Media and Communication Theory 1947-6264
-#&gt; 2                                                     Oikos 0030-1299
-#&gt;   romeocolour preprint  postprint        pdf pre_embargo post_embargo
-#&gt; 1      yellow      can restricted restricted        &lt;NA&gt;    12 months
-#&gt; 2      yellow      can restricted     cannot        &lt;NA&gt;    12 months
-#&gt;   pdf_embargo
-#&gt; 1   12 months
-#&gt; 2        &lt;NA&gt;</div></pre>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>rr_journal_issn</span>(<span class='kw'>issn</span> <span class='kw'>=</span> <span class='st'>"1947-6264"</span>)
+<span class='fu'>rr_journal_issn</span>(<span class='kw'>issn</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"1947-6264"</span>, <span class='st'>"0030-1299"</span>))
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
