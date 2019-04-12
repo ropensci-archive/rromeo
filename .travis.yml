@@ -5,7 +5,7 @@ sudo: false
 cache: packages
 
 before_script:
-  - Rscript -e 'remotes::install_cran(c("covr", "pkgdown", "spelling", "miniCRAN", "igraph", "ggnetwork", "intergraph"))'
+  - Rscript -e 'remotes::install_cran(c("devtools", "covr", "pkgdown", "spelling", "miniCRAN", "igraph", "ggnetwork", "intergraph"))'
 
 matrix:
   include:
