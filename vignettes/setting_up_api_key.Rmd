@@ -99,7 +99,7 @@ You can then reload your session and check that `rromeo` managed to get your key
 check_key()
 ```
 
-Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://rekyt.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
+Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://ropensci.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
 
 
 ### Setting up your API key in an `.Renviron` file

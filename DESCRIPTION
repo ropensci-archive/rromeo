@@ -30,5 +30,5 @@ Suggests:
     mockery
 Language: en-US
 VignetteBuilder: knitr
-URL: https://github.com/Rekyt/rromeo
-BugReports: https://github.com/Rekyt/rromeo/issues
+URL: https://github.com/ropensci/rromeo
+BugReports: https://github.com/ropensci/rromeo/issues

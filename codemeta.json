@@ -7,8 +7,8 @@
   "identifier": "rromeo",
   "description": "Provides an R Client for SHERPA/RoMEO API\n  <http://www.sherpa.ac.uk/romeo/apimanual.php> which indexes policies of\n  journal regarding the archival of scientific manuscripts before and/or after\n  peer-review as well as formatted manuscripts.",
   "name": "rromeo: An R Client for SHERPA/RoMEO API",
-  "codeRepository": "https://github.com/Rekyt/rromeo",
-  "issueTracker": "https://github.com/Rekyt/rromeo/issues",
+  "codeRepository": "https://github.com/ropensci/rromeo",
+  "issueTracker": "https://github.com/ropensci/rromeo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.1.0",
   "programmingLanguage": {
@@ -98,6 +98,7 @@
       "@type": "SoftwareApplication",
       "identifier": "vcr",
       "name": "vcr",
+      "version": ">= 0.2.6",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -157,11 +158,47 @@
       "sameAs": "https://CRAN.R-project.org/package=xml2"
     }
   ],
-  "readme": "https://github.com/Rekyt/rromeo/blob/master/README.md",
-  "fileSize": "434.647KB",
+  "readme": "https://github.com/ropensci/rromeo/blob/master/README.md",
+  "fileSize": "748.824KB",
   "contIntegration": [
     "https://travis-ci.org/Rekyt/rromeo",
     "https://codecov.io/gh/Rekyt/rromeo"
   ],
-  "developmentStatus": "https://www.repostatus.org/#active"
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "review": {
+    "@type": "Review",
+    "url": "https://github.com/ropensci/onboarding/issues/285",
+    "provider": "http://ropensci.org"
+  },
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": "Matthias",
+          "familyName": "Grenié"
+        },
+        {
+          "@type": "Person",
+          "givenName": "Hugo",
+          "familyName": "Gruson"
+        }
+      ],
+      "name": "{rromeo}: An {R} Client for {SHERPA/RoMEO} {API}",
+      "url": "http://CRAN.R-project.org/package=rromeo"
+    },
+    {
+      "@type": "CreativeWork",
+      "datePublished": "2019",
+      "author": [
+        {
+          "@type": "Organization",
+          "name": "SHERPA/RoMEO"
+        }
+      ],
+      "url": "http://www.sherpa.ac.uk/romeo/",
+      "description": "Data released under the Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license"
+    }
+  ]
 }

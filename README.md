@@ -7,10 +7,10 @@
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Travis build
-status](https://travis-ci.org/Rekyt/rromeo.svg?branch=master)](https://travis-ci.org/Rekyt/rromeo)
+status](https://travis-ci.org/ropensci/rromeo.svg?branch=master)](https://travis-ci.org/ropensci/rromeo)
 [![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/Rekyt/rromeo?branch=master&svg=true)](https://ci.appveyor.com/project/Rekyt/rromeo)
-[![codecov](https://codecov.io/gh/Rekyt/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/Rekyt/rromeo)
+status](https://ci.appveyor.com/api/projects/status/github/ropensci/rromeo?branch=master&svg=true)](https://ci.appveyor.com/project/ropensci/rromeo)
+[![codecov](https://codecov.io/gh/ropensci/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/rromeo)
 [![](https://badges.ropensci.org/285_status.svg)](https://github.com/ropensci/onboarding/issues/285)
 
 `rromeo` is an R client for the [SHERPA/RoMEO
@@ -55,7 +55,7 @@ retrieve the API key.
 
 `rromeo` contains functions to retrieve data from the SHERPA/RoMEO API
 (for a complete overview please refer to the
-[vignette](https://rekyt.github.io/rromeo/articles/rromeo.html)). The
+[vignette](https://ropensci.github.io/rromeo/articles/rromeo.html)). The
 data is released under the [Creative Commons
 Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5)
 license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A

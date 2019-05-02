@@ -400,7 +400,7 @@ validate_country_code <- function(country) {
 
 #' rromeo User Agent
 rr_ua <- function() {
-  paste0("http://github.com/Rekyt/rromeo R package rromeo/v.",
+  paste0("http://github.com/ropensci/rromeo R package rromeo/v.",
          utils::packageVersion("rromeo"))
 }
 
