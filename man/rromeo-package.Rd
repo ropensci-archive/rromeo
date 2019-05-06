@@ -14,8 +14,8 @@ Provides an R Client for SHERPA/RoMEO API
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/Rekyt/rromeo}
-  \item Report bugs at \url{https://github.com/Rekyt/rromeo/issues}
+  \item \url{https://github.com/ropensci/rromeo}
+  \item Report bugs at \url{https://github.com/ropensci/rromeo/issues}
 }
 
 }

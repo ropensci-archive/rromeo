@@ -117,7 +117,7 @@ You can then check that your key has been found using `check_key()`:
 check_key()
 ```
 
-Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://rekyt.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
+Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](https://ropensci.github.io/rromeo/articles/rromeo.html) for usage of `rromeo` functions.
 
 
 ### Using the `key` function argument (**NOT RECOMMENDED**)
