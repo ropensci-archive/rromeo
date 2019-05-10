@@ -4,4 +4,7 @@ pkgdown_sha: ~
 articles:
   rromeo: rromeo.html
   setting_up_api_key: setting_up_api_key.html
+urls:
+  reference: https://ropensci.github.io/rromeo/reference
+  article: https://ropensci.github.io/rromeo/articles
 
