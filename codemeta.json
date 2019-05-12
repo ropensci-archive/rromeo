@@ -14,10 +14,10 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.3",
+    "version": "3.6.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.3 (2019-03-11)",
+  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
   "author": [
     {
       "@type": "Person",
@@ -159,7 +159,7 @@
     }
   ],
   "readme": "https://github.com/ropensci/rromeo/blob/master/README.md",
-  "fileSize": "470.4KB",
+  "fileSize": "500.387KB",
   "contIntegration": [
     "https://travis-ci.org/Rekyt/rromeo",
     "https://codecov.io/gh/Rekyt/rromeo"
@@ -186,7 +186,7 @@
         }
       ],
       "name": "{rromeo}: An {R} Client for {SHERPA/RoMEO} {API}",
-      "url": "http://CRAN.R-project.org/package=rromeo"
+      "url": "https://CRAN.R-project.org/package=rromeo"
     },
     {
       "@type": "CreativeWork",
