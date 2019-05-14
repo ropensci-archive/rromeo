@@ -6,6 +6,7 @@ cache: packages
 
 before_script:
   - Rscript -e 'remotes::install_cran(c("devtools", "covr", "pkgdown", "spelling", "miniCRAN", "igraph", "ggnetwork", "intergraph"))'
+  - Rscript -e 'remotes::install_github("ropensci/rotemplate")'
 
 matrix:
   include:
@@ -18,7 +19,6 @@ after_success:
   - Rscript -e 'library(covr); codecov()'
   - Rscript -e 'spelling::spell_check_package(vignettes = TRUE)'
 
-before_deploy: Rscript -e 'remotes::install_github("ropensci/rotemplate")'
 deploy:
   - provider: script
     script: Rscript -e 'pkgdown::deploy_site_github()'
