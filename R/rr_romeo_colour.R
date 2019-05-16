@@ -32,7 +32,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' rr_romeo_colour(romeo_colour = "green")
 #' }
 rr_romeo_colour <- rr_romeo_color <- function(

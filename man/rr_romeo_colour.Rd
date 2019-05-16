@@ -63,7 +63,7 @@ size than specific functions like [\code{rr_journal_name()}] or
 [\code{rr_publisher_id()}]
 }
 \examples{
-\dontrun{
+\donttest{
 rr_romeo_colour(romeo_colour = "green")
 }
 }

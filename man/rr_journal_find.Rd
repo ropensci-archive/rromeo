@@ -44,7 +44,7 @@ You can also use \code{\link{rr_auth}} that will use the provided key to store i
 an environmental variable.
 }
 \examples{
-\dontrun{
+\donttest{
 rr_journal_find(name = "Biostatistics", qtype = "contains")
 }
 

@@ -11,7 +11,7 @@
 #'
 #' @inherit check_key details
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' rr_journal_find(name = "Biostatistics", qtype = "contains")
 #' }
 #'

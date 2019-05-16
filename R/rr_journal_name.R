@@ -43,7 +43,7 @@
 #'
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' rr_journal_name(name = "Journal of Geology")
 #' rr_journal_name(name = "Biogeography", qtype = "contains")
 #' # You can also query multiple journals with exact titles in a single call
