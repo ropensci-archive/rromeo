@@ -183,13 +183,28 @@ an environmental variable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Journal of Geology"</span>)
-<span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Biogeography"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)
-<span class='co'># You can also query multiple journals with exact titles in a single call</span>
+    <pre class="examples"><div class='input'><span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Journal of Geology"</span>)</div><div class='output co'>#&gt;                title      issn romeocolour preprint postprint pdf pre_embargo
+#&gt; 1 Journal of Geology 0022-1376       green      can       can can        &lt;NA&gt;
+#&gt;   post_embargo pdf_embargo
+#&gt; 1         &lt;NA&gt;        &lt;NA&gt;</div><div class='input'><span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Biogeography"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"contains"</span>)</div><div class='output co'>#&gt; <span class='message'>5 journals match your query terms.</span></div><div class='output co'>#&gt; <span class='message'>Recursively fetching data from each journal. This may take some time...</span></div><div class='output co'>#&gt;                                     title      issn romeocolour preprint
+#&gt; 1                            Biogeography 1345-0662        &lt;NA&gt;     &lt;NA&gt;
+#&gt; 2               Frontiers of Biogeography 1948-6596        &lt;NA&gt;     &lt;NA&gt;
+#&gt; 3         Global Ecology and Biogeography 1466-822X      yellow      can
+#&gt; 4 Global Ecology and Biogeography Letters 0960-7447        &lt;NA&gt;     &lt;NA&gt;
+#&gt; 5                 Journal of Biogeography 0305-0270      yellow      can
+#&gt;    postprint    pdf pre_embargo post_embargo pdf_embargo
+#&gt; 1       &lt;NA&gt;   &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
+#&gt; 2       &lt;NA&gt;   &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
+#&gt; 3 restricted cannot        &lt;NA&gt;    12 months        &lt;NA&gt;
+#&gt; 4       &lt;NA&gt;   &lt;NA&gt;        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;
+#&gt; 5 restricted cannot        &lt;NA&gt;    12 months        &lt;NA&gt;</div><div class='input'><span class='co'># You can also query multiple journals with exact titles in a single call</span>
 <span class='fu'>rr_journal_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Journal of Biogeography"</span>, <span class='st'>"PLoS ONE"</span>),
-                <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"exact"</span>)
-<span class='co'># }</span></pre>
+                <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"exact"</span>)</div><div class='output co'>#&gt;                     title      issn romeocolour preprint  postprint    pdf
+#&gt; 1 Journal of Biogeography 0305-0270      yellow      can restricted cannot
+#&gt; 2                PLoS ONE 1932-6203       green      can        can    can
+#&gt;   pre_embargo post_embargo pdf_embargo
+#&gt; 1        &lt;NA&gt;    12 months        &lt;NA&gt;
+#&gt; 2        &lt;NA&gt;         &lt;NA&gt;        &lt;NA&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

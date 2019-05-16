@@ -172,11 +172,103 @@ an environmental variable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>rr_publisher_continent</span>(<span class='kw'>continent</span> <span class='kw'>=</span> <span class='st'>"Caribbean"</span>)
-<span class='fu'>rr_publisher_continent</span>(<span class='kw'>continent</span> <span class='kw'>=</span> <span class='st'>"Central America"</span>)
-<span class='fu'>rr_publisher_continent</span>(<span class='kw'>continent</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Caribbean"</span>, <span class='st'>"Central America"</span>))
-<span class='co'># }</span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>rr_publisher_continent</span>(<span class='kw'>continent</span> <span class='kw'>=</span> <span class='st'>"Caribbean"</span>)</div><div class='output co'>#&gt;    romeoid
+#&gt; 1     2192
+#&gt; 2     2687
+#&gt; 3     2614
+#&gt; 4     1371
+#&gt; 5     1717
+#&gt; 6     2942
+#&gt; 7     2815
+#&gt; 8     2034
+#&gt; 9     1280
+#&gt; 10    1505
+#&gt; 11    2620
+#&gt;                                                                                                                     publisher
+#&gt; 1                                                                             Instituto de Investigaciones de Sanidad Vegetal
+#&gt; 2                               Instituto Superior Politécnico José Antonio Echeverría-Cujae, Facultad de Ingeniería Mecánica
+#&gt; 3                                        Sistema Universitario Ana G. Mendez. Universidad Metropolitana, Escuela de Educación
+#&gt; 4                                                                                                   Sociedad Cubana de Física
+#&gt; 5                                                                                Sociedad Cubana de Neurología y Neurocirugía
+#&gt; 6  Universidad Central Marta Abreu de Las Villas, Facultad de Ciencias Agropecuarias, Centro de Investigaciones Agropecuarias
+#&gt; 7                                                                              Universidad de La Habana, Facultad de Biologia
+#&gt; 8                                                                                    Universidad de las Ciencias Informaticas
+#&gt; 9                                                                   Universidad de Las Tunas, Centro de Estudios de Didáctica
+#&gt; 10                                                                                                     Universidad de Oriente
+#&gt; 11                                                                    Universidad de Puerto Rico, Recinto de Ciencias Médicas
+#&gt;    alias romeocolour preprint postprint  pdf
+#&gt; 1   &lt;NA&gt;       green      can       can  can
+#&gt; 2   &lt;NA&gt;        blue   cannot       can  can
+#&gt; 3   &lt;NA&gt;       green      can    cannot  can
+#&gt; 4   &lt;NA&gt;       green      can       can &lt;NA&gt;
+#&gt; 5   &lt;NA&gt;        blue   cannot    cannot  can
+#&gt; 6   &lt;NA&gt;        blue   cannot    cannot  can
+#&gt; 7   &lt;NA&gt;       green      can       can  can
+#&gt; 8   &lt;NA&gt;        blue   cannot    cannot  can
+#&gt; 9   &lt;NA&gt;       green      can       can  can
+#&gt; 10  &lt;NA&gt;       green      can       can &lt;NA&gt;
+#&gt; 11  &lt;NA&gt;       green      can       can  can</div><div class='input'><span class='fu'>rr_publisher_continent</span>(<span class='kw'>continent</span> <span class='kw'>=</span> <span class='st'>"Central America"</span>)</div><div class='output co'>#&gt;   romeoid                                                      publisher alias
+#&gt; 1     798                         Asociacion Nicaraguense de Entomologia  &lt;NA&gt;
+#&gt; 2    2243                Colegio Profesional de Psicologos de Costa Rica  &lt;NA&gt;
+#&gt; 3    1364                                      Universidad de Costa Rica  &lt;NA&gt;
+#&gt; 4     939 Universidad de Costa Rica, Centro Centroamericano de Población  &lt;NA&gt;
+#&gt; 5    1728                             Universidad Nacional de Costa Rica  &lt;NA&gt;
+#&gt;   romeocolour preprint postprint  pdf
+#&gt; 1        blue   cannot       can  can
+#&gt; 2        blue   cannot       can  can
+#&gt; 3       green      can       can  can
+#&gt; 4        blue   cannot       can &lt;NA&gt;
+#&gt; 5       green      can       can  can</div><div class='input'><span class='fu'>rr_publisher_continent</span>(<span class='kw'>continent</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"Caribbean"</span>, <span class='st'>"Central America"</span>))</div><div class='output co'>#&gt;    romeoid
+#&gt; 1     2192
+#&gt; 2     2687
+#&gt; 3     2614
+#&gt; 4     1371
+#&gt; 5     1717
+#&gt; 6     2942
+#&gt; 7     2815
+#&gt; 8     2034
+#&gt; 9     1280
+#&gt; 10    1505
+#&gt; 11    2620
+#&gt; 12     798
+#&gt; 13    2243
+#&gt; 14    1364
+#&gt; 15     939
+#&gt; 16    1728
+#&gt;                                                                                                                     publisher
+#&gt; 1                                                                             Instituto de Investigaciones de Sanidad Vegetal
+#&gt; 2                               Instituto Superior Politécnico José Antonio Echeverría-Cujae, Facultad de Ingeniería Mecánica
+#&gt; 3                                        Sistema Universitario Ana G. Mendez. Universidad Metropolitana, Escuela de Educación
+#&gt; 4                                                                                                   Sociedad Cubana de Física
+#&gt; 5                                                                                Sociedad Cubana de Neurología y Neurocirugía
+#&gt; 6  Universidad Central Marta Abreu de Las Villas, Facultad de Ciencias Agropecuarias, Centro de Investigaciones Agropecuarias
+#&gt; 7                                                                              Universidad de La Habana, Facultad de Biologia
+#&gt; 8                                                                                    Universidad de las Ciencias Informaticas
+#&gt; 9                                                                   Universidad de Las Tunas, Centro de Estudios de Didáctica
+#&gt; 10                                                                                                     Universidad de Oriente
+#&gt; 11                                                                    Universidad de Puerto Rico, Recinto de Ciencias Médicas
+#&gt; 12                                                                                     Asociacion Nicaraguense de Entomologia
+#&gt; 13                                                                            Colegio Profesional de Psicologos de Costa Rica
+#&gt; 14                                                                                                  Universidad de Costa Rica
+#&gt; 15                                                             Universidad de Costa Rica, Centro Centroamericano de Población
+#&gt; 16                                                                                         Universidad Nacional de Costa Rica
+#&gt;    alias romeocolour preprint postprint  pdf
+#&gt; 1   &lt;NA&gt;       green      can       can  can
+#&gt; 2   &lt;NA&gt;        blue   cannot       can  can
+#&gt; 3   &lt;NA&gt;       green      can    cannot  can
+#&gt; 4   &lt;NA&gt;       green      can       can &lt;NA&gt;
+#&gt; 5   &lt;NA&gt;        blue   cannot    cannot  can
+#&gt; 6   &lt;NA&gt;        blue   cannot    cannot  can
+#&gt; 7   &lt;NA&gt;       green      can       can  can
+#&gt; 8   &lt;NA&gt;        blue   cannot    cannot  can
+#&gt; 9   &lt;NA&gt;       green      can       can  can
+#&gt; 10  &lt;NA&gt;       green      can       can &lt;NA&gt;
+#&gt; 11  &lt;NA&gt;       green      can       can  can
+#&gt; 12  &lt;NA&gt;        blue   cannot       can  can
+#&gt; 13  &lt;NA&gt;        blue   cannot       can  can
+#&gt; 14  &lt;NA&gt;       green      can       can  can
+#&gt; 15  &lt;NA&gt;        blue   cannot       can &lt;NA&gt;
+#&gt; 16  &lt;NA&gt;       green      can       can  can</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

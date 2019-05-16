@@ -174,13 +174,24 @@ an environmental variable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='co'># Taiwan</span>
-<span class='fu'>rr_publisher_country</span>(<span class='st'>"TW"</span>)
-<span class='co'># Egypt</span>
-<span class='fu'>rr_publisher_country</span>(<span class='st'>"EG"</span>)
-<span class='fu'>rr_publisher_country</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"TW"</span>, <span class='st'>"EG"</span>))
-<span class='co'># }</span></pre>
+    <pre class="examples"><div class='input'><span class='co'># Taiwan</span>
+<span class='fu'>rr_publisher_country</span>(<span class='st'>"TW"</span>)</div><div class='output co'>#&gt;   romeoid                                         publisher alias romeocolour
+#&gt; 1     232 Academia Sinica, Institute of Statistical Science  &lt;NA&gt;        blue
+#&gt;   preprint postprint        pdf
+#&gt; 1  unclear       can restricted</div><div class='input'><span class='co'># Egypt</span>
+<span class='fu'>rr_publisher_country</span>(<span class='st'>"EG"</span>)</div><div class='output co'>#&gt;   romeoid                                                             publisher
+#&gt; 1    1409 International Foundation for Modern Education and Scientific Research
+#&gt; 2    1173                                             Modern Science Publishers
+#&gt;      alias romeocolour preprint postprint pdf
+#&gt; 1 INFOMESR       green      can       can can
+#&gt; 2     &lt;NA&gt;        blue   cannot    cannot can</div><div class='input'><span class='fu'>rr_publisher_country</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"TW"</span>, <span class='st'>"EG"</span>))</div><div class='output co'>#&gt;   romeoid                                                             publisher
+#&gt; 1     232                     Academia Sinica, Institute of Statistical Science
+#&gt; 2    1409 International Foundation for Modern Education and Scientific Research
+#&gt; 3    1173                                             Modern Science Publishers
+#&gt;      alias romeocolour preprint postprint        pdf
+#&gt; 1     &lt;NA&gt;        blue  unclear       can restricted
+#&gt; 2 INFOMESR       green      can       can        can
+#&gt; 3     &lt;NA&gt;        blue   cannot    cannot        can</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

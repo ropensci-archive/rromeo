@@ -181,11 +181,84 @@ an environmental variable.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>rr_publisher_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Optical Society"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"all"</span>)
-<span class='fu'>rr_publisher_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Swiss Chemistry"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"any"</span>)
-<span class='fu'>rr_publisher_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Swiss Chemistry"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"exact"</span>)
-<span class='co'># }</span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>rr_publisher_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Optical Society"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"all"</span>)</div><div class='output co'>#&gt;   romeoid                                          publisher alias romeocolour
+#&gt; 1     219                           European Optical Society  &lt;NA&gt;        blue
+#&gt; 2     108                         Optical Society of America  &lt;NA&gt;       green
+#&gt; 3     127 Society of Photo-optical Instrumentation Engineers  SPIE       green
+#&gt;   preprint postprint    pdf
+#&gt; 1  unclear       can   &lt;NA&gt;
+#&gt; 2      can       can cannot
+#&gt; 3      can       can    can</div><div class='input'><span class='fu'>rr_publisher_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Swiss Chemistry"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"any"</span>)</div><div class='output co'>#&gt;    romeoid
+#&gt; 1     2677
+#&gt; 2      318
+#&gt; 3      113
+#&gt; 4      195
+#&gt; 5     2049
+#&gt; 6       84
+#&gt; 7       43
+#&gt; 8      452
+#&gt; 9     2118
+#&gt; 10      63
+#&gt; 11    1649
+#&gt; 12    2612
+#&gt; 13     411
+#&gt; 14     440
+#&gt; 15    3020
+#&gt; 16     673
+#&gt;                                                                                                 publisher
+#&gt; 1                                                    Academia de Stiinte a Moldovei, Institutul de Chimie
+#&gt; 2                                                             American Association for Clinical Chemistry
+#&gt; 3                                                 American Society for Biochemistry and Molecular Biology
+#&gt; 4                                                                                       Chemistry Central
+#&gt; 5                                                                         EMH Schweizerischer Arzteverlag
+#&gt; 6                                                       International Union of Pure and Applied Chemistry
+#&gt; 7                                                                           Internet Journal of Chemistry
+#&gt; 8                                          Japan Society for Bioscience, Biotechnology, and Agrochemistry
+#&gt; 9                                                                                  Nihon Bunseki Kagakkai
+#&gt; 10                                                                             Royal Society of Chemistry
+#&gt; 11  Russian Academy of Sciences, Siberian Branch, Siberian Institute of Plant Physiology and Biochemistry
+#&gt; 12                                                                                                   SBBq
+#&gt; 13                                                                  Schweizerische Chemische Gesellschaft
+#&gt; 14                                                Society of Environmental Toxicology and Chemistry Press
+#&gt; 15                                                                               Swiss Medical Press GmbH
+#&gt; 16 Universidade Federal de Mato Grosso do Sul, Department of Chemistry, Center for Science and Technology
+#&gt;                                                       alias romeocolour
+#&gt; 1    Academy of Sciences of Moldova, Institute of Chemistry       green
+#&gt; 2                                                      &lt;NA&gt;      yellow
+#&gt; 3                                                      &lt;NA&gt;       green
+#&gt; 4                                                      &lt;NA&gt;       green
+#&gt; 5                              EMH Swiss Medical Publishers       green
+#&gt; 6                                                      &lt;NA&gt;        blue
+#&gt; 7                                                      &lt;NA&gt;       green
+#&gt; 8  &amp;#26085;&amp;#26412;&amp;#36786;&amp;#33464;&amp;#21270;&amp;#23398;&amp;#20250;       white
+#&gt; 9                    Japan Society for Analytical Chemistry        blue
+#&gt; 10                                                     &lt;NA&gt;      yellow
+#&gt; 11                                                     &lt;NA&gt;       green
+#&gt; 12 Brazilian Society for Biochemistry and Molecular Biology       green
+#&gt; 13                                  Swiss Chemistry Society       white
+#&gt; 14                                                    SETAC       white
+#&gt; 15                                                     &lt;NA&gt;       green
+#&gt; 16                                                     &lt;NA&gt;       green
+#&gt;    preprint  postprint        pdf
+#&gt; 1       can        can        can
+#&gt; 2       can restricted     cannot
+#&gt; 3       can        can restricted
+#&gt; 4       can        can        can
+#&gt; 5       can        can        can
+#&gt; 6    cannot     cannot        can
+#&gt; 7       can        can     cannot
+#&gt; 8   unclear restricted       &lt;NA&gt;
+#&gt; 9   unclear     cannot        can
+#&gt; 10      can restricted     cannot
+#&gt; 11      can        can        can
+#&gt; 12      can        can        can
+#&gt; 13  unclear     cannot restricted
+#&gt; 14   cannot     cannot       &lt;NA&gt;
+#&gt; 15      can        can        can
+#&gt; 16      can        can       &lt;NA&gt;</div><div class='input'><span class='fu'>rr_publisher_name</span>(<span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"Swiss Chemistry"</span>, <span class='kw'>qtype</span> <span class='kw'>=</span> <span class='st'>"exact"</span>)</div><div class='output co'>#&gt;   romeoid                             publisher                   alias
+#&gt; 1     411 Schweizerische Chemische Gesellschaft Swiss Chemistry Society
+#&gt;   romeocolour preprint postprint        pdf
+#&gt; 1       white  unclear    cannot restricted</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
