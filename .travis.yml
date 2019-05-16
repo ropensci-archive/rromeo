@@ -8,12 +8,18 @@ before_script:
   - Rscript -e 'remotes::install_cran(c("devtools", "covr", "pkgdown", "spelling", "miniCRAN", "igraph", "ggnetwork", "intergraph"))'
   - Rscript -e 'remotes::install_github("ropensci/rotemplate")'
 
+r:
+  - oldrel
+  - devel
+os:
+  - linux
 matrix:
   include:
-    - os: linux
-      r: release
-    - os: osx
-      r: release
+    - r: release
+      os: osx
+    - r: release
+      os: linux
+      env: DEPLOY=true
 
 after_success:
   - Rscript -e 'library(covr); codecov()'
@@ -25,4 +31,4 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
-      condition: $TRAVIS_OS_NAME = linux
+      condition: "$DEPLOY = true"
