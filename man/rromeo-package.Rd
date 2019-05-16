@@ -4,9 +4,10 @@
 \name{rromeo-package}
 \alias{rromeo}
 \alias{rromeo-package}
-\title{rromeo: An R Client for SHERPA/RoMEO API}
+\title{rromeo: Access publisher copyright policies & self-archiving via the 
+  'SHERPA/RoMEO' API}
 \description{
-Provides an R Client for SHERPA/RoMEO API
+Fetches information from the 'SHERPA/RoMEO' API
   <http://www.sherpa.ac.uk/romeo/apimanual.php> which indexes policies of
   journal regarding the archival of scientific manuscripts before and/or after
   peer-review as well as formatted manuscripts.

@@ -1,6 +1,7 @@
 Package: rromeo
 Type: Package
-Title: An R Client for SHERPA/RoMEO API
+Title: Access Publisher Copyright & Self-Archiving Policies via the 
+  'SHERPA/RoMEO' API
 Version: 0.1.0
 Authors@R: c(
   person("Matthias", "Grenié", email = "matthias.grenie@gmail.com",
@@ -8,7 +9,7 @@ Authors@R: c(
   person("Hugo", "Gruson",
          role = "aut", comment = c(ORCID = "0000-0002-4094-1476"))
   )
-Description: Provides an R Client for SHERPA/RoMEO API
+Description: Fetches information from the 'SHERPA/RoMEO' API
   <http://www.sherpa.ac.uk/romeo/apimanual.php> which indexes policies of
   journal regarding the archival of scientific manuscripts before and/or after
   peer-review as well as formatted manuscripts.
