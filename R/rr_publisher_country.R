@@ -17,7 +17,7 @@
 #'
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' # Taiwan
 #' rr_publisher_country("TW")
 #' # Egypt

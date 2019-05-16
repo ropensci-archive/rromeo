@@ -12,7 +12,7 @@
 #' @inherit check_key details
 #'
 #' @export
-#' @examples \dontrun{
+#' @examples \donttest{
 #' rr_publisher_id(id = 55)
 #' rr_publisher_id(id = c(55, 735))
 #' }

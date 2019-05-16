@@ -10,7 +10,7 @@ rr_api_version()
 This function queries SHERPA/RoMEO and returns the version of the API.
 }
 \examples{
-\dontrun{
+\donttest{
 rr_api_version()
 }
 }

@@ -62,7 +62,7 @@ You can also use \code{\link{rr_auth}} that will use the provided key to store i
 an environmental variable.
 }
 \examples{
-\dontrun{
+\donttest{
 rr_journal_name(name = "Journal of Geology")
 rr_journal_name(name = "Biogeography", qtype = "contains")
 # You can also query multiple journals with exact titles in a single call

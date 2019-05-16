@@ -22,7 +22,7 @@
 #'
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' rr_publisher_name(name = "Optical Society", qtype = "all")
 #' rr_publisher_name(name = "Swiss Chemistry", qtype = "any")
 #' rr_publisher_name(name = "Swiss Chemistry", qtype = "exact")

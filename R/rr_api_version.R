@@ -5,7 +5,7 @@
 #' @importFrom xml2 xml_attr
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' rr_api_version()
 #' }
 rr_api_version <- function() {

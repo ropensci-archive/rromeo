@@ -18,7 +18,7 @@
 #'
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' rr_publisher_continent(continent = "Caribbean")
 #' rr_publisher_continent(continent = "Central America")
 #' rr_publisher_continent(continent = c("Caribbean", "Central America"))

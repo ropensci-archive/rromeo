@@ -13,7 +13,7 @@
 #'
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' rr_journal_issn(issn = "1947-6264")
 #' rr_journal_issn(issn = c("1947-6264", "0030-1299"))
 #' }
