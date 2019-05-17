@@ -11,6 +11,9 @@ status](https://travis-ci.org/ropensci/rromeo.svg?branch=master)](https://travis
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/ropensci/rromeo?branch=master&svg=true)](https://ci.appveyor.com/project/ropensci/rromeo)
 [![codecov](https://codecov.io/gh/ropensci/rromeo/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/rromeo)
+[![cran
+checks](https://cranchecks.info/badges/summary/rromeo)](https://cran.r-project.org/web/checks/check_results_rromeo.html)
+[![CRAN-version](https://www.r-pkg.org/badges/version/rromeo)](https://cran.r-project.org/package=rromeo)
 [![](https://badges.ropensci.org/285_status.svg)](https://github.com/ropensci/onboarding/issues/285)
 
 `rromeo` is an R client for the [SHERPA/RoMEO
