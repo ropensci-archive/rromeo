@@ -1,7 +1,5 @@
-rromeo 0.1.0 (2019-05-17)
+# rromeo 0.1.0
 
-=====================
-
-### NEW FEATURES
+## NEW FEATURES
 
 * released to CRAN
