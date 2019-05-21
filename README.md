@@ -28,8 +28,14 @@ fields.
 
 ## Install
 
-`rromeo` is not yet on CRAN but you can install the development version
-of `rromeo` with:
+The latest stable release of `rromeo` is available on CRAN and can be
+installed with:
+
+``` r
+install.packages("rromeo")
+```
+
+You can also install the development version from GitHub:
 
 ``` r
 # install.packages("remotes")
