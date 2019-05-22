@@ -115,7 +115,7 @@ journal:
 
 `rromeo` lets you retrieve the policies of all journals of a given
 colour using the function `rr_romeo_colour()` (**NOTE:** this function
-can be slow as there many journals to retrieve):
+can be slow as there are many journals to retrieve):
 
 ``` r
 green_journals = rromeo::rr_romeo_colour("green")

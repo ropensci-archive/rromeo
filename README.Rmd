@@ -78,7 +78,7 @@ SHERPA/RoMEO provides a synthetic "colour" for each journal, the colour summariz
   
 (Table taken from <http://www.sherpa.ac.uk/romeo/definitions.php#colours>)
 
-`rromeo` lets you retrieve the policies of all journals of a given colour using the function `rr_romeo_colour()` (**NOTE:** this function can be slow as there many journals to retrieve):
+`rromeo` lets you retrieve the policies of all journals of a given colour using the function `rr_romeo_colour()` (**NOTE:** this function can be slow as there are many journals to retrieve):
 
 ```{r example_rr_romeo_colour}
 green_journals = rromeo::rr_romeo_colour("green")
