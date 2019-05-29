@@ -9,6 +9,7 @@ reference:
   contents:
   - '`check_key`'
   - '`rr_api_version`'
+  - '`rr_auth`'
 - title: Journal Functions
   desc: >
     Functions to access journals' policies
