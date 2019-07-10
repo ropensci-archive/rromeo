@@ -144,15 +144,12 @@ green_journals[8:12,]
 
 ## Contributing to `rromeo`
 
-We welcome contribution to `rromeo`\! Please read the [contribution
-guidelines](.github/CONTRIBUTING.md) if you want to contribute, as well
-as the below-mentioned Code of Conduct.
+We welcome contribution to `rromeo`\! Please read the [contribution guidelines](https://docs.ropensci.org/rromeo/CONTRIBUTING.html) if you want to 
+contribute, as well as the below-mentioned Code of Conduct.
 
 ## Code of Conduct
 
-Please note that the `rromeo` project is released with a [Contributor
-Code of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this
-project, you agree to abide by its
-terms.
+Please note that the `rromeo` project is released with a [Contributor Code of Conduct](https://docs.ropensci.org/rromeo/CODE_OF_CONDUCT.html). By contributing
+to this project, you agree to abide by its terms.
 
 [![ropensci\_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)
