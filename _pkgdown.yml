@@ -3,6 +3,12 @@ url: https://ropensci.github.io/rromeo
 template:
   package: rotemplate
 
+authors:
+  Matthias Grenié:
+    href: https://rekyt.github.io/
+  Hugo Gruson:
+    href: https://www.normalesup.org/~hgruson/
+
 reference:
 - title: Utility functions
   desc: ~
