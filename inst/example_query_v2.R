@@ -10,7 +10,7 @@ pub_data = GET("https://v2.sherpa.ac.uk/cgi/retrieve",
                  "api-key"   = api_key)) %>%
   content()
 
-# Publisher Poilicy
+# Publisher Policy
 str(pub_data$items[[1]]$policies)
 
 # An example to extract permitted oa location
@@ -29,7 +29,7 @@ str(pub_data$items[[1]]$publications[[1]])
 
 pol_data = GET("https://v2.sherpa.ac.uk/cgi/retrieve",
                add_headers("user-agent" = rr_ua()),
-               query = list("item-type" = "publisher",
+               query = list("item-type" = "publisher_policy",
                             format      = "Json",
                             limit       = 10,
                             "api-key"   = api_key)) %>%
@@ -41,7 +41,13 @@ str(pol_data$items[[1]])
 
 # Publication Data -------------------------------------------------------------
 
-
+journal_data = GET("https://v2.sherpa.ac.uk/cgi/retrieve",
+               add_headers("user-agent" = rr_ua()),
+               query = list("item-type" = "publication",
+                            format      = "Json",
+                            limit       = 10,
+                            "api-key"   = api_key)) %>%
+  content()
 
 # Single journal info
 str(journal_data$items[[1]], max.level = 1)
@@ -51,6 +57,43 @@ journal_data$items[[1]]$publishers
 
 # Last modified date and system data
 journal_data$items[[1]]$system_metadata
+
+
+parse_journal_data = function(journal_dat) {
+  journal_df_list = lapply(journal_dat$items, parse_journal_single_item)
+
+  do.call(rbind, journal_df_list)
+}
+
+parse_journal_single_item = function(single_journal_item) {
+
+  journal_id    = single_journal_item$id
+  journal_title = single_journal_item$title[[1]]$title
+  journal_issn  = single_journal_item$issns[[1]]$issn
+
+  journal_policies = single_journal_item$publisher_policy[[1]]
+
+  journal_authorized_oa = lapply(journal_policies$permitted_oa, function(x) {
+
+    list(version = x$article_version[[1]],
+         embargo = x$embargo)
+  })
+
+  journal_versions = lapply(journal_authorized_oa, function(y) y$version)
+
+  journal_preprint = ifelse("submitted" %in% journal_versions, "yes", "no")
+  journal_postprint = ifelse("accepted" %in% journal_versions, "yes", "no")
+  journal_published = ifelse("published" %in% journal_versions, "yes", "no")
+
+  data.frame(
+    id        = journal_id,
+    title     = journal_title,
+    issn      = journal_issn,
+    preprint  = journal_preprint,
+    postprint = journal_postprint,
+    published = journal_published
+  )
+}
 
 
 # Funder data ------------------------------------------------------------------
