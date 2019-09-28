@@ -6,7 +6,7 @@ test_that("rr_journal_find() works", {
 
     expect_is(res, "data.frame")
 
-    expect_named(res, c("title", "issn"))
+    expect_named(res, c("title", "provided_issn", "issn"))
     expect_equal(res$issn, "0091-7613")
   })
 
@@ -27,8 +27,8 @@ test_that("rr_journal_find() works", {
 
     expect_is(res, "data.frame")
 
-    expect_named(res, c("title", "issn"))
-    expect_equal(dim(res), c(5, 2))
+    expect_named(res, c("title", "provided_issn", "issn"))
+    expect_equal(dim(res), c(5, 3))
     expect_equal(res$title[1], "Biogeography")
     expect_equal(res$issn[1], "1345-0662")
   })
@@ -40,10 +40,11 @@ test_that("rr_journal_find() works", {
 
     expect_is(res, "data.frame")
 
-    expect_equal(dim(res), c(2, 2))
-    expect_named(res, c("title", "issn"))
+    expect_equal(dim(res), c(2, 3))
+    expect_named(res, c("title", "provided_issn", "issn"))
 
     expect_is(res$title, "character")
+    expect_is(res$provided_issn, "character")
     expect_is(res$issn, "character")
     expect_equal(res$issn[[1]], "0305-0270")
     expect_equal(res$issn[[2]], "1932-6203")

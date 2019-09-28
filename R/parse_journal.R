@@ -57,9 +57,12 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
 
     title <- xml_text(xml_find_first(xml_source, "//jtitle"))
     issn <- xml_text(xml_find_first(xml_source, "//issn"))
+    # Find provided ISSN
+    provided_issn <- xml_text(xml_find_first(
+      xml_source, "//parameter[parametername='issn']/parametervalue"))
 
     if (type == "find") {
-      return(data.frame(title, issn,
+      return(data.frame(title, provided_issn, issn,
                         stringsAsFactors = FALSE))
     } else {
       romeocolour <- xml_text(xml_find_first(xml_source, "//romeocolour"))
@@ -78,7 +81,7 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
       post_embargo <- parse_embargo(xml_source, "post")
       pdf_embargo <- parse_embargo(xml_source, "pdf")
 
-      return(data.frame(title, issn, romeocolour,
+      return(data.frame(title, provided_issn, issn, romeocolour,
                         preprint,    postprint,    pdf,
                         pre_embargo, post_embargo, pdf_embargo,
                         stringsAsFactors = FALSE))
@@ -98,8 +101,12 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
 
     journals <- xml_text(xml_find_all(xml_source, "//jtitle"))
     issns <- xml_text(xml_find_all(xml_source, "//issn"))
+    provided_issns <- xml_text(xml_find_first(
+      xml_source, "//parameter[parametername='issn']/parametervalue"))
+    provided_issns <- ifelse(is.na(provided_issns), rep(NA, length(issns)))
 
     journal_df <- data.frame(title = journals,
+                             provided_issn = provided_issns,
                              issn  = issns,
                              stringsAsFactors = FALSE)
     journal_df[journal_df == ""] <- NA
@@ -128,15 +135,16 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
             rr_journal_name(x["title"], key, qtype = "exact")
           },
           error = function(err) {
-            return(data.frame(title        = x["title"],
-                              issn         = x["issn"],
-                              romeocolour  = NA,
-                              preprint     = NA,
-                              postprint    = NA,
-                              pdf          = NA,
-                              pre_embargo  = NA,
-                              post_embargo = NA,
-                              pdf_embargo  = NA,
+            return(data.frame(title         = x["title"],
+                              provided_issn = x["provided_issn"],
+                              issn          = x["issn"],
+                              romeocolour   = NA,
+                              preprint      = NA,
+                              postprint     = NA,
+                              pdf           = NA,
+                              pre_embargo   = NA,
+                              post_embargo  = NA,
+                              pdf_embargo   = NA,
                               stringsAsFactors = FALSE))
           })
         }})
