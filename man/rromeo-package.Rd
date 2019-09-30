@@ -4,7 +4,7 @@
 \name{rromeo-package}
 \alias{rromeo}
 \alias{rromeo-package}
-\title{rromeo: Access publisher copyright policies & self-archiving via the 
+\title{rromeo: Access Publisher Copyright & Self-Archiving Policies via the 
   'SHERPA/RoMEO' API}
 \description{
 Fetches information from the 'SHERPA/RoMEO' API
@@ -15,6 +15,7 @@ Fetches information from the 'SHERPA/RoMEO' API
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://docs.ropensci.org/rromeo/}
   \item \url{https://github.com/ropensci/rromeo}
   \item Report bugs at \url{https://github.com/ropensci/rromeo/issues}
 }

@@ -8,41 +8,45 @@ rr_journal_issn(issn, key = NULL)
 }
 \arguments{
 \item{issn}{[\code{character(1+)}]\cr{}
-one or a vector of journal(s) ISSN(s)}
+one or a vector of journal(s) ISSN(s) or ESSN(s)}
 
 \item{key}{[\code{character(1)}]\cr{}
 a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
-Returns a data.frame with complete information from journal:
+Returns a data.frame with the following columns:
 \itemize{
-\item \code{title}        [\code{character(1)}]\cr{}
+\item \code{title}         [\code{character(1)}]\cr{}
 the name of the journal
-\item \code{issn}         [\code{character(1)}]\cr{}
+\item \code{provided_issn} [\code{character(1)}]\cr{}
+the ISSN you provided in your query (might differ from the
+ISSN returned by the API)
+\item \code{issn}          [\code{character(1)}]\cr{}
 the ISSN of the journal
-\item \code{romeocolour}  [\code{character(1)}]\cr{}
+\item \code{romeocolour}   [\code{character(1)}]\cr{}
 the SHERPA/RoMEO colour of the journal
-\item \code{preprint}     [\code{character(1)}]\cr{}
+\item \code{preprint}      [\code{character(1)}]\cr{}
 is the preprint (not reviewed) archivable?
-\item \code{postprint}    [\code{character(1)}]\cr{}
-is the postprint (reviewed but not formatted)?
-\item \code{pdf}          [\code{character(1)}]\cr{}
+\item \code{postprint}     [\code{character(1)}]\cr{}
+is the postprint (reviewed but not formatted) archivable?
+\item \code{pdf}           [\code{character(1)}]\cr{}
 is the publisher's version (reviewed and formatted)
-\item \code{pre_embargo}  [\code{character(1)}]\cr{}
+\item \code{pre_embargo}   [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the preprint
-\item \code{post_embargo} [\code{character(1)}]\cr{}
+\item \code{post_embargo}  [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the postprint
-\item \code{pdf_embargo}  [\code{character(1)}]\cr{}
+\item \code{pdf_embargo}   [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the publisher's version
 }
 }
 \description{
-Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
-the journal
+Retrieve policy information from the SHERPA/RoMEO API using the ISSN
+from the paper edition of the journal or the ISSN of the electronic version
+(e-ISSN or ESSN)
 }
 \details{
 There are several ways to provide your API key.
@@ -54,7 +58,13 @@ an environmental variable.
 }
 \examples{
 \donttest{
+# Query single ISSN
 rr_journal_issn(issn = "1947-6264")
+
+# Query multiple ISSN
 rr_journal_issn(issn = c("1947-6264", "0030-1299"))
+
+# Query by ESSN
+rr_journal_issn("1463-9084")
 }
 }

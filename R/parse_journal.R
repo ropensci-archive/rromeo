@@ -10,27 +10,30 @@
 #' @inheritParams check_key
 #'
 #' @return Returns a data.frame with the following columns:
-#' * `title`        \[`character(1)`\]\cr{}
-#'                  the name of the journal
-#' * `issn`         \[`character(1)`\]\cr{}
-#'                  the ISSN of the journal
-#' * `romeocolour`  \[`character(1)`\]\cr{}
-#'                  the SHERPA/RoMEO colour of the journal
-#' * `preprint`     \[`character(1)`\]\cr{}
-#'                  is the preprint (not reviewed) archivable?
-#' * `postprint`    \[`character(1)`\]\cr{}
-#'                  is the postprint (reviewed but not formatted) archivable?
-#' * `pdf`          \[`character(1)`\]\cr{}
-#'                  is the publisher's version (reviewed and formatted)
-#' * `pre_embargo`  \[`character(1)`\]\cr{}
-#'                  if applicable the embargo period before the author(s) can
-#'                  archive the preprint
-#' * `post_embargo` \[`character(1)`\]\cr{}
-#'                  if applicable the embargo period before the author(s) can
-#'                  archive the postprint
-#' * `pdf_embargo`  \[`character(1)`\]\cr{}
-#'                  if applicable the embargo period before the author(s) can
-#'                  archive the publisher's version
+#' * `title`         \[`character(1)`\]\cr{}
+#'                   the name of the journal
+#' * `provided_issn` \[`character(1)`\]\cr{}
+#'                   the ISSN you provided in your query (might differ from the
+#'                   ISSN returned by the API)
+#' * `issn`          \[`character(1)`\]\cr{}
+#'                   the ISSN of the journal
+#' * `romeocolour`   \[`character(1)`\]\cr{}
+#'                   the SHERPA/RoMEO colour of the journal
+#' * `preprint`      \[`character(1)`\]\cr{}
+#'                   is the preprint (not reviewed) archivable?
+#' * `postprint`     \[`character(1)`\]\cr{}
+#'                   is the postprint (reviewed but not formatted) archivable?
+#' * `pdf`           \[`character(1)`\]\cr{}
+#'                   is the publisher's version (reviewed and formatted)
+#' * `pre_embargo`   \[`character(1)`\]\cr{}
+#'                   if applicable the embargo period before the author(s) can
+#'                   archive the preprint
+#' * `post_embargo`  \[`character(1)`\]\cr{}
+#'                   if applicable the embargo period before the author(s) can
+#'                   archive the postprint
+#' * `pdf_embargo`   \[`character(1)`\]\cr{}
+#'                   if applicable the embargo period before the author(s) can
+#'                   archive the publisher's version
 #'
 #' @keywords internal
 #'
@@ -57,9 +60,12 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
 
     title <- xml_text(xml_find_first(xml_source, "//jtitle"))
     issn <- xml_text(xml_find_first(xml_source, "//issn"))
+    # Find provided ISSN
+    provided_issn <- xml_text(xml_find_first(
+      xml_source, "//parameter[parametername='issn']/parametervalue"))
 
     if (type == "find") {
-      return(data.frame(title, issn,
+      return(data.frame(title, provided_issn, issn,
                         stringsAsFactors = FALSE))
     } else {
       romeocolour <- xml_text(xml_find_first(xml_source, "//romeocolour"))
@@ -78,7 +84,7 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
       post_embargo <- parse_embargo(xml_source, "post")
       pdf_embargo <- parse_embargo(xml_source, "pdf")
 
-      return(data.frame(title, issn, romeocolour,
+      return(data.frame(title, provided_issn, issn, romeocolour,
                         preprint,    postprint,    pdf,
                         pre_embargo, post_embargo, pdf_embargo,
                         stringsAsFactors = FALSE))
@@ -98,8 +104,12 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
 
     journals <- xml_text(xml_find_all(xml_source, "//jtitle"))
     issns <- xml_text(xml_find_all(xml_source, "//issn"))
+    provided_issns <- xml_text(xml_find_first(
+      xml_source, "//parameter[parametername='issn']/parametervalue"))
+    provided_issns <- ifelse(is.na(provided_issns), rep(NA, length(issns)))
 
     journal_df <- data.frame(title = journals,
+                             provided_issn = provided_issns,
                              issn  = issns,
                              stringsAsFactors = FALSE)
     journal_df[journal_df == ""] <- NA
@@ -128,15 +138,16 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
             rr_journal_name(x["title"], key, qtype = "exact")
           },
           error = function(err) {
-            return(data.frame(title        = x["title"],
-                              issn         = x["issn"],
-                              romeocolour  = NA,
-                              preprint     = NA,
-                              postprint    = NA,
-                              pdf          = NA,
-                              pre_embargo  = NA,
-                              post_embargo = NA,
-                              pdf_embargo  = NA,
+            return(data.frame(title         = x["title"],
+                              provided_issn = x["provided_issn"],
+                              issn          = x["issn"],
+                              romeocolour   = NA,
+                              preprint      = NA,
+                              postprint     = NA,
+                              pdf           = NA,
+                              pre_embargo   = NA,
+                              post_embargo  = NA,
+                              pdf_embargo   = NA,
                               stringsAsFactors = FALSE))
           })
         }})

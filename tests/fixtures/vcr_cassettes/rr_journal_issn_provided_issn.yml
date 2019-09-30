@@ -1,0 +1,115 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1463-9084
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/ropensci/rromeo R package rromeo/v.0.1.0
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 28 Sep 2019 08:58:09 GMT
+      content-type: text/xml
+      content-length: '1541'
+      connection: keep-alive
+      server: Apache
+      x-powered-by: PHP/5.5.9-1ubuntu4.29+esm5
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+    body:
+      encoding: ISO-8859-1
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>1463-9084</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>28-Sep-2019:09:58:09</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Physical Chemistry Chemical Physics</jtitle>
+              <issn>1463-9076</issn>
+              <zetocpub>Royal Society of Chemistry</zetocpub>
+              <romeopub>Royal Society of Chemistry</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="63">
+              <name>Royal Society of Chemistry</name>
+              <alias />
+              <homeurl>http://www.rsc.org/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
+              </pdfversion>
+              <conditions>
+                <condition>Pre-prints on non-commercial repositories. arXiv, ChemRxiv, instititional repositories and author's personal website</condition>
+                <condition>Author's post-print on author's personal website, institutional repository, open access repository, scholarly communications networks that comply with International Association of STM Publishers sharing principles</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>NIH authors may have their articles deposited in PubMed Central on their behalf.</condition>
+                <condition>Publisher last reviewed on 21/07/2015</condition>
+                <condition>Author's post-print may immediately share with a closed group of research collaborators, for example via an intranet or privately via a scholarly communication network.</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.rsc.org/Publishing/Journals/OpenScience/FAQ.asp</paidaccessurl>
+                <paidaccessname>Open Access</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Policy</copyrightlinktext>
+                  <copyrightlinkurl>http://www.rsc.org/journals-books-databases/open-access/green-open-access/</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2004-01-10 00:00:00</dateadded>
+              <dateupdated>2019-04-01 11:01:19</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2019-09-28 08:58:09 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

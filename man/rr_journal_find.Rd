@@ -26,9 +26,12 @@ a character string containing the API key or \code{NULL}
 \value{
 Returns a data frame:
 \itemize{
-\item \code{title}        [\code{character(1)}]\cr{}
+\item \code{title}         [\code{character(1)}]\cr{}
 the name of the journal
-\item \code{issn}         [\code{character(1)}]\cr{}
+\item \code{provided_issn} [\code{character(1)}]\cr{}
+the ISSN you provided in your query (might differ from the
+ISSN returned by the API)
+\item \code{issn}          [\code{character(1)}]\cr{}
 the ISSN of the journal
 }
 }
