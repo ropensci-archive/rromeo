@@ -52,6 +52,8 @@ rr_journal_issn("1947-6264")
 
 From this we see that the archival of the preprint is permitted while some restrictions apply for both postprint and pdf version of the manuscript. The restrictions are visible in the `*_embargo` field: the authors have to wait 12 months after publication before archiving postprint and formatted manuscript.
 
+**Nota Bene**: the `rr_journal_issn()` function can use either the paper edition ISSN of the journal or the ISSN of the electronic version of the journal (e-ISSN or ESSN) which may differ
+
 
 ### Query by Journal Title
 

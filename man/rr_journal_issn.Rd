@@ -8,7 +8,7 @@ rr_journal_issn(issn, key = NULL)
 }
 \arguments{
 \item{issn}{[\code{character(1+)}]\cr{}
-one or a vector of journal(s) ISSN(s)}
+one or a vector of journal(s) ISSN(s) or ESSN(s)}
 
 \item{key}{[\code{character(1)}]\cr{}
 a character string containing the API key or \code{NULL}
@@ -44,8 +44,9 @@ archive the publisher's version
 }
 }
 \description{
-Retrieve policy information from the SHERPA/RoMEO API using the ISSN of
-the journal
+Retrieve policy information from the SHERPA/RoMEO API using the ISSN
+from the paper edition of the journal or the ISSN of the electronic version
+(e-ISSN or ESSN)
 }
 \details{
 There are several ways to provide your API key.
@@ -57,7 +58,13 @@ an environmental variable.
 }
 \examples{
 \donttest{
+# Query single ISSN
 rr_journal_issn(issn = "1947-6264")
+
+# Query multiple ISSN
 rr_journal_issn(issn = c("1947-6264", "0030-1299"))
+
+# Query by ESSN
+rr_journal_issn("1463-9084")
 }
 }
