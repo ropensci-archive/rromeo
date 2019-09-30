@@ -4,10 +4,13 @@
 #'
 #' @return
 #' Returns a data frame:
-#' * `title`        \[`character(1)`\]\cr{}
-#'                  the name of the journal
-#' * `issn`         \[`character(1)`\]\cr{}
-#'                  the ISSN of the journal
+#' * `title`         \[`character(1)`\]\cr{}
+#'                   the name of the journal
+#' * `provided_issn` \[`character(1)`\]\cr{}
+#'                   the ISSN you provided in your query (might differ from the
+#'                   ISSN returned by the API)
+#' * `issn`          \[`character(1)`\]\cr{}
+#'                   the ISSN of the journal
 #'
 #' @inherit check_key details
 #'

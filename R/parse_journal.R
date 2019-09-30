@@ -10,27 +10,30 @@
 #' @inheritParams check_key
 #'
 #' @return Returns a data.frame with the following columns:
-#' * `title`        \[`character(1)`\]\cr{}
-#'                  the name of the journal
-#' * `issn`         \[`character(1)`\]\cr{}
-#'                  the ISSN of the journal
-#' * `romeocolour`  \[`character(1)`\]\cr{}
-#'                  the SHERPA/RoMEO colour of the journal
-#' * `preprint`     \[`character(1)`\]\cr{}
-#'                  is the preprint (not reviewed) archivable?
-#' * `postprint`    \[`character(1)`\]\cr{}
-#'                  is the postprint (reviewed but not formatted) archivable?
-#' * `pdf`          \[`character(1)`\]\cr{}
-#'                  is the publisher's version (reviewed and formatted)
-#' * `pre_embargo`  \[`character(1)`\]\cr{}
-#'                  if applicable the embargo period before the author(s) can
-#'                  archive the preprint
-#' * `post_embargo` \[`character(1)`\]\cr{}
-#'                  if applicable the embargo period before the author(s) can
-#'                  archive the postprint
-#' * `pdf_embargo`  \[`character(1)`\]\cr{}
-#'                  if applicable the embargo period before the author(s) can
-#'                  archive the publisher's version
+#' * `title`         \[`character(1)`\]\cr{}
+#'                   the name of the journal
+#' * `provided_issn` \[`character(1)`\]\cr{}
+#'                   the ISSN you provided in your query (might differ from the
+#'                   ISSN returned by the API)
+#' * `issn`          \[`character(1)`\]\cr{}
+#'                   the ISSN of the journal
+#' * `romeocolour`   \[`character(1)`\]\cr{}
+#'                   the SHERPA/RoMEO colour of the journal
+#' * `preprint`      \[`character(1)`\]\cr{}
+#'                   is the preprint (not reviewed) archivable?
+#' * `postprint`     \[`character(1)`\]\cr{}
+#'                   is the postprint (reviewed but not formatted) archivable?
+#' * `pdf`           \[`character(1)`\]\cr{}
+#'                   is the publisher's version (reviewed and formatted)
+#' * `pre_embargo`   \[`character(1)`\]\cr{}
+#'                   if applicable the embargo period before the author(s) can
+#'                   archive the preprint
+#' * `post_embargo`  \[`character(1)`\]\cr{}
+#'                   if applicable the embargo period before the author(s) can
+#'                   archive the postprint
+#' * `pdf_embargo`   \[`character(1)`\]\cr{}
+#'                   if applicable the embargo period before the author(s) can
+#'                   archive the publisher's version
 #'
 #' @keywords internal
 #'
