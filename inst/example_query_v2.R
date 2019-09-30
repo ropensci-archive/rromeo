@@ -75,11 +75,31 @@ parse_journal_single_item = function(single_journal_item) {
 
   journal_authorized_oa = lapply(journal_policies$permitted_oa, function(x) {
 
-    list(version = x$article_version[[1]],
-         embargo = x$embargo)
+    given_embargo = x$embargo
+
+    embargo_time = paste(given_embargo$amount, given_embargo$units)
+    embargo_time = ifelse(length(embargo_time) == 0, NA, embargo_time)
+
+    data.frame(version = x$article_version[[1]],
+               presence = "yes",
+               embargo = embargo_time)
   })
 
+  journal_authorized_oa_df = do.call(rbind, journal_authorized_oa)
+
+  ms_version = data.frame(
+    version = c("submitted", "accepted", "published"),
+    presence = "no",
+    embargo = "NA"
+  )
+
+  journal_authorized_oa_df = merge(journal_authorized_oa, ms_version,
+                                by = c("version", "presence"))
+
+  browser()
+
   journal_versions = lapply(journal_authorized_oa, function(y) y$version)
+  journal_embargo  = lapply(journal_authorized_oa, function(y) y$embargo)
 
   journal_preprint = ifelse("submitted" %in% journal_versions, "yes", "no")
   journal_postprint = ifelse("accepted" %in% journal_versions, "yes", "no")
