@@ -1,6 +1,7 @@
 context("rr_publisher_country")
 
 test_that("rr_publisher_country() works", {
+  skip_on_cran()
   expect_error(rr_publisher_country("Albania"),
                regexp = paste0("Albania is an invalid country code. ",
                                "The country code should be two letter long or ",

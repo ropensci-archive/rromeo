@@ -1,28 +1,32 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1947-6264
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1947-6264&ak=<<rromeo_key>>
     body:
       encoding: ''
-      string: ''
+      string: no
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/ropensci/rromeo R package rromeo/v.0.1.0.9000
   response:
     status:
+      status_code: 200
       category: Success
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Wed, 09 Jan 2019 17:17:45 GMT
-      server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      date: Mon, 09 Dec 2019 13:37:08 GMT
+      content-type: text/xml
+      content-length: '1609'
+      connection: keep-alive
+      server: Apache
+      x-powered-by: PHP/5.5.9-1ubuntu4.29+esm6
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1607'
-      Content-Type: text/xml
     body:
-      encoding: ISO-8859-1
+      encoding: UTF-8
+      file: no
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -53,7 +57,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>09-Jan-2019:17:17:45</timestamp>
+            <timestamp>09-Dec-2019:13:37:08</timestamp>
           </header>
           <journals>
             <journal>
@@ -114,5 +118,5 @@ http_interactions:
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2019-01-09 17:17:45 GMT
-  recorded_with: vcr/0.2.0, webmockr/0.2.9
+  recorded_at: 2019-12-09 13:37:09 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0

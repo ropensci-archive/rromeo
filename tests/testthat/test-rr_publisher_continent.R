@@ -1,6 +1,7 @@
 context("rr_publisher_continent")
 
 test_that("rr_publisher_continent() works", {
+  skip_on_cran()
   expect_error(rr_publisher_continent("a"),
                regexp = paste0("Some continents are not valid, see ",
                                "?rr_publisher_continent to get the list of ",
@@ -54,5 +55,5 @@ test_that("rr_publisher_continent() works", {
     expect_is(res$pdf,         "character")
 
     expect_equal(dim(res), c(16, 7))
-  })
+  }, encoding = "ISO-8859-1")
 })

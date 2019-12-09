@@ -1,27 +1,29 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Journal&qtype=contains
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Journal&qtype=contains&ak=<<rromeo_key>>
     body:
       encoding: ''
-      string: ''
+      string: no
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/ropensci/rromeo R package rromeo/v.0.1.0.9000
   response:
     status:
-      status_code: 500
+      status_code: 504
       category: Server error
-      reason: Internal Server Error
-      message: 'Server error: (500) Internal Server Error'
+      reason: Gateway Timeout
+      message: 'Server error: (504) Gateway Timeout'
     headers:
-      date: Mon, 28 Jan 2019 17:08:23 GMT
-      server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
-      content-length: '0'
-      connection: close
-      Content-Type: text/html
+      server: awselb/2.0
+      date: Mon, 09 Dec 2019 13:58:31 GMT
+      content-type: text/html
+      content-length: '148'
+      connection: keep-alive
     body:
       encoding: UTF-8
-      string: ''
-  recorded_at: 2019-01-28 17:08:58 GMT
-  recorded_with: vcr/0.2.2, webmockr/0.3.0
+      file: no
+      string: "<html>\r\n<head><title>504 Gateway Time-out</title></head>\r\n<body
+        bgcolor=\"white\">\r\n<center><h1>504 Gateway Time-out</h1></center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: 2019-12-09 13:58:31 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0

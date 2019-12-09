@@ -1,6 +1,7 @@
 context("rr_publisher_id")
 
 test_that("rr_publisher_id() works", {
+  skip_on_cran()
   expect_error(rr_publisher_id("a"),
                regexp = "All provided IDs should be integers")
 
@@ -47,18 +48,11 @@ test_that("rr_publisher_id() works", {
 
   # When Publisher is not found
   use_cassette("rr_publisher_id_notfound", {
-    expect_error(rr_publisher_id(1500000, key = ""),
+    expect_error(rr_publisher_id(1500000),
                  "No publisher was found. Maybe try another query? ;)",
                  fixed = TRUE)
   })
 
   # Invalid ID
   expect_error(rr_publisher_id("azerty"), "All provided IDs should be integers")
-
-  # When server is not reachable
-  use_cassette("api_unreachable_publisher", {
-    expect_error(rr_publisher_id(55),
-                 paste0("The API endpoint could not be reached. Please try",
-                        " again later."))
-  })
 })

@@ -1,6 +1,7 @@
 context("rr_publisher_name")
 
 test_that("rr_publisher_name() works", {
+  skip_on_cran()
   expect_error(rr_publisher_name("a", qtype = "bla"),
                regexp = paste0("'arg' should be one of ", dQuote("all"), ", ",
                                dQuote("any"), ", ", dQuote("exact")))
