@@ -87,14 +87,14 @@ green_journals[8:12,]
 
 ## Dependency network (Imports only)
 
-```{r dependency_network_imports, echo=FALSE, message=FALSE, warning=FALSE}
+```{r dependency_network_imports, echo=FALSE, message=FALSE, warning=FALSE, dev='svg'}
 source("https://gist.githubusercontent.com/Rekyt/261c2c3040715dcd8c211d7f5d18c9c8/raw/")
 plot_dependencies()
 ```
 
 ## Dependency network (Imports and Suggests)
 
-```{r dependency_network_full, echo=FALSE, message=FALSE, warning=FALSE}
+```{r dependency_network_full, echo=FALSE, message=FALSE, warning=FALSE, dev='svg'}
 source("https://gist.githubusercontent.com/Rekyt/261c2c3040715dcd8c211d7f5d18c9c8/raw/")
 plot_dependencies(type = "full")
 ```
