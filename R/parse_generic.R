@@ -13,7 +13,7 @@ parse_generic <- function(api_answer, ...) {
          call. = FALSE)
   }
 
-  xml_source <- content(api_answer, encoding = "ISO-8859-1")
+  xml_source <- content(api_answer, type = "text/xml", encoding = "ISO-8859-1")
 
   # API Control Block
   apicontrol <- xml_text(xml_find_all(xml_source, "//apicontrol"))
