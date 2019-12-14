@@ -15,7 +15,11 @@ vignette: >
 ```{r setup, include = FALSE}
 library(vcr)
 
-vcr_configure("../inst")
+vcr_configure(
+  dir = "../inst",
+  filter_sensitive_data = list("<<rromeo_key>>" =
+                                 Sys.getenv("SHERPAROMEO_KEY"))
+)
 
 use_cassette("vignette_cassette", {
   rromeo::rr_journal_issn("1947-6264")
