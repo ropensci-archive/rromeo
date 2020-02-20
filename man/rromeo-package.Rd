@@ -22,11 +22,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Matthias Grenié \email{matthias.grenie@gmail.com} (0000-0002-4659-7522)
+\strong{Maintainer}: Matthias Grenié \email{matthias.grenie@gmail.com} (\href{https://orcid.org/0000-0002-4659-7522}{ORCID})
 
 Authors:
 \itemize{
-  \item Hugo Gruson (0000-0002-4094-1476)
+  \item Hugo Gruson (\href{https://orcid.org/0000-0002-4094-1476}{ORCID})
 }
 
 }

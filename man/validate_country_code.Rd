@@ -9,7 +9,7 @@ validate_country_code(country)
 \arguments{
 \item{country}{[\code{character(1)}]\cr{}
 a two-letter country code or \code{AA}, \code{ZZ} or
-\code{__} (special country codes for SHERPA/RoMEO)}
+\verb{__} (special country codes for SHERPA/RoMEO)}
 }
 \value{
 \code{TRUE} if the country code is valid, errors otherwise
@@ -17,6 +17,6 @@ a two-letter country code or \code{AA}, \code{ZZ} or
 \description{
 If available uses \code{\link[ISOcodes:ISO_3166]{ISOcodes::ISO_3166}} to validate country code.
 Otherwise assume that the code is valid as long as it is a two-letter code or
-\code{__}. See \code{\link[=rr_publisher_country]{rr_publisher_country()}} for use of country codes.
+\verb{__}. See \code{\link[=rr_publisher_country]{rr_publisher_country()}} for use of country codes.
 }
 \keyword{internal}

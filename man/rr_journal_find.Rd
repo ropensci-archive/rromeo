@@ -4,11 +4,10 @@
 \alias{rr_journal_find}
 \title{Find if journals are available in SHERPA/RoMEO}
 \usage{
-rr_journal_find(name, qtype = c("exact", "contains", "starts"),
-  key = NULL)
+rr_journal_find(name, qtype = c("exact", "contains", "starts"), key = NULL)
 }
 \arguments{
-\item{name}{[\code{character(1+)}]\cr{}
+\item{name}{[\verb{character(1+)}]\cr{}
 one or several strings to match the titles of the journals}
 
 \item{qtype}{[\code{character(1)}]\cr{}

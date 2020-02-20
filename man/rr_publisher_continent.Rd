@@ -4,13 +4,15 @@
 \alias{rr_publisher_continent}
 \title{Get Publisher Policy by Publisher's Continent}
 \usage{
-rr_publisher_continent(continent = c("Africa", "Antarctica", "Asia",
-  "Australasia", "Caribbean", "Central America", "Europe", "North America",
-  "Oceania", "South America"), key = NULL)
+rr_publisher_continent(
+  continent = c("Africa", "Antarctica", "Asia", "Australasia", "Caribbean",
+    "Central America", "Europe", "North America", "Oceania", "South America"),
+  key = NULL
+)
 }
 \arguments{
-\item{continent}{[\code{character(1+)}]\cr{}
-one or a vector of strings in \code{c("Africa", "Antarctica",  "Asia",  "Australasia", "Carribean",  "Central America",  "Europe", "North America",  "Oceania",  "South America")}\cr{}
+\item{continent}{[\verb{character(1+)}]\cr{}
+one or a vector of strings in \code{c("Africa", "Antarctica", "Asia", "Australasia", "Carribean", "Central America", "Europe", "North America", "Oceania", "South America")}\cr{}
 the continent name to retrieve}
 
 \item{key}{[\code{character(1)}]\cr{}

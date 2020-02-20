@@ -4,11 +4,10 @@
 \alias{rr_journal_name}
 \title{Retrieve journals policies by matching title}
 \usage{
-rr_journal_name(name, qtype = c("exact", "contains", "starts"),
-  key = NULL)
+rr_journal_name(name, qtype = c("exact", "contains", "starts"), key = NULL)
 }
 \arguments{
-\item{name}{[\code{character(1+)}]\cr{}
+\item{name}{[\verb{character(1+)}]\cr{}
 one or several strings to match the titles of the journals}
 
 \item{qtype}{[\code{character(1)}]\cr{}

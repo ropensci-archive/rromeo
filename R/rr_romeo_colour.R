@@ -13,10 +13,9 @@
 #' [FAQ section](http://sherpa.ac.uk/romeo/definitions.php#colours) of
 #' SHERPA/RoMEO
 #'
-#' Note that when using `rr_romeo_colour()` the API returns **all** the
+#' Note that when using [rr_romeo_colour()] the API returns **all** the
 #' publishers in the selected category, so the results are generally bigger in
-#' size than specific functions like \[`rr_journal_name()`\] or
-#' \[`rr_publisher_id()`\]
+#' size than specific functions like [rr_journal_name()] or [rr_publisher_id()]
 #'
 #' @param romeo_colour \[`character(1)`\]\cr{}
 #'                     in `c("green", "blue", "yellow", "white")`

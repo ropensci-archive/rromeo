@@ -7,7 +7,7 @@
 rr_journal_issn(issn, key = NULL)
 }
 \arguments{
-\item{issn}{[\code{character(1+)}]\cr{}
+\item{issn}{[\verb{character(1+)}]\cr{}
 one or a vector of journal(s) ISSN(s) or ESSN(s)}
 
 \item{key}{[\code{character(1)}]\cr{}

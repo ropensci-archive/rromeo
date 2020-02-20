@@ -4,8 +4,7 @@
 \alias{parse_journal}
 \title{Parse API answer}
 \usage{
-parse_journal(xml_source, outcome, hits, type = c("find", "name"),
-  key = NULL)
+parse_journal(xml_source, outcome, hits, type = c("find", "name"), key = NULL)
 }
 \arguments{
 \item{type}{[\code{character(1)} in \code{c("find", "name")}]\cr{}

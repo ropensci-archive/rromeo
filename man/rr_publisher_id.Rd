@@ -7,7 +7,7 @@
 rr_publisher_id(id, key = NULL)
 }
 \arguments{
-\item{id}{[\code{integer(1+)}]\cr{}
+\item{id}{[\verb{integer(1+)}]\cr{}
 one or a vector of SHERPA/RoMEO publisher's ID}
 
 \item{key}{[\code{character(1)}]\cr{}
