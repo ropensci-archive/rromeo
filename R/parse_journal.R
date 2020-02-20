@@ -112,7 +112,7 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
                              provided_issn = provided_issns,
                              issn  = issns,
                              stringsAsFactors = FALSE)
-    journal_df[journal_df == ""] <- NA
+    journal_df[journal_df == ""] <- NA_character_
 
     # Keep only journal with unique titles or unique ISSNs
     unique_titles <- gsub("&", "and", tolower(journal_df$title), fixed = TRUE)
@@ -141,13 +141,13 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
             return(data.frame(title         = x["title"],
                               provided_issn = x["provided_issn"],
                               issn          = x["issn"],
-                              romeocolour   = NA,
-                              preprint      = NA,
-                              postprint     = NA,
-                              pdf           = NA,
-                              pre_embargo   = NA,
-                              post_embargo  = NA,
-                              pdf_embargo   = NA,
+                              romeocolour   = NA_character_,
+                              preprint      = NA_character_,
+                              postprint     = NA_character_,
+                              pdf           = NA_character_,
+                              pre_embargo   = NA_character_,
+                              post_embargo  = NA_character_,
+                              pdf_embargo   = NA_character_,
                               stringsAsFactors = FALSE))
           })
         }})
