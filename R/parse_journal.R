@@ -106,7 +106,9 @@ parse_journal <- function(xml_source, outcome, hits, type = c("find", "name"),
     issns <- xml_text(xml_find_all(xml_source, "//issn"))
     provided_issns <- xml_text(xml_find_first(
       xml_source, "//parameter[parametername='issn']/parametervalue"))
-    provided_issns <- ifelse(is.na(provided_issns), rep(NA, length(issns)))
+    provided_issns <- ifelse(is.na(provided_issns),
+                             rep_len(NA, length(issns)),
+                             provided_issns)
 
     journal_df <- data.frame(title = journals,
                              provided_issn = provided_issns,
