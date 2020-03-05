@@ -47,7 +47,7 @@ test_that("rr_publisher_id() works", {
 
   # When Publisher is not found
   use_cassette("rr_publisher_id_notfound", {
-    expect_error(rr_publisher_id(1500000, key = ""),
+    expect_error(rr_publisher_id(1500000),
                  "No publisher was found. Maybe try another query? ;)",
                  fixed = TRUE)
   })

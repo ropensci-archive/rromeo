@@ -1,7 +1,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?id=55
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?id=55&ak=<<<api_key>>>
     body:
       encoding: ''
       string: ''

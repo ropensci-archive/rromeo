@@ -1,7 +1,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Journal&qtype=contains
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Journal&qtype=contains&ak=<<<api_key>>>
     body:
       encoding: ''
       string: ''
