@@ -7,7 +7,12 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 
 ## What is an API key?
@@ -47,20 +52,16 @@ Sys.getenv("SHERPAROMEO_KEY")
 
 If none has been defined it should return `""`. You can then set the environment variable using the function `Sys.setenv()`:
 
-
-```r
+```{r set_env_var}
 Sys.setenv(SHERPAROMEO_KEY = "Iq83AIL5bss")
 Sys.getenv("SHERPAROMEO_KEY")
-#> [1] "Iq83AIL5bss"
 ```
 
 It is set up for the rest of your R session and `rromeo` will automatically use it when you call the different functions. You can also use the `check_key()` function that should give the same result if your key is well set-up:
 
-
-```r
+```{r}
 library("rromeo")
 check_key()
-#> [1] "Iq83AIL5bss"
 ```
 
 
@@ -68,11 +69,9 @@ check_key()
 
 `rromeo` provides the function `rr_auth()` that creates a well named environmental variable that can be used in the rest of your session:
 
-
-```r
+```{r}
 rr_auth("Iq83AIL5bs2")
 check_key()
-#> [1] "Iq83AIL5bs2"
 ```
 
 This works so that you don't have to specify the name of the environmental variable by hand. Under the hood `rr_auth()` uses the same mechanism as explained in the above mentioned section.
@@ -96,10 +95,8 @@ SHERPAROMEO_KEY = "Iq83AIL5bss"
 
 You can then reload your session and check that `rromeo` managed to get your key by using the `check_key()` function:
 
-
-```r
+```{r check_api_key}
 check_key()
-#> [1] "Iq83AIL5bs2"
 ```
 
 Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](rromeo.html) for usage of `rromeo` functions.
@@ -116,10 +113,8 @@ SHERPAROMEO_KEY=Iq83AIL5bss
 
 You can then check that your key has been found using `check_key()`:
 
-
-```r
+```{r check_key_renviron}
 check_key()
-#> [1] "Iq83AIL5bs2"
 ```
 
 Now `rromeo` can use your SHERPA/RoMEO API key! See the [getting started vignette](rromeo.html) for usage of `rromeo` functions.
@@ -139,4 +134,6 @@ However, **we do not recommend** this approach as your API key will be available
 
 Furthermore using this method you have to specify it at each function call while the other methods shown above only needs to be set up once.
 
-
+```{r include = FALSE}
+Sys.setenv("SHERPAROMEO_KEY" = "")
+```
