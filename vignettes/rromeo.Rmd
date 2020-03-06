@@ -523,7 +523,7 @@ ggplot(stacked_res, aes(x = ind, fill = values)) +
        subtitle = "Archiving Policies of Journals with 'Biostatistics' in their title")
 ```
 
-![plot of chunk bar_graph](vignettes/bar_graph-1.png)
+![plot of chunk bar_graph](bar_graph-1.png)
 
 
 ```r
@@ -534,4 +534,4 @@ ggplot(res, aes(x = "a", fill = romeocolour)) +
        subtitle = "RoMEO colours of Journals with 'Biostatistics' in their title")
 ```
 
-![plot of chunk pie_chart](vignettes/pie_chart-1.png)
+![plot of chunk pie_chart](pie_chart-1.png)
