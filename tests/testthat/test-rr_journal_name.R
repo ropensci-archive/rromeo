@@ -12,7 +12,7 @@ test_that("rr_journal_name() works", {
     expect_equal(res$issn, "0305-0270")
     expect_is(res$romeocolour, "character")
     expect_is(res$preprint, "character")
-  }, preserve_exact_body_bytes = TRUE)
+  })
 
   use_cassette("rr_journal_name_multiple", {
 
