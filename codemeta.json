@@ -14,10 +14,10 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.3",
+    "version": "3.6.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.3 (2019-03-11)",
+  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
   "author": [
     {
       "@type": "Person",
@@ -46,18 +46,6 @@
     }
   ],
   "softwareSuggestions": [
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "ggplot2",
-      "name": "ggplot2",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=ggplot2"
-    },
     {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
@@ -98,7 +86,7 @@
       "@type": "SoftwareApplication",
       "identifier": "vcr",
       "name": "vcr",
-      "version": ">= 0.2.6",
+      "version": ">= 0.5.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -159,7 +147,7 @@
     }
   ],
   "readme": "https://github.com/ropensci/rromeo/blob/master/README.md",
-  "fileSize": "478.484KB",
+  "fileSize": "214.378KB",
   "contIntegration": [
     "https://travis-ci.org/Rekyt/rromeo",
     "https://codecov.io/gh/Rekyt/rromeo"
@@ -190,7 +178,7 @@
     },
     {
       "@type": "CreativeWork",
-      "datePublished": "2019",
+      "datePublished": "2020",
       "author": [
         {
           "@type": "Organization",
@@ -201,7 +189,10 @@
       "description": "Data released under the Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license"
     }
   ],
-  "relatedLink": ["https://docs.ropensci.org/rromeo/", "https://CRAN.R-project.org/package=rromeo"],
+  "relatedLink": [
+    "https://docs.ropensci.org/rromeo/",
+    "https://CRAN.R-project.org/package=rromeo"
+  ],
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -209,5 +200,11 @@
     "url": "https://cran.r-project.org"
   },
   "releaseNotes": "https://github.com/ropensci/rromeo/blob/master/NEWS.md",
-  "keywords": ["r", "r-package", "rstats", "sherpa-romeo", "api-client"]
+  "keywords": [
+    "r",
+    "r-package",
+    "rstats",
+    "sherpa-romeo",
+    "api-client"
+  ]
 }
