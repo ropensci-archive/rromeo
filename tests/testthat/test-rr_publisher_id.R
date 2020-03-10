@@ -4,6 +4,7 @@ test_that("rr_publisher_id() works", {
   expect_error(rr_publisher_id("a"),
                regexp = "All provided IDs should be integers")
 
+  skip_on_cran()
   # Regular Query
   use_cassette("rr_publisher_id", {
     res <- rr_publisher_id(55)

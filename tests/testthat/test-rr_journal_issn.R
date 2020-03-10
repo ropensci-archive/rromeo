@@ -1,6 +1,8 @@
 context("rr_journal_issn")
 
 test_that("rr_journal_issn() works", {
+  skip_on_cran()
+
   use_cassette("rr_journal_issn", {
     res <- rr_journal_issn("1947-6264")
 
@@ -60,6 +62,8 @@ test_that("rr_journal_issn() works", {
 })
 
 test_that("rr_journal_issn() returns provided ISSN", {
+  skip_on_cran()
+
   use_cassette("rr_journal_issn_provided_issn", {
     res <- rr_journal_issn("1463-9084")
 

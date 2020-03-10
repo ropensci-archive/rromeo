@@ -7,6 +7,7 @@ test_that("rr_publisher_continent() works", {
                                "valid continents"),
                fixed = TRUE)
 
+  skip_on_cran()
   # When Publisher is not found
   use_cassette("rr_publisher_continent_notfound", {
     expect_error(rr_publisher_continent("Antarctica"),

@@ -1,6 +1,7 @@
 context("test-rr_journal_find")
 
 test_that("rr_journal_find() works", {
+  skip_on_cran()
   use_cassette("rr_journal_find", {
     res <- rr_journal_find("Geology")
 

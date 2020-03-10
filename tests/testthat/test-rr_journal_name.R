@@ -1,6 +1,8 @@
 context("rr_journal_name")
 
 test_that("rr_journal_name() works", {
+  skip_on_cran()
+
   use_cassette("rr_journal_name", {
     res <- rr_journal_name("Journal of Biogeography")
 
