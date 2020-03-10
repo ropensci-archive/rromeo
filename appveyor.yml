@@ -17,6 +17,7 @@ cache:
 
 environment:
   USE_RTOOLS: true
+  PKGTYPE: both
 
 build_script:
   - travis-tool.sh install_deps
