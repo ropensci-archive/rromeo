@@ -22,11 +22,10 @@ Imports:
 RoxygenNote: 7.0.2
 Roxygen: list(markdown = TRUE)
 Suggests:
-    ggplot2,
     knitr,
     rmarkdown,
     testthat,
-    vcr (>= 0.2.6),
+    vcr (>= 0.5.0),
     ISOcodes,
     mockery
 Language: en-US
