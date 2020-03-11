@@ -10,14 +10,14 @@
   "codeRepository": "https://github.com/ropensci/rromeo",
   "issueTracker": "https://github.com/ropensci/rromeo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.0.9000",
+  "version": "0.1.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.0",
+    "version": "3.6.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
+  "runtimePlatform": "R version 3.6.3 (2020-02-29)",
   "author": [
     {
       "@type": "Person",
@@ -147,7 +147,7 @@
     }
   ],
   "readme": "https://github.com/ropensci/rromeo/blob/master/README.md",
-  "fileSize": "214.378KB",
+  "fileSize": "183.538KB",
   "contIntegration": [
     "https://travis-ci.org/Rekyt/rromeo",
     "https://codecov.io/gh/Rekyt/rromeo"
