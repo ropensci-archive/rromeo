@@ -149,8 +149,8 @@
   "readme": "https://github.com/ropensci/rromeo/blob/master/README.md",
   "fileSize": "183.538KB",
   "contIntegration": [
-    "https://travis-ci.org/Rekyt/rromeo",
-    "https://codecov.io/gh/Rekyt/rromeo"
+    "https://travis-ci.org/ropensci/rromeo",
+    "https://codecov.io/gh/ropensci/rromeo"
   ],
   "developmentStatus": "https://www.repostatus.org/#active",
   "review": {

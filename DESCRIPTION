@@ -2,7 +2,7 @@ Package: rromeo
 Type: Package
 Title: Access Publisher Copyright & Self-Archiving Policies via the 
   'SHERPA/RoMEO' API
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R: c(
   person("Matthias", "Grenié", email = "matthias.grenie@gmail.com",
          role = c("aut", "cre"), comment = c(ORCID = "0000-0002-4659-7522")),

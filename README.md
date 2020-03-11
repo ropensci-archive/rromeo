@@ -39,7 +39,7 @@ You can also install the development version from GitHub:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("Rekyt/rromeo")
+remotes::install_github("ropensci/rromeo")
 ```
 
 ## API Key
@@ -58,7 +58,9 @@ rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
 
 or you can specify the environment variable `SHERPAROMEO_KEY` in an
 `.Rprofile` or in an `.Renviron` file and `rromeo` will automatically
-retrieve the API key.
+retrieve the API key. See the [specific
+vignette](https://docs.ropensci.org/rromeo/articles/setting_up_api_key.html)
+to know how to apply and use the API key with `rromeo`.
 
 ## Usage
 
