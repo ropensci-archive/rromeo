@@ -7,6 +7,7 @@ test_that("rr_publisher_continent() works", {
                                "valid continents"),
                fixed = TRUE)
 
+  skip_on_cran()
   # When Publisher is not found
   use_cassette("rr_publisher_continent_notfound", {
     expect_error(rr_publisher_continent("Antarctica"),
@@ -14,10 +15,9 @@ test_that("rr_publisher_continent() works", {
                  fixed = TRUE)
   })
 
-  skip("Not possible because of encoding problems waiting for a fix in vcr")
   # Regular Query
   use_cassette("rr_publisher_continent", {
-    res <- rr_publisher_continent("Caribbean")
+    res <- rr_publisher_continent("Australasia")
 
     expect_is(res, "data.frame")
 
@@ -32,27 +32,7 @@ test_that("rr_publisher_continent() works", {
     expect_is(res$postprint,   "character")
     expect_is(res$pdf,         "character")
 
-    expect_equal(dim(res), c(11, 7))
-    expect_equal(res$romeoid[[1]], 2192)
+    expect_equal(dim(res), c(58, 7))
+    expect_equal(res$romeoid[[1]], 1514)
   }, preserve_exact_body_bytes = TRUE)
-
-  # Multiple continents
-  use_cassette("rr_publisher_continent_multiple", {
-    res <- rr_publisher_continent(c("Caribbean", "Central America"))
-
-    expect_is(res, "data.frame")
-
-    expect_named(res, c("romeoid", "publisher", "alias", "romeocolour",
-                        "preprint", "postprint", "pdf"))
-
-    expect_is(res$romeoid,     "numeric")
-    expect_is(res$publisher,   "character")
-    expect_is(res$alias,       "character")
-    expect_is(res$romeocolour, "character")
-    expect_is(res$preprint,    "character")
-    expect_is(res$postprint,   "character")
-    expect_is(res$pdf,         "character")
-
-    expect_equal(dim(res), c(16, 7))
-  })
 })

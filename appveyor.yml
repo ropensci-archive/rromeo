@@ -17,6 +17,10 @@ cache:
 
 environment:
   USE_RTOOLS: true
+  PKGTYPE: both
+  NOT_CRAN: true
+  SHERPAROMEO_KEY:
+    secure: ITVS2k0p09c09fuf3yWCVQ==
 
 build_script:
   - travis-tool.sh install_deps
