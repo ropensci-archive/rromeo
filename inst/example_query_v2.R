@@ -139,3 +139,22 @@ repo_data = GET("https://v2.sherpa.ac.uk/cgi/retrieve",
   content()
 
 str(repo_data$items[[1]])
+
+# Other functions --------------------------------------------------------------
+
+# General retrieve function
+rr_v2_retrieve = function(item_type, key = api_key,
+                          order = NULL,
+                          limit = NULL,
+                          offset = NULL) {
+  GET("https://v2.sherpa.ac.uk/cgi/retrieve",
+      add_headers("user-agent" = rr_ua()),
+      query = list("item-type" = item_type,
+                   format      = "Json",
+                   "order"     = order,
+                   "limit"     = limit,
+                   "offset"    = offset,
+                   "api-key"   = key)) %>%
+    content() %>%
+    .[["items"]]
+}
