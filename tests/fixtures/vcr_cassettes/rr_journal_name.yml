@@ -1,123 +1,32 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Journal%20of%20Geology&qtype=exact
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Journal%20of%20Biogeography&qtype=exact&ak=<<<api_key>>>
     body:
       encoding: ''
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/ropensci/rromeo R package rromeo/v.0.1.0.9000
   response:
     status:
+      status_code: 200
       category: Success
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Wed, 09 Jan 2019 16:57:48 GMT
-      server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.26
+      date: Thu, 05 Mar 2020 16:21:30 GMT
+      content-type: text/xml
+      content-length: '1657'
+      connection: keep-alive
+      server: Apache
+      x-powered-by: PHP/5.5.9-1ubuntu4.29+esm6
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '1603'
-      Content-Type: text/xml
     body:
-      encoding: ISO-8859-1
-      string: |
-        <?xml version="1.0" encoding="ISO-8859-1" ?>
-        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
-        <romeoapi version="2.9.9">
-          <header>
-            <parameters>
-              <parameter source="specified">
-                <parametername>jtitle</parametername>
-                <parametervalue>Journal of Geology</parametervalue>
-              </parameter>
-              <parameter source="specified">
-                <parametername>qtype</parametername>
-                <parametervalue>exact</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>showfunder</parametername>
-                <parametervalue>none</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>fIDnum</parametername>
-                <parametervalue>|</parametervalue>
-              </parameter>
-              <parameter source="default">
-                <parametername>la</parametername>
-                <parametervalue>en</parametervalue>
-              </parameter>
-            </parameters>
-            <numhits>1</numhits>
-            <apicontrol>journal</apicontrol>
-            <outcome>singleJournal</outcome>
-            <message />
-            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
-            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
-            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>09-Jan-2019:16:57:48</timestamp>
-          </header>
-          <journals>
-            <journal>
-              <jtitle>Journal of Geology</jtitle>
-              <issn>0022-1376</issn>
-              <zetocpub>University of Chicago Press</zetocpub>
-              <romeopub>University of Chicago Press</romeopub>
-            </journal>
-          </journals>
-          <publishers>
-            <publisher id="77">
-              <name>University of Chicago Press</name>
-              <alias />
-              <homeurl>http://www.press.uchicago.edu/</homeurl>
-              <preprints>
-                <prearchiving>can</prearchiving>
-                <prerestrictions />
-              </preprints>
-              <postprints>
-                <postarchiving>can</postarchiving>
-                <postrestrictions />
-              </postprints>
-              <pdfversion>
-                <pdfarchiving>can</pdfarchiving>
-                <pdfrestrictions />
-              </pdfversion>
-              <conditions>
-                <condition>On a not-for-profit author's personal website, institutional website, social website or pre-print server immediately</condition>
-                <condition>On an institutional repository or open access repository after &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</condition>
-                <condition>Publisher's version/PDF may be used in open access repositories only</condition>
-                <condition>Publisher copyright and source must be acknowledged with set statement</condition>
-                <condition>Non-commercial use</condition>
-                <condition>Encouraged to link to publisher version</condition>
-                <condition>Wellcome Trust and MRC authors may post authors accepted version in PubMed Central/ PubMed Central UK 6 month after publication</condition>
-                <condition>NIH authors may post authors' own version in PubMed Central for release &lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; after publication</condition>
-                <condition>RCUK authors may post authors accepted version in an open access repository 6 months or 12 months after publication, as required by the funding agency</condition>
-                <condition>Publisher last reviewed on 08/09/2017</condition>
-                <condition>Deposit of author's pre-print and author's post-print are permitted, but are discouraged</condition>
-              </conditions>
-              <mandates />
-              <paidaccess>
-                <paidaccessurl>http://www.press.uchicago.edu/infoServices/open.html</paidaccessurl>
-                <paidaccessname>Gold Open Access Option</paidaccessname>
-                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
-              </paidaccess>
-              <copyrightlinks>
-                <copyrightlink>
-                  <copyrightlinktext>Open Access at Chicago</copyrightlinktext>
-                  <copyrightlinkurl>http://www.press.uchicago.edu/infoServices/open.html</copyrightlinkurl>
-                </copyrightlink>
-                <copyrightlink>
-                  <copyrightlinktext>University of Chicago Press Guidelines;for Journal Authors' Rights</copyrightlinktext>
-                  <copyrightlinkurl>http://www.press.uchicago.edu/journals/jrnl_rights.html</copyrightlinkurl>
-                </copyrightlink>
-              </copyrightlinks>
-              <romeocolour>green</romeocolour>
-              <dateadded>2004-01-10 00:00:00</dateadded>
-              <dateupdated>2017-09-08 15:16:32</dateupdated>
-            </publisher>
-          </publishers>
-        </romeoapi>
-  recorded_at: 2019-01-09 16:57:49 GMT
-  recorded_with: vcr/0.2.0, webmockr/0.2.9
+      encoding: ASCII-8BIT
+      file: no
+      string: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iSVNPLTg4NTktMSIgPz4KPCFET0NUWVBFIHJvbWVvYXBpIFNZU1RFTSAiaHR0cDovL3d3dy5zaGVycGEuYWMudWsvcm9tZW8vcm9tZW9hcGkyOTMuZHRkIj4KPHJvbWVvYXBpIHZlcnNpb249IjIuOS45Ij4KICA8aGVhZGVyPgogICAgPHBhcmFtZXRlcnM+CiAgICAgIDxwYXJhbWV0ZXIgc291cmNlPSJzcGVjaWZpZWQiPgogICAgICAgIDxwYXJhbWV0ZXJuYW1lPmp0aXRsZTwvcGFyYW1ldGVybmFtZT4KICAgICAgICA8cGFyYW1ldGVydmFsdWU+Sm91cm5hbCBvZiBCaW9nZW9ncmFwaHk8L3BhcmFtZXRlcnZhbHVlPgogICAgICA8L3BhcmFtZXRlcj4KICAgICAgPHBhcmFtZXRlciBzb3VyY2U9InNwZWNpZmllZCI+CiAgICAgICAgPHBhcmFtZXRlcm5hbWU+cXR5cGU8L3BhcmFtZXRlcm5hbWU+CiAgICAgICAgPHBhcmFtZXRlcnZhbHVlPmV4YWN0PC9wYXJhbWV0ZXJ2YWx1ZT4KICAgICAgPC9wYXJhbWV0ZXI+CiAgICAgIDxwYXJhbWV0ZXIgc291cmNlPSJkZWZhdWx0Ij4KICAgICAgICA8cGFyYW1ldGVybmFtZT5zaG93ZnVuZGVyPC9wYXJhbWV0ZXJuYW1lPgogICAgICAgIDxwYXJhbWV0ZXJ2YWx1ZT5ub25lPC9wYXJhbWV0ZXJ2YWx1ZT4KICAgICAgPC9wYXJhbWV0ZXI+CiAgICAgIDxwYXJhbWV0ZXIgc291cmNlPSJkZWZhdWx0Ij4KICAgICAgICA8cGFyYW1ldGVybmFtZT5mSURudW08L3BhcmFtZXRlcm5hbWU+CiAgICAgICAgPHBhcmFtZXRlcnZhbHVlPnw8L3BhcmFtZXRlcnZhbHVlPgogICAgICA8L3BhcmFtZXRlcj4KICAgICAgPHBhcmFtZXRlciBzb3VyY2U9ImRlZmF1bHQiPgogICAgICAgIDxwYXJhbWV0ZXJuYW1lPmxhPC9wYXJhbWV0ZXJuYW1lPgogICAgICAgIDxwYXJhbWV0ZXJ2YWx1ZT5lbjwvcGFyYW1ldGVydmFsdWU+CiAgICAgIDwvcGFyYW1ldGVyPgogICAgPC9wYXJhbWV0ZXJzPgogICAgPG51bWhpdHM+MTwvbnVtaGl0cz4KICAgIDxhcGljb250cm9sPmpvdXJuYWw8L2FwaWNvbnRyb2w+CiAgICA8b3V0Y29tZT5zaW5nbGVKb3VybmFsPC9vdXRjb21lPgogICAgPG1lc3NhZ2UgLz4KICAgIDxsaWNlbmNlPlNIRVJQQS9Sb01FTyBkYXRhIGlzIGF2YWlsYWJsZSBmb3IgcmUtdXNlIHVuZGVyIGEgQ3JlYXRpdmUgQ29tbW9ucyBBdHRyaWJ1dGlvbi1Ob24tQ29tbWVyY2lhbC1TaGFyZSBBbGlrZSAyLjUgbGljZW5jZS4gRm9yIG1vcmUgZGV0YWlscywgcGxlYXNlIHNlZSB0aGUgJ2NvbmRpdGlvbnMgZm9yIHJlLXVzZScgYXQgdGhlICZsdDtsaWNlbmNldXJsIC8mZ3Q7LCBhbmQgbGlua2VkLXRvIGZyb20gdGhlIFNIRVJQQS9Sb01FTyBob21lIHBhZ2UuPC9saWNlbmNlPgogICAgPGxpY2VuY2V1cmw+aHR0cDovL3d3dy5zaGVycGEuYWMudWsvcm9tZW9yZXVzZS5odG1sPC9saWNlbmNldXJsPgogICAgPGRpc2NsYWltZXI+QWxsIFNIRVJQQS9Sb01FTyBpbmZvcm1hdGlvbiBpcyBjb3JyZWN0IHRvIHRoZSBiZXN0IG9mIG91ciBrbm93bGVkZ2UgYnV0IHNob3VsZCBub3QgYmUgcmVsaWVkIHVwb24gZm9yIGxlZ2FsIGFkdmljZS4gU0hFUlBBIGNhbm5vdCBiZSBoZWxkIHJlc3BvbnNpYmxlIGZvciB0aGUgcmUtdXNlIG9mIFJvTUVPIGRhdGEsIG9yIGZvciBhbHRlcm5hdGl2ZSBpbnRlcnByZXRhdGlvbnMgd2hpY2ggYXJlIGRlcml2ZWQgZnJvbSB0aGlzIGluZm9ybWF0aW9uLjwvZGlzY2xhaW1lcj4KICAgIDx0aW1lc3RhbXA+MDUtTWFyLTIwMjA6MTY6MjE6MzA8L3RpbWVzdGFtcD4KICA8L2hlYWRlcj4KICA8am91cm5hbHM+CiAgICA8am91cm5hbD4KICAgICAgPGp0aXRsZT5Kb3VybmFsIG9mIEJpb2dlb2dyYXBoeTwvanRpdGxlPgogICAgICA8aXNzbj4wMzA1LTAyNzA8L2lzc24+CiAgICAgIDx6ZXRvY3B1Yj5XaWxleTogMTIgbW9udGhzPC96ZXRvY3B1Yj4KICAgICAgPHJvbWVvcHViPldpbGV5OiAxMiBtb250aHM8L3JvbWVvcHViPgogICAgPC9qb3VybmFsPgogIDwvam91cm5hbHM+CiAgPHB1Ymxpc2hlcnM+CiAgICA8cHVibGlzaGVyIGlkPSIyMDUwIiAgcGFyZW50aWQ9IjU4MCI+CiAgICAgIDxuYW1lPldpbGV5PC9uYW1lPgogICAgICA8YWxpYXM+MTIgbW9udGhzPC9hbGlhcz4KICAgICAgPGhvbWV1cmw+aHR0cDovL2V1LndpbGV5LmNvbS9XaWxleUNEQS88L2hvbWV1cmw+CiAgICAgIDxwcmVwcmludHM+CiAgICAgICAgPHByZWFyY2hpdmluZz5jYW48L3ByZWFyY2hpdmluZz4KICAgICAgICA8cHJlcmVzdHJpY3Rpb25zIC8+CiAgICAgIDwvcHJlcHJpbnRzPgogICAgICA8cG9zdHByaW50cz4KICAgICAgICA8cG9zdGFyY2hpdmluZz5yZXN0cmljdGVkPC9wb3N0YXJjaGl2aW5nPgogICAgICAgIDxwb3N0cmVzdHJpY3Rpb25zPgogICAgICAgICAgPHBvc3RyZXN0cmljdGlvbj4mbHQ7bnVtJmd0OzEyJmx0Oy9udW0mZ3Q7ICZsdDtwZXJpb2QgdW5pdHM9JnF1b3Q7bW9udGgmcXVvdDsmZ3Q7bW9udGhzJmx0Oy9wZXJpb2QmZ3Q7IGVtYmFyZ288L3Bvc3RyZXN0cmljdGlvbj4KICAgICAgICA8L3Bvc3RyZXN0cmljdGlvbnM+CiAgICAgIDwvcG9zdHByaW50cz4KICAgICAgPHBkZnZlcnNpb24+CiAgICAgICAgPHBkZmFyY2hpdmluZz5jYW5ub3Q8L3BkZmFyY2hpdmluZz4KICAgICAgICA8cGRmcmVzdHJpY3Rpb25zIC8+CiAgICAgIDwvcGRmdmVyc2lvbj4KICAgICAgPGNvbmRpdGlvbnM+CiAgICAgICAgPGNvbmRpdGlvbj5Tb21lIGpvdXJuYWxzIGhhdmUgc2VwYXJhdGUgcG9saWNpZXMsIHBsZWFzZSBjaGVjayB3aXRoIGVhY2ggam91cm5hbCBkaXJlY3RseTwvY29uZGl0aW9uPgogICAgICAgIDxjb25kaXRpb24+T24gYXV0aG9yJ3MgcGVyc29uYWwgd2Vic2l0ZSwgaW5zdGl0dXRpb25hbCByZXBvc2l0b3JpZXMsIGFyWGl2LCBBZ0Vjb24sIFBoaWxQYXBlcnMsIFB1Yk1lZCBDZW50cmFsLCBSZVBFYyBvciBTb2NpYWwgU2NpZW5jZSBSZXNlYXJjaCBOZXR3b3JrPC9jb25kaXRpb24+CiAgICAgICAgPGNvbmRpdGlvbj5BdXRob3IncyBwcmUtcHJpbnQgbWF5IG5vdCBiZSB1cGRhdGVkIHdpdGggUHVibGlzaGVyJ3MgVmVyc2lvbi9QREY8L2NvbmRpdGlvbj4KICAgICAgICA8Y29uZGl0aW9uPkF1dGhvcidzIHByZS1wcmludCBtdXN0IGFja25vd2xlZGdlIGFjY2VwdGFuY2UgZm9yIHB1YmxpY2F0aW9uPC9jb25kaXRpb24+CiAgICAgICAgPGNvbmRpdGlvbj5Ob24tQ29tbWVyY2lhbDwvY29uZGl0aW9uPgogICAgICAgIDxjb25kaXRpb24+UHVibGlzaGVyJ3MgdmVyc2lvbi9QREYgY2Fubm90IGJlIHVzZWQ8L2NvbmRpdGlvbj4KICAgICAgICA8Y29uZGl0aW9uPlB1Ymxpc2hlciBzb3VyY2UgbXVzdCBiZSBhY2tub3dsZWRnZWQgd2l0aCBjaXRhdGlvbjwvY29uZGl0aW9uPgogICAgICAgIDxjb25kaXRpb24+TXVzdCBsaW5rIHRvIHB1Ymxpc2hlciB2ZXJzaW9uIHdpdGggc2V0IHN0YXRlbWVudCAoc2VlIHBvbGljeSk8L2NvbmRpdGlvbj4KICAgICAgICA8Y29uZGl0aW9uPklmIE9ubGluZU9wZW4gaXMgYXZhaWxhYmxlLCBCQlNSQywgRVBTUkMsIE1SQywgTkVSQyBhbmQgU1RGQyBhdXRob3JzLCBtYXkgc2VsZi1hcmNoaXZlIGFmdGVyIDEyIG1vbnRoczwvY29uZGl0aW9uPgogICAgICAgIDxjb25kaXRpb24+UHVibGlzaGVyIGxhc3QgY29udGFjdGVkIG9uIDA3LzA4LzIwMTQ8L2NvbmRpdGlvbj4KICAgICAgPC9jb25kaXRpb25zPgogICAgICA8bWFuZGF0ZXMgLz4KICAgICAgPHBhaWRhY2Nlc3M+CiAgICAgICAgPHBhaWRhY2Nlc3N1cmw+aHR0cHM6Ly9hdXRob3JzZXJ2aWNlcy53aWxleS5jb20vYXV0aG9yLXJlc291cmNlcy9Kb3VybmFsLUF1dGhvcnMvbGljZW5zaW5nLW9wZW4tYWNjZXNzL29wZW4tYWNjZXNzL29ubGluZW9wZW4uaHRtbDwvcGFpZGFjY2Vzc3VybD4KICAgICAgICA8cGFpZGFjY2Vzc25hbWU+T25saW5lT3BlbjwvcGFpZGFjY2Vzc25hbWU+CiAgICAgICAgPHBhaWRhY2Nlc3Nub3Rlcz5BIHBhaWQgb3BlbiBhY2Nlc3Mgb3B0aW9uIGlzIGF2YWlsYWJsZSBmb3IgdGhpcyBqb3VybmFsLjwvcGFpZGFjY2Vzc25vdGVzPgogICAgICA8L3BhaWRhY2Nlc3M+CiAgICAgIDxjb3B5cmlnaHRsaW5rcz4KICAgICAgICA8Y29weXJpZ2h0bGluaz4KICAgICAgICAgIDxjb3B5cmlnaHRsaW5rdGV4dD5TZWxmLWFyY2hpdmluZzwvY29weXJpZ2h0bGlua3RleHQ+CiAgICAgICAgICA8Y29weXJpZ2h0bGlua3VybD5odHRwOi8vb2xhYm91dC53aWxleS5jb20vV2lsZXlDREEvU2VjdGlvbi9pZC04MjgwMzkuaHRtbDwvY29weXJpZ2h0bGlua3VybD4KICAgICAgICA8L2NvcHlyaWdodGxpbms+CiAgICAgICAgPGNvcHlyaWdodGxpbms+CiAgICAgICAgICA8Y29weXJpZ2h0bGlua3RleHQ+QXV0aG9ycyBDb21wbGlhbmNlIFRvb2w8L2NvcHlyaWdodGxpbmt0ZXh0PgogICAgICAgICAgPGNvcHlyaWdodGxpbmt1cmw+aHR0cDovL29sYWJvdXQud2lsZXkuY29tL1dpbGV5Q0RBL1NlY3Rpb24vaWQtODI4MDM4Lmh0bWw8L2NvcHlyaWdodGxpbmt1cmw+CiAgICAgICAgPC9jb3B5cmlnaHRsaW5rPgogICAgICAgIDxjb3B5cmlnaHRsaW5rPgogICAgICAgICAgPGNvcHlyaWdodGxpbmt0ZXh0PkZ1bmRlciBQb2xpY2llczwvY29weXJpZ2h0bGlua3RleHQ+CiAgICAgICAgICA8Y29weXJpZ2h0bGlua3VybD5odHRwczovL2F1dGhvcnNlcnZpY2VzLndpbGV5LmNvbS9hdXRob3ItcmVzb3VyY2VzL0pvdXJuYWwtQXV0aG9ycy9saWNlbnNpbmctb3Blbi1hY2Nlc3Mvb3Blbi1hY2Nlc3MvZnVuZGVyLWFncmVlbWVudHMuaHRtbDwvY29weXJpZ2h0bGlua3VybD4KICAgICAgICA8L2NvcHlyaWdodGxpbms+CiAgICAgIDwvY29weXJpZ2h0bGlua3M+CiAgICAgIDxyb21lb2NvbG91cj55ZWxsb3c8L3JvbWVvY29sb3VyPgogICAgICA8ZGF0ZWFkZGVkPjIwMTQtMDgtMDggMTU6MDg6MzU8L2RhdGVhZGRlZD4KICAgICAgPGRhdGV1cGRhdGVkPjIwMTctMTEtMjQgMTA6MjI6Mjc8L2RhdGV1cGRhdGVkPgogICAgPC9wdWJsaXNoZXI+CiAgPC9wdWJsaXNoZXJzPgo8L3JvbWVvYXBpPgo=
+  recorded_at: 2020-03-05 16:21:30 GMT
+  recorded_with: vcr/0.5.0, webmockr/0.6.0

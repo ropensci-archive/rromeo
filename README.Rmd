@@ -32,7 +32,7 @@ You can also install the development version from GitHub:
 
 ```{r, eval = FALSE}
 # install.packages("remotes")
-remotes::install_github("Rekyt/rromeo")
+remotes::install_github("ropensci/rromeo")
 ```
 
 ## API Key
@@ -46,10 +46,11 @@ rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
 ```
 
 or you can specify the environment variable `SHERPAROMEO_KEY` in an `.Rprofile` or in an `.Renviron` file and `rromeo` will automatically retrieve the API key.
+See the [specific vignette](https://docs.ropensci.org/rromeo/articles/setting_up_api_key.html) to know how to apply and use the API key with `rromeo`.
 
 ## Usage
 
-`rromeo` contains functions to retrieve data from the SHERPA/RoMEO API (for a complete overview please refer to the [vignette](https://ropensci.github.io/rromeo/articles/rromeo.html)). The data is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A suggestion of citation is included in `rromeo` via `citation("rromeo")`.
+`rromeo` contains functions to retrieve data from the SHERPA/RoMEO API (for a complete overview please refer to the [vignette](https://docs.ropensci.org/rromeo/articles/rromeo.html)). The data is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A suggestion of citation is included in `rromeo` via `citation("rromeo")`.
 
 `rromeo` functions are prefixed with `rr_` such as `rr_journal_name()` that lets you retrieve a journal policy information using the title of a journal:
 
@@ -87,14 +88,14 @@ green_journals[8:12,]
 
 ## Dependency network (Imports only)
 
-```{r dependency_network_imports, echo=FALSE, message=FALSE, warning=FALSE}
+```{r dependency_network_imports, echo=FALSE, message=FALSE, warning=FALSE, dev='svg'}
 source("https://gist.githubusercontent.com/Rekyt/261c2c3040715dcd8c211d7f5d18c9c8/raw/")
 plot_dependencies()
 ```
 
 ## Dependency network (Imports and Suggests)
 
-```{r dependency_network_full, echo=FALSE, message=FALSE, warning=FALSE}
+```{r dependency_network_full, echo=FALSE, message=FALSE, warning=FALSE, dev='svg'}
 source("https://gist.githubusercontent.com/Rekyt/261c2c3040715dcd8c211d7f5d18c9c8/raw/")
 plot_dependencies(type = "full")
 ```

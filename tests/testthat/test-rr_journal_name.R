@@ -1,14 +1,17 @@
 context("rr_journal_name")
 
 test_that("rr_journal_name() works", {
+  skip_on_cran()
+
   use_cassette("rr_journal_name", {
-    res <- rr_journal_name("Journal of Geology")
+    res <- rr_journal_name("Journal of Biogeography")
 
     expect_is(res, "data.frame")
 
-    expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
+    expect_named(res, c("title", "provided_issn", "issn", "romeocolour",
+                        "preprint", "postprint",
                         "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
-    expect_equal(res$issn, "0022-1376")
+    expect_equal(res$issn, "0305-0270")
     expect_is(res$romeocolour, "character")
     expect_is(res$preprint, "character")
   })
@@ -28,9 +31,10 @@ test_that("rr_journal_name() works", {
 
     expect_is(res, "data.frame")
 
-    expect_equal(dim(res), c(5, 9))
-    expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
-                        "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
+    expect_equal(dim(res), c(5, 10))
+    expect_named(res, c("title", "provided_issn", "issn", "romeocolour",
+                        "preprint", "postprint", "pdf", "pre_embargo",
+                        "post_embargo", "pdf_embargo"))
     expect_is(res$issn, "character")
     expect_is(res$title, "character")
 
@@ -45,11 +49,13 @@ test_that("rr_journal_name() works", {
 
     expect_is(res, "data.frame")
 
-    expect_equal(dim(res), c(2, 9))
-    expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
-                        "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
+    expect_equal(dim(res), c(2, 10))
+    expect_named(res, c("title", "provided_issn", "issn", "romeocolour",
+                        "preprint", "postprint", "pdf", "pre_embargo",
+                        "post_embargo", "pdf_embargo"))
 
     expect_is(res$title, "character")
+    expect_is(res$provided_issn, "character")
     expect_is(res$issn, "character")
     expect_is(res$romeocolour, "character")
     expect_is(res$preprint, "character")
@@ -65,7 +71,7 @@ test_that("rr_journal_name() works", {
 
   use_cassette("rr_journal_name_notfound", {
     expect_error(
-      rr_journal_name("Journal of Blabla", qtype = "contains", key = ""),
+      rr_journal_name("Journal of Blabla", qtype = "contains"),
       "No journal matches your query terms. Please try another query.")
   })
 
@@ -90,11 +96,13 @@ test_that("rr_journal_name() works", {
 
     expect_is(res, "data.frame")
 
-    expect_equal(dim(res), c(6, 9))
-    expect_named(res, c("title", "issn", "romeocolour", "preprint", "postprint",
-                        "pdf", "pre_embargo", "post_embargo", "pdf_embargo"))
+    expect_equal(dim(res), c(6, 10))
+    expect_named(res, c("title", "provided_issn", "issn", "romeocolour",
+                        "preprint", "postprint", "pdf", "pre_embargo",
+                        "post_embargo", "pdf_embargo"))
 
     expect_is(res$title, "character")
+    expect_is(res$provided_issn, "character")
     expect_is(res$issn, "character")
     expect_is(res$romeocolour, "character")
     expect_is(res$preprint, "character")

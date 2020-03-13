@@ -4,11 +4,10 @@
 \alias{rr_journal_find}
 \title{Find if journals are available in SHERPA/RoMEO}
 \usage{
-rr_journal_find(name, qtype = c("exact", "contains", "starts"),
-  key = NULL)
+rr_journal_find(name, qtype = c("exact", "contains", "starts"), key = NULL)
 }
 \arguments{
-\item{name}{[\code{character(1+)}]\cr{}
+\item{name}{[\verb{character(1+)}]\cr{}
 one or several strings to match the titles of the journals}
 
 \item{qtype}{[\code{character(1)}]\cr{}
@@ -26,9 +25,12 @@ a character string containing the API key or \code{NULL}
 \value{
 Returns a data frame:
 \itemize{
-\item \code{title}        [\code{character(1)}]\cr{}
+\item \code{title}         [\code{character(1)}]\cr{}
 the name of the journal
-\item \code{issn}         [\code{character(1)}]\cr{}
+\item \code{provided_issn} [\code{character(1)}]\cr{}
+the ISSN you provided in your query (might differ from the
+ISSN returned by the API)
+\item \code{issn}          [\code{character(1)}]\cr{}
 the ISSN of the journal
 }
 }

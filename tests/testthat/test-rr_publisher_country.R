@@ -6,6 +6,7 @@ test_that("rr_publisher_country() works", {
                                "The country code should be two letter long or ",
                                "'__' for undefined."))
 
+  skip_on_cran()
   # Regular Query
   use_cassette("rr_publisher_country", {
     res <- rr_publisher_country("IR")

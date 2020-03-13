@@ -7,10 +7,10 @@
 rr_publisher_country(country, key = NULL)
 }
 \arguments{
-\item{country}{[\code{character(1+)}]\cr{}
+\item{country}{[\verb{character(1+)}]\cr{}
 one or a vector of ISO two-letter country code or \code{AA} for
 international publisher, \code{ZZ} for publisher of unknown
-countries and \code{__} for publishers without specified country
+countries and \verb{__} for publishers without specified country
 (case insensitive).}
 
 \item{key}{[\code{character(1)}]\cr{}

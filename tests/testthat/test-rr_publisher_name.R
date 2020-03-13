@@ -5,6 +5,7 @@ test_that("rr_publisher_name() works", {
                regexp = paste0("'arg' should be one of ", dQuote("all"), ", ",
                                dQuote("any"), ", ", dQuote("exact")))
 
+  skip_on_cran()
   # Regular Query
   use_cassette("rr_publisher_name", {
     res <- rr_publisher_name("Swiss Chemistry", qtype = "exact")

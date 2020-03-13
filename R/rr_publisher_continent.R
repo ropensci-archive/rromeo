@@ -5,9 +5,9 @@
 #'
 #' @param continent \[`character(1+)`\]\cr{}
 #'                  one or a vector of strings in ```
-#'                  c("Africa", "Antarctica",  "Asia",  "Australasia",
-#'                  "Carribean",  "Central America",  "Europe",
-#'                  "North America",  "Oceania",  "South America")
+#'                  c("Africa", "Antarctica", "Asia", "Australasia",
+#'                  "Carribean", "Central America", "Europe",
+#'                  "North America", "Oceania", "South America")
 #'                  ```\cr{}
 #'                  the continent name to retrieve
 #' @inheritParams check_key

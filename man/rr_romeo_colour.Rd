@@ -5,8 +5,10 @@
 \alias{rr_romeo_color}
 \title{Query publisher by RoMEO colour}
 \usage{
-rr_romeo_colour(romeo_colour = c("green", "blue", "yellow", "white"),
-  key = NULL)
+rr_romeo_colour(
+  romeo_colour = c("green", "blue", "yellow", "white"),
+  key = NULL
+)
 }
 \arguments{
 \item{romeo_colour}{[\code{character(1)}]\cr{}
@@ -57,10 +59,9 @@ For more details about the definitions of RoMEO colours check the
 \href{http://sherpa.ac.uk/romeo/definitions.php#colours}{FAQ section} of
 SHERPA/RoMEO
 
-Note that when using \code{rr_romeo_colour()} the API returns \strong{all} the
+Note that when using \code{\link[=rr_romeo_colour]{rr_romeo_colour()}} the API returns \strong{all} the
 publishers in the selected category, so the results are generally bigger in
-size than specific functions like [\code{rr_journal_name()}] or
-[\code{rr_publisher_id()}]
+size than specific functions like \code{\link[=rr_journal_name]{rr_journal_name()}} or \code{\link[=rr_publisher_id]{rr_publisher_id()}}
 }
 \examples{
 \donttest{
