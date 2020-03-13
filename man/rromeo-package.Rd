@@ -4,7 +4,7 @@
 \name{rromeo-package}
 \alias{rromeo}
 \alias{rromeo-package}
-\title{rromeo: Access publisher copyright policies & self-archiving via the 
+\title{rromeo: Access Publisher Copyright & Self-Archiving Policies via the 
   'SHERPA/RoMEO' API}
 \description{
 Fetches information from the 'SHERPA/RoMEO' API
@@ -15,17 +15,18 @@ Fetches information from the 'SHERPA/RoMEO' API
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://docs.ropensci.org/rromeo/}
   \item \url{https://github.com/ropensci/rromeo}
   \item Report bugs at \url{https://github.com/ropensci/rromeo/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Matthias Grenié \email{matthias.grenie@gmail.com} (0000-0002-4659-7522)
+\strong{Maintainer}: Matthias Grenié \email{matthias.grenie@gmail.com} (\href{https://orcid.org/0000-0002-4659-7522}{ORCID})
 
 Authors:
 \itemize{
-  \item Hugo Gruson (0000-0002-4094-1476)
+  \item Hugo Gruson (\href{https://orcid.org/0000-0002-4094-1476}{ORCID})
 }
 
 }

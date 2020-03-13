@@ -1,13 +1,13 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biogeography&qtype=contains
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?jtitle=Biogeography&qtype=contains&ak=<<<api_key>>>
     body:
       encoding: ''
       string: ''
     headers:
       Accept: application/json, text/xml, application/xml, */*
-      user-agent: http://github.com/Rekyt/rromeo R package rromeo/v.0.1.0
+      user-agent: http://github.com/ropensci/rromeo R package rromeo/v.0.1.0.9000
   response:
     status:
       status_code: 200
@@ -15,16 +15,18 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Mon, 08 Apr 2019 14:26:45 GMT
-      server: Apache/2.4.7 (Ubuntu)
-      x-powered-by: PHP/5.5.9-1ubuntu4.27
+      date: Thu, 05 Mar 2020 15:03:30 GMT
+      content-type: text/xml
+      content-length: '938'
+      connection: keep-alive
+      server: Apache
+      x-powered-by: PHP/5.5.9-1ubuntu4.29+esm6
       access-control-allow-origin: '*'
       vary: Accept-Encoding
       content-encoding: gzip
-      content-length: '938'
-      content-type: text/xml
     body:
       encoding: UTF-8
+      file: no
       string: |
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
@@ -59,7 +61,7 @@ http_interactions:
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>08-Apr-2019:15:26:46</timestamp>
+            <timestamp>05-Mar-2020:15:03:30</timestamp>
           </header>
           <journals>
             <journal>
@@ -95,5 +97,5 @@ http_interactions:
           </journals>
           <publishers />
         </romeoapi>
-  recorded_at: 2019-04-08 14:26:46 GMT
-  recorded_with: vcr/0.2.6.9100, webmockr/0.3.4
+  recorded_at: 2020-03-05 15:03:30 GMT
+  recorded_with: vcr/0.5.0, webmockr/0.6.0

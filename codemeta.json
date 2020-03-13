@@ -5,19 +5,19 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "rromeo",
-  "description": "Provides an R Client for SHERPA/RoMEO API\n  <http://www.sherpa.ac.uk/romeo/apimanual.php> which indexes policies of\n  journal regarding the archival of scientific manuscripts before and/or after\n  peer-review as well as formatted manuscripts.",
-  "name": "rromeo: An R Client for SHERPA/RoMEO API",
+  "description": "Fetches information from the 'SHERPA/RoMEO' API\n  <http://www.sherpa.ac.uk/romeo/apimanual.php> which indexes policies of\n  journal regarding the archival of scientific manuscripts before and/or after\n  peer-review as well as formatted manuscripts.",
+  "name": "rromeo: Access Publisher Copyright & Self-Archiving Policies via the \n  'SHERPA/RoMEO' API",
   "codeRepository": "https://github.com/ropensci/rromeo",
   "issueTracker": "https://github.com/ropensci/rromeo/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.0",
+    "version": "3.6.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
+  "runtimePlatform": "R version 3.6.3 (2020-02-29)",
   "author": [
     {
       "@type": "Person",
@@ -46,18 +46,6 @@
     }
   ],
   "softwareSuggestions": [
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "ggplot2",
-      "name": "ggplot2",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=ggplot2"
-    },
     {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
@@ -98,7 +86,7 @@
       "@type": "SoftwareApplication",
       "identifier": "vcr",
       "name": "vcr",
-      "version": ">= 0.2.6",
+      "version": ">= 0.5.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -159,10 +147,10 @@
     }
   ],
   "readme": "https://github.com/ropensci/rromeo/blob/master/README.md",
-  "fileSize": "500.387KB",
+  "fileSize": "183.538KB",
   "contIntegration": [
-    "https://travis-ci.org/Rekyt/rromeo",
-    "https://codecov.io/gh/Rekyt/rromeo"
+    "https://travis-ci.org/ropensci/rromeo",
+    "https://codecov.io/gh/ropensci/rromeo"
   ],
   "developmentStatus": "https://www.repostatus.org/#active",
   "review": {
@@ -190,7 +178,7 @@
     },
     {
       "@type": "CreativeWork",
-      "datePublished": "2019",
+      "datePublished": "2020",
       "author": [
         {
           "@type": "Organization",
@@ -200,5 +188,23 @@
       "url": "http://www.sherpa.ac.uk/romeo/",
       "description": "Data released under the Creative Commons Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5) license"
     }
+  ],
+  "relatedLink": [
+    "https://docs.ropensci.org/rromeo/",
+    "https://CRAN.R-project.org/package=rromeo"
+  ],
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
+  "releaseNotes": "https://github.com/ropensci/rromeo/blob/master/NEWS.md",
+  "keywords": [
+    "r",
+    "r-package",
+    "rstats",
+    "sherpa-romeo",
+    "api-client"
   ]
 }

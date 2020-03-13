@@ -7,7 +7,7 @@
 rr_publisher_name(name, qtype = c("all", "any", "exact"), key = NULL)
 }
 \arguments{
-\item{name}{[\code{character(1+)}]\cr{}
+\item{name}{[\verb{character(1+)}]\cr{}
 One or a vector of query string(s) to search publisher name}
 
 \item{qtype}{[\code{character(1)}]\cr{}

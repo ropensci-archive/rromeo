@@ -1,7 +1,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.sherpa.ac.uk/romeo/api29.php?pub=Swiss%20Chemistry&qtype=exact&ak=<<<api_key>>>
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=1463-9084&ak=<<<api_key>>>
     body:
       encoding: ''
       string: ''
@@ -15,9 +15,9 @@ http_interactions:
       reason: OK
       message: 'Success: (200) OK'
     headers:
-      date: Thu, 05 Mar 2020 15:03:37 GMT
+      date: Thu, 05 Mar 2020 15:03:34 GMT
       content-type: text/xml
-      content-length: '1378'
+      content-length: '1542'
       connection: keep-alive
       server: Apache
       x-powered-by: PHP/5.5.9-1ubuntu4.29+esm6
@@ -34,12 +34,8 @@ http_interactions:
           <header>
             <parameters>
               <parameter source="specified">
-                <parametername>pub</parametername>
-                <parametervalue>Swiss Chemistry</parametervalue>
-              </parameter>
-              <parameter source="specified">
-                <parametername>qtype</parametername>
-                <parametervalue>exact</parametervalue>
+                <parametername>issn</parametername>
+                <parametervalue>1463-9084</parametervalue>
               </parameter>
               <parameter source="default">
                 <parametername>showfunder</parametername>
@@ -55,59 +51,66 @@ http_interactions:
               </parameter>
             </parameters>
             <numhits>1</numhits>
-            <apicontrol>publisher</apicontrol>
-            <outcome>publisherFound</outcome>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
             <message />
             <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
             <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
             <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
-            <timestamp>05-Mar-2020:15:03:37</timestamp>
+            <timestamp>05-Mar-2020:15:03:34</timestamp>
           </header>
-          <journals />
+          <journals>
+            <journal>
+              <jtitle>Physical Chemistry Chemical Physics</jtitle>
+              <issn>1463-9076</issn>
+              <zetocpub>Royal Society of Chemistry</zetocpub>
+              <romeopub>Royal Society of Chemistry</romeopub>
+            </journal>
+          </journals>
           <publishers>
-            <publisher id="411">
-              <name>Schweizerische Chemische Gesellschaft</name>
-              <alias>Swiss Chemistry Society</alias>
-              <homeurl>http://www.swiss-chem-soc.ch/</homeurl>
+            <publisher id="63">
+              <name>Royal Society of Chemistry</name>
+              <alias />
+              <homeurl>http://www.rsc.org/</homeurl>
               <preprints>
-                <prearchiving>unclear</prearchiving>
+                <prearchiving>can</prearchiving>
                 <prerestrictions />
               </preprints>
               <postprints>
-                <postarchiving>cannot</postarchiving>
-                <postrestrictions />
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</postrestriction>
+                </postrestrictions>
               </postprints>
               <pdfversion>
-                <pdfarchiving>restricted</pdfarchiving>
-                <pdfrestrictions>
-                  <pdfrestriction>&lt;num&gt;12&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</pdfrestriction>
-                </pdfrestrictions>
+                <pdfarchiving>cannot</pdfarchiving>
+                <pdfrestrictions />
               </pdfversion>
               <conditions>
-                <condition>On authors personal website and/or in a non-profit and non-commercial institutional repository or funding body repository</condition>
-                <condition>Publisher copyright and source must be acknowledged with citation</condition>
-                <condition>Must link to journal homepage</condition>
-                <condition>Publisher's version/PDF must be used (free to members of the society)</condition>
-                <condition>Must link to publisher version with DOI</condition>
-                <condition>Publisher last contacted on 01/03/2017</condition>
+                <condition>Pre-prints on non-commercial repositories. arXiv, ChemRxiv, instititional repositories and author's personal website</condition>
+                <condition>Author's post-print on author's personal website, institutional repository, open access repository, scholarly communications networks that comply with International Association of STM Publishers sharing principles</condition>
+                <condition>Publisher's version/PDF cannot be used</condition>
+                <condition>NIH authors may have their articles deposited in PubMed Central on their behalf.</condition>
+                <condition>Publisher last reviewed on 21/07/2015</condition>
+                <condition>Author's post-print may immediately share with a closed group of research collaborators, for example via an intranet or privately via a scholarly communication network.</condition>
               </conditions>
               <mandates />
               <paidaccess>
-                <paidaccessurl>https://chimia.ch/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=431&amp;Itemid=674&amp;lang=en</paidaccessurl>
+                <paidaccessurl>http://www.rsc.org/Publishing/Journals/OpenScience/FAQ.asp</paidaccessurl>
                 <paidaccessname>Open Access</paidaccessname>
-                <paidaccessnotes />
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
               </paidaccess>
               <copyrightlinks>
                 <copyrightlink>
                   <copyrightlinktext>Policy</copyrightlinktext>
-                  <copyrightlinkurl>https://chimia.ch/index.php?option=com_content&amp;view=category&amp;layout=blog&amp;id=431&amp;Itemid=674&amp;lang=en</copyrightlinkurl>
+                  <copyrightlinkurl>http://www.rsc.org/journals-books-databases/open-access/green-open-access/</copyrightlinkurl>
                 </copyrightlink>
               </copyrightlinks>
-              <romeocolour>white</romeocolour>
-              <dateadded>2008-03-04 00:00:00</dateadded>
-              <dateupdated>2011-08-12 11:23:35</dateupdated>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2004-01-10 00:00:00</dateadded>
+              <dateupdated>2019-04-01 11:01:19</dateupdated>
             </publisher>
           </publishers>
         </romeoapi>
-  recorded_at: 2020-03-05 15:03:37 GMT
+  recorded_at: 2020-03-05 15:03:34 GMT
   recorded_with: vcr/0.5.0, webmockr/0.6.0

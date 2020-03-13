@@ -5,7 +5,7 @@
 #'
 #' @param ... Other options passed to parsing functions
 #'
-#' @return either results from [`parse_journal()`] or [`parse_publisher()`]
+#' @return either results from [parse_journal()] or [parse_publisher()]
 parse_generic <- function(api_answer, ...) {
 
   if (http_error(api_answer)) {

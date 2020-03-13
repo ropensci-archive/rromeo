@@ -39,7 +39,7 @@ You can also install the development version from GitHub:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("Rekyt/rromeo")
+remotes::install_github("ropensci/rromeo")
 ```
 
 ## API Key
@@ -58,13 +58,15 @@ rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
 
 or you can specify the environment variable `SHERPAROMEO_KEY` in an
 `.Rprofile` or in an `.Renviron` file and `rromeo` will automatically
-retrieve the API key.
+retrieve the API key. See the [specific
+vignette](https://docs.ropensci.org/rromeo/articles/setting_up_api_key.html)
+to know how to apply and use the API key with `rromeo`.
 
 ## Usage
 
 `rromeo` contains functions to retrieve data from the SHERPA/RoMEO API
 (for a complete overview please refer to the
-[vignette](https://ropensci.github.io/rromeo/articles/rromeo.html)). The
+[vignette](https://docs.ropensci.org/rromeo/articles/rromeo.html)). The
 data is released under the [Creative Commons
 Attribution-NonCommercial-ShareAlike 2.5 (CC BY-NC-SA 2.5)
 license](https://creativecommons.org/licenses/by-nc-sa/2.5/). A
@@ -76,10 +78,10 @@ journal:
 
 ``` r
 rromeo::rr_journal_name("Journal of Biogeography", qtype = "exact")
-#>                     title      issn romeocolour preprint  postprint    pdf
-#> 1 Journal of Biogeography 0305-0270      yellow      can restricted cannot
-#>   pre_embargo post_embargo pdf_embargo
-#> 1        <NA>    12 months        <NA>
+#>                     title provided_issn      issn romeocolour preprint
+#> 1 Journal of Biogeography          <NA> 0305-0270      yellow      can
+#>    postprint    pdf pre_embargo post_embargo pdf_embargo
+#> 1 restricted cannot        <NA>    12 months        <NA>
 ```
 
 the `qtype` argument indicates the type of query to make (`exact` for
@@ -90,18 +92,17 @@ You can also retrieve a journal information using its ISSN:
 
 ``` r
 rromeo::rr_journal_issn("0305-0270")
-#>                     title      issn romeocolour preprint  postprint    pdf
-#> 1 Journal of Biogeography 0305-0270      yellow      can restricted cannot
-#>   pre_embargo post_embargo pdf_embargo
-#> 1        <NA>    12 months        <NA>
+#>                     title provided_issn      issn romeocolour preprint
+#> 1 Journal of Biogeography     0305-0270 0305-0270      yellow      can
+#>    postprint    pdf pre_embargo post_embargo pdf_embargo
+#> 1 restricted cannot        <NA>    12 months        <NA>
 ```
 
 `rromeo` also provides a function to retrieve information based on
 publisher ID `rr_publisher()`.
 
 SHERPA/RoMEO provides a synthetic “colour” for each journal, the colour
-summarizes the editorial policy of a
-journal:
+summarizes the editorial policy of a journal:
 
 | RoMEO colour | Archiving policy                                        |
 | :----------- | :------------------------------------------------------ |
@@ -136,20 +137,22 @@ green_journals[8:12,]
 
 ## Dependency network (Imports only)
 
-<img src="man/figures/README-dependency_network_imports-1.png" width="100%" />
+<img src="man/figures/README-dependency_network_imports-1.svg" width="100%" />
 
 ## Dependency network (Imports and Suggests)
 
-<img src="man/figures/README-dependency_network_full-1.png" width="100%" />
+<img src="man/figures/README-dependency_network_full-1.svg" width="100%" />
 
 ## Contributing to `rromeo`
 
-We welcome contribution to `rromeo`\! Please read the [contribution guidelines](https://docs.ropensci.org/rromeo/CONTRIBUTING.html) if you want to 
-contribute, as well as the below-mentioned Code of Conduct.
+We welcome contribution to `rromeo`\! Please read the [contribution
+guidelines](https://docs.ropensci.org/rromeo/CONTRIBUTING.html) if you
+want to contribute, as well as the below-mentioned Code of Conduct.
 
 ## Code of Conduct
 
-Please note that the `rromeo` project is released with a [Contributor Code of Conduct](https://docs.ropensci.org/rromeo/CODE_OF_CONDUCT.html). By contributing
-to this project, you agree to abide by its terms.
+Please note that the `rromeo` project is released with a [Contributor
+Code of Conduct](https://docs.ropensci.org/rromeo/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
 
 [![ropensci\_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)

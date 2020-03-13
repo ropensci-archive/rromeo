@@ -4,11 +4,10 @@
 \alias{rr_journal_name}
 \title{Retrieve journals policies by matching title}
 \usage{
-rr_journal_name(name, qtype = c("exact", "contains", "starts"),
-  key = NULL)
+rr_journal_name(name, qtype = c("exact", "contains", "starts"), key = NULL)
 }
 \arguments{
-\item{name}{[\code{character(1+)}]\cr{}
+\item{name}{[\verb{character(1+)}]\cr{}
 one or several strings to match the titles of the journals}
 
 \item{qtype}{[\code{character(1)}]\cr{}
@@ -24,27 +23,30 @@ a character string containing the API key or \code{NULL}
 (see Details section on how to specify it)}
 }
 \value{
-Returns a data.frame with complete information from journal:
+Returns a data.frame with the following columns:
 \itemize{
-\item \code{title}        [\code{character(1)}]\cr{}
+\item \code{title}         [\code{character(1)}]\cr{}
 the name of the journal
-\item \code{issn}         [\code{character(1)}]\cr{}
+\item \code{provided_issn} [\code{character(1)}]\cr{}
+the ISSN you provided in your query (might differ from the
+ISSN returned by the API)
+\item \code{issn}          [\code{character(1)}]\cr{}
 the ISSN of the journal
-\item \code{romeocolour}  [\code{character(1)}]\cr{}
+\item \code{romeocolour}   [\code{character(1)}]\cr{}
 the SHERPA/RoMEO colour of the journal
-\item \code{preprint}     [\code{character(1)}]\cr{}
+\item \code{preprint}      [\code{character(1)}]\cr{}
 is the preprint (not reviewed) archivable?
-\item \code{postprint}    [\code{character(1)}]\cr{}
-is the postprint (reviewed but not formatted)?
-\item \code{pdf}          [\code{character(1)}]\cr{}
+\item \code{postprint}     [\code{character(1)}]\cr{}
+is the postprint (reviewed but not formatted) archivable?
+\item \code{pdf}           [\code{character(1)}]\cr{}
 is the publisher's version (reviewed and formatted)
-\item \code{pre_embargo}  [\code{character(1)}]\cr{}
+\item \code{pre_embargo}   [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the preprint
-\item \code{post_embargo} [\code{character(1)}]\cr{}
+\item \code{post_embargo}  [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the postprint
-\item \code{pdf_embargo}  [\code{character(1)}]\cr{}
+\item \code{pdf_embargo}   [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
 archive the publisher's version
 }
