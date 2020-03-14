@@ -30,7 +30,7 @@ install.packages("rromeo")
 
 You can also install the development version from GitHub:
 
-```{r, eval = FALSE}
+```{r}
 # install.packages("remotes")
 remotes::install_github("ropensci/rromeo")
 ```
@@ -41,7 +41,7 @@ Note that SHERPA/RoMEO lets you run 500 requests per day per IP address, by [reg
 
 `rromeo` can use your registered SHERPA/RoMEO API key; you can either pass it as a string when querying the data with the argument `key`:
 
-``` r
+```{r, eval = FALSE}
 rr_journal_name("Journal of Geology", key = "Iq83AIL5bss")
 ```
 
