@@ -15,7 +15,7 @@ jobs:
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install rmarkdown
-        run: Rscript -e 'install.packages(c("rmarkdown", "devtools", "miniCRAN", "igraph", "ggplot2", "ggnetwork"))'
+        run: Rscript -e 'install.packages(c("rmarkdown", "devtools", "miniCRAN", "igraph", "ggplot2", "ggnetwork", "svglite"))'
       - name: Render README
         env:
           SHERPAROMEO_KEY: ${{ secrets.SHERPAROMEO_KEY }}
