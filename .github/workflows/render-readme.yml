@@ -14,6 +14,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
+      - name: Install XQuartz
+        run: brew install Caskroom/cask/xquartz
       - name: Install rmarkdown
         run: Rscript -e 'install.packages(c("rmarkdown", "devtools", "miniCRAN", "igraph", "ggplot2", "ggnetwork", "svglite"))'
       - name: Render README
