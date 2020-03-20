@@ -158,3 +158,34 @@ rr_v2_retrieve = function(item_type, key = api_key,
     content() %>%
     .[["items"]]
 }
+
+
+rr_v2_publisher_formatted = function(given_limit, given_offset) {
+  full_query = rr_v2_retrieve("publisher", limit = given_limit, offset = given_offset)
+ publishers = lapply(full_query, function(x) {
+   data.frame(
+     publisher_name = x[["name"]][[1]][["name"]],
+     country = x[["country"]],
+     publication_count = x[["publication_count"]]
+   )
+ })
+
+ do.call(rbind, publishers)
+}
+rr_v2_publisher_formatted(12, NULL)
+
+
+rr_v2_publication_formatted = function(given_limit, given_offset) {
+  full_query = rr_v2_retrieve("publication", limit = given_limit, offset = given_offset)
+  publications = lapply(full_query, function(x) {
+    data.frame(
+      title = x[["title"]][[1]][["title"]],
+      type  = x[["type"]],
+      listed_in_doaj = x[["listed_in_doaj"]],
+      issn = x[["issns"]][[1]][["issn"]],
+      issn_type = x[["issns"]][[1]][["type"]]
+    )
+  })
+
+  do.call(rbind, publications)
+}
