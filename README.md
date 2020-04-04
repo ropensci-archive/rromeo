@@ -152,7 +152,7 @@ want to contribute, as well as the below-mentioned Code of Conduct.
 ## Code of Conduct
 
 Please note that the `rromeo` project is released with a [Contributor
-Code of Conduct](https://docs.ropensci.org/rromeo/CODE_OF_CONDUCT.html).
+Code of Conduct](https://ropensci.org/code-of-conduct/).
 By contributing to this project, you agree to abide by its terms.
 
 [![ropensci\_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)

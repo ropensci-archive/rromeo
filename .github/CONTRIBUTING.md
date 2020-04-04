@@ -36,5 +36,5 @@ GitHub username, and links to relevant issue(s)/PR(s).
 ### Code of Conduct
 
 Please note that the rromeo project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
-project you agree to abide by its terms.
+[Contributor Code of Conduct](https://ropensci.org/code-of-conduct/). By 
+contributing to this project you agree to abide by its terms.
