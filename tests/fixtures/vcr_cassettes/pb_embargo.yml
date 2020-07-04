@@ -1,0 +1,135 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.sherpa.ac.uk/romeo/api29.php?issn=0027-8424&ak=<<<api_key>>>
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      user-agent: http://github.com/ropensci/rromeo R package rromeo/v.0.1.1
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      date: Sat, 04 Jul 2020 06:38:23 GMT
+      content-type: text/xml
+      content-length: '1626'
+      connection: keep-alive
+      server: Apache
+      x-powered-by: PHP/5.5.9-1ubuntu4.29+esm6
+      access-control-allow-origin: '*'
+      vary: Accept-Encoding
+      content-encoding: gzip
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        <?xml version="1.0" encoding="ISO-8859-1" ?>
+        <!DOCTYPE romeoapi SYSTEM "http://www.sherpa.ac.uk/romeo/romeoapi293.dtd">
+        <romeoapi version="2.9.9">
+          <header>
+            <parameters>
+              <parameter source="specified">
+                <parametername>issn</parametername>
+                <parametervalue>0027-8424</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>showfunder</parametername>
+                <parametervalue>none</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>fIDnum</parametername>
+                <parametervalue>|</parametervalue>
+              </parameter>
+              <parameter source="default">
+                <parametername>la</parametername>
+                <parametervalue>en</parametervalue>
+              </parameter>
+            </parameters>
+            <numhits>1</numhits>
+            <apicontrol>journal</apicontrol>
+            <outcome>singleJournal</outcome>
+            <message />
+            <licence>SHERPA/RoMEO data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.</licence>
+            <licenceurl>http://www.sherpa.ac.uk/romeoreuse.html</licenceurl>
+            <disclaimer>All SHERPA/RoMEO information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of RoMEO data, or for alternative interpretations which are derived from this information.</disclaimer>
+            <timestamp>04-Jul-2020:07:38:20</timestamp>
+          </header>
+          <journals>
+            <journal>
+              <jtitle>Proceedings of the National Academy of Sciences</jtitle>
+              <issn>0027-8424</issn>
+              <zetocpub>National Academy of Sciences</zetocpub>
+              <romeopub>National Academy of Sciences</romeopub>
+            </journal>
+          </journals>
+          <publishers>
+            <publisher id="94">
+              <name>National Academy of Sciences</name>
+              <alias />
+              <homeurl>http://www.nasonline.org/</homeurl>
+              <preprints>
+                <prearchiving>can</prearchiving>
+                <prerestrictions />
+              </preprints>
+              <postprints>
+                <postarchiving>restricted</postarchiving>
+                <postrestrictions>
+                  <postrestriction>Authors post-print after media embargo has expired</postrestriction>
+                </postrestrictions>
+              </postprints>
+              <pdfversion>
+                <pdfarchiving>restricted</pdfarchiving>
+                <pdfrestrictions>
+                  <pdfrestriction>Authors post-print after media embargo has expired</pdfrestriction>
+                </pdfrestrictions>
+              </pdfversion>
+              <conditions>
+                <condition>Author's pre-print on author's personal website, arXiv or bioRxiv</condition>
+                <condition>Authors retain copyright</condition>
+                <condition>Must link to publisher version</condition>
+                <condition>Non-commercial use only</condition>
+                <condition>Authors post-print after media embargo has expired</condition>
+                <condition>Publisher's version/PDF may be used</condition>
+                <condition>Publisher's version/PDF may be used on author's personal website after &lt;num&gt;6&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; embargo</condition>
+                <condition>Authors may have deposit the author's post-print in funding body's archive or funding body's designated repository for public release &lt;num&gt;6&lt;/num&gt; &lt;period units=&quot;month&quot;&gt;months&lt;/period&gt; after publication</condition>
+                <condition>All PNAS-formatted versions are deposited in PubMed Central for release after 6 months, regardless of funding</condition>
+                <condition>Applies to PNAS only</condition>
+                <condition>Publisher last contacted on 20/02/2018</condition>
+              </conditions>
+              <mandates />
+              <paidaccess>
+                <paidaccessurl>http://www.pnas.org/page/subscriptions/open-access</paidaccessurl>
+                <paidaccessname>PNAS Open Access Option</paidaccessname>
+                <paidaccessnotes>A paid open access option is available for this journal.</paidaccessnotes>
+              </paidaccess>
+              <copyrightlinks>
+                <copyrightlink>
+                  <copyrightlinktext>Editorial and Journal Policies</copyrightlinktext>
+                  <copyrightlinkurl>http://www.pnas.org/page/authors/journal-policies</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Licenses for PNAS Articles</copyrightlinktext>
+                  <copyrightlinkurl>http://www.pnas.org/page/authors/licenses</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>FAQ</copyrightlinktext>
+                  <copyrightlinkurl>http://www.pnas.org/page/authors/author-faq#permissions</copyrightlinkurl>
+                </copyrightlink>
+                <copyrightlink>
+                  <copyrightlinktext>Preprint servers facilitate scientific discourse</copyrightlinktext>
+                  <copyrightlinkurl>http://www.pnas.org/content/114/48/12630</copyrightlinkurl>
+                </copyrightlink>
+              </copyrightlinks>
+              <romeocolour>yellow</romeocolour>
+              <dateadded>2004-06-08 00:00:00</dateadded>
+              <dateupdated>2018-11-07 11:00:03</dateupdated>
+            </publisher>
+          </publishers>
+        </romeoapi>
+  recorded_at: 2020-07-04 06:38:23 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

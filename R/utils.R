@@ -92,9 +92,13 @@ parse_embargo <- function(xml_source, type = c("pre", "post", "pdf")) {
     return(NA_character_)
   }
   else {
-    embargo_field <- read_html(embargo_field)
-    time <- xml_text(xml_find_first(embargo_field, "//num"))
-    unit <- xml_text(xml_find_first(embargo_field, "//period"))
+    time <- "after"
+    unit <- "media"
+    if (embargo_field != "Authors post-print after media embargo has expired") {
+      embargo_field <- read_html(embargo_field)
+      time <- xml_text(xml_find_first(embargo_field, "//num"))
+      unit <- xml_text(xml_find_first(embargo_field, "//period"))
+    }
     return(paste(time, unit))
   }
 }

@@ -74,3 +74,14 @@ test_that("Can validate country two-letters ISO codes", {
                paste0("Albania is an invalid country code. The country code ",
                       "should be two letter long or '__' for undefined."))
 })
+
+
+test_that("Can parse embargo on problematic journal", {
+  use_cassette("pb_embargo", {
+    a = rromeo::rr_journal_issn("0027-8424")
+
+    a$title = "Proceedings of the National Academy of Sciences"
+    a$post = "after media"
+    a$pdf  = "after media"
+  })
+})
