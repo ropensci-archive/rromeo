@@ -30,10 +30,14 @@
 #'                   archive the preprint
 #' * `post_embargo`  \[`character(1)`\]\cr{}
 #'                   if applicable the embargo period before the author(s) can
-#'                   archive the postprint
+#'                   archive the postprint, if value is `"after media"`, it
+#'                   means that the post-print can be archived after media
+#'                   embargo has passed
 #' * `pdf_embargo`   \[`character(1)`\]\cr{}
 #'                   if applicable the embargo period before the author(s) can
-#'                   archive the publisher's version
+#'                   archive the publisher's version, if value is `"after media"`,
+#'                   it means that the publisher's version can be archived after
+#'                   media embargo has passed
 #'
 #' @keywords internal
 #'

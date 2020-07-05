@@ -19,7 +19,7 @@ LazyData: true
 Imports: 
     httr,
     xml2
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)
 Suggests:
     knitr,

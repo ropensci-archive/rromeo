@@ -105,7 +105,7 @@ parse_embargo <- function(xml_source, type = c("pre", "post", "pdf")) {
 
 #' Validate ISO two-letters country code
 #'
-#' If available uses [`ISOcodes::ISO_3166`] to validate country code.
+#' If available uses [`ISOcodes::ISO_3166_1`] to validate country code.
 #' Otherwise assume that the code is valid as long as it is a two-letter code or
 #' `__`. See [`rr_publisher_country()`] for use of country codes.
 #'
