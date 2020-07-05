@@ -15,7 +15,7 @@ a two-letter country code or \code{AA}, \code{ZZ} or
 \code{TRUE} if the country code is valid, errors otherwise
 }
 \description{
-If available uses \code{\link[ISOcodes:ISO_3166]{ISOcodes::ISO_3166}} to validate country code.
+If available uses \code{\link[ISOcodes:ISO_3166]{ISOcodes::ISO_3166_1}} to validate country code.
 Otherwise assume that the code is valid as long as it is a two-letter code or
 \verb{__}. See \code{\link[=rr_publisher_country]{rr_publisher_country()}} for use of country codes.
 }

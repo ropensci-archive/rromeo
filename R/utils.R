@@ -92,16 +92,20 @@ parse_embargo <- function(xml_source, type = c("pre", "post", "pdf")) {
     return(NA_character_)
   }
   else {
-    embargo_field <- read_html(embargo_field)
-    time <- xml_text(xml_find_first(embargo_field, "//num"))
-    unit <- xml_text(xml_find_first(embargo_field, "//period"))
+    time <- "after"
+    unit <- "media"
+    if (embargo_field != "Authors post-print after media embargo has expired") {
+      embargo_field <- read_html(embargo_field)
+      time <- xml_text(xml_find_first(embargo_field, "//num"))
+      unit <- xml_text(xml_find_first(embargo_field, "//period"))
+    }
     return(paste(time, unit))
   }
 }
 
 #' Validate ISO two-letters country code
 #'
-#' If available uses [`ISOcodes::ISO_3166`] to validate country code.
+#' If available uses [`ISOcodes::ISO_3166_1`] to validate country code.
 #' Otherwise assume that the code is valid as long as it is a two-letter code or
 #' `__`. See [`rr_publisher_country()`] for use of country codes.
 #'

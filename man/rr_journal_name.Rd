@@ -45,10 +45,14 @@ if applicable the embargo period before the author(s) can
 archive the preprint
 \item \code{post_embargo}  [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
-archive the postprint
+archive the postprint, if value is \code{"after media"}, it
+means that the post-print can be archived after media
+embargo has passed
 \item \code{pdf_embargo}   [\code{character(1)}]\cr{}
 if applicable the embargo period before the author(s) can
-archive the publisher's version
+archive the publisher's version, if value is \code{"after media"},
+it means that the publisher's version can be archived after
+media embargo has passed
 }
 }
 \description{
