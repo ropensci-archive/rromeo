@@ -16,7 +16,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
+  "runtimePlatform": "R version 4.0.2 (2020-06-22)",
   "author": [
     {
       "@type": "Person",
@@ -145,7 +145,7 @@
       "sameAs": "https://CRAN.R-project.org/package=xml2"
     }
   ],
-  "fileSize": "1276.925KB",
+  "fileSize": "1222.945KB",
   "contIntegration": ["https://travis-ci.org/ropensci/rromeo", "https://ci.appveyor.com/project/ropensci/rromeo", "https://codecov.io/gh/ropensci/rromeo"],
   "developmentStatus": "https://www.repostatus.org/#active",
   "review": {
@@ -201,6 +201,5 @@
     "rstats",
     "sherpa-romeo",
     "api-client"
-  ],
-  "readme": "https://github.com/ropensci/rromeo/blob/master/README.md"
+  ]
 }
