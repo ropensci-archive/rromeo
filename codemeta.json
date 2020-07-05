@@ -145,7 +145,7 @@
       "sameAs": "https://CRAN.R-project.org/package=xml2"
     }
   ],
-  "fileSize": "1222.945KB",
+  "fileSize": "1214.558KB",
   "contIntegration": ["https://travis-ci.org/ropensci/rromeo", "https://ci.appveyor.com/project/ropensci/rromeo", "https://codecov.io/gh/ropensci/rromeo"],
   "developmentStatus": "https://www.repostatus.org/#active",
   "review": {
